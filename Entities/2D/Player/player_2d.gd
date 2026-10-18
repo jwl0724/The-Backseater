@@ -30,6 +30,9 @@ var projectile_count: float = base_projectile_count
 
 var fire_rate: float:
     get: return 3 / attack_speed
+var is_dead: bool:
+    get: return health <= 0
+
 var elasped_time: float = 0
 
 

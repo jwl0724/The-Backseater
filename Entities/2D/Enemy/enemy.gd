@@ -31,7 +31,8 @@ var projectile_count: int = 0
 var projectile_speed: float = 0
 
 var player: Player2D = null
-
+var is_dead: bool:
+    get: return health <= 0
 
 
 func load_data(data: Enemy2DData):
@@ -60,3 +61,12 @@ func spawn_at_position(global_pos: Vector2):
 func hurt_enemy(projectile: Projectile):
     health -= player.damage
     movement.knockback(projectile.target_direction, projectile.projectile_speed)
+    if is_dead: kill()
+    else: visuals.play_hurt_animation()
+
+
+
+func kill():
+    visuals.play_die_animation()
+    await visuals.death_finished
+    visible = false

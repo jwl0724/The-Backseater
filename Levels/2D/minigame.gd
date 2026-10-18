@@ -20,9 +20,7 @@ class_name MiniGame
 
 func _ready():
     enemy.player = player
-    data.move_speed = 80
     enemy.load_data(data)
-    enemy.spawn_at_position(Vector2.ZERO)
     start_game(autoload_level) # TODO: Temp, need the 3D scene to call this later
 
 
@@ -41,3 +39,4 @@ func start_game(level_number: int):
     add_child(scene)
     var spawn_point: Node2D = scene.find_child("Spawn")
     player.teleport_to_point(spawn_point.global_position)
+    enemy.spawn_at_position(player.global_position - Vector2.LEFT * 20)

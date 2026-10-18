@@ -78,4 +78,4 @@ func _on_body_entered(body: Node2D):
     if body is Player2D && collision_layer == Constants.PhysLayers.Enemy:
         print("TODO: make some damage function on player and call it here")
     elif body is Enemy2D && collision_layer == Constants.PhysLayers.Player:
-        print("TODO: make some damage function on enemy and call it here")
+        (body as Enemy2D).hurt_enemy(self)
