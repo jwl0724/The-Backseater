@@ -6,6 +6,8 @@ class AudioBus:
 
 class PhysLayers:
     const Terrain: int = 1
+    const Player: int = 2
+    const Enemy: int = 4
 
 class Controls:
     const Left := "Left"

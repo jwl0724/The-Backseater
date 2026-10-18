@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://ck2j28gj7elr2" path="res://Entities/2D/Player/player_2d.gd" id="1_ec1sy"]
 [ext_resource type="Texture2D" uid="uid://coq6sjqpvxw5b" path="res://Entities/2D/Player/Imports/PlayerSprite.png" id="2_lhr0x"]
 [ext_resource type="Script" uid="uid://b3cy0k8v1glh4" path="res://Entities/2D/Player/Systems/player_controls.gd" id="2_rlqyc"]
+[ext_resource type="Script" uid="uid://tj78qksw71gs" path="res://Entities/2D/Shared/projectile_handler.gd" id="3_njn1r"]
 [ext_resource type="Script" uid="uid://cyh2jf0yiln0n" path="res://Entities/2D/Player/Systems/player_visuals.gd" id="4_1l528"]
+[ext_resource type="PackedScene" uid="uid://bcjks3144ttli" path="res://Entities/2D/Shared/projectile.tscn" id="4_hoive"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlqyc"]
 atlas = ExtResource("2_lhr0x")
@@ -65,6 +67,7 @@ radius = 5.0
 height = 18.0
 
 [node name="Player2d" type="CharacterBody2D" unique_id=586874172]
+collision_layer = 2
 script = ExtResource("1_ec1sy")
 
 [node name="Systems" type="Node" parent="." unique_id=686166810]
@@ -72,13 +75,18 @@ script = ExtResource("1_ec1sy")
 [node name="PlayerControls" type="Node" parent="Systems" unique_id=402809458]
 script = ExtResource("2_rlqyc")
 
+[node name="ProjectileHandler" type="Node" parent="Systems" unique_id=553166961 node_paths=PackedStringArray("projectile_spawn_node")]
+script = ExtResource("3_njn1r")
+projectile_spawn_node = NodePath("..")
+projectile_scene = ExtResource("4_hoive")
+
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1560723382]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_gtvml")
 animation = &"move"
 autoplay = "idle"
-frame_progress = 0.89277256
+frame_progress = 0.6606788
 script = ExtResource("4_1l528")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=340695099]

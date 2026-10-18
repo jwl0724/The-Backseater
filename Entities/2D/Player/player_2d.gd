@@ -8,12 +8,16 @@ const health_regen_per_upgrade: float = 0.2
 const attack_speed_per_upgrade: float = 1
 const projectile_count_per_upgrade: int = 1
 
+const projectile_speed: float = 80
+
 @export var base_damage: float = 1
 @export var base_move_speed: float = 30
 @export var base_health: float = 20
 @export var base_health_regen: float = 0.1
 @export var base_attack_speed: float = 1 ## the attack interval will be 3 / attack_speed
 @export var base_projectile_count: int = 1
+
+@onready var projectile_handler: ProjectileHandler = $Systems/ProjectileHandler
 
 var damage: float = base_damage
 var move_speed: float = base_move_speed
@@ -22,9 +26,14 @@ var health_regen: float = base_health_regen
 var attack_speed: float = base_attack_speed
 var projectile_count: float = base_projectile_count
 
+var fire_rate: float:
+    get: return 3 / attack_speed
+var elasped_time: float = 0
+
 
 
 func _ready():
+    projectile_handler.create_pool(8)
     SignalBus.game2d_player_upgrade.connect(_on_upgrade)
 
 
@@ -37,3 +46,11 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
         UpgradeData.UpgradeType.HEALTH_REGEN: health_regen += health_regen_per_upgrade
         UpgradeData.UpgradeType.ATTACK_SPEED: attack_speed += attack_speed_per_upgrade
         UpgradeData.UpgradeType.PROJECTILE_COUNT: projectile_count += projectile_count_per_upgrade
+
+
+
+func _process(delta):
+    if elasped_time >= fire_rate:
+        elasped_time = 0
+        projectile_handler.shoot(get_global_mouse_position(), projectile_speed)
+    else: elasped_time += delta
