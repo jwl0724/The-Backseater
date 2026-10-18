@@ -19,6 +19,7 @@ var time_alive: float = 0
 func _ready():
     visible = false
     screen_notifier.screen_exited.connect(despawn)
+    body_entered.connect(_on_body_entered)
 
 
 
@@ -66,3 +67,11 @@ func _process(delta):
     # Handle timer
     time_alive += delta
     if time_alive >= lifespan: despawn()
+
+
+
+func _on_body_entered(body: Node2D):
+    if body is Player2D && collision_layer == Constants.PhysLayers.Enemy:
+        print("TODO: make some damage function on player and call it here")
+    elif body is Enemy2D && collision_layer == Constants.PhysLayers.Player:
+        print("TODO: make some damage function on enemy and call it here")

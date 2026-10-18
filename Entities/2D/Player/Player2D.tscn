@@ -63,8 +63,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlqyc"]
-radius = 5.0
-height = 18.0
+radius = 4.0
+height = 16.0
 
 [node name="Player2d" type="CharacterBody2D" unique_id=586874172]
 collision_layer = 2
@@ -82,7 +82,7 @@ projectile_scene = ExtResource("4_hoive")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1560723382]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_gtvml")
 animation = &"move"
 autoplay = "idle"
