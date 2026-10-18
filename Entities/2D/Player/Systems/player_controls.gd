@@ -25,5 +25,5 @@ func _input(event: InputEvent):
 
 
 func _physics_process(_delta):
-    player.velocity = input_vector * player.move_speed
+    player.velocity = input_vector.normalized() * player.move_speed
     player.move_and_slide()
