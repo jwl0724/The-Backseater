@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://tj78qksw71gs" path="res://Entities/2D/Shared/projectile_handler.gd" id="3_njn1r"]
 [ext_resource type="Script" uid="uid://cyh2jf0yiln0n" path="res://Entities/2D/Player/Systems/player_visuals.gd" id="4_1l528"]
 [ext_resource type="PackedScene" uid="uid://bcjks3144ttli" path="res://Entities/2D/Shared/projectile.tscn" id="4_hoive"]
+[ext_resource type="Script" uid="uid://b8eiaxfykrhg" path="res://Entities/2D/Player/Systems/i_frame_handler.gd" id="5_uol42"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlqyc"]
 atlas = ExtResource("2_lhr0x")
@@ -82,6 +83,11 @@ script = ExtResource("2_rlqyc")
 script = ExtResource("3_njn1r")
 projectile_spawn_node = NodePath("..")
 projectile_scene = ExtResource("4_hoive")
+
+[node name="IFrameHandler" type="Node" parent="Systems" unique_id=538163174]
+script = ExtResource("5_uol42")
+
+[node name="Animations" type="AnimationPlayer" parent="." unique_id=1045314596]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1560723382]
 texture_filter = 1
