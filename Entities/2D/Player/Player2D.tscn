@@ -62,7 +62,10 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlqyc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hoive"]
+radius = 3.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hoive"]
 radius = 4.0
 height = 16.0
 
@@ -89,11 +92,20 @@ autoplay = "idle"
 frame_progress = 0.6606788
 script = ExtResource("4_1l528")
 
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1347169259]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_hoive")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=340695099]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347169259]
-shape = SubResource("CapsuleShape2D_rlqyc")
+[node name="Hitbox" type="Area2D" parent="." unique_id=1963986733]
+visible = false
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox" unique_id=523798227]
+shape = SubResource("CapsuleShape2D_hoive")

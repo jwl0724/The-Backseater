@@ -33,7 +33,8 @@ var elasped_time: float = 0
 
 
 func _ready():
-    projectile_handler.create_pool(8)
+    move_speed = base_move_speed
+    projectile_handler.create_pool(20)
     SignalBus.game2d_player_upgrade.connect(_on_upgrade)
 
 

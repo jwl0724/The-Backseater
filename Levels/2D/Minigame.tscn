@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://cbvrdcpgtd850" path="res://Levels/2D/minigame.gd" id="1_qhb8o"]
 
 [node name="Minigame" type="Node2D" unique_id=751759855]
+y_sort_enabled = true
 script = ExtResource("1_qhb8o")
