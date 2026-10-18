@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://ba6s7du8ihkco"]
+
+[ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_hih4i"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hih4i"]
+
+[resource]
+script = ExtResource("1_hih4i")
+upgrade_type = 4
+upgrade_display_title = "ATK SPD"
+upgrade_icon = SubResource("PlaceholderTexture2D_hih4i")
+upgrade_description = "Increase your fire rate"
+metadata/_custom_type_script = "uid://du6cj010564tf"

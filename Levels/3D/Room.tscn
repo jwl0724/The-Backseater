@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c5vsswhadftvh"]
+
+[ext_resource type="Script" uid="uid://bhrqyrnv765ok" path="res://Levels/3D/room.gd" id="1_ja5dw"]
+
+[node name="Room" type="Node3D" unique_id=340710139]
+script = ExtResource("1_ja5dw")

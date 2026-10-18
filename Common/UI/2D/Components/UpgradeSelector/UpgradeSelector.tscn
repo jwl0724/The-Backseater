@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bfs2svupj0rhq"]
+
+[ext_resource type="PackedScene" uid="uid://dtsk5ddwj2c6y" path="res://Common/UI/2D/Components/UpgradeSelector/Selection/Selection.tscn" id="1_eo4s6"]
+[ext_resource type="Script" uid="uid://cc7q8fv4ujan8" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_selector.gd" id="1_yri8i"]
+
+[node name="UpgradeSelector" type="Control" unique_id=219363242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yri8i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=656810269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09803922, 0.09803922, 0.09803922, 0.627451)
+
+[node name="Title" type="Label" parent="." unique_id=1316049606]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Choose An Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=921756814]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -40.0
+offset_right = 275.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Selection" parent="VBoxContainer" unique_id=1742919721 instance=ExtResource("1_eo4s6")]
+layout_mode = 2
+
+[node name="Selection2" parent="VBoxContainer" unique_id=1682124038 instance=ExtResource("1_eo4s6")]
+layout_mode = 2
+
+[node name="Selection3" parent="VBoxContainer" unique_id=1199953513 instance=ExtResource("1_eo4s6")]
+layout_mode = 2

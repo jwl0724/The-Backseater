@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dtsk5ddwj2c6y"]
+
+[ext_resource type="Script" uid="uid://do8f1pesbauho" path="res://Common/UI/2D/Components/UpgradeSelector/Selection/selection.gd" id="1_b1d1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7j2jh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1d1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_52nkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cmmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xgye"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_52nkd"]
+
+[node name="Selection" type="Button" unique_id=1742919721]
+custom_minimum_size = Vector2(550, 70)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7j2jh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_b1d1n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_52nkd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2cmmc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8xgye")
+script = ExtResource("1_b1d1n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=517721911]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04156731, 0.07463022, 0.19540611, 0.8745098)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902541500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2086347842]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=699816972]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_52nkd")
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1339955711]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1136568600]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="MarginContainer/HBoxContainer" unique_id=983775159]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1672631160]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Put a cool description here, wow very cool! It's so informative that its so meta."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1095925376]
+layout_mode = 2
+size_flags_horizontal = 3

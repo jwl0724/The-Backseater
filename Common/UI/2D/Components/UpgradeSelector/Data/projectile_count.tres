@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bgewxb8astj6v"]
+
+[ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_0jwt1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0jwt1"]
+
+[resource]
+script = ExtResource("1_0jwt1")
+upgrade_type = 5
+upgrade_display_title = "PROJ COUNT"
+upgrade_icon = SubResource("PlaceholderTexture2D_0jwt1")
+upgrade_description = "Increase the amount of projectiles you fire"
+metadata/_custom_type_script = "uid://du6cj010564tf"

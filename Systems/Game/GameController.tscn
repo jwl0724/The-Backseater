@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://b3pg1ple7wm2m"]
 
 [ext_resource type="Script" uid="uid://c0hnrrj4gcl5f" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
+[ext_resource type="Script" uid="uid://1q2cv2eh4bmk" path="res://Common/UI/Shared/fade.gd" id="2_gqpt8"]
+[ext_resource type="PackedScene" uid="uid://b5raq70loikcn" path="res://Common/Menus/Main/MainMenu.tscn" id="2_q7v2m"]
 
 [node name="GameController" type="Node" unique_id=227253429]
 script = ExtResource("1_yl5u5")
+debug_scene = ExtResource("2_q7v2m")
 
 [node name="Node" type="Node" parent="." unique_id=1096348032]
-
-[node name="Running2D" type="Node2D" parent="." unique_id=1048275769]
 
 [node name="Running3D" type="Node3D" parent="." unique_id=403058516]
 
@@ -38,13 +39,14 @@ grow_vertical = 2
 process_mode = 3
 layer = 30
 
-[node name="Control" type="Control" parent="Transition" unique_id=939623198]
-layout_mode = 3
+[node name="Fade" type="ColorRect" parent="Transition" unique_id=816028005]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+script = ExtResource("2_gqpt8")
 
 [node name="Debug" type="CanvasLayer" parent="." unique_id=318372319]
 process_mode = 3

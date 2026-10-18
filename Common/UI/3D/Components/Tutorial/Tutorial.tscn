@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dgr18mw2u3cg4"]
+
+[ext_resource type="Script" uid="uid://vca0d2q2g0yr" path="res://Common/UI/3D/Components/Tutorial/tutorial.gd" id="1_cvl8o"]
+
+[node name="Tutorial" type="Label" unique_id=2122530405]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -57.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Tutorial Here"
+horizontal_alignment = 1
+script = ExtResource("1_cvl8o")

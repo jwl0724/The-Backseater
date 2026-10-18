@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cpo85mk64105m"]
+
+[ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_hkvop"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hkvop"]
+
+[resource]
+script = ExtResource("1_hkvop")
+upgrade_type = 1
+upgrade_display_title = "MV SPD"
+upgrade_icon = SubResource("NoiseTexture2D_hkvop")
+upgrade_description = "Increase your movement speed"
+metadata/_custom_type_script = "uid://du6cj010564tf"

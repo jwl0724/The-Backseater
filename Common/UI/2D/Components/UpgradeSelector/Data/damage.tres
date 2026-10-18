@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cb2h0ds7d3qf0"]
+
+[ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_j84vl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j84vl"]
+
+[resource]
+script = ExtResource("1_j84vl")
+upgrade_display_title = "DMG"
+upgrade_icon = SubResource("PlaceholderTexture2D_j84vl")
+upgrade_description = "Increase your damage"
+metadata/_custom_type_script = "uid://du6cj010564tf"

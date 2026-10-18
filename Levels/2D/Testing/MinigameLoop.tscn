@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cds8lkfa038ef"]
+
+[ext_resource type="PackedScene" uid="uid://cx22fqar72tow" path="res://Entities/2D/Player/Player2D.tscn" id="1_2ohst"]
+
+[node name="MinigameLoop" type="Node2D" unique_id=1621997455]
+
+[node name="Player2d" parent="." unique_id=88766166 instance=ExtResource("1_2ohst")]

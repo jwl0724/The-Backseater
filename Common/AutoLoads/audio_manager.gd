@@ -24,9 +24,6 @@ func _ready() -> void:
     _player2.bus = Constants.AudioBus_DefaultMusic
     add_child(_player2)
 
-    SignalBus.OptionsChanged_MusicDB.connect(_on_options_music_db_changed)
-    SignalBus.OptionsChanged_SFXDB.connect(_on_options_sfx_db_changed)
-
 
 
 func add_to_playlist(stream: AudioStream) -> void:
