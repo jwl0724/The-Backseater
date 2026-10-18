@@ -17,10 +17,12 @@ var loop_playlist: bool = false
 func _ready() -> void:
     _player1 = AudioStreamPlayer.new()
     _player1.bus = Constants.AudioBus_DefaultMusic
+    add_child(_player1)
     in_use_player = _player1
 
     _player2 = AudioStreamPlayer.new()
     _player2.bus = Constants.AudioBus_DefaultMusic
+    add_child(_player2)
 
     SignalBus.OptionsChanged_MusicDB.connect(_on_options_music_db_changed)
     SignalBus.OptionsChanged_SFXDB.connect(_on_options_sfx_db_changed)
