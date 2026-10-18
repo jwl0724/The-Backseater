@@ -1,5 +1,12 @@
 extends Node
 
+class AudioBus:
+    const DefaultMusic: String = "Default_Music"
+    const DefaultSFX: String = "Default_SFX"
+
+class PhysLayers:
+    const Terrain: int = 1
+
 class Controls:
     const Left := "Left"
     const Right := "Right"

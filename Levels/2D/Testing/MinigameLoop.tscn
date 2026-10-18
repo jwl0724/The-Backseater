@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cds8lkfa038ef"]
 
 [ext_resource type="PackedScene" uid="uid://cx22fqar72tow" path="res://Entities/2D/Player/Player2D.tscn" id="1_2ohst"]
+[ext_resource type="Script" uid="uid://cbvrdcpgtd850" path="res://Levels/2D/minigame.gd" id="1_3sou0"]
 
 [node name="MinigameLoop" type="Node2D" unique_id=1621997455]
+script = ExtResource("1_3sou0")
 
 [node name="Player2d" parent="." unique_id=88766166 instance=ExtResource("1_2ohst")]
+position = Vector2(295, 254)
