@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bj4rgvv3cmc2x" path="res://Levels/2D/Maps/Level2.tscn" id="3_wnl36"]
 [ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
+[ext_resource type="Resource" uid="uid://bbqp0sdg7arqc" path="res://Entities/2D/Enemy/Resources/Datasets/fire_slime.tres" id="6_7ac68"]
+[ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="7_wnl36"]
 
 [node name="Minigame" type="Node2D" unique_id=751759855]
 y_sort_enabled = true
@@ -14,5 +16,8 @@ night1 = ExtResource("2_xpwx0")
 night2 = ExtResource("3_wnl36")
 night3 = ExtResource("4_7ac68")
 night4 = ExtResource("5_hpms7")
+data = ExtResource("6_7ac68")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
+
+[node name="Enemy" parent="." unique_id=912568309 instance=ExtResource("7_wnl36")]

@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dmlhilkq4ypxh"]
+
+[ext_resource type="SpriteFrames" uid="uid://pl88fnirplxb" path="res://Entities/2D/Enemy/Resources/enemy_sprite_tracks.tres" id="1_xta0p"]
+[ext_resource type="Script" uid="uid://dk37wyxvj40bc" path="res://Entities/2D/Enemy/Systems/enemy_visuals.gd" id="2_kauq6"]
+
+[sub_resource type="Animation" id="Animation_owkh2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3s014"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-0.5, -0.5), Vector2(0, 0.5), Vector2(0.5, -0.5), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 0.12940858, 1, 0.16493872, 1),
+"update": 0,
+"values": [0.0, 0.08726646, 0.0, -0.08726646, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_obnnc"]
+_data = {
+&"RESET": SubResource("Animation_owkh2"),
+&"move": SubResource("Animation_3s014")
+}
+
+[sub_resource type="Animation" id="Animation_xta0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kauq6"]
+resource_name = "Hurt"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.36666667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.6721822, 0.0007285552, 0.00039876328, 1), Color(0.95413464, 0.0030300473, 0.0016620511, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owkh2"]
+_data = {
+&"RESET": SubResource("Animation_xta0p"),
+&"hurt": SubResource("Animation_kauq6")
+}
+
+[node name="Visuals" type="AnimatedSprite2D" unique_id=1934212922]
+texture_filter = 1
+scale = Vector2(1.3, 1.3)
+sprite_frames = ExtResource("1_xta0p")
+animation = &"wukong"
+frame_progress = 0.5970188
+script = ExtResource("2_kauq6")
+
+[node name="Move" type="AnimationPlayer" parent="." unique_id=1388188676]
+libraries/ = SubResource("AnimationLibrary_obnnc")
+
+[node name="Hurt" type="AnimationPlayer" parent="." unique_id=723572972]
+libraries/ = SubResource("AnimationLibrary_owkh2")

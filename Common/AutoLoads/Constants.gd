@@ -8,6 +8,7 @@ class PhysLayers:
     const Terrain: int = 1
     const Player: int = 2
     const Enemy: int = 4
+    const XP: int = 8
 
 class Controls:
     const Left := "Left"

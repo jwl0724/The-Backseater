@@ -12,9 +12,17 @@ class_name MiniGame
 
 @onready var player: Player2D = $Player
 
+# TODO: remove below later
+@onready var enemy: Enemy2D = $Enemy
+@export var data: Enemy2DData = null
+
 
 
 func _ready():
+    enemy.player = player
+    data.move_speed = 80
+    enemy.load_data(data)
+    enemy.spawn_at_position(Vector2.ZERO)
     start_game(autoload_level) # TODO: Temp, need the 3D scene to call this later
 
 

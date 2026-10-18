@@ -22,7 +22,8 @@ const projectile_speed: float = 80
 
 var damage: float = base_damage
 var move_speed: float = base_move_speed
-var health: float = base_health
+var max_health: float = base_health
+var health: float = max_health
 var health_regen: float = base_health_regen
 var attack_speed: float = base_attack_speed
 var projectile_count: float = base_projectile_count
@@ -51,10 +52,13 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
     match type:
         UpgradeData.UpgradeType.DAMAGE: damage += damage_per_upgrade
         UpgradeData.UpgradeType.MOVE_SPEED: move_speed += move_speed_per_upgrade
-        UpgradeData.UpgradeType.HEALTH: health += health_per_upgrade
         UpgradeData.UpgradeType.HEALTH_REGEN: health_regen += health_regen_per_upgrade
         UpgradeData.UpgradeType.ATTACK_SPEED: attack_speed += attack_speed_per_upgrade
         UpgradeData.UpgradeType.PROJECTILE_COUNT: projectile_count += projectile_count_per_upgrade
+        UpgradeData.UpgradeType.HEALTH:
+            var health_percent = health / max_health
+            max_health += health_per_upgrade
+            health = max_health * health_percent
 
 
 

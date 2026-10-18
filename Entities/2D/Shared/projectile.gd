@@ -13,6 +13,7 @@ var projectile_speed: float = 0
 var target_direction = Vector2.ZERO
 
 var time_alive: float = 0
+var is_active: bool = false
 
 
 
@@ -44,6 +45,7 @@ func set_shooter(node: Node2D):
 
 func shoot(target_location: Vector2, move_speed: float):
     visible = true
+    is_active = true
     global_position = projectile_owner.global_position
     target_direction = global_position.direction_to(target_location)
     projectile_speed = move_speed
@@ -52,6 +54,7 @@ func shoot(target_location: Vector2, move_speed: float):
 
 
 func despawn():
+    is_active = false
     visible = false
     time_alive = 0
     despawned.emit()
@@ -71,6 +74,7 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node2D):
+    if !is_active: return
     if body is Player2D && collision_layer == Constants.PhysLayers.Enemy:
         print("TODO: make some damage function on player and call it here")
     elif body is Enemy2D && collision_layer == Constants.PhysLayers.Player:
