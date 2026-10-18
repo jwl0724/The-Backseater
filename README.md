@@ -40,3 +40,8 @@ The real-life part will be task management game, where you have to watch out on 
 - Some sort of loading animation, while also displaying some text message exchange between the backseater and the player character as the backdrop premise of the night.
 
 ## Credit Links
+
+# Tilesets
+https://opengameart.org/content/waterworld-tileset-16x16
+https://opengameart.org/content/interior-tileset-16x16
+https://opengameart.org/content/zelda-like-tilesets-and-sprites

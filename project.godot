@@ -66,6 +66,10 @@ Focus={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Terrain"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -75,3 +79,4 @@ Focus={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.103743516, 0.10374353, 0.103743516, 1)
