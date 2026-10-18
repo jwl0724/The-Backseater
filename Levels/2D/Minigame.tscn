@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://32ej174w2uik"]
 
 [ext_resource type="Script" uid="uid://cbvrdcpgtd850" path="res://Levels/2D/minigame.gd" id="1_qhb8o"]
+[ext_resource type="PackedScene" uid="uid://dvhdeqpqc071m" path="res://Levels/2D/Maps/Level1.tscn" id="2_xpwx0"]
+[ext_resource type="PackedScene" uid="uid://cx22fqar72tow" path="res://Entities/2D/Player/Player2D.tscn" id="2_y5ggp"]
+[ext_resource type="PackedScene" uid="uid://bj4rgvv3cmc2x" path="res://Levels/2D/Maps/Level2.tscn" id="3_wnl36"]
+[ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
+[ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
 
 [node name="Minigame" type="Node2D" unique_id=751759855]
 y_sort_enabled = true
 script = ExtResource("1_qhb8o")
+night1 = ExtResource("2_xpwx0")
+night2 = ExtResource("3_wnl36")
+night3 = ExtResource("4_7ac68")
+night4 = ExtResource("5_hpms7")
+
+[node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]

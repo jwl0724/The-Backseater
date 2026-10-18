@@ -17,6 +17,7 @@ const projectile_speed: float = 80
 @export var base_attack_speed: float = 1 ## the attack interval will be 3 / attack_speed
 @export var base_projectile_count: int = 1
 
+@onready var camera: Camera2D = $Camera2D
 @onready var projectile_handler: ProjectileHandler = $Systems/ProjectileHandler
 
 var damage: float = base_damage
@@ -36,6 +37,13 @@ func _ready():
     move_speed = base_move_speed
     projectile_handler.create_pool(20)
     SignalBus.game2d_player_upgrade.connect(_on_upgrade)
+
+
+
+func teleport_to_point(pos: Vector2):
+    camera.position_smoothing_enabled = false
+    global_position = pos
+    camera.set.bind("position_smoothing_enabled", true).call_deferred()
 
 
 
