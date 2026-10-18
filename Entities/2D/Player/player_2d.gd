@@ -1,6 +1,13 @@
 extends CharacterBody2D
 class_name Player2D
 
+const damage_per_upgrade: float = 1
+const move_speed_per_upgrade: float = 10
+const health_per_upgrade: float = 5
+const health_regen_per_upgrade: float = 0.2
+const attack_speed_per_upgrade: float = 1
+const projectile_count_per_upgrade: int = 1
+
 @export var base_damage: float = 1
 @export var base_move_speed: float = 30
 @export var base_health: float = 20
@@ -14,3 +21,19 @@ var health: float = base_health
 var health_regen: float = base_health_regen
 var attack_speed: float = base_attack_speed
 var projectile_count: float = base_projectile_count
+
+
+
+func _ready():
+    SignalBus.game2d_player_upgrade.connect(_on_upgrade)
+
+
+
+func _on_upgrade(type: UpgradeData.UpgradeType):
+    match type:
+        UpgradeData.UpgradeType.DAMAGE: damage += damage_per_upgrade
+        UpgradeData.UpgradeType.MOVE_SPEED: move_speed += move_speed_per_upgrade
+        UpgradeData.UpgradeType.HEALTH: health += health_per_upgrade
+        UpgradeData.UpgradeType.HEALTH_REGEN: health_regen += health_regen_per_upgrade
+        UpgradeData.UpgradeType.ATTACK_SPEED: attack_speed += attack_speed_per_upgrade
+        UpgradeData.UpgradeType.PROJECTILE_COUNT: projectile_count += projectile_count_per_upgrade
