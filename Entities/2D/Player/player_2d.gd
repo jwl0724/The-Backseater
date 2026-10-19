@@ -37,13 +37,13 @@ const projectile_count_per_upgrade: int = 2
 @onready var iframe_handler: Player2DIFrames = $Systems/IFrameHandler
 
 # Run time stats
-var damage: float = base_damage
-var move_speed: float = base_move_speed
-var max_health: float = base_health
-var health: float = max_health
-var health_regen: float = base_health_regen
-var attack_speed: float = base_attack_speed
-var projectile_count: int = base_projectile_count
+@onready var damage: float = base_damage
+@onready var move_speed: float = base_move_speed
+@onready var max_health: float = base_health
+@onready var health: float = max_health
+@onready var health_regen: float = base_health_regen
+@onready var attack_speed: float = base_attack_speed
+@onready var projectile_count: int = base_projectile_count
 
 # Run time variables
 var elapsed: float = 0
@@ -61,14 +61,6 @@ var is_dead: bool:
 
 
 func _ready():
-    # TODO: Remove the setters down here later, only need this cause export sets the value late
-    damage = base_damage
-    move_speed = base_move_speed
-    max_health = base_health
-    health = max_health
-    health_regen = base_health_regen
-    attack_speed = base_attack_speed
-    projectile_count = base_projectile_count
     projectile_handler.create_pool(40)
 
     hitbox.body_entered.connect(damage_handler.try_queue_body)
@@ -124,6 +116,8 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
 
 
 func _process(delta):
+    if Engine.get_process_frames() % 60 == 0: health += health_regen # TODO: Probably have to move this later when variable fps is involved?
+
     if elapsed >= fire_rate:
         elapsed = 0
         if is_dead: return
