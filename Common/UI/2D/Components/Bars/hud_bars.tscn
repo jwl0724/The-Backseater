@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ia5utrcstwjf"]
+
+[ext_resource type="Script" uid="uid://br27qi6qlnq2" path="res://Common/UI/2D/Components/Bars/hud_bars.gd" id="1_3bu24"]
+
+[node name="HudBars" type="Control" unique_id=316807712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3bu24")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1249211335]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer" unique_id=600106622]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 27)
+layout_mode = 2
+size_flags_horizontal = 0
+value = 50.0
+show_percentage = false
+
+[node name="XPBar" type="ProgressBar" parent="." unique_id=955643031]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+value = 50.0
+show_percentage = false

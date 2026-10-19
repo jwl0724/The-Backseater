@@ -49,6 +49,7 @@ func kill():
     player.visuals.play_death()
     await player.visuals.death_finished
     player.visible = false
+    player.killed.emit()
 
 
 

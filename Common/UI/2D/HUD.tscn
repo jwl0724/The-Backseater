@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://duk653tpcfw03"]
 
+[ext_resource type="PackedScene" uid="uid://bfs2svupj0rhq" path="res://Common/UI/2D/Components/UpgradeSelector/UpgradeSelector.tscn" id="1_s1nf5"]
+[ext_resource type="PackedScene" uid="uid://ia5utrcstwjf" path="res://Common/UI/2D/Components/Bars/hud_bars.tscn" id="2_4i5n4"]
+
 [node name="Hud" type="Control" unique_id=30358670]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="UpgradeSelector" parent="." unique_id=219363242 instance=ExtResource("1_s1nf5")]
+layout_mode = 1
+
+[node name="HudBars" parent="." unique_id=316807712 instance=ExtResource("2_4i5n4")]
+layout_mode = 1

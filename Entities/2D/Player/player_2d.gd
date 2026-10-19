@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name Player2D
 
+@warning_ignore("unused_signal") signal killed()
+signal xp_collected()
+
 # Physics constants
 const knockback_recovery_rate: float = 0.25
 const projectile_speed: float = 80
@@ -85,6 +88,7 @@ func teleport_to_point(pos: Vector2):
 
 func collect_xp(amount: int):
     xp_handler.add_xp(amount)
+    xp_collected.emit()
 
 
 

@@ -4,7 +4,8 @@ class_name MiniGame
 @export_group("Dev Tools")
 @export var autoload_level: int = 1
 
-@export_group("Level Scenes")
+@export_group("Required Scenes")
+@export var player_hud: PackedScene = null
 @export var night1: PackedScene = null
 @export var night2: PackedScene = null
 @export var night3: PackedScene = null
@@ -39,4 +40,9 @@ func start_game(level_number: int):
     add_child(scene)
     var spawn_point: Node2D = scene.find_child("Spawn")
     player.teleport_to_point(spawn_point.global_position)
-    enemy.spawn_at_position(player.global_position + Vector2.LEFT * 200)
+
+    # TODO: Below might not be necessary when there's subviewport, but will have to see when there
+    SignalBus.game2d_player_addHUD.emit.call_deferred(player_hud)
+    SignalBus.game2d_start.emit.bind(player).call_deferred()
+
+    enemy.spawn_at_position(player.global_position + Vector2.LEFT * 200) # TODO: Remove later when theres actually dynamic enemy spawning
