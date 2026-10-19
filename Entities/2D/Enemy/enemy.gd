@@ -45,7 +45,6 @@ var is_dead: bool:
 var elapsed_time: float = 0
 var xp_collected: bool = false
 
-# TODO: Some of the sprites are squished
 # TODO: Projectile +1 turned into +3
 
 

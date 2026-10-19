@@ -18,7 +18,6 @@ func _ready():
 func set_sprite(enemy_type: Enemy2D.EnemyType):
     var track_name: String = Enemy2D.EnemyType.keys()[enemy_type].to_lower()
     play(track_name)
-    hurt_player.play("RESET")
     move_player.play("move")
     move_player.speed_scale = enemy.move_speed / 20
 
@@ -35,6 +34,7 @@ func play_die_animation():
     stop() # Stop the sprite from being animated
     await hurt_player.animation_finished
     death_finished.emit()
+    hurt_player.play("RESET")
 
 
 
