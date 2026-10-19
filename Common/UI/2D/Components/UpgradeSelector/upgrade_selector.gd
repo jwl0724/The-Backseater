@@ -6,6 +6,8 @@ extends Control
 @onready var option2: UpgradeSelection = %Selection2
 @onready var option3: UpgradeSelection = %Selection3
 
+var times_to_open: int = 0
+
 
 
 func _ready():
@@ -18,6 +20,10 @@ func _ready():
 
 
 func _open_upgrades():
+    if visible: # Queue up another upgrade screen to open if the window is already open
+        times_to_open += 1
+        return
+
     visible = true
     var dupe = data_set.duplicate()
     dupe.shuffle()
@@ -30,3 +36,6 @@ func _open_upgrades():
 func _on_selected(option: UpgradeSelection):
     SignalBus.game2d_player_upgrade.emit(option.type)
     visible = false
+    if times_to_open > 0:
+        times_to_open -= 1
+        _open_upgrades()

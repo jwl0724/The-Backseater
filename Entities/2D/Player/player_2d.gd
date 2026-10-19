@@ -57,7 +57,6 @@ var is_dead: bool:
 
 # TODO: Create the mini-game loop that runs indefinitely until a stop signal
 # TODO: Implement level restarting
-# TODO: Fix leveling up when menu is already open -> losing the last upgrade
 
 
 
