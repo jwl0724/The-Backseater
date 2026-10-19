@@ -1,0 +1,39 @@
+extends Node
+class_name Player2DXPHandler
+
+const starting_threshold: int = 5
+const exponent: float = 1.25
+
+var level: int = 0
+var collected_xp: int = 0
+var required_xp: int = starting_threshold
+
+
+
+func add_xp(amount: int):
+    print("added %d" % amount)
+    collected_xp += amount
+    if collected_xp >= required_xp: _level_up()
+
+
+
+func reset_levels():
+    level = 0
+    required_xp = starting_threshold
+    collected_xp = 0
+
+
+
+func _level_up():
+    level += 1
+    collected_xp -= required_xp
+    required_xp = _get_next_threshold()
+    print("TODO: Create the upgrade menu and make it connect to the game2d_player_levelup signal")
+    SignalBus.game2d_player_levelup.emit()
+    await SignalBus.game2d_player_upgrade
+    if collected_xp >= required_xp: _level_up()
+
+
+
+func _get_next_threshold():
+    return int(floor(starting_threshold * pow(level, exponent)))

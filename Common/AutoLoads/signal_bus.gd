@@ -9,6 +9,7 @@ signal transition_fade_hide(time: float)
 signal hud_2d_sendMessage(message: String)
 
 # 2D Game Signals
+signal game2d_player_levelup()
 signal game2d_player_upgrade(type: UpgradeData.UpgradeType)
 signal game2d_mechanic_noAudio() # Night 2 gimmick
 signal game2d_mechanic_lowResolution(new_resolution: Vector2) # Night 3 gimmick

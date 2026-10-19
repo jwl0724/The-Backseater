@@ -62,4 +62,4 @@ func _on_hitbox_entered(body: Node2D):
     if body is not Player2D || disabled: return
     disabled = true
     sprite.visible = false
-    print("TODO: Add some sort of function on player to collect this thing and add it to XP")
+    (body as Player2D).collect_xp(worth)

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b8eiaxfykrhg" path="res://Entities/2D/Player/Systems/i_frame_handler.gd" id="5_uol42"]
 [ext_resource type="PackedScene" uid="uid://bn4nw802d6ww3" path="res://Entities/2D/Player/Components/PlayerVisuals.tscn" id="6_hoive"]
 [ext_resource type="Script" uid="uid://c37xyshjjfbjb" path="res://Entities/2D/Player/Systems/player_damage_handler.gd" id="6_uol42"]
+[ext_resource type="Script" uid="uid://dvu681tftmc3q" path="res://Entities/2D/Player/Systems/xp_handler.gd" id="7_4emro"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoive"]
 radius = 3.0
@@ -35,6 +36,9 @@ script = ExtResource("5_uol42")
 
 [node name="DamageHandler" type="Node" parent="Systems" unique_id=252014786]
 script = ExtResource("6_uol42")
+
+[node name="XPHandler" type="Node" parent="Systems" unique_id=2121360123]
+script = ExtResource("7_4emro")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1347169259]
 position = Vector2(0, 6)

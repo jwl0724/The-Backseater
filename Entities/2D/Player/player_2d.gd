@@ -1,8 +1,11 @@
 extends CharacterBody2D
 class_name Player2D
 
+# Physics constants
 const knockback_recovery_rate: float = 0.25
+const projectile_speed: float = 80
 
+# Upgrade stats
 const damage_per_upgrade: float = 1
 const move_speed_per_upgrade: float = 10
 const health_per_upgrade: float = 5
@@ -10,8 +13,7 @@ const health_regen_per_upgrade: float = 0.2
 const attack_speed_per_upgrade: float = 1
 const projectile_count_per_upgrade: int = 2
 
-const projectile_speed: float = 80
-
+# Base stats on spawn in
 @export var base_damage: float = 1
 @export var base_move_speed: float = 30
 @export var base_health: float = 20
@@ -19,14 +21,19 @@ const projectile_speed: float = 80
 @export var base_attack_speed: float = 1 ## the attack interval will be 3 / attack_speed
 @export var base_projectile_count: int = 1
 
+# Node components
 @onready var camera: Camera2D = $Camera
-@onready var projectile_handler: ProjectileHandler = $Systems/ProjectileHandler
 @onready var hitbox: Area2D = $Hitbox
+
+# System components
+@onready var xp_handler: Player2DXPHandler = $Systems/XPHandler
+@onready var projectile_handler: ProjectileHandler = $Systems/ProjectileHandler
 @onready var movement: Player2DControls = $Systems/PlayerControls
 @onready var visuals: PlayerVisuals = $Components/Sprite
 @onready var damage_handler: Player2DDamageHandler = $Systems/DamageHandler
 @onready var iframe_handler: Player2DIFrames = $Systems/IFrameHandler
 
+# Run time stats
 var damage: float = base_damage
 var move_speed: float = base_move_speed
 var max_health: float = base_health
@@ -35,16 +42,18 @@ var health_regen: float = base_health_regen
 var attack_speed: float = base_attack_speed
 var projectile_count: int = base_projectile_count
 
+# Run time variables
+var elasped_time: float = 0
+
+# Run time getters
 var fire_rate: float:
     get: return 3 / attack_speed
 var is_dead: bool:
     get: return health <= 0
 
-var elasped_time: float = 0
 
 # TODO: Create the mini-game loop that runs indefinitely until a stop signal
 # TODO: Connect upgrade menu and upgrades to player after player reaches xp threshold
-# TODO: Create xp handler to handle xp gains and calculate next level threshold
 # TODO: Implement level restarting
 
 
@@ -71,6 +80,11 @@ func teleport_to_point(pos: Vector2):
     camera.position_smoothing_enabled = false
     global_position = pos
     camera.set.bind("position_smoothing_enabled", true).call_deferred()
+
+
+
+func collect_xp(amount: int):
+    xp_handler.add_xp(amount)
 
 
 
