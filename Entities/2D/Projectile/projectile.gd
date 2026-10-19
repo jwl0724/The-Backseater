@@ -77,6 +77,6 @@ func _process(delta):
 func _on_body_entered(body: Node2D):
     if !is_active: return
     if body is Player2D && collision_layer == Constants.PhysLayers.Enemy:
-        print("TODO: make some damage function on player and call it here")
+        (body as Player2D).hurt_via_projectile(self)
     elif body is Enemy2D && collision_layer == Constants.PhysLayers.Player:
         (body as Enemy2D).hurt_enemy(self)

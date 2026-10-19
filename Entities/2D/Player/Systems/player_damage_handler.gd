@@ -8,7 +8,7 @@ var overlapping_enemies: Array[Enemy2D] = []
 
 
 func try_queue_body(body: Node2D):
-    if body is Projectile: hit_via_projectile(body as Projectile)
+    if body is Projectile: hit_via_projectile(body as Projectile) # Redunant for now cause projectile calls harm function, but just leave it in case need to change it in the future
     elif body is Enemy2D: overlapping_enemies.append(body as Enemy2D)
 
 
@@ -33,12 +33,15 @@ func hit_via_enemy(enemy: Enemy2D):
 
 
 func hit_via_projectile(projectile: Projectile):
+    if !player.iframe_handler.can_be_damaged: return
     if !projectile.get_collision_layer_value(roundi(log(Constants.PhysLayers.Enemy) / log(2)) + 1): return
-    player.ealth -= projectile.projectile_owner.damage
+    player.health -= projectile.projectile_owner.damage
     player.visuals.toggle_direction(false)
-    player.movement.knockback(projectile.target_direction, projectile.projectile_speed * 1.5)
+    player.movement.knockback(projectile.target_direction, projectile.projectile_speed * 2)
     if player.is_dead: kill()
-    else: player.visuals.play_hurt()
+    else:
+        player.visuals.play_hurt()
+        player.iframe_handler.activate_iframes()
 
 
 

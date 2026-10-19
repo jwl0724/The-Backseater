@@ -88,6 +88,11 @@ func collect_xp(amount: int):
 
 
 
+func hurt_via_projectile(proj: Projectile):
+    damage_handler.hit_via_projectile(proj)
+
+
+
 func respawn(respawn_point: Vector2):
     damage = base_damage
     move_speed = base_move_speed
