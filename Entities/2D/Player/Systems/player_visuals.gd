@@ -8,6 +8,7 @@ signal death_finished()
 
 @onready var player: Player2D = owner as Player2D
 @onready var animation_player: AnimationPlayer = $Animations
+@onready var flash_player: AnimationPlayer = $Flash
 
 var handle_direction: bool = true
 
@@ -25,6 +26,10 @@ func toggle_direction(handle: bool):
 
 func play_hurt():
     animation_player.play("hurt")
+    var hurt_anim_time: float = animation_player.current_animation_length
+    await animation_player.animation_finished
+    flash_player.speed_scale = 1 / (Player2DIFrames.i_frame_time - hurt_anim_time)
+    flash_player.play("flash")
 
 
 
