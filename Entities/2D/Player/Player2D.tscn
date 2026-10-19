@@ -40,10 +40,17 @@ script = ExtResource("6_uol42")
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_hoive")
 
-[node name="Sprite" parent="." unique_id=914139335 instance=ExtResource("6_hoive")]
+[node name="Components" type="Node2D" parent="." unique_id=123599088]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=340695099]
+[node name="Sprite" parent="Components" unique_id=914139335 instance=ExtResource("6_hoive")]
+
+[node name="Camera" type="Camera2D" parent="." unique_id=340695099]
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 360
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1963986733]
