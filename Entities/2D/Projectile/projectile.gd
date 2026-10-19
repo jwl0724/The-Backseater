@@ -1,13 +1,14 @@
 extends Area2D
 class_name Projectile
 
+const lifespan: float = 5
+
 signal despawned()
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var sfx: AudioStreamPlayer2D = $SFX
 @onready var screen_notifier: VisibleOnScreenNotifier2D = $ScreenNotifier
 
-var lifespan: float = 5
 var projectile_owner: Node2D = null
 var projectile_speed: float = 0
 var target_direction = Vector2.ZERO

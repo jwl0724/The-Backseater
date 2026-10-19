@@ -9,7 +9,6 @@ class_name ProjectileHandler
 var projectile_pool: Array[Projectile] = []
 
 var elapsed_time: float = 0
-var fire_rate: float = -1
 
 
 
@@ -20,6 +19,12 @@ func create_pool(pool_size: int):
         projectile_pool.append(projectile)
         projectile.set_shooter(shooter)
         projectile.despawned.connect(projectile_pool.append.bind(projectile))
+
+
+
+func set_pool_data(texture: Texture2D, fireSFX: AudioStream):
+    for projectile: Projectile in projectile_pool:
+        projectile.set_data(texture, fireSFX)
 
 
 

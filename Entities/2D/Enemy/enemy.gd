@@ -15,14 +15,12 @@ enum EnemyType {
 signal damaged() # For presentational updates (i.e. sound and visuals)
 signal killed() # For presentational updates (i.e. sound and visuals)
 
+@onready var projectile_handler: ProjectileHandler = %ProjectileHandler
 @onready var components: Node2D = $Components
 @onready var visuals: EnemyVisuals = %Visuals
 @onready var movement: Enemy2DMovement = %EnemyMovement
 @onready var xp_orb: XPOrb = %XpOrb
 
-var projectile_template: PackedScene = null
-
-# TODO: Make enemies be able to shoot projectiles
 
 # All Enemy Stats
 var type: EnemyType = EnemyType.ACID_SLIME
@@ -41,21 +39,27 @@ var player: Player2D = null
 var is_dead: bool:
     get: return health <= 0
 
+var elapsed_time: float = 0
+
 
 
 func load_data(data: Enemy2DData):
+    projectile_handler.projectile_scene = data.projectile_scene
     type = data.enemy_type
     damage = data.damage
     move_speed = data.move_speed
     max_health = data.health
     health = max_health
     xp_worth = data.xp_worth
+    attack_speed = data.attack_speed
     visuals.set_sprite(type)
 
-    if !data.projectile_scene: return
-    projectile_template = data.projectile_scene
+    if !projectile_handler.projectile_scene: return
     projectile_count = data.projectile_count
     projectile_speed = data.projectile_speed
+    if projectile_handler.projectile_pool.size() < ceili(data.attack_speed / 3) * data.projectile_count * Projectile.lifespan:
+        projectile_handler.create_pool(ceili(data.attack_speed / 3) * data.projectile_count * ceili(Projectile.lifespan) - projectile_handler.projectile_pool.size())
+    projectile_handler.set_pool_data(data.projectile_texture, null) # TODO: Null for now cause no audio implementation yet
 
 
 
@@ -81,3 +85,13 @@ func kill():
     await visuals.death_finished
     components.visible = false
     xp_orb.drop_xp(global_position, xp_worth)
+
+
+
+func _process(delta):
+    if projectile_handler.projectile_scene == null: return
+    if elapsed_time >= 3 / attack_speed:
+        elapsed_time = 0
+        if is_dead || player == null: return
+        projectile_handler.shoot(player.global_position, projectile_speed)
+    else: elapsed_time += delta

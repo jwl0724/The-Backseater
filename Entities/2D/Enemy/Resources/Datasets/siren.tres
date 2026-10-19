@@ -15,5 +15,5 @@ attack_speed = 2.0
 projectile_scene = ExtResource("1_0j4dk")
 projectile_texture = ExtResource("2_jp2u0")
 projectile_count = 3
-projectile_speed = 8.0
+projectile_speed = 25.0
 metadata/_custom_type_script = "uid://bcu08sudqiuyg"

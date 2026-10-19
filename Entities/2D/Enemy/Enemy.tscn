@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs1mi1gjsygic" path="res://Entities/2D/Enemy/enemy.gd" id="1_fsa33"]
 [ext_resource type="Script" uid="uid://c4p31sn6utmar" path="res://Entities/2D/Enemy/Systems/enemy_movement.gd" id="2_7m32k"]
+[ext_resource type="Script" uid="uid://tj78qksw71gs" path="res://Entities/2D/Projectile/projectile_handler.gd" id="3_f14s2"]
 [ext_resource type="PackedScene" uid="uid://dmlhilkq4ypxh" path="res://Entities/2D/Enemy/Components/EnemyVisuals.tscn" id="3_i01j8"]
 [ext_resource type="Script" uid="uid://btvx3bqvxl45b" path="res://Entities/2D/Enemy/Systems/enemy_health_bar.gd" id="4_7m32k"]
 [ext_resource type="PackedScene" uid="uid://c85j8wv8lq1yg" path="res://Entities/2D/XPOrb/XPOrb.tscn" id="5_sbrd8"]
@@ -26,6 +27,11 @@ script = ExtResource("1_fsa33")
 [node name="EnemyMovement" type="Node" parent="Systems" unique_id=850700960]
 unique_name_in_owner = true
 script = ExtResource("2_7m32k")
+
+[node name="ProjectileHandler" type="Node" parent="Systems" unique_id=1583057959 node_paths=PackedStringArray("projectile_spawn_node")]
+unique_name_in_owner = true
+script = ExtResource("3_f14s2")
+projectile_spawn_node = NodePath("..")
 
 [node name="Components" type="Node2D" parent="." unique_id=565327444]
 
