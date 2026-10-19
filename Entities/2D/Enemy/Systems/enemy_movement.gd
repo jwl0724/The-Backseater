@@ -21,15 +21,15 @@ func knockback(direction: Vector2, proj_speed: float):
 
 
 func _physics_process(_delta):
-    if enemy.is_dead: return
-
     # Handle knockback physics
     if knockback_vector.length_squared() > 2:
         enemy.velocity = knockback_vector
         knockback_vector = knockback_vector.lerp(Vector2.ZERO, knockback_recovery_rate)
         if knockback_vector.length_squared() < 2:
-            knockback_vector = Vector2.ZERO
+            knockback_vector =Vector2.ZERO
             enemy.velocity = Vector2.ZERO
+
+    elif enemy.is_dead: return
 
     # Handle normal chasing
     else:

@@ -103,6 +103,6 @@ func _process(delta):
     if projectile_handler.projectile_scene == null: return
     if elapsed_time >= 3 / attack_speed:
         elapsed_time = 0
-        if is_dead || player == null: return
-        projectile_handler.shoot(player.global_position, projectile_speed) # TODO: Fix problem where the projectile just despawns early sometimes?
+        if is_dead || player == null || player.is_dead: return
+        projectile_handler.shoot(player.global_position, projectile_speed)
     else: elapsed_time += delta

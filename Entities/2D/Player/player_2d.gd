@@ -6,7 +6,7 @@ signal xp_collected()
 
 # Physics constants
 const knockback_recovery_rate: float = 0.25
-const projectile_speed: float = 80
+const projectile_speed: float = 160
 
 # Upgrade stats
 const damage_per_upgrade: float = 1
@@ -57,6 +57,7 @@ var is_dead: bool:
 
 # TODO: Create the mini-game loop that runs indefinitely until a stop signal
 # TODO: Implement level restarting
+# TODO: Fix leveling up when menu is already open -> losing the last upgrade
 
 
 

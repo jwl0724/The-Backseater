@@ -32,7 +32,6 @@ func knockback(direction: Vector2, speed: float):
 
 
 func _physics_process(_delta):
-    if player.is_dead: return # TODO: Enemy as well, want to make it so knockback vector still goes when dying -> sliding enemy dies
 
     # Handle knockback
     if knockback_vector.length_squared() > 2:
@@ -41,6 +40,8 @@ func _physics_process(_delta):
         if knockback_vector.length_squared() < 2:
             player.velocity = Vector2.ZERO
             finished_knockback.emit()
+            
+    elif player.is_dead: return
 
     else:
         # Handle regular movement
