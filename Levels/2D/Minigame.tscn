@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
 [ext_resource type="Resource" uid="uid://bbqp0sdg7arqc" path="res://Entities/2D/Enemy/Resources/Datasets/fire_slime.tres" id="6_7ac68"]
 [ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="7_wnl36"]
+[ext_resource type="PackedScene" uid="uid://c85j8wv8lq1yg" path="res://Entities/2D/XPOrb/XPOrb.tscn" id="9_hpms7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ac68"]
 size = Vector2(20, 360)
@@ -54,3 +55,6 @@ shape = SubResource("RectangleShape2D_hpms7")
 base_move_speed = 60.0
 
 [node name="Enemy" parent="." unique_id=912568309 instance=ExtResource("7_wnl36")]
+
+[node name="XpOrb" parent="." unique_id=1642183335 instance=ExtResource("9_hpms7")]
+position = Vector2(507, 285)

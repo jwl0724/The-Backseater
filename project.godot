@@ -75,7 +75,7 @@ Focus={
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
-2d_physics/layer_4="xp"
+2d_physics/layer_4="XP"
 
 [physics]
 

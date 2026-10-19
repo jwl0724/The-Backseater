@@ -30,6 +30,7 @@ script = ExtResource("2_7m32k")
 
 [node name="Visuals" parent="Components" unique_id=1934212922 instance=ExtResource("3_i01j8")]
 unique_name_in_owner = true
+y_sort_enabled = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2001812960]
 visible = false
