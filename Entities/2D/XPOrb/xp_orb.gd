@@ -6,6 +6,7 @@ const max_attract_speed: float = 60
 
 @export var attract_shape: CircleShape2D = null
 
+@onready var sprite: Sprite2D = $Sprite
 @onready var animator: AnimationPlayer = $Animation
 @onready var hitbox: Area2D = $Hitbox
 @onready var attract_radius: Area2D = $AttractRadius
@@ -20,7 +21,8 @@ var disabled: bool = true
 
 
 func _ready():
-    visible = false
+    visible = true
+    sprite.visible = false
     max_distance = attract_shape.radius
     hitbox.body_entered.connect(_on_hitbox_entered)
     attract_radius.body_entered.connect(_on_attract_entered)
@@ -29,11 +31,10 @@ func _ready():
 
 
 func drop_xp(global_pos: Vector2, value: int):
-    visible = true
     disabled = false
     global_position = global_pos
     worth = value
-    animator.play("spawn")
+    animator.play("spawn") # Will set visibility to true
 
 
 
@@ -60,5 +61,5 @@ func _on_attract_exited(body: Node2D):
 func _on_hitbox_entered(body: Node2D):
     if body is not Player2D || disabled: return
     disabled = true
-    visible = false
+    sprite.visible = false
     print("TODO: Add some sort of function on player to collect this thing and add it to XP")
