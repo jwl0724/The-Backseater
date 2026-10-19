@@ -22,8 +22,10 @@ const projectile_speed: float = 80
 @onready var camera: Camera2D = $Camera2D
 @onready var projectile_handler: ProjectileHandler = $Systems/ProjectileHandler
 @onready var hitbox: Area2D = $Hitbox
-@onready var player_movement: Player2DControls = $Systems/PlayerControls
+@onready var movement: Player2DControls = $Systems/PlayerControls
 @onready var visuals: PlayerVisuals = $Sprite
+@onready var damage_handler: Player2DDamageHandler = $Systems/DamageHandler
+@onready var iframe_handler: Player2DIFrames = $Systems/IFrameHandler
 
 var damage: float = base_damage
 var move_speed: float = base_move_speed
@@ -40,7 +42,6 @@ var is_dead: bool:
 
 var elasped_time: float = 0
 
-# TODO: Connect IFrames
 # TODO: Make the shooting shoot at an angle when projectile count is > 1
 # TODO: Make the camera stay within the boundaries of the map
 # TODO: Add collisions on the edges of the map so player can't leave
@@ -55,9 +56,9 @@ func _ready():
     move_speed = base_move_speed
     projectile_handler.create_pool(20)
 
-    hitbox.body_entered.connect(_try_hit_player)
-    player_movement.finished_knockback.connect(visuals.toggle_direction.bind(true))
-
+    hitbox.body_entered.connect(damage_handler.try_queue_body)
+    hitbox.body_exited.connect(damage_handler.try_remove_body)
+    movement.finished_knockback.connect(visuals.toggle_direction.bind(true))
     SignalBus.game2d_player_upgrade.connect(_on_upgrade)
 
 
@@ -69,7 +70,7 @@ func teleport_to_point(pos: Vector2):
 
 
 
-func respawn():
+func respawn(respawn_point: Vector2):
     damage = base_damage
     move_speed = base_move_speed
     max_health = base_health
@@ -78,35 +79,7 @@ func respawn():
     attack_speed = base_attack_speed
     projectile_count = base_projectile_count
     visuals.reset_visuals()
-
-
-
-func _try_hit_player(body: Node2D):
-    if body is not Enemy2D && body is not Projectile: return
-
-    if body is Enemy2D:
-        var enemy = body as Enemy2D
-        health -= enemy.damage
-        visuals.toggle_direction(false)
-        player_movement.knockback(enemy.global_position.direction_to(global_position), enemy.move_speed * (enemy.damage + enemy.max_health) * 2)
-        if is_dead: kill()
-        else: visuals.play_hurt()
-
-    elif body is Projectile:
-        var projectile = body as Projectile
-        if !projectile.get_collision_layer_value(roundi(log(Constants.PhysLayers.Enemy) / log(2)) + 1): return
-        health -= projectile.projectile_owner.damage
-        visuals.toggle_direction(false)
-        player_movement.knockback(projectile.target_direction, projectile.projectile_speed * 1.5)
-        if is_dead: kill()
-        else: visuals.play_hurt()
-
-
-
-func kill():
-    visuals.play_death()
-    await visuals.death_finished
-    visible = false
+    teleport_to_point(respawn_point)
 
 
 
