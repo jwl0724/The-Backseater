@@ -40,9 +40,6 @@ var is_dead: bool:
 
 var elasped_time: float = 0
 
-# TODO: Make it not shoot after player died
-# TODO: Make player not shoot anymore after dying
-# TODO: Actually implement a dying state
 # TODO: Connect IFrames
 # TODO: Make the shooting shoot at an angle when projectile count is > 1
 # TODO: Make the camera stay within the boundaries of the map
@@ -130,5 +127,6 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
 func _process(delta):
     if elasped_time >= fire_rate:
         elasped_time = 0
+        if is_dead: return
         projectile_handler.shoot(get_global_mouse_position(), projectile_speed)
     else: elasped_time += delta
