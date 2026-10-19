@@ -9,9 +9,16 @@ signal death_finished()
 
 
 
+func _ready():
+    enemy.damaged.connect(play_hurt_animation)
+    enemy.killed.connect(play_die_animation)
+
+
+
 func set_sprite(enemy_type: Enemy2D.EnemyType):
     var track_name: String = Enemy2D.EnemyType.keys()[enemy_type].to_lower()
     play(track_name)
+    hurt_player.play("RESET")
     move_player.play("move")
     move_player.speed_scale = enemy.move_speed / 20
 
@@ -25,6 +32,7 @@ func play_hurt_animation():
 func play_die_animation():
     if flip_h: hurt_player.play("die_right")
     else: hurt_player.play("die_left")
+    stop() # Stop the sprite from being animated
     await hurt_player.animation_finished
     death_finished.emit()
 

@@ -12,6 +12,9 @@ enum EnemyType {
     WANDERING_SPIRIT, BANSHEE, UMIBOZU, REAPER, DULLAHAN, SHADOW_PERSON
 }
 
+signal damaged() # For presentational updates (i.e. sound and visuals)
+signal killed() # For presentational updates (i.e. sound and visuals)
+
 @onready var visuals: EnemyVisuals = %Visuals
 @onready var movement: Enemy2DMovement = %EnemyMovement
 
@@ -35,6 +38,7 @@ var projectile_speed: float = 0
 var player: Player2D = null
 var is_dead: bool:
     get: return health <= 0
+
 
 
 func load_data(data: Enemy2DData):
@@ -64,11 +68,11 @@ func hurt_enemy(projectile: Projectile):
     health -= player.damage
     movement.knockback(projectile.target_direction, projectile.projectile_speed)
     if is_dead: kill()
-    else: visuals.play_hurt_animation()
+    else: damaged.emit()
 
 
 
 func kill():
-    visuals.play_die_animation()
+    killed.emit()
     await visuals.death_finished
     visible = false

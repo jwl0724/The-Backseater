@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://cs1mi1gjsygic" path="res://Entities/2D/Enemy/enemy.gd" id="1_fsa33"]
 [ext_resource type="Script" uid="uid://c4p31sn6utmar" path="res://Entities/2D/Enemy/Systems/enemy_movement.gd" id="2_7m32k"]
 [ext_resource type="PackedScene" uid="uid://dmlhilkq4ypxh" path="res://Entities/2D/Enemy/Components/EnemyVisuals.tscn" id="3_i01j8"]
+[ext_resource type="Script" uid="uid://btvx3bqvxl45b" path="res://Entities/2D/Enemy/Systems/enemy_health_bar.gd" id="4_7m32k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i01j8"]
 radius = 6.0
 height = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i01j8"]
+bg_color = Color(0.90588236, 0.14117648, 0.078431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m32k"]
+bg_color = Color(0.11764706, 0.6156863, 0.078431375, 1)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=912568309]
 collision_layer = 4
@@ -27,3 +34,14 @@ unique_name_in_owner = true
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2001812960]
 visible = false
 shape = SubResource("CapsuleShape2D_i01j8")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1404780172]
+offset_left = -8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 13.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i01j8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7m32k")
+value = 50.0
+show_percentage = false
+script = ExtResource("4_7m32k")
