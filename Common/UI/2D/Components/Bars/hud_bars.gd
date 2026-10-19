@@ -19,7 +19,6 @@ func _process(_delta):
 
 
 func _start_listening(player: Player2D):
-    print("start listening")
     player_ref = player
     _update_healthbar()
     _update_xpBar()

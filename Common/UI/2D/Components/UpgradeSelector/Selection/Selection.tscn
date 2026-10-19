@@ -32,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.04156731, 0.07463022, 0.19540611, 0.8745098)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902541500]
@@ -54,10 +55,12 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_52nkd")
+expand_mode = 2
 
 [node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1339955711]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="Name" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1136568600]
 unique_name_in_owner = true
@@ -71,6 +74,7 @@ vertical_alignment = 1
 [node name="Spacer3" type="Control" parent="MarginContainer/HBoxContainer" unique_id=983775159]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="Description" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1672631160]
 unique_name_in_owner = true
@@ -86,3 +90,4 @@ autowrap_mode = 2
 [node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1095925376]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1

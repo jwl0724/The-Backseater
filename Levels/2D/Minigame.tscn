@@ -7,8 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://bj4rgvv3cmc2x" path="res://Levels/2D/Maps/Level2.tscn" id="3_wnl36"]
 [ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
-[ext_resource type="Resource" uid="uid://cu3eq1nyq1yol" path="res://Entities/2D/Enemy/Resources/Datasets/siren.tres" id="6_7ac68"]
+[ext_resource type="PackedScene" uid="uid://cw58yfq3rxj1t" path="res://Entities/2D/Projectile/enemy_projectile.tscn" id="7_6q765"]
 [ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="7_wnl36"]
+[ext_resource type="Texture2D" uid="uid://c4xcdt106jrt6" path="res://Entities/2D/Projectile/Imports/Note.png" id="8_c52h6"]
+[ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="9_we3jm"]
+
+[sub_resource type="Resource" id="Resource_xfmyu"]
+script = ExtResource("9_we3jm")
+enemy_type = 9
+damage = 5.0
+move_speed = 12.0
+health = 20.0
+xp_worth = 90
+attack_speed = 2.0
+projectile_scene = ExtResource("7_6q765")
+projectile_texture = ExtResource("8_c52h6")
+projectile_count = 3
+projectile_speed = 25.0
+metadata/_custom_type_script = "uid://bcu08sudqiuyg"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ac68"]
 size = Vector2(20, 360)
@@ -24,7 +40,7 @@ night1 = ExtResource("2_xpwx0")
 night2 = ExtResource("3_wnl36")
 night3 = ExtResource("4_7ac68")
 night4 = ExtResource("5_hpms7")
-data = ExtResource("6_7ac68")
+data = SubResource("Resource_xfmyu")
 
 [node name="Borders" type="Node2D" parent="." unique_id=508902735]
 
@@ -53,6 +69,5 @@ position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_hpms7")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
-base_damage = 5.0
 
 [node name="Enemy" parent="." unique_id=912568309 instance=ExtResource("7_wnl36")]

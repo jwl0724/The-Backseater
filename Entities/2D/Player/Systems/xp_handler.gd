@@ -11,7 +11,6 @@ var required_xp: int = starting_threshold
 
 
 func add_xp(amount: int):
-    print("added %d" % amount)
     collected_xp += amount
     if collected_xp >= required_xp: _level_up()
 
@@ -28,8 +27,7 @@ func _level_up():
     level += 1
     collected_xp -= required_xp
     required_xp = _get_next_threshold()
-    print("TODO: Create the upgrade menu and make it connect to the game2d_player_levelup signal")
-    SignalBus.game2d_player_levelup.emit()
+    SignalBus.game2d_player_levelup.emit.call_deferred() # Need to wait for next frame, doesn't open menu otherwise
     await SignalBus.game2d_player_upgrade
     if collected_xp >= required_xp: _level_up()
 
