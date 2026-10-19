@@ -39,7 +39,7 @@ func start_game(level_number: int):
     # TODO: Below might not be necessary when there's subviewport, but will have to see when there
     SignalBus.game2d_player_addHUD.emit.call_deferred(player_hud)
     SignalBus.game2d_start.emit.bind(player).call_deferred()
-    spawner.start_spawning(player, level_number, 1 / float(level_number) * 8)
+    spawner.start_spawning(player, level_number, 1 / float(level_number) * 4)
 
 
 # Expected to be called by the 3D scene once 5 minutes have passed then freed after

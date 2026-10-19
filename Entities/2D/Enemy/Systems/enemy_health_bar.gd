@@ -7,6 +7,7 @@ class_name EnemyHealthBar
 
 func _ready():
     _update_values()
+    enemy.respawned.connect(_update_values)
     enemy.damaged.connect(_update_values)
     enemy.killed.connect(_update_values)
 

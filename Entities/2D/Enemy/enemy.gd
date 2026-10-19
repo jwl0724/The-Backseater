@@ -14,6 +14,7 @@ enum EnemyType {
 
 signal damaged() # For presentational updates (i.e. sound and visuals)
 signal killed() # For presentational updates (i.e. sound and visuals)
+signal respawned()
 
 @onready var projectile_handler: ProjectileHandler = %ProjectileHandler
 @onready var components: Node2D = $Components
@@ -53,6 +54,7 @@ func load_data(data: Enemy2DData):
     xp_worth = data.xp_worth
     attack_speed = data.attack_speed
     visuals.set_sprite(type)
+    respawned.emit()
 
     if !projectile_handler.projectile_scene: return
     projectile_count = data.projectile_count
