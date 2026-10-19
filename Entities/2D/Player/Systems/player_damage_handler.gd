@@ -21,6 +21,7 @@ func try_remove_body(body: Node2D):
 
 
 func hit_via_enemy(enemy: Enemy2D):
+    if enemy.is_dead: return
     player.health -= enemy.damage
     player.visuals.toggle_direction(false)
     player.movement.knockback(enemy.global_position.direction_to(player.global_position), enemy.move_speed * (enemy.damage + enemy.max_health) * 2)
@@ -50,5 +51,5 @@ func kill():
 
 func _process(_delta):
     if overlapping_enemies.size() == 0 || !player.iframe_handler.can_be_damaged: return
-    var most_recent_enemy = overlapping_enemies[-1] # Do damage based off most recent enemy
-    hit_via_enemy(most_recent_enemy)
+    var index = overlapping_enemies.find_custom(func(e): return e.is_dead == false) # Get the first enemy that's not dead
+    if index != -1: hit_via_enemy(overlapping_enemies[index])
