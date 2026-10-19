@@ -14,15 +14,9 @@ class_name MiniGame
 @onready var player: Player2D = $Player
 @onready var spawner: EnemySpawner = $Systems/Spawner
 
-# TODO: remove below later
-@onready var enemy: Enemy2D = $Enemy
-@export var data: Enemy2DData = null
-
 
 
 func _ready():
-    enemy.player = player
-    enemy.load_data(data)
     start_game(autoload_level) # TODO: Temp, need the 3D scene to call this later
 
 
@@ -45,8 +39,7 @@ func start_game(level_number: int):
     # TODO: Below might not be necessary when there's subviewport, but will have to see when there
     SignalBus.game2d_player_addHUD.emit.call_deferred(player_hud)
     SignalBus.game2d_start.emit.bind(player).call_deferred()
-
-    enemy.spawn_at_position(player.global_position + Vector2.LEFT * 200) # TODO: Remove later when theres actually dynamic enemy spawning
+    spawner.start_spawning(player, level_number, 1 / float(level_number) * 8)
 
 
 # Expected to be called by the 3D scene once 5 minutes have passed then freed after

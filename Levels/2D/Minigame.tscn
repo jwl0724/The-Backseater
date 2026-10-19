@@ -7,24 +7,39 @@
 [ext_resource type="PackedScene" uid="uid://bj4rgvv3cmc2x" path="res://Levels/2D/Maps/Level2.tscn" id="3_wnl36"]
 [ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
-[ext_resource type="PackedScene" uid="uid://cw58yfq3rxj1t" path="res://Entities/2D/Projectile/enemy_projectile.tscn" id="7_6q765"]
-[ext_resource type="Texture2D" uid="uid://c4xcdt106jrt6" path="res://Entities/2D/Projectile/Imports/Note.png" id="8_c52h6"]
+[ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="8_mplvn"]
 [ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="9_we3jm"]
 [ext_resource type="Script" uid="uid://dsi2nj53a61wm" path="res://Levels/2D/Systems/enemy_spawner.gd" id="10_c52h6"]
-
-[sub_resource type="Resource" id="Resource_xfmyu"]
-script = ExtResource("9_we3jm")
-enemy_type = 9
-damage = 5.0
-move_speed = 12.0
-health = 20.0
-xp_worth = 90
-attack_speed = 2.0
-projectile_scene = ExtResource("7_6q765")
-projectile_texture = ExtResource("8_c52h6")
-projectile_count = 3
-projectile_speed = 25.0
-metadata/_custom_type_script = "uid://bcu08sudqiuyg"
+[ext_resource type="Resource" uid="uid://bbqp0sdg7arqc" path="res://Entities/2D/Enemy/Resources/Datasets/fire_slime.tres" id="10_xtuuh"]
+[ext_resource type="Resource" uid="uid://b4nhdeu8y8gy5" path="res://Entities/2D/Enemy/Resources/Datasets/fire_wasp.tres" id="11_al2ln"]
+[ext_resource type="Resource" uid="uid://c4j6qaxqbddy" path="res://Entities/2D/Enemy/Resources/Datasets/flower_slime.tres" id="12_tpbkn"]
+[ext_resource type="Resource" uid="uid://bio3jqidpowys" path="res://Entities/2D/Enemy/Resources/Datasets/goblin.tres" id="13_jfpo8"]
+[ext_resource type="Resource" uid="uid://dqbbyal1wqrth" path="res://Entities/2D/Enemy/Resources/Datasets/goo_slime.tres" id="14_kacqb"]
+[ext_resource type="Resource" uid="uid://babqku01183ib" path="res://Entities/2D/Enemy/Resources/Datasets/fairy.tres" id="15_m1cfy"]
+[ext_resource type="Resource" uid="uid://b8tqdfhsect0c" path="res://Entities/2D/Enemy/Resources/Datasets/minotaur.tres" id="16_rcxuc"]
+[ext_resource type="Resource" uid="uid://cwlmi0g6fh86q" path="res://Entities/2D/Enemy/Resources/Datasets/dryad.tres" id="17_mf03q"]
+[ext_resource type="Resource" uid="uid://cu3eq1nyq1yol" path="res://Entities/2D/Enemy/Resources/Datasets/siren.tres" id="18_f7ybf"]
+[ext_resource type="Resource" uid="uid://u6r0m5vd5cxu" path="res://Entities/2D/Enemy/Resources/Datasets/mantis_shrimp.tres" id="19_5iw8n"]
+[ext_resource type="Resource" uid="uid://bu4kxegihpiwe" path="res://Entities/2D/Enemy/Resources/Datasets/umibozu.tres" id="20_uhw6r"]
+[ext_resource type="Resource" uid="uid://vsayei7pg7ay" path="res://Entities/2D/Enemy/Resources/Datasets/water_slime.tres" id="21_n17mt"]
+[ext_resource type="Resource" uid="uid://5m552x541qf7" path="res://Entities/2D/Enemy/Resources/Datasets/bubble_spider.tres" id="22_jdtpb"]
+[ext_resource type="Resource" uid="uid://dmc06eaief5hu" path="res://Entities/2D/Enemy/Resources/Datasets/azure_dragon.tres" id="23_w40hx"]
+[ext_resource type="Resource" uid="uid://sed0qyhbqieu" path="res://Entities/2D/Enemy/Resources/Datasets/wandering_spirit.tres" id="24_pvew2"]
+[ext_resource type="Resource" uid="uid://lxpkbum6iaml" path="res://Entities/2D/Enemy/Resources/Datasets/soul_slime.tres" id="25_d5syc"]
+[ext_resource type="Resource" uid="uid://duj87jnocq8i4" path="res://Entities/2D/Enemy/Resources/Datasets/dullahan.tres" id="26_5cmf4"]
+[ext_resource type="Resource" uid="uid://bjxxiiplqxtsq" path="res://Entities/2D/Enemy/Resources/Datasets/centaur.tres" id="27_gr8tx"]
+[ext_resource type="Resource" uid="uid://c1qj8vh0lxerk" path="res://Entities/2D/Enemy/Resources/Datasets/shadow_person.tres" id="28_0dy87"]
+[ext_resource type="Resource" uid="uid://bqw57b6om8ur4" path="res://Entities/2D/Enemy/Resources/Datasets/banshee.tres" id="29_d7ht1"]
+[ext_resource type="Resource" uid="uid://cuilogleh8lke" path="res://Entities/2D/Enemy/Resources/Datasets/reaper.tres" id="30_jjav7"]
+[ext_resource type="Resource" uid="uid://dggjos1oj0q55" path="res://Entities/2D/Enemy/Resources/Datasets/soul_bug.tres" id="31_djnm0"]
+[ext_resource type="Resource" uid="uid://dmcelvv1dt45j" path="res://Entities/2D/Enemy/Resources/Datasets/nezha.tres" id="32_kvgok"]
+[ext_resource type="Resource" uid="uid://xldy3sphf7dc" path="res://Entities/2D/Enemy/Resources/Datasets/angel_slime.tres" id="33_ixuo1"]
+[ext_resource type="Resource" uid="uid://d4dav22i5rbhf" path="res://Entities/2D/Enemy/Resources/Datasets/genasi.tres" id="34_i64hn"]
+[ext_resource type="Resource" uid="uid://234knoa1ufr3" path="res://Entities/2D/Enemy/Resources/Datasets/bomb_beetle.tres" id="35_11as7"]
+[ext_resource type="Resource" uid="uid://ukveqpfxcvev" path="res://Entities/2D/Enemy/Resources/Datasets/acid_slime.tres" id="36_0gvdo"]
+[ext_resource type="Resource" uid="uid://0hmx5sb2ravx" path="res://Entities/2D/Enemy/Resources/Datasets/pixiefly.tres" id="37_vm0cl"]
+[ext_resource type="Resource" uid="uid://di1de6oavinvp" path="res://Entities/2D/Enemy/Resources/Datasets/parasite.tres" id="38_r8q1p"]
+[ext_resource type="Resource" uid="uid://bip1scw02ebxg" path="res://Entities/2D/Enemy/Resources/Datasets/wukong.tres" id="39_p6l65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ac68"]
 size = Vector2(20, 360)
@@ -40,13 +55,17 @@ night1 = ExtResource("2_xpwx0")
 night2 = ExtResource("3_wnl36")
 night3 = ExtResource("4_7ac68")
 night4 = ExtResource("5_hpms7")
-data = SubResource("Resource_xfmyu")
 
 [node name="Systems" type="Node" parent="." unique_id=882784264]
 script = ExtResource("10_c52h6")
 
 [node name="Spawner" type="Node" parent="Systems" unique_id=728499451]
 script = ExtResource("10_c52h6")
+enemy_template = ExtResource("8_mplvn")
+level1_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("10_xtuuh"), ExtResource("11_al2ln"), ExtResource("12_tpbkn"), ExtResource("13_jfpo8"), ExtResource("14_kacqb"), ExtResource("15_m1cfy"), ExtResource("16_rcxuc"), ExtResource("17_mf03q")])
+level2_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("18_f7ybf"), ExtResource("19_5iw8n"), ExtResource("20_uhw6r"), ExtResource("21_n17mt"), ExtResource("22_jdtpb"), ExtResource("23_w40hx"), ExtResource("24_pvew2"), ExtResource("25_d5syc")])
+level3_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("26_5cmf4"), ExtResource("27_gr8tx"), ExtResource("28_0dy87"), ExtResource("29_d7ht1"), ExtResource("30_jjav7"), ExtResource("31_djnm0"), ExtResource("32_kvgok"), ExtResource("30_jjav7")])
+level4_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("33_ixuo1"), ExtResource("34_i64hn"), ExtResource("35_11as7"), ExtResource("36_0gvdo"), ExtResource("37_vm0cl"), ExtResource("38_r8q1p"), ExtResource("39_p6l65")])
 
 [node name="Borders" type="Node2D" parent="." unique_id=508902735]
 
