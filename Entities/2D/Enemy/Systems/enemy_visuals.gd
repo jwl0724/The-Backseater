@@ -41,6 +41,9 @@ func play_die_animation():
 func _process(_delta):
     if enemy.is_dead: return
 
+    # Stop animation if player is dead
+    if enemy.player.is_dead && move_player.is_playing(): move_player.stop()
+
     # Handle direction
     if enemy.velocity.x < 0: flip_h = true
     elif enemy.velocity.x > 0: flip_h = false
