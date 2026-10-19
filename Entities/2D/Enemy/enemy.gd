@@ -22,9 +22,7 @@ signal killed() # For presentational updates (i.e. sound and visuals)
 
 var projectile_template: PackedScene = null
 
-# TODO: Make enemies drop xp orbs based on the amount of xp they are worth
 # TODO: Make enemies be able to shoot projectiles
-# TODO: Fix hitting the dead body still dropped xp
 
 # All Enemy Stats
 var type: EnemyType = EnemyType.ACID_SLIME
@@ -67,7 +65,7 @@ func spawn_at_position(global_pos: Vector2):
     if player != null: movement.start_chasing(player)
 
 
-# TODO: Disable turning of sprite when being knocked back
+
 func hurt_enemy(projectile: Projectile):
     if is_dead: return
     health -= player.damage

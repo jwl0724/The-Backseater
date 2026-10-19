@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bj4rgvv3cmc2x" path="res://Levels/2D/Maps/Level2.tscn" id="3_wnl36"]
 [ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
-[ext_resource type="Resource" uid="uid://bbqp0sdg7arqc" path="res://Entities/2D/Enemy/Resources/Datasets/fire_slime.tres" id="6_7ac68"]
+[ext_resource type="Resource" uid="uid://u6r0m5vd5cxu" path="res://Entities/2D/Enemy/Resources/Datasets/mantis_shrimp.tres" id="6_7ac68"]
 [ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="7_wnl36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ac68"]
@@ -51,6 +51,6 @@ position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_hpms7")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
-base_damage = 8.0
+base_damage = 5.0
 
 [node name="Enemy" parent="." unique_id=912568309 instance=ExtResource("7_wnl36")]
