@@ -44,7 +44,7 @@ func _spawn_enemy():
 func _get_random_enemy_data() -> Enemy2DData:
     var weights: Array[float] = []
     for data in data_sets[data_set_number]:
-        weights.append(1 / data.xp_worth)
+        weights.append(1 / float(data.xp_worth))
     var index = rng.rand_weighted(weights)
     return data_sets[data_set_number][index]
 
