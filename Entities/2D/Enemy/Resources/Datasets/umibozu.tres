@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Enemy2DData" format=3 uid="uid://bu4kxegihpiwe"]
+
+[ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="1_6o72d"]
+[ext_resource type="PackedScene" uid="uid://cw58yfq3rxj1t" path="res://Entities/2D/Projectile/enemy_projectile.tscn" id="1_o2dcx"]
+[ext_resource type="Texture2D" uid="uid://bo5rqop3n7ny2" path="res://Entities/2D/Projectile/Imports/Bubble.png" id="2_wyx7o"]
+
+[resource]
+script = ExtResource("1_6o72d")
+enemy_type = 26
+damage = 8.0
+move_speed = 5.0
+health = 15.0
+xp_worth = 3
+attack_speed = 0.5
+projectile_scene = ExtResource("1_o2dcx")
+projectile_texture = ExtResource("2_wyx7o")
+projectile_speed = 10.0
+metadata/_custom_type_script = "uid://bcu08sudqiuyg"
