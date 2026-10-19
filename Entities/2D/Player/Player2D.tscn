@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ck2j28gj7elr2" path="res://Entities/2D/Player/player_2d.gd" id="1_ec1sy"]
 [ext_resource type="Script" uid="uid://b3cy0k8v1glh4" path="res://Entities/2D/Player/Systems/player_controls.gd" id="2_rlqyc"]
-[ext_resource type="Script" uid="uid://tj78qksw71gs" path="res://Entities/2D/Shared/projectile_handler.gd" id="3_njn1r"]
-[ext_resource type="PackedScene" uid="uid://bcjks3144ttli" path="res://Entities/2D/Shared/projectile.tscn" id="4_hoive"]
+[ext_resource type="Script" uid="uid://tj78qksw71gs" path="res://Entities/2D/Projectile/projectile_handler.gd" id="3_njn1r"]
+[ext_resource type="PackedScene" uid="uid://bcjks3144ttli" path="res://Entities/2D/Projectile/projectile.tscn" id="4_hoive"]
 [ext_resource type="Script" uid="uid://b8eiaxfykrhg" path="res://Entities/2D/Player/Systems/i_frame_handler.gd" id="5_uol42"]
 [ext_resource type="PackedScene" uid="uid://bn4nw802d6ww3" path="res://Entities/2D/Player/Components/PlayerVisuals.tscn" id="6_hoive"]
 [ext_resource type="Script" uid="uid://c37xyshjjfbjb" path="res://Entities/2D/Player/Systems/player_damage_handler.gd" id="6_uol42"]

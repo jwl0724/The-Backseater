@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cw58yfq3rxj1t"]
 
-[ext_resource type="Script" uid="uid://blwbjrory6368" path="res://Entities/2D/Shared/projectile.gd" id="1_2sjnm"]
-[ext_resource type="Texture2D" uid="uid://cbwbhkq7wl1xv" path="res://Entities/2D/Shared/Imports/Fire.png" id="2_2sjnm"]
+[ext_resource type="Script" uid="uid://blwbjrory6368" path="res://Entities/2D/Projectile/projectile.gd" id="1_2sjnm"]
+[ext_resource type="Texture2D" uid="uid://cbwbhkq7wl1xv" path="res://Entities/2D/Projectile/Imports/Fire.png" id="2_2sjnm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v57lb"]
 radius = 5.0

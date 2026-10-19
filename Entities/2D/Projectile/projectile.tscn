@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcjks3144ttli"]
 
-[ext_resource type="Script" uid="uid://blwbjrory6368" path="res://Entities/2D/Shared/projectile.gd" id="1_01dhq"]
-[ext_resource type="Texture2D" uid="uid://dbqiafl7kp14c" path="res://Entities/2D/Shared/Imports/PlayerProjectile.png" id="2_xjlok"]
+[ext_resource type="Script" uid="uid://blwbjrory6368" path="res://Entities/2D/Projectile/projectile.gd" id="1_01dhq"]
+[ext_resource type="Texture2D" uid="uid://dbqiafl7kp14c" path="res://Entities/2D/Projectile/Imports/PlayerProjectile.png" id="2_xjlok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luu1w"]
 

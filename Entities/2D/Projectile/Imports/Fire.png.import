@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo5rqop3n7ny2"
-path="res://.godot/imported/Bubble.png-f1c5d1d52c2f652bc5d4031f9e24f695.ctex"
+uid="uid://cbwbhkq7wl1xv"
+path="res://.godot/imported/Fire.png-1971b76c4d714cd76a69f298d1176a4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/2D/Shared/Imports/Bubble.png"
-dest_files=["res://.godot/imported/Bubble.png-f1c5d1d52c2f652bc5d4031f9e24f695.ctex"]
+source_file="res://Entities/2D/Projectile/Imports/Fire.png"
+dest_files=["res://.godot/imported/Fire.png-1971b76c4d714cd76a69f298d1176a4a.ctex"]
 
 [params]
 
