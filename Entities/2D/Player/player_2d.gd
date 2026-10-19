@@ -14,7 +14,7 @@ const move_speed_per_upgrade: float = 10
 const health_per_upgrade: float = 5
 const health_regen_per_upgrade: float = 0.2
 const attack_speed_per_upgrade: float = 1
-const projectile_count_per_upgrade: int = 2
+const projectile_count_per_upgrade: int = 1
 
 # Base stats on spawn in
 @export var base_damage: float = 1
