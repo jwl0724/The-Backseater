@@ -14,10 +14,12 @@ var current_speed: float = 0
 var max_distance: float
 
 var worth: int = 0
+var disabled: bool = true
 
 
 
 func _ready():
+    visible = false
     max_distance = attract_shape.radius
     hitbox.body_entered.connect(_on_hitbox_entered)
     attract_radius.body_entered.connect(_on_attract_entered)
@@ -25,13 +27,16 @@ func _ready():
 
 
 
-func set_xp_value(value: int):
+func drop_xp(global_pos: Vector2, value: int):
+    visible = true
+    disabled = false
+    global_position = global_pos
     worth = value
 
 
 
 func _process(delta):
-    if attract_target == null: return
+    if attract_target == null || disabled: return
     var factor = clamp(1 - (global_position.distance_squared_to(attract_target.global_position) / max_distance ** 2), 0.0, 1.0)
     current_speed = lerp(min_attract_speed, max_attract_speed, factor)
     global_position +=  global_position.direction_to(attract_target.global_position) * current_speed * delta
@@ -51,5 +56,7 @@ func _on_attract_exited(body: Node2D):
 
 
 func _on_hitbox_entered(body: Node2D):
-    if body is not Player2D: return
+    if body is not Player2D || disabled: return
+    disabled = true
+    visible = false
     print("TODO: Add some sort of function on player to collect this thing and add it to XP")

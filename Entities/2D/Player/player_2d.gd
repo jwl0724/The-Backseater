@@ -50,7 +50,14 @@ var elasped_time: float = 0
 
 
 func _ready():
+    # TODO: Remove the setters down here later, only need this cause export sets the value late
+    damage = base_damage
     move_speed = base_move_speed
+    max_health = base_health
+    health = max_health
+    health_regen = base_health_regen
+    attack_speed = base_attack_speed
+    projectile_count = base_projectile_count
     projectile_handler.create_pool(40)
 
     hitbox.body_entered.connect(damage_handler.try_queue_body)

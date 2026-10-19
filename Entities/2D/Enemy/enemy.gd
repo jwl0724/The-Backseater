@@ -15,12 +15,16 @@ enum EnemyType {
 signal damaged() # For presentational updates (i.e. sound and visuals)
 signal killed() # For presentational updates (i.e. sound and visuals)
 
+@onready var components: Node2D = $Components
 @onready var visuals: EnemyVisuals = %Visuals
 @onready var movement: Enemy2DMovement = %EnemyMovement
+@onready var xp_orb: XPOrb = %XpOrb
 
 var projectile_template: PackedScene = null
 
 # TODO: Make enemies drop xp orbs based on the amount of xp they are worth
+# TODO: Make enemies be able to shoot projectiles
+# TODO: Fix the hitbox still being active when its dead
 
 # All Enemy Stats
 var type: EnemyType = EnemyType.ACID_SLIME
@@ -57,7 +61,7 @@ func load_data(data: Enemy2DData):
 
 
 func spawn_at_position(global_pos: Vector2):
-    visible = true
+    components.visible = true
     health = max_health
     global_position = global_pos
     if player != null: movement.start_chasing(player)
@@ -75,4 +79,5 @@ func hurt_enemy(projectile: Projectile):
 func kill():
     killed.emit()
     await visuals.death_finished
-    visible = false
+    components.visible = false
+    xp_orb.drop_xp(global_position, xp_worth)
