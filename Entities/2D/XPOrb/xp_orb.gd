@@ -4,6 +4,8 @@ class_name XPOrb
 const min_attract_speed: float = 1
 const max_attract_speed: float = 60
 
+signal xp_collected()
+
 @export var attract_shape: CircleShape2D = null
 
 @onready var sprite: Sprite2D = $Sprite
@@ -63,3 +65,4 @@ func _on_hitbox_entered(body: Node2D):
     disabled = true
     sprite.visible = false
     (body as Player2D).collect_xp(worth)
+    xp_collected.emit()

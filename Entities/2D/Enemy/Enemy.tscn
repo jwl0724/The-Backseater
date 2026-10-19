@@ -51,7 +51,6 @@ show_percentage = false
 script = ExtResource("4_7m32k")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2001812960]
-visible = false
 shape = SubResource("CapsuleShape2D_i01j8")
 
 [node name="XpOrb" parent="." unique_id=1642183335 instance=ExtResource("5_sbrd8")]

@@ -12,8 +12,11 @@ enum EnemyType {
     WANDERING_SPIRIT, BANSHEE, UMIBOZU, REAPER, DULLAHAN, SHADOW_PERSON
 }
 
-signal damaged() # For presentational updates (i.e. sound and visuals)
-signal killed() # For presentational updates (i.e. sound and visuals)
+const death_pit_coords: Vector2 = Vector2(-44, -44)
+
+signal damaged()
+signal killed()
+signal ready_to_respawn()
 signal respawned()
 
 @onready var projectile_handler: ProjectileHandler = %ProjectileHandler
@@ -21,7 +24,6 @@ signal respawned()
 @onready var visuals: EnemyVisuals = %Visuals
 @onready var movement: Enemy2DMovement = %EnemyMovement
 @onready var xp_orb: XPOrb = %XpOrb
-
 
 # All Enemy Stats
 var type: EnemyType = EnemyType.ACID_SLIME
@@ -41,6 +43,15 @@ var is_dead: bool:
     get: return health <= 0
 
 var elapsed_time: float = 0
+var xp_collected: bool = false
+
+# TODO: Some of the sprites are squished
+# TODO: Projectile +1 turned into +3
+
+
+
+func _ready():
+    xp_orb.xp_collected.connect(ready_to_respawn.emit)
 
 
 
@@ -50,11 +61,9 @@ func load_data(data: Enemy2DData):
     damage = data.damage
     move_speed = data.move_speed
     max_health = data.health
-    health = max_health
     xp_worth = data.xp_worth
     attack_speed = data.attack_speed
     visuals.set_sprite(type)
-    respawned.emit()
 
     if !projectile_handler.projectile_scene: return
     projectile_count = data.projectile_count
@@ -66,9 +75,11 @@ func load_data(data: Enemy2DData):
 
 
 func spawn_at_position(global_pos: Vector2):
+    xp_collected = false
     components.visible = true
     health = max_health
     global_position = global_pos
+    respawned.emit()
     if player != null: movement.start_chasing(player)
 
 
@@ -87,6 +98,7 @@ func kill():
     await visuals.death_finished
     components.visible = false
     xp_orb.drop_xp(global_position, xp_worth)
+    global_position = death_pit_coords # Move hitbox out of the way on death
 
 
 

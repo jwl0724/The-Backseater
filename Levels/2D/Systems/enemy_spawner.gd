@@ -34,7 +34,7 @@ func _spawn_enemy():
     if !enemy:
         enemy = enemy_template.instantiate() as Enemy2D
         enemy.player = player # Set player reference to start chasing
-        enemy.killed.connect(dead_enemies.append.bind(enemy))
+        enemy.ready_to_respawn.connect(dead_enemies.append.bind(enemy))
         add_child(enemy)
     enemy.load_data(_get_random_enemy_data())
     enemy.spawn_at_position(_get_random_spawn_point())
