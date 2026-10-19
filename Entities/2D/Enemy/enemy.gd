@@ -49,6 +49,7 @@ func load_data(data: Enemy2DData):
     move_speed = data.move_speed
     max_health = data.health
     health = max_health
+    xp_worth = data.xp_worth
     visuals.set_sprite(type)
 
     if !data.projectile_scene: return

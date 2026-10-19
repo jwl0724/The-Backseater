@@ -7,7 +7,7 @@ class_name Enemy2DData
 @export var damage: float = 2
 @export var move_speed: float = 20
 @export var health: float = 10
-@export var xp_worth: float = 1
+@export var xp_worth: int = 1
 
 @export_group("Ranged Stats")
 @export var attack_speed: float = 0
