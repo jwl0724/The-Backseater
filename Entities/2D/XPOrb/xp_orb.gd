@@ -6,6 +6,7 @@ const max_attract_speed: float = 60
 
 @export var attract_shape: CircleShape2D = null
 
+@onready var animator: AnimationPlayer = $Animation
 @onready var hitbox: Area2D = $Hitbox
 @onready var attract_radius: Area2D = $AttractRadius
 
@@ -32,6 +33,7 @@ func drop_xp(global_pos: Vector2, value: int):
     disabled = false
     global_position = global_pos
     worth = value
+    animator.play("spawn")
 
 
 

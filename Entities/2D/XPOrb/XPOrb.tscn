@@ -9,6 +9,67 @@ radius = 120.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0irt"]
 radius = 4.0
 
+[sub_resource type="Animation" id="Animation_g0jyr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p0irt"]
+resource_name = "spawn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edlg5"]
+_data = {
+&"RESET": SubResource("Animation_g0jyr"),
+&"spawn": SubResource("Animation_p0irt")
+}
+
 [node name="XpOrb" type="Node2D" unique_id=1642183335]
 script = ExtResource("1_g0jyr")
 attract_shape = SubResource("CircleShape2D_g0jyr")
@@ -19,6 +80,7 @@ texture_filter = 1
 texture = ExtResource("1_2gidm")
 
 [node name="AttractRadius" type="Area2D" parent="." unique_id=1347626795]
+visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -27,9 +89,13 @@ monitorable = false
 shape = SubResource("CircleShape2D_g0jyr")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=291839123]
+visible = false
 collision_layer = 8
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2092390223]
 shape = SubResource("CircleShape2D_p0irt")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1837442866]
+libraries/ = SubResource("AnimationLibrary_edlg5")
