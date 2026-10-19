@@ -41,6 +41,7 @@ func set_shooter(node: Node2D):
     else:
         collision_layer = Constants.PhysLayers.Enemy
         collision_mask = Constants.PhysLayers.Player
+        area_entered.connect(_on_area_entered) # Needed since hitbox and collision box aren't the same
 
 
 
@@ -80,3 +81,10 @@ func _on_body_entered(body: Node2D):
         (body as Player2D).hurt_via_projectile(self)
     elif body is Enemy2D && collision_layer == Constants.PhysLayers.Player:
         (body as Enemy2D).hurt_enemy(self)
+
+
+
+func _on_area_entered(area: Area2D):
+    if !area.get_collision_layer_value(roundi(log(Constants.PhysLayers.Player) / log(2)) + 1): return
+    var player = area.owner as Player2D # Works because player will never be instantiated through code
+    player.hurt_via_projectile(self)
