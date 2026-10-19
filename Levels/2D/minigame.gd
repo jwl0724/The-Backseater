@@ -15,7 +15,6 @@ class_name MiniGame
 @onready var spawner: EnemySpawner = $Systems/Spawner
 
 
-
 func _ready():
     start_game(autoload_level) # TODO: Temp, need the 3D scene to call this later
 
@@ -35,9 +34,6 @@ func start_game(level_number: int):
     add_child(scene)
     var spawn_point: Node2D = scene.find_child("Spawn")
     player.teleport_to_point(spawn_point.global_position)
-
-    # TODO: Below might not be necessary when there's subviewport, but will have to see when there
-    SignalBus.game2d_player_addHUD.emit.call_deferred(player_hud)
     SignalBus.game2d_start.emit.bind(player).call_deferred()
     spawner.start_spawning(player, level_number, 1 / float(level_number) * 4)
 

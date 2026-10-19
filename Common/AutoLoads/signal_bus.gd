@@ -11,7 +11,6 @@ signal hud_2d_sendMessage(message: String)
 # 2D Game Signals
 signal game2d_start(player: Player2D)
 signal game2d_restart()
-signal game2d_player_addHUD(hud: Control)
 signal game2d_player_levelup()
 signal game2d_player_upgrade(type: UpgradeData.UpgradeType)
 signal game2d_mechanic_noAudio() # Night 2 gimmick

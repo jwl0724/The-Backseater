@@ -23,9 +23,6 @@ func _ready():
     var launch_scene = debug_scene.instantiate()
     running_node.add_child(launch_scene)
 
-    # TODO: This needs to be added to subviewport later, for now just add it to the layering
-    SignalBus.game2d_player_addHUD.connect(func(packed): gui_layer.add_child(packed.instantiate()))
-
 
 
 func direct_change_scenes(new_scene: PackedScene) -> void:

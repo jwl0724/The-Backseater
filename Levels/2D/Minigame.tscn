@@ -56,6 +56,11 @@ night2 = ExtResource("3_wnl36")
 night3 = ExtResource("4_7ac68")
 night4 = ExtResource("5_hpms7")
 
+[node name="LocalViewport" type="CanvasLayer" parent="." unique_id=1518055999]
+layer = 10
+
+[node name="Hud" parent="LocalViewport" unique_id=30358670 instance=ExtResource("2_hpms7")]
+
 [node name="Systems" type="Node" parent="." unique_id=882784264]
 script = ExtResource("10_c52h6")
 
@@ -94,3 +99,6 @@ position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_hpms7")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
+base_damage = 5.0
+base_move_speed = 50.0
+base_projectile_count = 2
