@@ -24,7 +24,7 @@ func hit_via_enemy(enemy: Enemy2D):
     if enemy.is_dead: return
     player.health -= enemy.damage
     player.visuals.toggle_direction(false)
-    player.movement.knockback(enemy.global_position.direction_to(player.global_position), enemy.move_speed * (enemy.damage + enemy.max_health) * 2)
+    player.movement.knockback(enemy.global_position.direction_to(player.global_position), enemy.move_speed * enemy.damage)
     if player.is_dead: kill()
     else:
         player.visuals.play_hurt()
