@@ -24,7 +24,7 @@ var projectile_template: PackedScene = null
 
 # TODO: Make enemies drop xp orbs based on the amount of xp they are worth
 # TODO: Make enemies be able to shoot projectiles
-# TODO: Fix the hitbox still being active when its dead
+# TODO: Fix hitting the dead body still dropped xp
 
 # All Enemy Stats
 var type: EnemyType = EnemyType.ACID_SLIME
@@ -69,6 +69,7 @@ func spawn_at_position(global_pos: Vector2):
 
 # TODO: Disable turning of sprite when being knocked back
 func hurt_enemy(projectile: Projectile):
+    if is_dead: return
     health -= player.damage
     movement.knockback(projectile.target_direction, projectile.projectile_speed)
     if is_dead: kill()
