@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Enemy2DData" format=3 uid="uid://sed0qyhbqieu"]
+
+[ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="1_0k13e"]
+
+[resource]
+script = ExtResource("1_0k13e")
+enemy_type = 24
+damage = 1.0
+move_speed = 80.0
+health = 1.0
+metadata/_custom_type_script = "uid://bcu08sudqiuyg"

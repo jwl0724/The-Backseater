@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Enemy2DData" format=3 uid="uid://di1de6oavinvp"]
+
+[ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="1_cfhji"]
+
+[resource]
+script = ExtResource("1_cfhji")
+enemy_type = 22
+damage = 15.0
+move_speed = 5.0
+health = 50.0
+xp_worth = 20
+metadata/_custom_type_script = "uid://bcu08sudqiuyg"
