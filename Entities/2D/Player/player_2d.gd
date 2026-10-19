@@ -8,7 +8,7 @@ const move_speed_per_upgrade: float = 10
 const health_per_upgrade: float = 5
 const health_regen_per_upgrade: float = 0.2
 const attack_speed_per_upgrade: float = 1
-const projectile_count_per_upgrade: int = 1
+const projectile_count_per_upgrade: int = 2
 
 const projectile_speed: float = 80
 
@@ -33,7 +33,7 @@ var max_health: float = base_health
 var health: float = max_health
 var health_regen: float = base_health_regen
 var attack_speed: float = base_attack_speed
-var projectile_count: float = base_projectile_count
+var projectile_count: int = base_projectile_count
 
 var fire_rate: float:
     get: return 3 / attack_speed
@@ -42,7 +42,6 @@ var is_dead: bool:
 
 var elasped_time: float = 0
 
-# TODO: Make the shooting shoot at an angle when projectile count is > 1
 # TODO: Make the camera stay within the boundaries of the map
 # TODO: Add collisions on the edges of the map so player can't leave
 # TODO: Create the mini-game loop that runs indefinitely until a stop signal
@@ -54,7 +53,7 @@ var elasped_time: float = 0
 
 func _ready():
     move_speed = base_move_speed
-    projectile_handler.create_pool(20)
+    projectile_handler.create_pool(40)
 
     hitbox.body_entered.connect(damage_handler.try_queue_body)
     hitbox.body_exited.connect(damage_handler.try_remove_body)

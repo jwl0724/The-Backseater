@@ -24,5 +24,15 @@ func create_pool(pool_size: int):
 
 
 func shoot(target_location: Vector2, speed: float):
-    var projectile = projectile_pool.pop_front()
-    if projectile: projectile.shoot(target_location, speed)
+    var count = shooter.get("projectile_count")
+    if !count || count is not int: return
+
+    for i in count:
+        var projectile = projectile_pool.pop_front()
+        if !projectile: return
+
+        var base_direction := shooter.global_position.direction_to(target_location)
+        var offset_angle := 0.
+        if i > 0: offset_angle = ((i + 1) / 2) * 10 * (-1 if i % 2 == 1 else 1)
+        var direction = base_direction.rotated(deg_to_rad(offset_angle))
+        projectile.shoot(direction, speed)

@@ -39,4 +39,4 @@ func start_game(level_number: int):
     add_child(scene)
     var spawn_point: Node2D = scene.find_child("Spawn")
     player.teleport_to_point(spawn_point.global_position)
-    enemy.spawn_at_position(player.global_position - Vector2.LEFT * 20)
+    enemy.spawn_at_position(player.global_position + Vector2.LEFT * 200)

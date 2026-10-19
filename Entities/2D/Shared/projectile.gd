@@ -43,11 +43,11 @@ func set_shooter(node: Node2D):
 
 
 
-func shoot(target_location: Vector2, move_speed: float):
+func shoot(direction: Vector2, move_speed: float):
     visible = true
     is_active = true
     global_position = projectile_owner.global_position
-    target_direction = global_position.direction_to(target_location)
+    target_direction = direction
     projectile_speed = move_speed
     sprite.rotation = Vector2.RIGHT.angle_to(target_direction)
 
