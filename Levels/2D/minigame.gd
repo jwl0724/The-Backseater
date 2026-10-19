@@ -12,6 +12,7 @@ class_name MiniGame
 @export var night4: PackedScene = null
 
 @onready var player: Player2D = $Player
+@onready var spawner: EnemySpawner = $Systems/Spawner
 
 # TODO: remove below later
 @onready var enemy: Enemy2D = $Enemy
@@ -46,3 +47,9 @@ func start_game(level_number: int):
     SignalBus.game2d_start.emit.bind(player).call_deferred()
 
     enemy.spawn_at_position(player.global_position + Vector2.LEFT * 200) # TODO: Remove later when theres actually dynamic enemy spawning
+
+
+# Expected to be called by the 3D scene once 5 minutes have passed then freed after
+func stop_game():
+    player.set_process(false)
+    spawner.set_process(false)

@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
 [ext_resource type="PackedScene" uid="uid://cw58yfq3rxj1t" path="res://Entities/2D/Projectile/enemy_projectile.tscn" id="7_6q765"]
-[ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="7_wnl36"]
 [ext_resource type="Texture2D" uid="uid://c4xcdt106jrt6" path="res://Entities/2D/Projectile/Imports/Note.png" id="8_c52h6"]
 [ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="9_we3jm"]
+[ext_resource type="Script" uid="uid://dsi2nj53a61wm" path="res://Levels/2D/Systems/enemy_spawner.gd" id="10_c52h6"]
 
 [sub_resource type="Resource" id="Resource_xfmyu"]
 script = ExtResource("9_we3jm")
@@ -42,6 +42,12 @@ night3 = ExtResource("4_7ac68")
 night4 = ExtResource("5_hpms7")
 data = SubResource("Resource_xfmyu")
 
+[node name="Systems" type="Node" parent="." unique_id=882784264]
+script = ExtResource("10_c52h6")
+
+[node name="Spawner" type="Node" parent="Systems" unique_id=728499451]
+script = ExtResource("10_c52h6")
+
 [node name="Borders" type="Node2D" parent="." unique_id=508902735]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=2032323704]
@@ -69,5 +75,3 @@ position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_hpms7")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
-
-[node name="Enemy" parent="." unique_id=912568309 instance=ExtResource("7_wnl36")]

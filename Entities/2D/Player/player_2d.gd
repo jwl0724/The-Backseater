@@ -46,7 +46,7 @@ var attack_speed: float = base_attack_speed
 var projectile_count: int = base_projectile_count
 
 # Run time variables
-var elasped_time: float = 0
+var elapsed: float = 0
 
 # Run time getters
 var fire_rate: float:
@@ -56,7 +56,6 @@ var is_dead: bool:
 
 
 # TODO: Create the mini-game loop that runs indefinitely until a stop signal
-# TODO: Connect upgrade menu and upgrades to player after player reaches xp threshold
 # TODO: Implement level restarting
 
 
@@ -125,8 +124,8 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
 
 
 func _process(delta):
-    if elasped_time >= fire_rate:
-        elasped_time = 0
+    if elapsed >= fire_rate:
+        elapsed = 0
         if is_dead: return
         projectile_handler.shoot(get_global_mouse_position(), projectile_speed)
-    else: elasped_time += delta
+    else: elapsed += delta
