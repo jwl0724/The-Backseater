@@ -10,3 +10,4 @@ script = ExtResource("2_3m8ev")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=162384180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5293813, 3.3770158, 0)

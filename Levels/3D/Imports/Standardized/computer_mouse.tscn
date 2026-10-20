@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b2w6pfqjsrg4a"]
+
+[ext_resource type="PackedScene" uid="uid://uxqoolqmwn47" path="res://Levels/3D/Imports/FurniturePack/computerMouse.fbx" id="1_ivvnn"]
+
+[node name="computerMouse" unique_id=936643654 instance=ExtResource("1_ivvnn")]
+
+[node name="computerMouse" parent="." index="0" unique_id=769605514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
