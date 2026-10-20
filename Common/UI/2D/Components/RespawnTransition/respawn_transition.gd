@@ -15,7 +15,7 @@ func play_hide():
     visible = true
     transition.play("transition_hide")
     await transition.animation_finished
-    await get_tree().create_timer(1).timeout
+    await get_tree().create_timer(0.5).timeout
     SignalBus.game2d_restart.emit()
 
 

@@ -19,5 +19,4 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="RespawnTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
