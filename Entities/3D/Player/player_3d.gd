@@ -5,6 +5,7 @@ enum View { LEFT, RIGHT, FRONT, GAME }
 
 @export var hud_scene: PackedScene = null
 
+@export var computer: RoomComputer = null
 @export var left_view_node: Node3D = null
 @export var right_view_node: Node3D = null
 @export var center_view_node: Node3D = null
@@ -34,10 +35,15 @@ func _input(event: InputEvent):
 	if event is not InputEventKey: return
 	if (look_tween && look_tween.is_running()) || !is_active: return # Ignore if in the middle of looking or is dying
 
-	if event.is_action_pressed(Constants.Controls.Left): goto_view(_get_next_view(Constants.Controls.Left))
-	elif event.is_action_pressed(Constants.Controls.Right): goto_view(_get_next_view(Constants.Controls.Right))
-	elif event.is_action_pressed(Constants.Controls.Tab): goto_view(_get_next_view(Constants.Controls.Tab))
-
+	if current_view != View.GAME:
+		if event.is_action_pressed(Constants.Controls.Left): goto_view(_get_next_view(Constants.Controls.Left))
+		elif event.is_action_pressed(Constants.Controls.Right): goto_view(_get_next_view(Constants.Controls.Right))
+		elif event.is_action_pressed(Constants.Controls.Tab): goto_view(_get_next_view(Constants.Controls.Tab))
+	else:
+		if event.is_action_pressed(Constants.Controls.Tab):
+			computer.release_inputs()
+			goto_view(_get_next_view(Constants.Controls.Tab))
+		else: computer.funnel_input(event)
 
 
 
