@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0hnrrj4gcl5f" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
 [ext_resource type="Script" uid="uid://1q2cv2eh4bmk" path="res://Common/UI/Shared/fade.gd" id="2_gqpt8"]
-[ext_resource type="PackedScene" uid="uid://32ej174w2uik" path="res://Levels/2D/Minigame.tscn" id="2_q7v2m"]
+[ext_resource type="PackedScene" uid="uid://c5vsswhadftvh" path="res://Levels/3D/Room.tscn" id="2_q7v2m"]
 
 [node name="GameController" type="Node" unique_id=227253429]
 script = ExtResource("1_yl5u5")

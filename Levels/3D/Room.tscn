@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://cvf2jnx2okhj0" path="res://Levels/3D/Imports/Standardized/speaker.tscn" id="38_cpqdp"]
 [ext_resource type="PackedScene" uid="uid://bpavbvrepfrpf" path="res://Levels/3D/Imports/Standardized/lamp_round_floor.tscn" id="39_cpqdp"]
 [ext_resource type="PackedScene" uid="uid://cc1f6lbraoa8q" path="res://Levels/3D/Imports/Standardized/chair_cushion.tscn" id="40_ecbks"]
+[ext_resource type="PackedScene" uid="uid://dwmiwoycg353x" path="res://Entities/3D/Player/Player3D.tscn" id="44_ecbks"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a8jx4"]
 
@@ -50,10 +51,23 @@
 sky_material = SubResource("ProceduralSkyMaterial_a8jx4")
 
 [sub_resource type="Environment" id="Environment_bl504"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.019607844, 0.019607844, 0.0627451, 1)
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_t3vhc")
-ambient_light_source = 3
-reflected_light_source = 2
+ambient_light_source = 2
+ambient_light_color = Color(0.0627451, 0.08235294, 0.14509805, 1)
+ambient_light_energy = 0.3
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 2.16
+ssao_intensity = 4.09
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.2
+fog_enabled = true
+fog_light_color = Color(0.5601969, 0.6930995, 0.9063276, 1)
+fog_light_energy = 0.5
 adjustment_enabled = true
 adjustment_brightness = 0.7
 adjustment_contrast = 1.1
@@ -64,13 +78,18 @@ script = ExtResource("1_ja5dw")
 
 [node name="Exterior" type="Node3D" parent="." unique_id=1780963428]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Exterior" unique_id=795181684]
-transform = Transform3D(0.018056808, -0.84638846, 0.53225994, 0.02869704, 0.53256613, 0.8459018, -0.99942505, -3.7234427e-09, 0.033905286, 0, 1.9925377, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Exterior" unique_id=1313034059]
 environment = SubResource("Environment_bl504")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Exterior" unique_id=1044457227]
+transform = Transform3D(-3.2924753e-08, -0.65775657, 0.7532306, -2.8751453e-08, 0.7532306, 0.65775657, -1, 0, -4.371139e-08, 0, 0, 0)
+light_color = Color(0.8156863, 0.8784314, 1, 1)
+light_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+
 [node name="Interior" type="Node3D" parent="." unique_id=1967315032]
+metadata/_edit_lock_ = true
 
 [node name="Layout" type="Node3D" parent="Interior" unique_id=1354914256]
 
@@ -113,6 +132,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
 
 [node name="floorFull23" parent="Interior/Layout/Floor" unique_id=1792141133 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="floorFull6" parent="Interior/Layout/Floor" unique_id=1147088507 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.466754, 0)
+
+[node name="floorFull7" parent="Interior/Layout/Floor" unique_id=1774665806 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 0)
+
+[node name="floorFull8" parent="Interior/Layout/Floor" unique_id=239970375 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 0)
+
+[node name="floorFull9" parent="Interior/Layout/Floor" unique_id=1141297396 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 0)
+
+[node name="floorFull10" parent="Interior/Layout/Floor" unique_id=1154849256 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 0)
+
+[node name="floorFull24" parent="Interior/Layout/Floor" unique_id=121196509 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.466754, 5)
+
+[node name="floorFull25" parent="Interior/Layout/Floor" unique_id=602596034 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 5)
+
+[node name="floorFull26" parent="Interior/Layout/Floor" unique_id=1012219880 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 5)
+
+[node name="floorFull27" parent="Interior/Layout/Floor" unique_id=1116976762 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 5)
+
+[node name="floorFull28" parent="Interior/Layout/Floor" unique_id=1384065460 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.466754, 10)
+
+[node name="floorFull29" parent="Interior/Layout/Floor" unique_id=1625880362 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 10)
+
+[node name="floorFull30" parent="Interior/Layout/Floor" unique_id=1672449764 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 10)
+
+[node name="floorFull31" parent="Interior/Layout/Floor" unique_id=484281413 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 10)
 
 [node name="Walls" type="Node3D" parent="Interior/Layout" unique_id=183447632]
 
@@ -313,3 +371,28 @@ transform = Transform3D(0.686618, 0, -0.7270182, 0, 1, 0, 0.7270182, 0, 0.686618
 
 [node name="benchCushionLow" parent="Interior/Layout/Furniture" unique_id=1234178750 instance=ExtResource("37_toc0v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8632847, 0.30992126, 6.297636)
+
+[node name="lampRoundFloor2" parent="Interior/Layout/Furniture" unique_id=266561064 instance=ExtResource("39_cpqdp")]
+transform = Transform3D(0.68741715, 0, -0.7262628, 0, 1, 0, 0.7262628, 0, 0.68741715, 7.020031, 0.19329858, 14.041032)
+
+[node name="CameraPoints" type="Node3D" parent="." unique_id=791846359]
+metadata/_edit_lock_ = true
+
+[node name="FrontView" type="Node3D" parent="CameraPoints" unique_id=287151110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
+
+[node name="LeftView" type="Node3D" parent="CameraPoints" unique_id=228499725]
+transform = Transform3D(0.31937283, -0.23693112, 0.9175319, -7.1456445e-09, 0.9682393, 0.25002512, -0.9476291, -0.079851225, 0.3092293, 1.4168371, 3.6, 4.8)
+
+[node name="RightView" type="Node3D" parent="CameraPoints" unique_id=123259158]
+transform = Transform3D(-0.09041273, 0.16292895, -0.9824866, 0.0039525316, 0.98657787, 0.16324368, 0.99589664, 0.010875997, -0.08984318, 2.4028661, 3.6, 4.8)
+
+[node name="GameView" type="Node3D" parent="CameraPoints" unique_id=876614721]
+transform = Transform3D(0.9997497, 0.004874473, -0.021835804, -0.00089592626, 0.98391736, 0.17862299, 0.02235532, -0.17855881, 0.9836753, 1.7, 3.2153494, 3.0413435)
+
+[node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("left_view_node", "right_view_node", "center_view_node", "game_view_node") instance=ExtResource("44_ecbks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
+left_view_node = NodePath("../CameraPoints/LeftView")
+right_view_node = NodePath("../CameraPoints/RightView")
+center_view_node = NodePath("../CameraPoints/FrontView")
+game_view_node = NodePath("../CameraPoints/GameView")
