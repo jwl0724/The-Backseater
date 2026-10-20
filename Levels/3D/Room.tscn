@@ -65,6 +65,7 @@ ssao_intensity = 4.09
 glow_enabled = true
 glow_intensity = 1.5
 glow_bloom = 0.2
+glow_hdr_threshold = 0.5
 fog_enabled = true
 fog_light_color = Color(0.5601969, 0.6930995, 0.9063276, 1)
 fog_light_energy = 0.5

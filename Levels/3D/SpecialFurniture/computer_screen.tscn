@@ -1,11 +1,35 @@
 [gd_scene format=3 uid="uid://25jo7trgtbcf"]
 
 [ext_resource type="PackedScene" uid="uid://d1wriemvj3sbd" path="res://Levels/3D/Imports/FurniturePack/computerScreen.fbx" id="1_8m4i1"]
+[ext_resource type="Script" uid="uid://dxdxnaxy0u4yb" path="res://Levels/3D/SpecialFurniture/computer_screen.gd" id="2_cdxrc"]
+[ext_resource type="PackedScene" uid="uid://32ej174w2uik" path="res://Levels/2D/Minigame.tscn" id="2_jt7oa"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3cr4x"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cdxrc"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p131"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3cr4x")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_cdxrc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ds57q"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_0p131")
+size = Vector2(1.92, 1.188)
 
 [node name="computerScreen" unique_id=1208118889 instance=ExtResource("1_8m4i1")]
+script = ExtResource("2_cdxrc")
 
 [node name="computerScreen" parent="." index="0" unique_id=2037487005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ViewportDisplay" type="MeshInstance3D" parent="computerScreen" index="0" unique_id=59231567]
+transform = Transform3D(-1, 1.2166899e-08, -8.657197e-08, 0, 0.990268, 0.13917309, 8.742278e-08, 0.13917309, -0.990268, -0.978657, 0.867072, 0.26105964)
+mesh = SubResource("QuadMesh_ds57q")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=442121940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94427544, 0.9172962, 0.26979208)
@@ -18,3 +42,11 @@ spot_range = 2.5
 spot_attenuation = 2.0
 spot_angle = 85.0
 spot_angle_attenuation = 3.0
+
+[node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=1884509528]
+transparent_bg = true
+size = Vector2i(640, 360)
+size_2d_override = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="Minigame" parent="SubViewport" index="0" unique_id=751759855 instance=ExtResource("2_jt7oa")]

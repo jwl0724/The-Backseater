@@ -99,4 +99,5 @@ position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_hpms7")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
+position = Vector2(311, 169)
 base_health = 2.0
