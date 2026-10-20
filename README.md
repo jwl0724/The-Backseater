@@ -41,6 +41,9 @@ The real-life part will be task management game, where you have to watch out on 
 
 ## Credit Links
 
+# Models
+https://opengameart.org/content/furniture-kit
+
 # Tilesets
 https://opengameart.org/content/waterworld-tileset-16x16
 https://opengameart.org/content/interior-tileset-16x16
