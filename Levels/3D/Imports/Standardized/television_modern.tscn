@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2l1qcicw6jbr"]
+
+[ext_resource type="PackedScene" uid="uid://4cpgfkhrkhv2" path="res://Levels/3D/Imports/FurniturePack/televisionModern.fbx" id="1_3hfvp"]
+
+[node name="televisionModern" unique_id=1055309208 instance=ExtResource("1_3hfvp")]
+
+[node name="televisionModern" parent="." index="0" unique_id=1019656483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

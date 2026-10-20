@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://kxsepxscg12j"
-path="res://.godot/imported/floorCornerRound.fbx-4096f4781d0c1f6d76e940e638a427c3.scn"
+uid="uid://4cpgfkhrkhv2"
+path="res://.godot/imported/televisionModern.fbx-640398879980c50048e6be09f7feb4d2.scn"
 
 [deps]
 
-source_file="res://Levels/3D/Imports/FurniturePack/floorCornerRound.fbx"
-dest_files=["res://.godot/imported/floorCornerRound.fbx-4096f4781d0c1f6d76e940e638a427c3.scn"]
+source_file="res://Levels/3D/Imports/FurniturePack/televisionModern.fbx"
+dest_files=["res://.godot/imported/televisionModern.fbx-640398879980c50048e6be09f7feb4d2.scn"]
 
 [params]
 
