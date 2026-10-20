@@ -94,9 +94,11 @@ func respawn(respawn_point: Vector2):
     projectile_count = base_projectile_count
     visible = true
 
+    projectile_handler.clear_projectiles()
     xp_handler.reset_levels()
     visuals.reset_visuals()
     teleport_to_point(respawn_point)
+    await get_tree().physics_frame
 
 
 

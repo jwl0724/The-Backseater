@@ -33,7 +33,7 @@ func hit_via_enemy(enemy: Enemy2D):
 
 
 func hit_via_projectile(projectile: Projectile):
-    if !player.iframe_handler.can_be_damaged: return
+    if !player.iframe_handler.can_be_damaged || player.is_dead: return
     if !projectile.get_collision_layer_value(roundi(log(Constants.PhysLayers.Enemy) / log(2)) + 1): return
     player.health -= projectile.projectile_owner.damage
     player.visuals.toggle_direction(false)

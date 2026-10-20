@@ -65,8 +65,8 @@ func load_data(data: Enemy2DData):
     if !projectile_handler.projectile_scene: return
     projectile_count = data.projectile_count
     projectile_speed = data.projectile_speed
-    if projectile_handler.projectile_pool.size() < ceili(data.attack_speed / 3) * data.projectile_count * Projectile.lifespan:
-        projectile_handler.create_pool(ceili(data.attack_speed / 3) * data.projectile_count * ceili(Projectile.lifespan) - projectile_handler.projectile_pool.size())
+    if projectile_handler.ready_projectiles.size() < ceili(data.attack_speed / 3) * data.projectile_count * Projectile.lifespan:
+        projectile_handler.create_pool(ceili(data.attack_speed / 3) * data.projectile_count * ceili(Projectile.lifespan) - projectile_handler.ready_projectiles.size())
     projectile_handler.set_pool_data(data.projectile_texture, null) # TODO: Null for now cause no audio implementation yet
 
 
@@ -104,7 +104,10 @@ func remove(): ## Kills the enemy without triggering any functions related to de
     health = 0
     components.visible = false
     global_position = death_pit_coords
-    ready_to_respawn.emit() # TODO: Have to clear this thing's projectiles too
+    projectile_handler.clear_projectiles()
+    xp_orb.clear_orb()
+    await get_tree().physics_frame
+    ready_to_respawn.emit()
 
 
 

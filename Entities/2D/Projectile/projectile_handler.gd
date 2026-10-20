@@ -6,7 +6,8 @@ class_name ProjectileHandler
 
 @onready var shooter: Node2D = owner as Node2D
 
-var projectile_pool: Array[Projectile] = []
+var active_projectiles: Array[Projectile] = [] ## Projectiles that are active and cannot be used until despawned
+var ready_projectiles: Array[Projectile] = [] ## Projectiles that are idle and can be used to fire
 
 var elapsed_time: float = 0
 
@@ -16,15 +17,23 @@ func create_pool(pool_size: int):
     for i in pool_size:
         var projectile = projectile_scene.instantiate() as Projectile
         projectile_spawn_node.add_child(projectile)
-        projectile_pool.append(projectile)
+        ready_projectiles.append(projectile)
         projectile.set_shooter(shooter)
-        projectile.despawned.connect(projectile_pool.append.bind(projectile))
+        projectile.despawned.connect(ready_projectiles.append.bind(projectile))
 
 
 
 func set_pool_data(texture: Texture2D, fireSFX: AudioStream):
-    for projectile: Projectile in projectile_pool:
+    for projectile: Projectile in ready_projectiles:
         projectile.set_data(texture, fireSFX)
+
+
+
+func clear_projectiles():
+    for projectile: Projectile in active_projectiles:
+        projectile.despawn()
+        projectile.global_position = shooter.global_position
+    active_projectiles.clear()
 
 
 
@@ -33,9 +42,10 @@ func shoot(target_location: Vector2, speed: float):
     if !count || count is not int: return
 
     for i in count:
-        var projectile = projectile_pool.pop_front()
+        var projectile = ready_projectiles.pop_front()
         if !projectile: return
 
+        active_projectiles.append(projectile)
         var base_direction := shooter.global_position.direction_to(target_location)
         var offset_angle := 0.
         if i > 0: offset_angle = ((i + 1) / 2) * 10 * (-1 if i % 2 == 1 else 1)
