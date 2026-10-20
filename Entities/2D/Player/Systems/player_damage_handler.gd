@@ -54,6 +54,6 @@ func kill():
 
 
 func _process(_delta):
-    if overlapping_enemies.size() == 0 || !player.iframe_handler.can_be_damaged: return
+    if overlapping_enemies.size() == 0 || !player.iframe_handler.can_be_damaged || player.is_dead: return
     var index = overlapping_enemies.find_custom(func(e): return e.is_dead == false) # Get the first enemy that's not dead
     if index != -1: hit_via_enemy(overlapping_enemies[index])

@@ -4,13 +4,15 @@ extends Node
 # Transition Signals
 signal transition_fade_show(time: float)
 signal transition_fade_hide(time: float)
+signal transition_respawn_show()
+signal transition_respawn_hide()
 
 # 2D HUD Signals
 signal hud_2d_sendMessage(message: String)
 
 # 2D Game Signals
 signal game2d_start(player: Player2D)
-signal game2d_restart()
+signal game2d_restart() # The signal to restart the 2D game, 3D game will also listen to this to know when to increment aggression on monster
 signal game2d_player_levelup()
 signal game2d_player_upgrade(type: UpgradeData.UpgradeType)
 signal game2d_mechanic_noAudio() # Night 2 gimmick

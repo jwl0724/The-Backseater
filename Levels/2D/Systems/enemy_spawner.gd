@@ -27,6 +27,14 @@ func start_spawning(player_ref: Player2D, level: int, frequency: float):
 
 
 
+func clear_and_stop_spawning():
+    spawn_interval = -1
+    time_elapsed = 0
+    for enemy: Enemy2D in get_children():
+        enemy.remove()
+
+
+
 func _spawn_enemy():
     # Re-use dead enemy entity
     var enemy = dead_enemies.pop_back()

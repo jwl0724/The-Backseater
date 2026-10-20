@@ -55,10 +55,6 @@ var is_dead: bool:
     get: return health <= 0
 
 
-# TODO: Create the mini-game loop that runs indefinitely until a stop signal
-# TODO: Implement level restarting
-
-
 
 func _ready():
     projectile_handler.create_pool(40)
@@ -96,6 +92,7 @@ func respawn(respawn_point: Vector2):
     health_regen = base_health_regen
     attack_speed = base_attack_speed
     projectile_count = base_projectile_count
+    visible = true
     visuals.reset_visuals()
     teleport_to_point(respawn_point)
 
