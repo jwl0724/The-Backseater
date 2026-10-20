@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bafk5bkpif4aa"]
 
 [ext_resource type="PackedScene" uid="uid://cilg8xtux674q" path="res://Levels/3D/Imports/FurniturePack/doorway.fbx" id="1_ptmmx"]
-[ext_resource type="Script" uid="uid://yrvok4s8ku3r" path="res://Levels/3D/Imports/Standardized/doorway.gd" id="2_x8wvy"]
+[ext_resource type="Script" uid="uid://yrvok4s8ku3r" path="res://Levels/3D/SpecialFurniture/doorway.gd" id="2_x8wvy"]
 
 [node name="doorway" unique_id=2030286840 instance=ExtResource("1_ptmmx")]
 script = ExtResource("2_x8wvy")

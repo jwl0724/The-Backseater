@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4t4ib4o18de8"]
 
 [ext_resource type="PackedScene" uid="uid://byclosg7n3pff" path="res://Levels/3D/Imports/FurniturePack/wallWindow.fbx" id="1_l2s3j"]
-[ext_resource type="Script" uid="uid://vwn6o28guw13" path="res://Levels/3D/Imports/Standardized/wall_window.gd" id="2_3m8ev"]
+[ext_resource type="Script" uid="uid://vwn6o28guw13" path="res://Levels/3D/SpecialFurniture/wall_window.gd" id="2_3m8ev"]
 
 [node name="wallWindow" unique_id=1914658601 instance=ExtResource("1_l2s3j")]
 script = ExtResource("2_3m8ev")
