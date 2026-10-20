@@ -43,10 +43,7 @@ func start_game(level_number: int):
     player.teleport_to_point(spawn_node.global_position)
     SignalBus.game2d_start.emit.bind(player).call_deferred()
     spawner.start_spawning(player, level_number, 1 / float(level_number) * 4)
-
-    await get_tree().create_timer(10).timeout
-    stop_game()
-
+    
 
 
 func restart_game(): # Respawning player and clearing enemies (probably keep player levels?)
