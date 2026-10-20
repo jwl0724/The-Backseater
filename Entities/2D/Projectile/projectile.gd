@@ -89,3 +89,4 @@ func _on_area_entered(area: Area2D):
     if !area.get_collision_layer_value(roundi(log(Constants.PhysLayers.Player) / log(2)) + 1): return
     var player = area.owner as Player2D # Works because player will never be instantiated through code
     player.hurt_via_projectile(self)
+    despawn() # Despawn enemy projectiles if they hit player
