@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfs2svupj0rhq" path="res://Common/UI/2D/Components/UpgradeSelector/UpgradeSelector.tscn" id="1_s1nf5"]
 [ext_resource type="PackedScene" uid="uid://ia5utrcstwjf" path="res://Common/UI/2D/Components/Bars/hud_bars.tscn" id="2_4i5n4"]
+[ext_resource type="PackedScene" uid="uid://cmxpf1ccq55ab" path="res://Common/UI/2D/Components/RespawnTransition/RespawnTransition.tscn" id="3_4i5n4"]
 
 [node name="Hud" type="Control" unique_id=30358670]
 layout_mode = 3
@@ -16,3 +17,7 @@ layout_mode = 1
 
 [node name="HudBars" parent="." unique_id=316807712 instance=ExtResource("2_4i5n4")]
 layout_mode = 1
+
+[node name="RespawnTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
+layout_mode = 0
+anchors_preset = 0
