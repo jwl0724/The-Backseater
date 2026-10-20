@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bpavbvrepfrpf"]
+
+[ext_resource type="PackedScene" uid="uid://cextp1k7s6pt0" path="res://Levels/3D/Imports/FurniturePack/lampRoundFloor.fbx" id="1_pg4ax"]
+
+[node name="lampRoundFloor" unique_id=1051924760 instance=ExtResource("1_pg4ax")]
+
+[node name="lampRoundFloor" parent="." index="0" unique_id=675345295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

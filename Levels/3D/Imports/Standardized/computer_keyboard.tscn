@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dqhx38srgjejm"]
+
+[ext_resource type="PackedScene" uid="uid://bsl2ujdhembv2" path="res://Levels/3D/Imports/FurniturePack/computerKeyboard.fbx" id="1_wk31u"]
+
+[node name="computerKeyboard" unique_id=1849610201 instance=ExtResource("1_wk31u")]
+
+[node name="computerKeyboard" parent="." index="0" unique_id=645806155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

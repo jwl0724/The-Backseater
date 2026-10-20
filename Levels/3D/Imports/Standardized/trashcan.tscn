@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cum0yk1dexry"]
+
+[ext_resource type="PackedScene" uid="uid://bbdnjvuj5xeod" path="res://Levels/3D/Imports/FurniturePack/trashcan.fbx" id="1_7dy53"]
+
+[node name="trashcan" unique_id=952867797 instance=ExtResource("1_7dy53")]
+
+[node name="trashcan" parent="." index="0" unique_id=14342609]
+transform = Transform3D(0, 0, 0.4720307, 0, 0.4720307, 0, -0.4720307, 0, 0, 0, 0, 0)

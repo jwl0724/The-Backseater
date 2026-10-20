@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b331f7gjkvlfi"]
+
+[ext_resource type="PackedScene" uid="uid://cyqcljgdqkcnw" path="res://Levels/3D/Imports/FurniturePack/books.fbx" id="1_87eni"]
+
+[node name="books" unique_id=2132796565 instance=ExtResource("1_87eni")]
+
+[node name="books" parent="." index="0" unique_id=577531173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cf5g7qixlmglo"]
+
+[ext_resource type="PackedScene" uid="uid://dm0jmg5chthvy" path="res://Levels/3D/Imports/FurniturePack/coatRackStanding.fbx" id="1_73p8y"]
+
+[node name="coatRackStanding" unique_id=1424552430 instance=ExtResource("1_73p8y")]
+
+[node name="coatRackStanding" parent="." index="0" unique_id=303149322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

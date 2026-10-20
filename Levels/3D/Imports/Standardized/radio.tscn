@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bgcqiqwbjguxx"]
+
+[ext_resource type="PackedScene" uid="uid://b4bqebk0ubomk" path="res://Levels/3D/Imports/FurniturePack/radio.fbx" id="1_6obfr"]
+
+[node name="radio" unique_id=1108837211 instance=ExtResource("1_6obfr")]
+
+[node name="radio" parent="." index="0" unique_id=1382224031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

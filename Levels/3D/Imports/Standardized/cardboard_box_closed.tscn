@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dyvcb7b418i4n"]
+
+[ext_resource type="PackedScene" uid="uid://bttu2gom85dgj" path="res://Levels/3D/Imports/FurniturePack/cardboardBoxClosed.fbx" id="1_bsxlp"]
+
+[node name="cardboardBoxClosed" unique_id=408618054 instance=ExtResource("1_bsxlp")]
+
+[node name="cardboardBoxClosed" parent="." index="0" unique_id=570684103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

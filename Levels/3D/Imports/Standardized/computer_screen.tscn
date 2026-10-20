@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://25jo7trgtbcf"]
+
+[ext_resource type="PackedScene" uid="uid://d1wriemvj3sbd" path="res://Levels/3D/Imports/FurniturePack/computerScreen.fbx" id="1_8m4i1"]
+
+[node name="computerScreen" unique_id=1208118889 instance=ExtResource("1_8m4i1")]
+
+[node name="computerScreen" parent="." index="0" unique_id=2037487005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cvf2jnx2okhj0"]
+
+[ext_resource type="PackedScene" uid="uid://dem71njce5huv" path="res://Levels/3D/Imports/FurniturePack/speaker.fbx" id="1_m1mo0"]
+
+[node name="speaker" unique_id=1462395232 instance=ExtResource("1_m1mo0")]
+
+[node name="speaker" parent="." index="0" unique_id=1483502849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

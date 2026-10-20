@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cn5b4x1054nqc"]
+
+[ext_resource type="PackedScene" uid="uid://yj60pplvn1r5" path="res://Levels/3D/Imports/FurniturePack/pillowLong.fbx" id="1_m2v4s"]
+
+[node name="pillowLong" unique_id=889861519 instance=ExtResource("1_m2v4s")]
+
+[node name="pillowLong" parent="." index="0" unique_id=178415910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

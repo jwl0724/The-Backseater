@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b5ftaceqqyt87"]
+
+[ext_resource type="PackedScene" uid="uid://imbcv84b8jby" path="res://Levels/3D/Imports/FurniturePack/chairDesk.fbx" id="1_jdyba"]
+
+[node name="chairDesk" unique_id=1618558638 instance=ExtResource("1_jdyba")]
+
+[node name="chairDesk" parent="." index="0" unique_id=858519758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

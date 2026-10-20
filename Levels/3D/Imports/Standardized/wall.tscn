@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cu58ntdcy8mki"]
+
+[ext_resource type="PackedScene" uid="uid://cr70431wop0ha" path="res://Levels/3D/Imports/FurniturePack/wall.fbx" id="1_oaor1"]
+
+[node name="wall" unique_id=1695453492 instance=ExtResource("1_oaor1")]
+
+[node name="wall" parent="." index="0" unique_id=1464262563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

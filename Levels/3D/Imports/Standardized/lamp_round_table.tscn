@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bsomafeuiykrf"]
+
+[ext_resource type="PackedScene" uid="uid://bb1kerm3alk2u" path="res://Levels/3D/Imports/FurniturePack/lampRoundTable.fbx" id="1_rx800"]
+
+[node name="lampRoundTable" unique_id=209314472 instance=ExtResource("1_rx800")]
+
+[node name="lampRoundTable" parent="." index="0" unique_id=35489894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

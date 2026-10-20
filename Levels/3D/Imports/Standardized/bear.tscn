@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cstj2ct48xj1o"]
+
+[ext_resource type="PackedScene" uid="uid://cq77uss3plcl7" path="res://Levels/3D/Imports/FurniturePack/bear.fbx" id="1_a6uig"]
+
+[node name="bear" unique_id=1940076369 instance=ExtResource("1_a6uig")]
+
+[node name="bear" parent="." index="0" unique_id=599938819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)

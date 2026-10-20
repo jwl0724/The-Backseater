@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dk6lynsooyxdc"]
+
+[ext_resource type="PackedScene" uid="uid://coi7ekrefhjna" path="res://Levels/3D/Imports/FurniturePack/ceilingFan.fbx" id="1_620wj"]
+
+[node name="ceilingFan" unique_id=1422931830 instance=ExtResource("1_620wj")]
+
+[node name="ceilingFan" parent="." index="0" unique_id=902183259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chq51hrwyr48v"]
+
+[ext_resource type="PackedScene" uid="uid://daxailwv0ek41" path="res://Levels/3D/Imports/FurniturePack/wallDoorway.fbx" id="1_btax3"]
+
+[node name="wallDoorway" unique_id=597431441 instance=ExtResource("1_btax3")]
+
+[node name="wallDoorway" parent="." index="0" unique_id=62792715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

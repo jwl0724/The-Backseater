@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bc3jwv14xtyx4"]
+
+[ext_resource type="PackedScene" uid="uid://kko83plej02d" path="res://Levels/3D/Imports/FurniturePack/doorwayOpen.fbx" id="1_8py7v"]
+
+[node name="doorwayOpen" unique_id=1617657956 instance=ExtResource("1_8py7v")]
+
+[node name="doorwayOpen" parent="." index="0" unique_id=1497451736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://duferpfc162l3"]
+
+[ext_resource type="PackedScene" uid="uid://b6mmcmj7ugl5j" path="res://Levels/3D/Imports/FurniturePack/desk.fbx" id="1_pa2vp"]
+
+[node name="desk" unique_id=1596238571 instance=ExtResource("1_pa2vp")]
+
+[node name="desk" parent="." index="0" unique_id=1594112083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ch6a8npm5y0rp"]
+
+[ext_resource type="PackedScene" uid="uid://ccdbcv2lbuwox" path="res://Levels/3D/Imports/FurniturePack/plantSmall1.fbx" id="1_lsww6"]
+
+[node name="plantSmall1" unique_id=320140035 instance=ExtResource("1_lsww6")]
+
+[node name="plantSmall1" parent="." index="0" unique_id=1046674942]
+transform = Transform3D(0, 0, -0.5, 0, 0.5, 0, 0.5, 0, 0, 0, 0, 0)

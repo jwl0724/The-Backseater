@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ladhu61i8yr4"]
+
+[ext_resource type="PackedScene" uid="uid://8j5yw8ywqdik" path="res://Levels/3D/Imports/FurniturePack/table.fbx" id="1_s136f"]
+
+[node name="table" unique_id=1489816529 instance=ExtResource("1_s136f")]
+
+[node name="table" parent="." index="0" unique_id=1077089021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

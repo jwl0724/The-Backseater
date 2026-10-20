@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bafnpktxbfv6n"]
+
+[ext_resource type="PackedScene" uid="uid://j5fjpuglg4jx" path="res://Levels/3D/Imports/FurniturePack/wallCornerRond.fbx" id="1_rc0by"]
+
+[node name="wallCornerRond" unique_id=1077808176 instance=ExtResource("1_rc0by")]
+
+[node name="wallCornerRond" parent="." index="0" unique_id=1688159193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

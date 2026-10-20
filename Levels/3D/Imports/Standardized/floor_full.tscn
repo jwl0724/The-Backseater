@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cqrv5ftextpc4"]
+
+[ext_resource type="PackedScene" uid="uid://ctsop8vdebmpu" path="res://Levels/3D/Imports/FurniturePack/floorFull.fbx" id="1_rjhp4"]
+
+[node name="floorFull" unique_id=1847567235 instance=ExtResource("1_rjhp4")]
+
+[node name="floorFull" parent="." index="0" unique_id=634309067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

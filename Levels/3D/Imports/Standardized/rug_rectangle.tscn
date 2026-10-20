@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c8n6x2cfg203d"]
+
+[ext_resource type="PackedScene" uid="uid://b0ko5uowlgmbg" path="res://Levels/3D/Imports/FurniturePack/rugRectangle.fbx" id="1_1s5t1"]
+
+[node name="rugRectangle" unique_id=1885410043 instance=ExtResource("1_1s5t1")]
+
+[node name="rugRectangle" parent="." index="0" unique_id=1616563904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

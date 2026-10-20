@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://btwgd8kjlahxu"]
+
+[ext_resource type="PackedScene" uid="uid://dox3ikpytukj3" path="res://Levels/3D/Imports/FurniturePack/cabinetBed.fbx" id="1_cammm"]
+
+[node name="cabinetBed" unique_id=1658140417 instance=ExtResource("1_cammm")]
+
+[node name="cabinetBed" parent="." index="0" unique_id=365449566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

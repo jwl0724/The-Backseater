@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://imuy1dgfgsrp"]
+
+[ext_resource type="PackedScene" uid="uid://divqrjq61jol1" path="res://Levels/3D/Imports/FurniturePack/benchCushionLow.fbx" id="1_x1upp"]
+
+[node name="benchCushionLow" unique_id=1234178750 instance=ExtResource("1_x1upp")]
+
+[node name="benchCushionLow" parent="." index="0" unique_id=1545706862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

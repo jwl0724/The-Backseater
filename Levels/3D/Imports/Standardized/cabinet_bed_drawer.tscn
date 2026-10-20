@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://08lyxbk7ulev"]
+
+[ext_resource type="PackedScene" uid="uid://cr8pebu8sdff7" path="res://Levels/3D/Imports/FurniturePack/cabinetBedDrawer.fbx" id="1_qujtb"]
+
+[node name="cabinetBedDrawer" unique_id=2129975855 instance=ExtResource("1_qujtb")]
+
+[node name="cabinetBedDrawer" parent="." index="0" unique_id=467551635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dvell60hq8x66"]
+
+[ext_resource type="PackedScene" uid="uid://c4nepvvoon2nw" path="res://Levels/3D/Imports/FurniturePack/bookcaseOpen.fbx" id="1_xplyd"]
+
+[node name="bookcaseOpen" unique_id=241060374 instance=ExtResource("1_xplyd")]
+
+[node name="bookcaseOpen" parent="." index="0" unique_id=1104938516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
