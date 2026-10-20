@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://bafk5bkpif4aa"]
 
 [ext_resource type="PackedScene" uid="uid://cilg8xtux674q" path="res://Levels/3D/Imports/FurniturePack/doorway.fbx" id="1_ptmmx"]
+[ext_resource type="Script" uid="uid://yrvok4s8ku3r" path="res://Levels/3D/Imports/Standardized/doorway.gd" id="2_x8wvy"]
 
 [node name="doorway" unique_id=2030286840 instance=ExtResource("1_ptmmx")]
+script = ExtResource("2_x8wvy")
 
 [node name="doorway" parent="." index="0" unique_id=1184754260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1525190534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4895619, 2.1896033, 0)
