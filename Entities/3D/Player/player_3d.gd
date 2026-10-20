@@ -18,7 +18,7 @@ var current_view: View = View.FRONT
 
 func _ready():
 	SignalBus.game3d_start_night.connect(func(): is_active = true)
-	SignalBus.game3d_hud_addUI.emit(hud_scene)
+	SignalBus.game3d_hud_addUI.emit.call_deferred(hud_scene)
 
 
 

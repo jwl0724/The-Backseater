@@ -20,4 +20,6 @@ signal game2d_mechanic_lowResolution(new_resolution: Vector2) # Night 3 gimmick
 signal game2d_mechanic_lowFPS(lower_fps: float) # Night 4 gimmick
 
 # 3D HUD Signals
-signal hud_3d_tutorial_play(sequence: Array[String])
+signal game3d_start_night()
+signal game3d_hud_addUI(hud_scene: PackedScene)
+signal game3d_tutorial_play(sequence: Array[String])

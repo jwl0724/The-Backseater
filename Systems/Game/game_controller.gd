@@ -23,6 +23,14 @@ func _ready():
     var launch_scene = debug_scene.instantiate()
     running_node.add_child(launch_scene)
 
+    SignalBus.game3d_hud_addUI.connect(_on_addUI)
+
+
+
+func _on_addUI(packed: PackedScene):
+    if gui_layer.get_child_count() == 1: gui_layer.get_child(0).queue_free() # Assumes each game state has 1 menu
+    gui_layer.add_child(packed.instantiate())
+
 
 
 func direct_change_scenes(new_scene: PackedScene) -> void:

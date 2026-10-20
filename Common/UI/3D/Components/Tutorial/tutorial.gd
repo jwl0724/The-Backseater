@@ -12,7 +12,7 @@ var running_tutorial_tween: Tween = null
 
 func _ready():
     visible = false
-    SignalBus.hud_3d_tutorial_play.connect(_on_tutorial_request)
+    SignalBus.game3d_tutorial_play.connect(_on_tutorial_request)
 
 
 

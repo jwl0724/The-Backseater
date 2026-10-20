@@ -10,6 +10,17 @@ class MessageContent: # Pair holder for dialogue messages
         sender = username
         content = message
 
+const night1_tutorial: Array[String] = [
+    "Press 'Tab' to focus and unfocus on the monitor",
+    "Press 'A' to look left",
+    "Press 'D' to look right",
+    "Good Luck"
+]
+
+const night2_tutorial: Array[String] = [
+    "Press 'Space' to defend yourself",
+    "Good Luck"
+]
 
 const random_chat_messages: Array[String] = [
     "Oh Honey",

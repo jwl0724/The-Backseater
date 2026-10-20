@@ -19,12 +19,6 @@ func _ready():
     default_window_pos = window.position
     default_window_rot = window.rotation
 
-    await get_tree().create_timer(1).timeout
-    break_window()
-    await get_tree().create_timer(3).timeout
-    fix_window()
-
-
 
 
 func fix_window():
