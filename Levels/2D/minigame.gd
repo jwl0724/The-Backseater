@@ -44,6 +44,9 @@ func start_game(level_number: int):
     SignalBus.game2d_start.emit.bind(player).call_deferred()
     spawner.start_spawning(player, level_number, 1 / float(level_number) * 4)
 
+    await get_tree().create_timer(10).timeout
+    stop_game()
+
 
 
 func restart_game(): # Respawning player and clearing enemies (probably keep player levels?)
@@ -55,8 +58,7 @@ func restart_game(): # Respawning player and clearing enemies (probably keep pla
 
 # Expected to be called by the 3D scene once 5 minutes have passed then freed after
 func stop_game():
-    player.set_process(false)
-    spawner.set_process(false)
+    process_mode = Node.PROCESS_MODE_DISABLED
 
 
 
