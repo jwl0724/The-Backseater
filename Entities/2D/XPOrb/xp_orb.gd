@@ -40,6 +40,12 @@ func drop_xp(global_pos: Vector2, value: int):
 
 
 
+func clear_orb():
+    disabled = true
+    sprite.visible = false
+
+
+
 func _process(delta):
     if attract_target == null || disabled: return
     var factor = clamp(1 - (global_position.distance_squared_to(attract_target.global_position) / max_distance ** 2), 0.0, 1.0)

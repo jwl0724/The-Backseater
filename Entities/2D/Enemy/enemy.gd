@@ -100,14 +100,13 @@ func kill():
 
 
 func remove(): ## Kills the enemy without triggering any functions related to death
-    if is_dead: return # Don't need to remove if already dead
     health = 0
     components.visible = false
     global_position = death_pit_coords
     projectile_handler.clear_projectiles()
     xp_orb.clear_orb()
     await get_tree().physics_frame
-    ready_to_respawn.emit()
+    if !is_dead: ready_to_respawn.emit() # Let spawner know that the alive entity can be re-used again
 
 
 
