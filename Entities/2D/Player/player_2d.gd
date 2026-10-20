@@ -93,6 +93,8 @@ func respawn(respawn_point: Vector2):
     attack_speed = base_attack_speed
     projectile_count = base_projectile_count
     visible = true
+
+    xp_handler.reset_levels()
     visuals.reset_visuals()
     teleport_to_point(respawn_point)
 
@@ -113,7 +115,7 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
 
 
 func _process(delta):
-    if Engine.get_process_frames() % 60 == 0: health += health_regen # TODO: Probably have to move this later when variable fps is involved?
+    if Engine.get_process_frames() % 60 == 0 && !is_dead: health = clampf(health_regen + health, 0, max_health) # TODO: Probably have to move this later when variable fps is involved?
 
     if elapsed >= fire_rate:
         elapsed = 0
