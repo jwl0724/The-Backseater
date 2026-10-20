@@ -18,3 +18,4 @@ class Controls:
     const Up := "Up"
     const Down := "Down"
     const Tab := "Focus"
+    const Defend := "Defend"
