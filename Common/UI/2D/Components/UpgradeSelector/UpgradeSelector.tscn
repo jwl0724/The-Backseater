@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfs2svupj0rhq"]
 
 [ext_resource type="PackedScene" uid="uid://dtsk5ddwj2c6y" path="res://Common/UI/2D/Components/UpgradeSelector/Selection/Selection.tscn" id="1_eo4s6"]
+[ext_resource type="Theme" uid="uid://dgov3bkfubhiw" path="res://Common/UI/2D/2d_theme.tres" id="1_xwvnf"]
 [ext_resource type="Script" uid="uid://cc7q8fv4ujan8" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_selector.gd" id="1_yri8i"]
 [ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="2_1oee0"]
 [ext_resource type="Resource" uid="uid://ba6s7du8ihkco" path="res://Common/UI/2D/Components/UpgradeSelector/Data/attack_speed.tres" id="3_xwvnf"]
@@ -18,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_xwvnf")
 script = ExtResource("1_yri8i")
 data_set = Array[ExtResource("2_1oee0")]([ExtResource("3_xwvnf"), ExtResource("4_jnitp"), ExtResource("5_hyb8p"), ExtResource("6_soh20"), ExtResource("7_peun4"), ExtResource("8_lnogg")])
 
@@ -34,8 +36,10 @@ color = Color(0.09803922, 0.09803922, 0.09803922, 0.627451)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_top = 19.0
+offset_bottom = 42.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
 text = "Choose An Upgrade"
 horizontal_alignment = 1
 vertical_alignment = 1

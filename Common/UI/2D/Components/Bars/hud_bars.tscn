@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ia5utrcstwjf"]
 
 [ext_resource type="Script" uid="uid://br27qi6qlnq2" path="res://Common/UI/2D/Components/Bars/hud_bars.gd" id="1_3bu24"]
+[ext_resource type="Theme" uid="uid://dgov3bkfubhiw" path="res://Common/UI/2D/2d_theme.tres" id="1_q5n2w"]
 [ext_resource type="Theme" uid="uid://bvy38t4bccxrw" path="res://Common/UI/2D/Components/Bars/2d_bars.tres" id="2_4ut54"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ut54"]
@@ -17,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_q5n2w")
 script = ExtResource("1_3bu24")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1249211335]
@@ -46,10 +48,12 @@ show_percentage = false
 
 [node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=792517927]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "1/20"
+vertical_alignment = 1
 
 [node name="XPBar" type="ProgressBar" parent="." unique_id=955643031]
 unique_name_in_owner = true

@@ -44,6 +44,5 @@ func _on_selected(option: UpgradeSelection):
 
 
 func _reset_screen():
-    print("Resetted")
     times_to_open = 0
     visible = false
