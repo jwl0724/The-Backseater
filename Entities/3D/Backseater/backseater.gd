@@ -32,7 +32,8 @@ const attack_delay: float = 5 # Gap between ready to pounce and actually attacki
 var hide_position: Vector3 = Vector3()
 
 var can_attack: bool = true
-var aggression: int = 0
+var aggression: int = 0:
+    set(val): aggression = clampi(aggression + val, 0, 20)
 var attack_stage: int = 0
 
 
@@ -56,7 +57,7 @@ func _ready():
 func activate(night: int):
     roll_timer.start()
     aggression_timer.start()
-    aggression = night * 2 # Set starting aggression level
+    aggression = (night - 1) * 2 # Set starting aggression level
 
 
 
@@ -69,8 +70,8 @@ func reset():
 
 
 # TODO: Probably need to create tweens of the monster running away
-# TODO: Need to fix the skybox, looks terrible right now
 func cancel_attack(start_roll_timer: bool = true):
+    delay_timer.stop()
     if delay_timer.timeout.is_connected(_attack.bind(door)):
         delay_timer.timeout.disconnect(_attack.bind(door))
         door.close_door()
@@ -83,6 +84,11 @@ func cancel_attack(start_roll_timer: bool = true):
 
 
 func _roll_attack_stage_advance():
+    if aggression == max_aggression && can_attack: # If player hit max aggression, force a death
+        if randi() % 2 == 0: _attack(door)
+        else: _attack(window)
+        return
+
     if randi() % max_aggression > aggression: return
     attack_stage += 1
 
