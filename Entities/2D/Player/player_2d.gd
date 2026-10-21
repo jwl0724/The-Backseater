@@ -122,5 +122,5 @@ func _process(delta):
     if elapsed >= fire_rate:
         elapsed = 0
         if is_dead: return
-        projectile_handler.shoot(get_global_mouse_position(), projectile_speed)
+        projectile_handler.shoot(get_viewport().get_camera_2d().get_global_mouse_position(), projectile_speed)
     else: elapsed += delta

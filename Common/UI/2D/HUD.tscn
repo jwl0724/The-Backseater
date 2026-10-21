@@ -22,7 +22,6 @@ layout_mode = 1
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1125446717]
 texture_filter = 1
-position = Vector2(296, 155)
 scale = Vector2(2, 2)
 texture = ExtResource("4_luq0o")
 script = ExtResource("4_rthi8")

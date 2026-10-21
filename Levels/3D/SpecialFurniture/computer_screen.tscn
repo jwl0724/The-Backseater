@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://32ej174w2uik" path="res://Levels/2D/Minigame.tscn" id="2_jt7oa"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3cr4x"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("GameScreen")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_cdxrc"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("GameScreen")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p131"]
 resource_local_to_scene = true
@@ -43,10 +43,11 @@ spot_attenuation = 2.0
 spot_angle = 85.0
 spot_angle_attenuation = 3.0
 
-[node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=1884509528]
+[node name="GameScreen" type="SubViewport" parent="." index="2" unique_id=1884509528]
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(640, 360)
 size_2d_override = Vector2i(640, 360)
 render_target_update_mode = 4
 
-[node name="Minigame" parent="SubViewport" index="0" unique_id=751759855 instance=ExtResource("2_jt7oa")]
+[node name="Minigame" parent="GameScreen" index="0" unique_id=751759855 instance=ExtResource("2_jt7oa")]
