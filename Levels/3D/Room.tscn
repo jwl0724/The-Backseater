@@ -46,20 +46,34 @@
 [ext_resource type="PackedScene" uid="uid://dwmiwoycg353x" path="res://Entities/3D/Player/Player3D.tscn" id="44_ecbks"]
 [ext_resource type="PackedScene" uid="uid://bpkyuyhj77adw" path="res://Entities/3D/Backseater/Backseater.tscn" id="45_0j41l"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a8jx4"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0j41l"]
 
-[sub_resource type="Sky" id="Sky_t3vhc"]
-sky_material = SubResource("ProceduralSkyMaterial_a8jx4")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_biiof"]
+noise = SubResource("FastNoiseLite_0j41l")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6tpf1"]
+sky_top_color = Color(0.035080858, 0.13616452, 0.3169841, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_curve = 0.10980653
+sky_energy_multiplier = 1.5
+sky_cover = SubResource("NoiseTexture2D_biiof")
+sky_cover_modulate = Color(0.051890314, 0.17391509, 0.20023283, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+ground_curve = 0.26908678
+sun_angle_max = 36.15
+
+[sub_resource type="Sky" id="Sky_75ltr"]
+sky_material = SubResource("ProceduralSkyMaterial_6tpf1")
 
 [sub_resource type="Environment" id="Environment_bl504"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.019607844, 0.019607844, 0.0627451, 1)
 background_energy_multiplier = 0.5
-sky = SubResource("Sky_t3vhc")
+sky = SubResource("Sky_75ltr")
 ambient_light_source = 2
 ambient_light_color = Color(0.0627451, 0.08235294, 0.14509805, 1)
 ambient_light_energy = 0.3
-tonemap_mode = 3
 ssao_enabled = true
 ssao_radius = 2.16
 ssao_intensity = 4.09
@@ -67,12 +81,11 @@ glow_enabled = true
 glow_intensity = 1.5
 glow_bloom = 0.2
 glow_hdr_threshold = 0.5
-fog_enabled = true
 fog_light_color = Color(0.5601969, 0.6930995, 0.9063276, 1)
 fog_light_energy = 0.5
 adjustment_enabled = true
 adjustment_brightness = 0.7
-adjustment_contrast = 1.1
+adjustment_contrast = 1.14
 adjustment_saturation = 1.17
 
 [node name="Room" type="Node3D" unique_id=340710139]
@@ -86,9 +99,10 @@ script = ExtResource("1_ja5dw")
 environment = SubResource("Environment_bl504")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map/Exterior" unique_id=1044457227]
-transform = Transform3D(-3.2924753e-08, -0.65775657, 0.7532306, -2.8751453e-08, 0.7532306, 0.65775657, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-2.315768e-08, -0.84813154, 0.5297861, -3.7073e-08, 0.5297861, 0.84813154, -1, -1.0835065e-14, -4.371139e-08, 0, 0, 0)
 light_color = Color(0.8156863, 0.8784314, 1, 1)
 light_energy = 2.0
+light_angular_distance = 10.0
 light_bake_mode = 1
 shadow_enabled = true
 
