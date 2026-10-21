@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bpavbvrepfrpf" path="res://Levels/3D/Imports/Standardized/lamp_round_floor.tscn" id="39_cpqdp"]
 [ext_resource type="PackedScene" uid="uid://cc1f6lbraoa8q" path="res://Levels/3D/Imports/Standardized/chair_cushion.tscn" id="40_ecbks"]
 [ext_resource type="PackedScene" uid="uid://dwmiwoycg353x" path="res://Entities/3D/Player/Player3D.tscn" id="44_ecbks"]
+[ext_resource type="PackedScene" uid="uid://bpkyuyhj77adw" path="res://Entities/3D/Backseater/Backseater.tscn" id="45_0j41l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a8jx4"]
 
@@ -175,6 +176,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 10)
 [node name="floorFull31" parent="Map/Interior/Layout/Floor" unique_id=484281413 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 10)
 
+[node name="floorFull11" parent="Map/Interior/Layout/Floor" unique_id=2053087411 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="floorFull32" parent="Map/Interior/Layout/Floor" unique_id=684639861 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+
+[node name="floorFull33" parent="Map/Interior/Layout/Floor" unique_id=1332878583 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+
 [node name="Walls" type="Node3D" parent="Map/Interior/Layout" unique_id=183447632]
 
 [node name="wall" parent="Map/Interior/Layout/Walls" unique_id=1695453492 instance=ExtResource("2_4ik4e")]
@@ -239,6 +249,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.75, 0, 12.75)
 
 [node name="wall5" parent="Map/Interior/Layout/Walls/wall6" unique_id=533019749 instance=ExtResource("2_4ik4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
+
+[node name="wallCornerRond3" parent="Map/Interior/Layout/Walls" unique_id=1311078811 instance=ExtResource("3_otcfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.774916, 0, 0)
+
+[node name="wallCornerRond2" parent="Map/Interior/Layout/Walls/wallCornerRond3" unique_id=1241371649 instance=ExtResource("3_otcfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
+
+[node name="wallDoorway2" parent="Map/Interior/Layout/Walls" unique_id=1853614631 instance=ExtResource("4_46r0l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.524916, 0, 2.75)
+
+[node name="wall5" parent="Map/Interior/Layout/Walls/wallDoorway2" unique_id=1288045984 instance=ExtResource("2_4ik4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
+
+[node name="door" parent="Map/Interior/Layout/Walls/wallDoorway2" unique_id=1051961559 instance=ExtResource("6_otcfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3938682, 0, 0)
+
+[node name="wall7" parent="Map/Interior/Layout/Walls" unique_id=237832128 instance=ExtResource("2_4ik4e")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.524916, 0, 7.75)
+
+[node name="wall5" parent="Map/Interior/Layout/Walls/wall7" unique_id=1603284492 instance=ExtResource("2_4ik4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
+
+[node name="wall8" parent="Map/Interior/Layout/Walls" unique_id=229896943 instance=ExtResource("2_4ik4e")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.524916, 0, 12.75)
+
+[node name="wall5" parent="Map/Interior/Layout/Walls/wall8" unique_id=822634303 instance=ExtResource("2_4ik4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
 
 [node name="Furniture" type="Node3D" parent="Map/Interior/Layout" unique_id=1191394969]
@@ -401,3 +438,6 @@ left_view_node = NodePath("../CameraPoints/LeftView")
 right_view_node = NodePath("../CameraPoints/RightView")
 center_view_node = NodePath("../CameraPoints/FrontView")
 game_view_node = NodePath("../CameraPoints/GameView")
+
+[node name="Backseater" parent="." unique_id=221199719 instance=ExtResource("45_0j41l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.962774, 2.2729836, 5.102585)
