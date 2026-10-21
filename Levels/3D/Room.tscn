@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://1hvauhjd476p" path="res://Levels/3D/Imports/Standardized/lounge_sofa.tscn" id="16_8ttuv"]
 [ext_resource type="PackedScene" uid="uid://cskt5hh47hhes" path="res://Levels/3D/Imports/Standardized/plant_small_2.tscn" id="16_gr5l1"]
 [ext_resource type="PackedScene" uid="uid://b7owwnbqcm7v6" path="res://Levels/3D/Imports/Standardized/plant_small_3.tscn" id="17_7u8w5"]
-[ext_resource type="PackedScene" uid="uid://cayjxlxq3ik68" path="res://Entities/3D/Backseater/Imports/BackseaterModel.tscn" id="17_biiof"]
 [ext_resource type="PackedScene" uid="uid://7768r4syqodd" path="res://Levels/3D/Imports/Standardized/pillow.tscn" id="17_t3vhc"]
 [ext_resource type="PackedScene" uid="uid://b331f7gjkvlfi" path="res://Levels/3D/Imports/Standardized/books.tscn" id="18_7u8w5"]
 [ext_resource type="PackedScene" uid="uid://cn5b4x1054nqc" path="res://Levels/3D/Imports/Standardized/pillow_long.tscn" id="18_bl504"]
@@ -45,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bpavbvrepfrpf" path="res://Levels/3D/Imports/Standardized/lamp_round_floor.tscn" id="39_cpqdp"]
 [ext_resource type="PackedScene" uid="uid://cc1f6lbraoa8q" path="res://Levels/3D/Imports/Standardized/chair_cushion.tscn" id="40_ecbks"]
 [ext_resource type="PackedScene" uid="uid://dwmiwoycg353x" path="res://Entities/3D/Player/Player3D.tscn" id="44_ecbks"]
+[ext_resource type="PackedScene" uid="uid://bpkyuyhj77adw" path="res://Entities/3D/Backseater/Backseater.tscn" id="45_0j41l"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0j41l"]
 
@@ -163,14 +163,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 0)
 [node name="floorFull9" parent="Map/Interior/Layout/Floor" unique_id=1141297396 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 0)
 
-[node name="floorFull10" parent="Map/Interior/Layout/Floor" unique_id=1154849256 instance=ExtResource("8_m5fwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 0)
+[node name="floorFull11" parent="Map/Interior/Layout/Floor" unique_id=2053087411 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
 [node name="floorFull24" parent="Map/Interior/Layout/Floor" unique_id=121196509 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.466754, 5)
 
-[node name="floorFull25" parent="Map/Interior/Layout/Floor" unique_id=602596034 instance=ExtResource("8_m5fwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 5)
+[node name="floorFull32" parent="Map/Interior/Layout/Floor" unique_id=684639861 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
 
 [node name="floorFull26" parent="Map/Interior/Layout/Floor" unique_id=1012219880 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 5)
@@ -184,20 +184,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.466754, 10)
 [node name="floorFull29" parent="Map/Interior/Layout/Floor" unique_id=1625880362 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 10)
 
-[node name="floorFull30" parent="Map/Interior/Layout/Floor" unique_id=1672449764 instance=ExtResource("8_m5fwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 10)
-
-[node name="floorFull31" parent="Map/Interior/Layout/Floor" unique_id=484281413 instance=ExtResource("8_m5fwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 10)
-
-[node name="floorFull11" parent="Map/Interior/Layout/Floor" unique_id=2053087411 instance=ExtResource("8_m5fwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
-
-[node name="floorFull32" parent="Map/Interior/Layout/Floor" unique_id=684639861 instance=ExtResource("8_m5fwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+[node name="floorFull25" parent="Map/Interior/Layout/Floor" unique_id=602596034 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 5)
 
 [node name="floorFull33" parent="Map/Interior/Layout/Floor" unique_id=1332878583 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+
+[node name="floorFull30" parent="Map/Interior/Layout/Floor" unique_id=1672449764 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 12.466754, 10)
+
+[node name="floorFull10" parent="Map/Interior/Layout/Floor" unique_id=1154849256 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 0)
+
+[node name="floorFull31" parent="Map/Interior/Layout/Floor" unique_id=484281413 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 10)
 
 [node name="Walls" type="Node3D" parent="Map/Interior/Layout" unique_id=183447632]
 
@@ -445,7 +445,11 @@ transform = Transform3D(-0.09041273, 0.16292895, -0.9824866, 0.0039525316, 0.986
 [node name="GameView" type="Node3D" parent="CameraPoints" unique_id=876614721]
 transform = Transform3D(0.9997497, 0.004874473, -0.021835804, -0.00089592626, 0.98391736, 0.17862299, 0.02235532, -0.17855881, 0.9836753, 1.7, 3.2153494, 3.0413435)
 
+[node name="DeadView" type="Node3D" parent="CameraPoints" unique_id=1132617853]
+transform = Transform3D(0.21604764, 0.9763828, -1.1773539e-08, -0.95528674, 0.21137965, -0.20675075, -0.20186788, 0.044668023, 0.9783937, 3.6872172, 0.763294, 4.53579)
+
 [node name="AttackPoints" type="Node3D" parent="." unique_id=628466602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
 
 [node name="Window" type="Node3D" parent="AttackPoints" unique_id=1741470631]
 transform = Transform3D(0.22032292, 0, -0.975427, 0, 1, 0, 0.975427, 0, 0.22032292, 8.597059, 3.1997771, 5.3775887)
@@ -453,13 +457,14 @@ transform = Transform3D(0.22032292, 0, -0.975427, 0, 1, 0, 0.975427, 0, 0.220322
 [node name="Door" type="Node3D" parent="AttackPoints" unique_id=1209291331]
 transform = Transform3D(-0.03681809, 0, 0.999322, 0, 1, 0, -0.999322, 0, -0.03681809, -7.834141, 3.1997771, 5.0256357)
 
-[node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node") instance=ExtResource("44_ecbks")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
+[node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node", "dead_view_node") instance=ExtResource("44_ecbks")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 1.7, 3.6, 4.8)
 computer = NodePath("../Map/Interior/Layout/Furniture/desk/Computer")
 left_view_node = NodePath("../CameraPoints/LeftView")
 right_view_node = NodePath("../CameraPoints/RightView")
 center_view_node = NodePath("../CameraPoints/FrontView")
 game_view_node = NodePath("../CameraPoints/GameView")
+dead_view_node = NodePath("../CameraPoints/DeadView")
 
-[node name="Backseater2" parent="." unique_id=538325695 instance=ExtResource("17_biiof")]
-transform = Transform3D(-0.036818102, 0, 0.99932194, 0, 1, 0, -0.99932194, 0, -0.036818102, 1.8584776, 3.1997771, -9.8148155)
+[node name="Backseater" parent="." unique_id=221199719 instance=ExtResource("45_0j41l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6503053, 3.4864798, -8.02515)
