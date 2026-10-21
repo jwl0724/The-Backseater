@@ -12,7 +12,7 @@ class_name MiniGame
 @export var night4: PackedScene = null
 
 @onready var player: Player2D = $Player
-@onready var ui: CanvasLayer = $LocalViewport
+@onready var hud_2d: HUD2D = $LocalViewport/Hud
 @onready var spawner: EnemySpawner = $Systems/Spawner
 
 var spawn_node: Node2D = null
@@ -22,7 +22,8 @@ var instanced_level: int = 0
 
 func _ready():
     visible = false
-    ui.visible = false
+    player.visible = false
+    hud_2d.hide_hud()
     player.killed.connect(_on_player_death)
     SignalBus.game2d_restart.connect(restart_game)
 
@@ -30,7 +31,6 @@ func _ready():
 
 func start_game(level_number: int):
     visible = true
-    ui.visible = true
 
     instanced_level = level_number
     var scene: Node2D
@@ -57,14 +57,16 @@ func start_game(level_number: int):
     SignalBus.transition_message_hide.emit(msg)
     await SignalBus.transition_message_finished
     add_child(scene)
+    player.visible = true
     spawn_node = scene.find_child("Spawn")
     player.teleport_to_point(spawn_node.global_position)
 
     # Start the game
     SignalBus.transition_message_show.emit()
     await SignalBus.transition_message_finished
-    SignalBus.game2d_start.emit.bind(player).call_deferred()
+    hud_2d.show_hud()
     player.in_play = true # Activate the player
+    SignalBus.game2d_start.emit.bind(player).call_deferred()
     spawner.start_spawning(player, level_number, 1 / float(level_number) * 4)
 
 

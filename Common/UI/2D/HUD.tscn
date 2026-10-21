@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duk653tpcfw03"]
 
 [ext_resource type="PackedScene" uid="uid://bfs2svupj0rhq" path="res://Common/UI/2D/Components/UpgradeSelector/UpgradeSelector.tscn" id="1_s1nf5"]
+[ext_resource type="Script" uid="uid://3xmnhn7rbujv" path="res://Common/UI/2D/hud.gd" id="1_s4xjq"]
 [ext_resource type="PackedScene" uid="uid://ia5utrcstwjf" path="res://Common/UI/2D/Components/Bars/hud_bars.tscn" id="2_4i5n4"]
 [ext_resource type="PackedScene" uid="uid://cmxpf1ccq55ab" path="res://Common/UI/2D/Components/MessageTransition/MessageTransition.tscn" id="3_4i5n4"]
 [ext_resource type="Texture2D" uid="uid://b3v7rs42yd6nr" path="res://Common/UI/2D/Systems/Reticle.png" id="4_luq0o"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s4xjq")
 
 [node name="UpgradeSelector" parent="." unique_id=219363242 instance=ExtResource("1_s1nf5")]
 layout_mode = 1
