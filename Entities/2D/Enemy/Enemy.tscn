@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmlhilkq4ypxh" path="res://Entities/2D/Enemy/Components/EnemyVisuals.tscn" id="3_i01j8"]
 [ext_resource type="Script" uid="uid://btvx3bqvxl45b" path="res://Entities/2D/Enemy/Systems/enemy_health_bar.gd" id="4_7m32k"]
 [ext_resource type="PackedScene" uid="uid://c85j8wv8lq1yg" path="res://Entities/2D/XPOrb/XPOrb.tscn" id="5_sbrd8"]
+[ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="6_fqab3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i01j8"]
 bg_color = Color(0.90588236, 0.14117648, 0.078431375, 1)
@@ -49,6 +50,13 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_7m32k")
 value = 50.0
 show_percentage = false
 script = ExtResource("4_7m32k")
+
+[node name="Shadow" type="Sprite2D" parent="Components" unique_id=648126437]
+modulate = Color(0.6392157, 0.6392157, 0.6392157, 0.5882353)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(0, 9)
+texture = ExtResource("6_fqab3")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2001812960]
 shape = SubResource("CapsuleShape2D_i01j8")

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bn4nw802d6ww3" path="res://Entities/2D/Player/Components/PlayerVisuals.tscn" id="6_hoive"]
 [ext_resource type="Script" uid="uid://c37xyshjjfbjb" path="res://Entities/2D/Player/Systems/player_damage_handler.gd" id="6_uol42"]
 [ext_resource type="Script" uid="uid://dvu681tftmc3q" path="res://Entities/2D/Player/Systems/xp_handler.gd" id="7_4emro"]
+[ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="9_gtvml"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoive"]
 radius = 3.0
@@ -46,7 +47,15 @@ shape = SubResource("CircleShape2D_hoive")
 
 [node name="Components" type="Node2D" parent="." unique_id=123599088]
 
-[node name="Sprite" parent="Components" unique_id=914139335 instance=ExtResource("6_hoive")]
+[node name="Sprite" parent="Components" unique_id=1047877202 instance=ExtResource("6_hoive")]
+
+[node name="Shadow" type="Sprite2D" parent="Components" unique_id=1828882438]
+modulate = Color(0.6392157, 0.6392157, 0.6392157, 0.5882353)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(0, 9.230769)
+scale = Vector2(0.745, 0.745)
+texture = ExtResource("9_gtvml")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=340695099]
 zoom = Vector2(2, 2)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blwbjrory6368" path="res://Entities/2D/Projectile/projectile.gd" id="1_01dhq"]
 [ext_resource type="Texture2D" uid="uid://dbqiafl7kp14c" path="res://Entities/2D/Projectile/Imports/PlayerProjectile.png" id="2_xjlok"]
+[ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="3_lo45h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luu1w"]
 
@@ -23,3 +24,10 @@ shape = SubResource("CircleShape2D_luu1w")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=88573804]
 bus = &"2DSFX"
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1685798990]
+modulate = Color(0.6392157, 0.6392157, 0.6392157, 0.5882353)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(0, 9)
+texture = ExtResource("3_lo45h")
