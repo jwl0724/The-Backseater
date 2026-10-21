@@ -5,25 +5,16 @@ signal finished_knockback
 
 @onready var player: Player2D = owner as Player2D
 
-var input_vector: Vector2 = Vector2()
 var knockback_vector: Vector2 = Vector2()
+var handle_inputs: bool = false
+
 
 
 func _input(event: InputEvent):
     if event is InputEventMouseMotion: return
-    # Can't use get_input_vector cause it'll read inputs when in 3D view as well
-    if event.is_action_pressed(Constants.Controls.Up): input_vector.y -= 1
-    elif event.is_action_released(Constants.Controls.Up): input_vector.y += 1
 
-    if event.is_action_pressed(Constants.Controls.Down): input_vector.y += 1
-    elif event.is_action_released(Constants.Controls.Down): input_vector.y -= 1
-
-    if event.is_action_pressed(Constants.Controls.Left): input_vector.x -= 1
-    elif event.is_action_released(Constants.Controls.Left): input_vector.x += 1
-
-    if event.is_action_pressed(Constants.Controls.Right): input_vector.x += 1
-    elif event.is_action_released(Constants.Controls.Right): input_vector.x -= 1
-
+    if event.is_action_pressed(Constants.Controls.Tab): handle_inputs = true
+    if event.is_action_released(Constants.Controls.Tab): handle_inputs = false
 
 
 func knockback(direction: Vector2, speed: float):
@@ -32,7 +23,6 @@ func knockback(direction: Vector2, speed: float):
 
 
 func _physics_process(_delta):
-
     # Handle knockback
     if knockback_vector.length_squared() > 2:
         player.velocity = knockback_vector
@@ -40,11 +30,13 @@ func _physics_process(_delta):
         if knockback_vector.length_squared() < 2:
             player.velocity = Vector2.ZERO
             finished_knockback.emit()
-            
+
     elif player.is_dead: return
 
     else:
         # Handle regular movement
-        player.velocity = input_vector.normalized() * player.move_speed
+        var input_vector := Input.get_vector(Constants.Controls.Left, Constants.Controls.Right, Constants.Controls.Up, Constants.Controls.Down)
+        if !handle_inputs: input_vector = Vector2.ZERO
+        player.velocity = input_vector * player.move_speed
 
     player.move_and_slide()

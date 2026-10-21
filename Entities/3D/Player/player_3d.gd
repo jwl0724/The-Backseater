@@ -38,12 +38,14 @@ func _input(event: InputEvent):
 	if current_view != View.GAME:
 		if event.is_action_pressed(Constants.Controls.Left): goto_view(_get_next_view(Constants.Controls.Left))
 		elif event.is_action_pressed(Constants.Controls.Right): goto_view(_get_next_view(Constants.Controls.Right))
-		elif event.is_action_pressed(Constants.Controls.Tab): goto_view(_get_next_view(Constants.Controls.Tab))
+		elif event.is_action_pressed(Constants.Controls.Tab):
+			computer.toggle_input_reading()
+			goto_view(_get_next_view(Constants.Controls.Tab))
+
 	else:
 		if event.is_action_pressed(Constants.Controls.Tab):
-			computer.release_inputs()
+			computer.toggle_input_reading()
 			goto_view(_get_next_view(Constants.Controls.Tab))
-		else: computer.funnel_input(event)
 
 
 

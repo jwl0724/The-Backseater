@@ -3,16 +3,13 @@ class_name RoomComputer
 
 @onready var game_window: SubViewport = $SubViewport
 
+var is_reading_input: bool = false
 
 
-func funnel_input(event: InputEvent):
+
+func toggle_input_reading():
+    is_reading_input = !is_reading_input
+    var event = InputEventAction.new()
+    event.action = Constants.Controls.Tab
+    event.pressed = is_reading_input
     game_window.push_input(event)
-
-
-# TODO: Fix the inputs not being released properly
-func release_inputs():
-    for action in InputMap.get_actions(): # Cycle through actions and manually release them all
-        var release = InputEventAction.new()
-        release.action = action
-        release.pressed = false
-        game_window.push_input(release)
