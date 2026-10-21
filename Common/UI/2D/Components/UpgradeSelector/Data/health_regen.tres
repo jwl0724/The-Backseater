@@ -1,13 +1,16 @@
 [gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bd5bmo1yl0gel"]
 
 [ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_lfhsa"]
+[ext_resource type="Texture2D" uid="uid://b6l7dri6y0c27" path="res://Common/UI/2D/Components/UpgradeSelector/Selection/all_the_icons_.png" id="2_glm8g"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lfhsa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gb0w"]
+atlas = ExtResource("2_glm8g")
+region = Rect2(127, 192, 16, 16)
 
 [resource]
 script = ExtResource("1_lfhsa")
 upgrade_type = 3
 upgrade_display_title = "HP REGEN"
-upgrade_icon = SubResource("PlaceholderTexture2D_lfhsa")
+upgrade_icon = SubResource("AtlasTexture_6gb0w")
 upgrade_description = "Increase your passive health regeneration"
 metadata/_custom_type_script = "uid://du6cj010564tf"

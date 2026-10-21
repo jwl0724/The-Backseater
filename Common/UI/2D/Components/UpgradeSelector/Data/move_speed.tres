@@ -1,13 +1,16 @@
 [gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cpo85mk64105m"]
 
 [ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_hkvop"]
+[ext_resource type="Texture2D" uid="uid://b6l7dri6y0c27" path="res://Common/UI/2D/Components/UpgradeSelector/Selection/all_the_icons_.png" id="2_2eoug"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hkvop"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vsaw"]
+atlas = ExtResource("2_2eoug")
+region = Rect2(143, 176, 16, 16)
 
 [resource]
 script = ExtResource("1_hkvop")
 upgrade_type = 1
 upgrade_display_title = "MV SPD"
-upgrade_icon = SubResource("NoiseTexture2D_hkvop")
+upgrade_icon = SubResource("AtlasTexture_0vsaw")
 upgrade_description = "Increase your movement speed"
 metadata/_custom_type_script = "uid://du6cj010564tf"

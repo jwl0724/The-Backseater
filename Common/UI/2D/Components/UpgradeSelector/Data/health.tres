@@ -1,13 +1,16 @@
 [gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dxrsrivhj802p"]
 
 [ext_resource type="Script" uid="uid://du6cj010564tf" path="res://Common/UI/2D/Components/UpgradeSelector/upgrade_data.gd" id="1_8nc8x"]
+[ext_resource type="Texture2D" uid="uid://b6l7dri6y0c27" path="res://Common/UI/2D/Components/UpgradeSelector/Selection/all_the_icons_.png" id="2_oxlb2"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8nc8x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x7ge"]
+atlas = ExtResource("2_oxlb2")
+region = Rect2(16, 208, 16, 16)
 
 [resource]
 script = ExtResource("1_8nc8x")
 upgrade_type = 2
 upgrade_display_title = "HP"
-upgrade_icon = SubResource("PlaceholderTexture2D_8nc8x")
+upgrade_icon = SubResource("AtlasTexture_1x7ge")
 upgrade_description = "Increase your max health"
 metadata/_custom_type_script = "uid://du6cj010564tf"

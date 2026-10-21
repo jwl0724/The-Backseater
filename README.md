@@ -51,6 +51,9 @@ https://godotshaders.com/shader/crt-with-luminance-preservation/
 https://opengameart.org/content/angler-man-3d
 https://opengameart.org/content/furniture-kit
 
+### Art
+https://opengameart.org/content/brigada-16x16-icon-pack
+
 ### Tilesets
 https://opengameart.org/content/waterworld-tileset-16x16
 https://opengameart.org/content/interior-tileset-16x16
