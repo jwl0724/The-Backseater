@@ -11,20 +11,19 @@ enum View { LEFT, RIGHT, FRONT, GAME }
 @export var center_view_node: Node3D = null
 @export var game_view_node: Node3D = null
 
-var is_active: bool = false
+var is_alive: bool = true
 var look_tween: Tween = null
 var current_view: View = View.FRONT
 
 
 
 func _ready():
-	SignalBus.game3d_start_night.connect(func(): is_active = true)
 	SignalBus.game3d_hud_addUI.emit.call_deferred(hud_scene)
 
 
 
 func reset_player():
-	is_active = false
+	is_alive = true
 	current_view = View.FRONT
 	position = center_view_node.position
 	rotation = center_view_node.rotation
@@ -33,7 +32,7 @@ func reset_player():
 
 func _input(event: InputEvent):
 	if event is not InputEventKey: return
-	if (look_tween && look_tween.is_running()) || !is_active: return # Ignore if in the middle of looking or is dying
+	if (look_tween && look_tween.is_running()) || !is_alive: return # Ignore if in the middle of looking or is dying
 
 	if current_view != View.GAME:
 		if event.is_action_pressed(Constants.Controls.Left): goto_view(_get_next_view(Constants.Controls.Left))

@@ -255,7 +255,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.7
 [node name="lampRoundTable" parent="Map/Interior/Layout/Furniture/desk" unique_id=209314472 instance=ExtResource("11_pk3pd")]
 transform = Transform3D(-0.73248357, 0, -0.68078476, 0, 1, 0, 0.68078476, 0, -0.73248357, -0.5042105, 1.8888997, 1.7637465)
 
-[node name="computerScreen" parent="Map/Interior/Layout/Furniture/desk" unique_id=1208118889 instance=ExtResource("12_w5auw")]
+[node name="Computer" parent="Map/Interior/Layout/Furniture/desk" unique_id=1208118889 instance=ExtResource("12_w5auw")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5558052, 1.941737, 1.0037411)
 
 [node name="computerKeyboard" parent="Map/Interior/Layout/Furniture/desk" unique_id=1849610201 instance=ExtResource("13_hyu4l")]
@@ -395,7 +396,7 @@ transform = Transform3D(0.9997497, 0.004874473, -0.021835804, -0.00089592626, 0.
 
 [node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node") instance=ExtResource("44_ecbks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
-computer = NodePath("../Map/Interior/Layout/Furniture/desk/computerScreen")
+computer = NodePath("../Map/Interior/Layout/Furniture/desk/Computer")
 left_view_node = NodePath("../CameraPoints/LeftView")
 right_view_node = NodePath("../CameraPoints/RightView")
 center_view_node = NodePath("../CameraPoints/FrontView")

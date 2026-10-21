@@ -14,7 +14,7 @@ const night1_tutorial: Array[String] = [
     "Press 'Tab' to focus and unfocus on the monitor",
     "Press 'A' to look left",
     "Press 'D' to look right",
-    "Good Luck"
+    "The game is starting now, Good Luck"
 ]
 
 const night2_tutorial: Array[String] = [

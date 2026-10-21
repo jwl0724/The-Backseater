@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmxpf1ccq55ab"]
 
-[ext_resource type="Script" uid="uid://pikqj8v3f8fk" path="res://Common/UI/2D/Components/RespawnTransition/respawn_transition.gd" id="1_07po5"]
+[ext_resource type="Script" uid="uid://pikqj8v3f8fk" path="res://Common/UI/2D/Components/MessageTransition/message_transition.gd" id="1_6004s"]
 
 [sub_resource type="Animation" id="Animation_12nua"]
 length = 0.001
@@ -93,7 +93,7 @@ _data = {
 &"transition_show": SubResource("Animation_j1mok")
 }
 
-[node name="RespawnTransition" type="ColorRect" unique_id=1510419780]
+[node name="MessageTransition" type="ColorRect" unique_id=1510419780]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -101,7 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.05490196, 0.05490196, 0.05490196, 1)
-script = ExtResource("1_07po5")
+script = ExtResource("1_6004s")
 
 [node name="Label" type="Label" parent="." unique_id=262377037]
 layout_mode = 1

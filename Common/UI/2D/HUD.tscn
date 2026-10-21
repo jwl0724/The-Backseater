@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfs2svupj0rhq" path="res://Common/UI/2D/Components/UpgradeSelector/UpgradeSelector.tscn" id="1_s1nf5"]
 [ext_resource type="PackedScene" uid="uid://ia5utrcstwjf" path="res://Common/UI/2D/Components/Bars/hud_bars.tscn" id="2_4i5n4"]
-[ext_resource type="PackedScene" uid="uid://cmxpf1ccq55ab" path="res://Common/UI/2D/Components/RespawnTransition/RespawnTransition.tscn" id="3_4i5n4"]
+[ext_resource type="PackedScene" uid="uid://cmxpf1ccq55ab" path="res://Common/UI/2D/Components/MessageTransition/MessageTransition.tscn" id="3_4i5n4"]
 [ext_resource type="Texture2D" uid="uid://b3v7rs42yd6nr" path="res://Common/UI/2D/Systems/Reticle.png" id="4_luq0o"]
 [ext_resource type="Script" uid="uid://xckime720lk6" path="res://Common/UI/2D/Systems/cursor2d.gd" id="4_rthi8"]
 
@@ -26,6 +26,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_luq0o")
 script = ExtResource("4_rthi8")
 
-[node name="RespawnTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
+[node name="MessageTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
 visible = false
 layout_mode = 1

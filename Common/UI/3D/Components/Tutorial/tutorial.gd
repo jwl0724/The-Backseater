@@ -1,10 +1,10 @@
 extends Label
 class_name TutorialText
 
-const seconds_per_line: float = 5
+const seconds_per_line: float = 3
 const seconds_per_transition: float = 0.15
 const transition_distance: float = 5
-const gap_per_message: float = 2
+const gap_per_message: float = 1
 
 var running_tutorial_tween: Tween = null
 
@@ -38,5 +38,6 @@ func _on_tutorial_request(tutorial_sequence: Array[String]):
 
     running_tutorial_tween.tween_callback(func():
         visible = false
-        position.y -= transition_distance)
+        position.y -= transition_distance
+        SignalBus.game3d_tutorial_finished.emit())
     running_tutorial_tween.play()

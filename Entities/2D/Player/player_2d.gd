@@ -46,13 +46,14 @@ const projectile_count_per_upgrade: int = 1
 @onready var projectile_count: int = base_projectile_count
 
 # Run time variables
+var in_play: bool = false # For when game actually starts
 var elapsed: float = 0
 
 # Run time getters
 var fire_rate: float:
     get: return 3 / attack_speed
 var is_dead: bool:
-    get: return health <= 0
+    get: return health <= 0 || !in_play
 
 
 
