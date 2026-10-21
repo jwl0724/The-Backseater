@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b3v7rs42yd6nr" path="res://Common/UI/2D/Systems/Reticle.png" id="4_luq0o"]
 [ext_resource type="Script" uid="uid://xckime720lk6" path="res://Common/UI/2D/Systems/cursor2d.gd" id="4_rthi8"]
 [ext_resource type="Shader" uid="uid://c0hqwhw1h1jdn" path="res://Common/UI/2D/Systems/scanlines.gdshader" id="7_k03iq"]
+[ext_resource type="PackedScene" uid="uid://ckmuibm6dvdgn" path="res://Common/UI/2D/Components/Messages/MessageWindow.tscn" id="9_pnoq1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_adf8c"]
 shader = ExtResource("7_k03iq")
@@ -46,6 +47,13 @@ script = ExtResource("4_rthi8")
 [node name="MessageTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
 visible = false
 layout_mode = 1
+
+[node name="MessageWindow" parent="." unique_id=2080460839 instance=ExtResource("9_pnoq1")]
+layout_mode = 1
+offset_left = -160.0
+offset_top = -10.0
+offset_right = -10.0
+offset_bottom = -10.0
 
 [node name="Filter" type="ColorRect" parent="." unique_id=271878355]
 material = SubResource("ShaderMaterial_adf8c")

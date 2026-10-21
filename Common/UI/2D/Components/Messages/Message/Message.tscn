@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dd2q3xdyo1y0j"]
+
+[ext_resource type="Script" uid="uid://dd6lxph3x8dhm" path="res://Common/UI/2D/Components/Messages/Message/message.gd" id="1_n6gxp"]
+[ext_resource type="Texture2D" uid="uid://ow76pjuf1id6" path="res://Common/Menus/PreGame/Imports/monster_pf.png" id="2_et13n"]
+[ext_resource type="Shader" uid="uid://c704gjs8563n5" path="res://Common/UI/2D/Components/Messages/Message/circle_crop.gdshader" id="2_r05wa"]
+[ext_resource type="FontFile" uid="uid://cteiocmri8rn8" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Black.ttf" id="3_et13n"]
+[ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="3_r05wa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r05wa"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nkrdk"]
+shader = ExtResource("2_r05wa")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkrdk"]
+font = ExtResource("3_et13n")
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_ilo3u"]
+font = ExtResource("3_r05wa")
+font_size = 7
+
+[node name="Message" type="Panel" unique_id=709474514]
+custom_minimum_size = Vector2(150, 50)
+offset_right = 150.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r05wa")
+script = ExtResource("1_n6gxp")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1041252552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2107625313]
+layout_mode = 2
+
+[node name="Picture" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=802909480]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_nkrdk")
+layout_mode = 2
+texture = ExtResource("2_et13n")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1246936793]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=880511403]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sender" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=379175319]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "bigTeethDJC"
+label_settings = SubResource("LabelSettings_nkrdk")
+
+[node name="Message" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1683492367]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This is what happens when you don't have spreadsheets"
+label_settings = SubResource("LabelSettings_ilo3u")
+vertical_alignment = 1
+autowrap_mode = 2
