@@ -80,3 +80,6 @@ text = "This is what happens when you don't have spreadsheets"
 label_settings = SubResource("LabelSettings_ilo3u")
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Lifespan" type="Timer" parent="." unique_id=380033267]
+one_shot = true

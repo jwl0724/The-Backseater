@@ -1,7 +1,7 @@
 extends VBoxContainer
 class_name MessageWindow
 
-const max_messages: int = 5
+const max_messages: int = 6
 @export var message_scene: PackedScene = null
 
 
@@ -12,7 +12,6 @@ func _ready():
 
 
 func _send_message(msg: String):
-    # TODO: Make the message scene, make sure the messages are blocking
     # TODO: Then create a pool of the max amount of messages allowed
     # TODO: Create a spawn in animation for the window similar to receiving messages
     pass
