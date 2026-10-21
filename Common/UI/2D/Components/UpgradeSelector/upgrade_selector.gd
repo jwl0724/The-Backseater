@@ -16,6 +16,7 @@ func _ready():
     option2.upgrade_selected.connect(_on_selected)
     option3.upgrade_selected.connect(_on_selected)
     SignalBus.game2d_player_levelup.connect(_open_upgrades)
+    SignalBus.game2d_restart.connect(_reset_screen)
 
 
 
@@ -39,3 +40,10 @@ func _on_selected(option: UpgradeSelection):
     if times_to_open > 0:
         times_to_open -= 1
         _open_upgrades()
+
+
+
+func _reset_screen():
+    print("Resetted")
+    times_to_open = 0
+    visible = false

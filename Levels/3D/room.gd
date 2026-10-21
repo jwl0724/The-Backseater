@@ -12,7 +12,6 @@ class_name Room3D
 @export var current_night: int = 1 # Up to 4
 
 # TODO: Implement level limitations in 2D Game
-# TODO: Fix upgrade screen needing to closed when dying in 2D game and 3D game (resetting the game state)
 # TODO: Implement ingame messages being sent to the 2D Screen and showing up in viewport
 # TODO: Main menu screen and credits screen with all credits properly listed
 # TODO: Need night transition screens when b/n nights

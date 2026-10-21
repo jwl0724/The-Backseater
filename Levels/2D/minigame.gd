@@ -25,7 +25,6 @@ func _ready():
     player.visible = false
     hud_2d.hide_hud()
     player.killed.connect(_on_player_death)
-    SignalBus.game2d_restart.connect(restart_game)
 
 
 
@@ -76,6 +75,7 @@ func restart_game(): # Respawning player and clearing enemies (probably keep pla
     player.respawn(spawn_node.global_position)
     spawner.start_spawning(player, instanced_level, 1 / float(instanced_level) * 4)
     SignalBus.transition_message_show.emit()
+    SignalBus.game2d_restart.emit()
 
 
 # Expected to be called by the 3D scene once 5 minutes have passed then freed after
