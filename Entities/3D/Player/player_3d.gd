@@ -32,18 +32,18 @@ func reset_player():
 
 func _input(event: InputEvent):
 	if event is not InputEventKey: return
-	if (look_tween && look_tween.is_running()) || !is_alive: return # Ignore if in the middle of looking or is dying
+	if !is_alive: return
 
 	if current_view != View.GAME:
 		if event.is_action_pressed(Constants.Controls.Left): goto_view(_get_next_view(Constants.Controls.Left))
 		elif event.is_action_pressed(Constants.Controls.Right): goto_view(_get_next_view(Constants.Controls.Right))
 		elif event.is_action_pressed(Constants.Controls.Tab):
-			computer.toggle_input_reading()
+			computer.enable_inputs(current_view == View.FRONT)
 			goto_view(_get_next_view(Constants.Controls.Tab))
 
 	else:
 		if event.is_action_pressed(Constants.Controls.Tab):
-			computer.toggle_input_reading()
+			computer.enable_inputs(false)
 			goto_view(_get_next_view(Constants.Controls.Tab))
 
 

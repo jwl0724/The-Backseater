@@ -12,14 +12,14 @@ func start_game(level: int):
     minigame.start_game(level)
 
 
-# TODO: Fix the inputs locking up in game sometimes, need to determine the exact sequence that locks it
-func toggle_input_reading():
-    is_reading_input = !is_reading_input
-    Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN if is_reading_input else Input.MOUSE_MODE_VISIBLE
+
+func enable_inputs(enable: bool):
+    is_reading_input = enable
+    Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN if enable else Input.MOUSE_MODE_VISIBLE
 
     var event = InputEventAction.new()
     event.action = Constants.Controls.Tab
-    event.pressed = is_reading_input
+    event.pressed = enable
     game_window.push_input(event)
 
 
