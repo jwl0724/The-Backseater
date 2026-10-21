@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://ia5utrcstwjf"]
 
 [ext_resource type="Script" uid="uid://br27qi6qlnq2" path="res://Common/UI/2D/Components/Bars/hud_bars.gd" id="1_3bu24"]
+[ext_resource type="Theme" uid="uid://bvy38t4bccxrw" path="res://Common/UI/2D/Components/Bars/2d_bars.tres" id="2_4ut54"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ut54"]
+bg_color = Color(0.050980393, 0.050980393, 0.050980393, 0.5764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5n2w"]
+bg_color = Color(0.7411765, 0.65882355, 0, 0.68235296)
 
 [node name="HudBars" type="Control" unique_id=316807712]
 layout_mode = 3
@@ -24,14 +31,25 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
-[node name="HealthBar" type="ProgressBar" parent="MarginContainer" unique_id=600106622]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=388135284]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/HBoxContainer" unique_id=600106622]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 27)
 layout_mode = 2
-size_flags_horizontal = 0
 mouse_filter = 2
+theme = ExtResource("2_4ut54")
 value = 50.0
 show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=792517927]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "1/20"
 
 [node name="XPBar" type="ProgressBar" parent="." unique_id=955643031]
 unique_name_in_owner = true
@@ -40,10 +58,14 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -27.0
+offset_top = -11.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 mouse_filter = 2
+theme = ExtResource("2_4ut54")
+theme_override_styles/background = SubResource("StyleBoxFlat_4ut54")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q5n2w")
 value = 50.0
 show_percentage = false

@@ -4,6 +4,8 @@ var player_ref: Player2D = null
 
 @onready var hp_bar: ProgressBar = %HealthBar
 @onready var xp_bar: ProgressBar = %XPBar
+@onready var hp_label: Label = %HealthLabel
+
 
 
 func _ready():
@@ -14,7 +16,9 @@ func _ready():
 
 func _process(_delta):
     if player_ref == null: return
-    hp_bar.value = player_ref.health # Need to constantly update cause health regen exists
+    # Need to constantly update cause health regen exists
+    hp_bar.value = player_ref.health
+    hp_label.text = "%.1f/%.0f" % [player_ref.health, player_ref.max_health]
 
 
 
