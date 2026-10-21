@@ -23,8 +23,8 @@ func _start_listening(player: Player2D):
     _update_healthbar()
     _update_xpBar()
 
-    player_ref.killed.connect(_update_healthbar)
     player_ref.xp_collected.connect(_update_xpBar)
+    player_ref.respawned.connect(_update_xpBar)
     SignalBus.game2d_player_levelup.connect(_update_xpBar)
     SignalBus.game2d_player_upgrade.connect(func(type): if type == UpgradeData.UpgradeType.HEALTH: _update_healthbar())
 

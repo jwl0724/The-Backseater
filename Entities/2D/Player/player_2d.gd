@@ -3,6 +3,7 @@ class_name Player2D
 
 @warning_ignore("unused_signal") signal killed()
 signal xp_collected()
+signal respawned()
 
 # Physics constants
 const knockback_recovery_rate: float = 0.25
@@ -99,6 +100,7 @@ func respawn(respawn_point: Vector2):
     xp_handler.reset_levels()
     visuals.reset_visuals()
     teleport_to_point(respawn_point)
+    respawned.emit()
     await get_tree().physics_frame
 
 
