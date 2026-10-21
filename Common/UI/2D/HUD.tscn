@@ -6,6 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://cmxpf1ccq55ab" path="res://Common/UI/2D/Components/MessageTransition/MessageTransition.tscn" id="3_4i5n4"]
 [ext_resource type="Texture2D" uid="uid://b3v7rs42yd6nr" path="res://Common/UI/2D/Systems/Reticle.png" id="4_luq0o"]
 [ext_resource type="Script" uid="uid://xckime720lk6" path="res://Common/UI/2D/Systems/cursor2d.gd" id="4_rthi8"]
+[ext_resource type="Shader" uid="uid://c0hqwhw1h1jdn" path="res://Common/UI/2D/Systems/scanlines.gdshader" id="7_k03iq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adf8c"]
+shader = ExtResource("7_k03iq")
+shader_parameter/curvature = 0.0
+shader_parameter/corner_radius = 0.06
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/scanlines = 0.35
+shader_parameter/scanline_size = 3.0
+shader_parameter/vignette = 0.3990000189525
+shader_parameter/brightness = 1.1290000298775
+shader_parameter/rgb_mask = false
+shader_parameter/mask_strength = 0.5330000253175
 
 [node name="Hud" type="Control" unique_id=30358670]
 layout_mode = 3
@@ -31,3 +44,13 @@ script = ExtResource("4_rthi8")
 [node name="MessageTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
 visible = false
 layout_mode = 1
+
+[node name="Filter" type="ColorRect" parent="." unique_id=271878355]
+material = SubResource("ShaderMaterial_adf8c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
