@@ -19,5 +19,5 @@ func toggle_input_reading():
 
 
 func _input(event: InputEvent):
-    if !is_reading_input || event is not InputEventMouseMotion: return
+    if !is_reading_input || event is not InputEventMouse: return
     game_window.push_input(event, false) # Forward mouse position to subviewport
