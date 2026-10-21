@@ -3,6 +3,7 @@ class_name RoomWindow
 
 @export var window_knock_sfx: AudioStream = null
 @export var window_break_sfx: AudioStream = null
+@export var window_scratch_sfx: AudioStream = null
 
 @onready var window: Node3D = $wallWindow/window
 @onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
@@ -13,6 +14,8 @@ var default_window_rot: Vector3 = Vector3()
 var broken_pos: Vector3 = Vector3(-1.564, -0.189, -1.883)
 var broken_rot: Vector3 = Vector3(37.3, 0, 0)
 
+var is_vulnerable: bool = false
+
 
 
 func _ready():
@@ -22,12 +25,14 @@ func _ready():
 
 
 func fix_window():
+    is_vulnerable = false
     window.position = default_window_pos
     window.rotation = default_window_rot
 
 
 
 func break_window():
+    is_vulnerable = true
     audio_player.stream = window_break_sfx
     audio_player.play()
 
@@ -40,4 +45,10 @@ func break_window():
 
 func knock_window():
     audio_player.stream = window_knock_sfx
+    audio_player.play()
+
+
+
+func scratch_window():
+    audio_player.stream = window_scratch_sfx
     audio_player.play()

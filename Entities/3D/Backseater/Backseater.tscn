@@ -7,3 +7,9 @@
 script = ExtResource("1_h2gjf")
 
 [node name="Model" parent="." unique_id=538325695 instance=ExtResource("1_nq5ow")]
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1425799207]
+bus = &"Default_SFX"
+
+[node name="DelayTimer" type="Timer" parent="." unique_id=1559654684]
+one_shot = true

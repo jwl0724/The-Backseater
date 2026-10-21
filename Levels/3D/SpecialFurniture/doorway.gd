@@ -9,15 +9,19 @@ class_name RoomDoor
 @onready var door: Node3D = $"doorway/door 3"
 @onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
 
+var is_vulnerable: bool = false
+
 
 
 func fix_door():
+    is_vulnerable = false
     door.rotation_degrees.x = 0
     door.rotation_degrees.y = 0
 
 
 
 func destroy_door():
+    is_vulnerable = true
     audio_player.stream = door_bash_sfx
     audio_player.play()
 

@@ -11,3 +11,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1525190534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4895619, 2.1896033, 0)
+bus = &"Default_SFX"
