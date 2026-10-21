@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cf5g7qixlmglo" path="res://Levels/3D/Imports/Standardized/coat_rack_standing.tscn" id="9_46r0l"]
 [ext_resource type="PackedScene" uid="uid://duferpfc162l3" path="res://Levels/3D/Imports/Standardized/desk.tscn" id="10_m5fwb"]
 [ext_resource type="PackedScene" uid="uid://bsomafeuiykrf" path="res://Levels/3D/SpecialFurniture/lamp_round_table.tscn" id="11_pk3pd"]
-[ext_resource type="PackedScene" uid="uid://25jo7trgtbcf" path="res://Levels/3D/SpecialFurniture/computer_screen.tscn" id="12_w5auw"]
+[ext_resource type="PackedScene" uid="uid://25jo7trgtbcf" path="res://Levels/3D/SpecialFurniture/Computer/computer_screen.tscn" id="12_w5auw"]
 [ext_resource type="PackedScene" uid="uid://dqhx38srgjejm" path="res://Levels/3D/Imports/Standardized/computer_keyboard.tscn" id="13_hyu4l"]
 [ext_resource type="PackedScene" uid="uid://b2w6pfqjsrg4a" path="res://Levels/3D/Imports/Standardized/computer_mouse.tscn" id="14_8ttuv"]
 [ext_resource type="PackedScene" uid="uid://ch6a8npm5y0rp" path="res://Levels/3D/Imports/Standardized/plant_small_1.tscn" id="15_pk3pd"]

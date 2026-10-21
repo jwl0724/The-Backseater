@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://25jo7trgtbcf"]
 
 [ext_resource type="PackedScene" uid="uid://d1wriemvj3sbd" path="res://Levels/3D/Imports/FurniturePack/computerScreen.fbx" id="1_8m4i1"]
-[ext_resource type="Script" uid="uid://dxdxnaxy0u4yb" path="res://Levels/3D/SpecialFurniture/computer_screen.gd" id="2_cdxrc"]
+[ext_resource type="Script" uid="uid://dxdxnaxy0u4yb" path="res://Levels/3D/SpecialFurniture/Computer/computer_screen.gd" id="2_cdxrc"]
 [ext_resource type="PackedScene" uid="uid://32ej174w2uik" path="res://Levels/2D/Minigame.tscn" id="2_jt7oa"]
+[ext_resource type="AudioStream" uid="uid://dgm6ij2myb4gb" path="res://Levels/3D/SpecialFurniture/Computer/alert.mp3" id="3_drifm"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3cr4x"]
 viewport_path = NodePath("GameScreen")
@@ -43,7 +44,15 @@ spot_attenuation = 2.0
 spot_angle = 85.0
 spot_angle_attenuation = 3.0
 
-[node name="GameScreen" type="SubViewport" parent="." index="2" unique_id=1884509528]
+[node name="AlertSound" type="AudioStreamPlayer3D" parent="." index="2" unique_id=1544666730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8991122, 0.76803946, 0.34822083)
+stream = ExtResource("3_drifm")
+bus = &"Default_SFX"
+
+[node name="GameSounds" type="AudioStreamPlayer3D" parent="." index="3" unique_id=618538193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8991122, 0.76803946, 0.34822083)
+
+[node name="GameScreen" type="SubViewport" parent="." index="4" unique_id=1884509528]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(640, 360)
