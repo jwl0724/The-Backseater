@@ -7,6 +7,7 @@ class_name Room3D
 @onready var door: RoomDoor = %Door
 @onready var computer: RoomComputer = %Computer
 @onready var player: Player3D = $Player3d
+@onready var monster: Backseater = $Backseater
 
 @export var current_night: int = 1 # Up to 4
 

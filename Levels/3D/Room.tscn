@@ -482,8 +482,11 @@ center_view_node = NodePath("../CameraPoints/FrontView")
 game_view_node = NodePath("../CameraPoints/GameView")
 dead_view_node = NodePath("../CameraPoints/DeadView")
 
-[node name="Backseater" parent="." unique_id=221199719 node_paths=PackedStringArray("door_kill_point", "door_peek_point", "window_kill_point", "window_peek_point") instance=ExtResource("45_0j41l")]
+[node name="Backseater" parent="." unique_id=221199719 node_paths=PackedStringArray("player", "door", "window", "door_kill_point", "door_peek_point", "window_kill_point", "window_peek_point") instance=ExtResource("45_0j41l")]
 transform = Transform3D(-0.9995379, 0, 0.030399024, 0, 1.0000001, 0, -0.030399054, 0, -0.9995378, 1.7634141, 3.9933808, -6.539016)
+player = NodePath("../Player3d")
+door = NodePath("../Map/Interior/Layout/Walls/wallDoorway2/door")
+window = NodePath("../Map/Interior/Layout/Walls/Window")
 door_kill_point = NodePath("../AttackPoints/DoorKill")
 door_peek_point = NodePath("../AttackPoints/DoorPeek")
 window_kill_point = NodePath("../AttackPoints/WindowKill")

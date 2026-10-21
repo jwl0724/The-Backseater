@@ -1,9 +1,12 @@
 extends Node3D
 class_name Backseater
 
+const roll_interval: int = 5
 const max_aggression: int = 20
 const total_attack_stages: int = 4
 const aggression_per_2d_death: int = 3
+const aggression_per_passive_gain: int = 2 # Gain 2 aggression per minute passively
+const time_per_aggression_increment: float = 60
 const attack_delay: float = 5 # Gap between ready to pounce and actually attacking
 
 @export_group("Sounds")
@@ -23,9 +26,11 @@ const attack_delay: float = 5 # Gap between ready to pounce and actually attacki
 
 @onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
 @onready var delay_timer: Timer = $DelayTimer
+@onready var roll_timer: Timer = $RollTimer
+@onready var aggression_timer: Timer = $AggroTimer
 
 var hide_position: Vector3 = Vector3()
-var is_attacking: bool = false
+
 var can_attack: bool = true
 var aggression: int = 0
 var attack_stage: int = 0
@@ -38,21 +43,42 @@ func disable_attacks(disable: bool):
 
 
 func _ready():
-    # Fired when player dies in 2D game, increase monsters aggression
-    SignalBus.game2d_restart.connect(func(): aggression += aggression_per_2d_death)
     delay_timer.wait_time = attack_delay
+    roll_timer.wait_time = roll_interval
+    aggression_timer.wait_time = time_per_aggression_increment
     hide_position = global_position
+
+    SignalBus.game2d_restart.connect(func(): aggression += aggression_per_2d_death) # Fired when player dies in 2D game, increase monsters aggression
+    roll_timer.timeout.connect(_roll_attack_stage_advance)
+
+
+
+func activate(night: int):
+    roll_timer.start()
+    aggression_timer.start()
+    aggression = night * 2 # Set starting aggression level
+
+
+
+func reset():
+    roll_timer.stop()
+    aggression_timer.stop()
+    cancel_attack(false)
+    aggression = 0
+    attack_stage = 0
 
 
 # TODO: Probably need to create tweens of the monster running away
 # TODO: Need to fix the skybox, looks terrible right now
-func cancel_attack():
+func cancel_attack(start_roll_timer: bool = true):
     if delay_timer.timeout.is_connected(_attack.bind(door)):
         delay_timer.timeout.disconnect(_attack.bind(door))
         door.close_door()
 
     elif delay_timer.timeout.is_connected(_attack.bind(window)):
         delay_timer.timeout.disconnect(_attack.bind(window))
+
+    if start_roll_timer: roll_timer.start()
 
 
 
@@ -64,7 +90,7 @@ func _roll_attack_stage_advance():
         _start_attack()
         return
     else: # Play sounds to mess with player
-        if randf() > 0.3: return
+        if randf() > 0.1: return
         if randi() % 2 == 0: door.knock_door()
         else: window.scratch_window()
 
@@ -73,6 +99,7 @@ func _roll_attack_stage_advance():
 func _start_attack():
     attack_stage = 0
     if !can_attack: return
+    roll_timer.stop()
 
     # Handle door attacks
     if randi() % 2 == 0:
@@ -106,9 +133,10 @@ func _start_attack():
 # TODO: Probably need to do some quick tweens of the monster moving
 func _attack(attack_point: Node3D):
     if attack_point is RoomDoor:
-        if door.is_vulnerable: door.destroy_door()
+        if !door.is_vulnerable: door.destroy_door()
         else: player.kill(Player3D.View.LEFT)
 
     elif attack_point is RoomWindow:
-        if window.is_vulnerable: window.break_window()
+        if !window.is_vulnerable: window.break_window()
         else: player.kill(Player3D.View.RIGHT)
+    roll_timer.start()

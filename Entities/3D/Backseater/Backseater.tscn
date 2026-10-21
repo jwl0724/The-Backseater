@@ -13,3 +13,7 @@ bus = &"Default_SFX"
 
 [node name="DelayTimer" type="Timer" parent="." unique_id=1559654684]
 one_shot = true
+
+[node name="RollTimer" type="Timer" parent="." unique_id=546936400]
+
+[node name="AggroTimer" type="Timer" parent="." unique_id=725758100]
