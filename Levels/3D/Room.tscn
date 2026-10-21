@@ -92,6 +92,7 @@ adjustment_saturation = 1.17
 script = ExtResource("1_ja5dw")
 
 [node name="Map" type="Node3D" parent="." unique_id=1756838734]
+metadata/_edit_lock_ = true
 
 [node name="Exterior" type="Node3D" parent="Map" unique_id=1780963428]
 
@@ -198,6 +199,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 12.466754, 0)
 
 [node name="floorFull31" parent="Map/Interior/Layout/Floor" unique_id=484281413 instance=ExtResource("8_m5fwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 12.466754, 10)
+
+[node name="floorFull34" parent="Map/Interior/Layout/Floor" unique_id=63513698 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 12.466754, 10)
+
+[node name="floorFull35" parent="Map/Interior/Layout/Floor" unique_id=1354410117 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 12.466754, 5)
+
+[node name="floorFull12" parent="Map/Interior/Layout/Floor" unique_id=1648114506 instance=ExtResource("8_m5fwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 12.466754, 0)
 
 [node name="Walls" type="Node3D" parent="Map/Interior/Layout" unique_id=183447632]
 
@@ -449,13 +459,19 @@ transform = Transform3D(0.9997497, 0.004874473, -0.021835804, -0.00089592626, 0.
 transform = Transform3D(0.21604764, 0.9763828, -1.1773539e-08, -0.95528674, 0.21137965, -0.20675075, -0.20186788, 0.044668023, 0.9783937, 3.6872172, 0.763294, 4.53579)
 
 [node name="AttackPoints" type="Node3D" parent="." unique_id=628466602]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
+metadata/_edit_lock_ = true
 
-[node name="Window" type="Node3D" parent="AttackPoints" unique_id=1741470631]
+[node name="WindowKill" type="Node3D" parent="AttackPoints" unique_id=1741470631]
 transform = Transform3D(0.22032292, 0, -0.975427, 0, 1, 0, 0.975427, 0, 0.22032292, 8.597059, 3.1997771, 5.3775887)
 
-[node name="Door" type="Node3D" parent="AttackPoints" unique_id=1209291331]
+[node name="WindowPeek" type="Node3D" parent="AttackPoints" unique_id=983580950]
+transform = Transform3D(-0.11716527, 0.7228034, -0.6810488, -0.38347742, 0.59965694, 0.70239353, 0.91608804, 0.343463, 0.20691983, 9.297775, 0.99829674, 5.399751)
+
+[node name="DoorKill" type="Node3D" parent="AttackPoints" unique_id=1209291331]
 transform = Transform3D(-0.03681809, 0, 0.999322, 0, 1, 0, -0.999322, 0, -0.03681809, -7.834141, 3.1997771, 5.0256357)
+
+[node name="DoorPeek" type="Node3D" parent="AttackPoints" unique_id=261418777]
+transform = Transform3D(-0.7403002, 0, 0.67227644, 0, 1, 0, -0.67227644, 0, -0.7403002, -9.256027, 3.1997771, 6.8531337)
 
 [node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node", "dead_view_node") instance=ExtResource("44_ecbks")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 1.7, 3.6, 4.8)
@@ -467,4 +483,4 @@ game_view_node = NodePath("../CameraPoints/GameView")
 dead_view_node = NodePath("../CameraPoints/DeadView")
 
 [node name="Backseater" parent="." unique_id=221199719 instance=ExtResource("45_0j41l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6503053, 3.4864798, -8.02515)
+transform = Transform3D(-0.9995379, 0, 0.030399024, 0, 1.0000001, 0, -0.030399054, 0, -0.9995378, 1.7634141, 3.9933808, -6.539016)

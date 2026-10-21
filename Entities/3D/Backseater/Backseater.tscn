@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bpkyuyhj77adw"]
 
+[ext_resource type="Script" uid="uid://chfq5yhb2mjp3" path="res://Entities/3D/Backseater/backseater.gd" id="1_h2gjf"]
 [ext_resource type="PackedScene" uid="uid://cayjxlxq3ik68" path="res://Entities/3D/Backseater/Imports/BackseaterModel.tscn" id="1_nq5ow"]
 
 [node name="Backseater" type="Node3D" unique_id=221199719]
+script = ExtResource("1_h2gjf")
 
-[node name="Backseater" parent="." unique_id=538325695 instance=ExtResource("1_nq5ow")]
+[node name="Model" parent="." unique_id=538325695 instance=ExtResource("1_nq5ow")]

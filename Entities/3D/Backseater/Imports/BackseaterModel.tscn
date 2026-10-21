@@ -11,6 +11,9 @@ metallic = 1.0
 metallic_specular = 0.0
 metallic_texture = ExtResource("3_2v6p6")
 metallic_texture_channel = 3
+emission_enabled = true
+emission = Color(0.43529412, 0.2, 0.14509805, 1)
+emission_energy_multiplier = 0.2
 normal_enabled = true
 normal_scale = -1.3
 normal_texture = ExtResource("4_aeigm")
@@ -20,6 +23,9 @@ albedo_texture = ExtResource("2_2v6p6")
 metallic = 1.0
 metallic_specular = 0.0
 metallic_texture = ExtResource("3_2v6p6")
+emission_enabled = true
+emission = Color(0.20787838, 5.760649e-07, 0.008586989, 1)
+emission_energy_multiplier = 0.6
 normal_enabled = true
 normal_scale = 4.99
 normal_texture = ExtResource("4_aeigm")
@@ -28,13 +34,15 @@ normal_texture = ExtResource("4_aeigm")
 albedo_texture = ExtResource("2_2v6p6")
 metallic = 1.0
 metallic_texture = ExtResource("3_2v6p6")
+emission_enabled = true
+emission = Color(0.69965345, 0.69965345, 0.69965345, 1)
 normal_enabled = true
 normal_scale = -1.56
 normal_texture = ExtResource("4_aeigm")
 
 [node name="Backseater" unique_id=538325695 instance=ExtResource("1_53ku2")]
 
-[node name="Skeleton3D" parent="Armature_001" parent_id_path=PackedInt32Array(442758033) index="0" unique_id=1162096487]
+[node name="Skeleton3D" parent="Armature_001" parent_id_path=PackedInt32Array(2034546682) index="0" unique_id=2108108989]
 bones/0/position = Vector3(1.561845, 1.652957, 0.060768604)
 bones/0/scale = Vector3(0.895841, 0.8461082, 0.8461082)
 bones/1/position = Vector3(-2.273925, -0.014084399, -0.4941312)
@@ -84,10 +92,10 @@ bones/69/rotation = Quaternion(0.5684929, -0.26171905, -0.6102818, 0.48566976)
 bones/70/rotation = Quaternion(0.39239776, -0.1805638, -0.3596722, 0.8270772)
 bones/71/rotation = Quaternion(-0.34871295, 0.34890202, 0.10751329, 0.86319613)
 
-[node name="angler final_001" parent="Armature_001/Skeleton3D" index="0" unique_id=1198613457]
+[node name="angler final_001" parent="Armature_001/Skeleton3D" index="0" unique_id=863803612]
 surface_material_override/0 = SubResource("StandardMaterial3D_aeigm")
 surface_material_override/1 = SubResource("StandardMaterial3D_tw1w5")
 surface_material_override/2 = SubResource("StandardMaterial3D_6qwvc")
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1926955369]
+[node name="AnimationPlayer" parent="." index="1" unique_id=1409196035]
 autoplay = &"Armature_001Action"

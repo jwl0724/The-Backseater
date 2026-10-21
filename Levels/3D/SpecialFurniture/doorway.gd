@@ -3,6 +3,8 @@ class_name RoomDoor
 
 @export var door_bash_sfx: AudioStream = null
 @export var door_knock_sfx: AudioStream = null
+@export var door_squeak_sfx: AudioStream = null
+@export var door_slam_sfx: AudioStream = null
 
 @onready var door: Node3D = $"doorway/door 3"
 @onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
@@ -11,6 +13,7 @@ class_name RoomDoor
 
 func fix_door():
     door.rotation_degrees.x = 0
+    door.rotation_degrees.y = 0
 
 
 
@@ -27,3 +30,23 @@ func destroy_door():
 func knock_door():
     audio_player.stream = door_knock_sfx
     audio_player.play()
+
+
+
+func close_door():
+    audio_player.stream = door_slam_sfx
+    audio_player.play()
+
+    var t = create_tween()
+    t.tween_property(door, "rotation_degrees", Vector2.ZERO, 0.25).set_trans(Tween.TRANS_BOUNCE)
+    t.play()
+
+
+
+func peek_door():
+    audio_player.stream = door_squeak_sfx
+    audio_player.play()
+
+    var t = create_tween()
+    t.tween_property(door, "rotation_degrees", Vector3(0, -21.8, 0), 0.25)
+    t.play()

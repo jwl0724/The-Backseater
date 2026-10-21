@@ -3,11 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://byclosg7n3pff" path="res://Levels/3D/Imports/FurniturePack/wallWindow.fbx" id="1_l2s3j"]
 [ext_resource type="Script" uid="uid://vwn6o28guw13" path="res://Levels/3D/SpecialFurniture/wall_window.gd" id="2_3m8ev"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lerek"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0, 0.29803923, 0.59607846, 0.58431375)
+
 [node name="wallWindow" unique_id=1914658601 instance=ExtResource("1_l2s3j")]
 script = ExtResource("2_3m8ev")
 
 [node name="wallWindow" parent="." index="0" unique_id=1531187802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="window" parent="wallWindow" index="0" unique_id=1229600546]
+surface_material_override/0 = SubResource("StandardMaterial3D_lerek")
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=162384180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5293813, 3.3770158, 0)
