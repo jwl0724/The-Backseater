@@ -42,6 +42,7 @@ The real-life part will be task management game, where you have to watch out on 
 ## Credit Links
 
 # Models
+https://opengameart.org/content/angler-man-3d
 https://opengameart.org/content/furniture-kit
 
 # Tilesets
