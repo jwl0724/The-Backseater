@@ -99,9 +99,8 @@ var night4_exchange: Array[MessageContent] = [
     MessageContent.new(player_name, "-_-"),
     MessageContent.new(backseater_name, "So game?"),
     MessageContent.new(player_name, "WHAT STUDY DID YOU READ THIS TIME?"),
-    MessageContent.new(backseater_name, "How did you know I read a study today?"),
-    MessageContent.new(backseater_name, "Well regardless, I read that playing at lower framerate is more optimal!"),
-    MessageContent.new(backseater_name, "It gives you more time to react to things! It's honestly a cheat code"),
+    MessageContent.new(backseater_name, "Hear me out, playing on low fps is meta!"),
+    MessageContent.new(backseater_name, "It gives you more time to react to things! Ah I'm so smart"),
     MessageContent.new(player_name, "-_-"),
 ]
 
