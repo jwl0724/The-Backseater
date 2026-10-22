@@ -18,9 +18,11 @@ func _ready():
 
 
 func disable_funnel(disable: bool):
-	do_funnel = disable
+	do_funnel = !disable
 	if disable: stop()
-	else: play()
+	else:
+		play()
+		playback = get_stream_playback()
 
 
 
