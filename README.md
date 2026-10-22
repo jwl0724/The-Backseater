@@ -65,6 +65,7 @@ https://opengameart.org/content/zelda-like-tilesets-and-sprites
 https://opengameart.org/content/4-chiptunes-adventure
 
 ### SFX
+https://pixabay.com/sound-effects/film-special-effects-bell-ring-390294/
 https://pixabay.com/sound-effects/film-special-effects-086398-game-die-81356/
 https://pixabay.com/sound-effects/film-special-effects-effect-notify-84408/
 https://pixabay.com/sound-effects/film-special-effects-sword-sound-2-36274/

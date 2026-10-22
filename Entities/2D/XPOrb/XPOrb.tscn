@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddau8g014ofpt" path="res://Entities/2D/XPOrb/Imports/xp.png" id="1_2gidm"]
 [ext_resource type="Script" uid="uid://bg2ry3cph82d6" path="res://Entities/2D/XPOrb/xp_orb.gd" id="1_g0jyr"]
 [ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="3_p0irt"]
+[ext_resource type="AudioStream" uid="uid://4es6vjhqakav" path="res://Entities/2D/XPOrb/Imports/xp.mp3" id="4_edlg5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g0jyr"]
 radius = 120.0
@@ -133,3 +134,8 @@ shape = SubResource("CircleShape2D_p0irt")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1837442866]
 libraries/ = SubResource("AnimationLibrary_edlg5")
+
+[node name="Collect" type="AudioStreamPlayer" parent="." unique_id=340736793]
+stream = ExtResource("4_edlg5")
+volume_db = -5.0
+bus = &"Game2D"

@@ -52,7 +52,7 @@ func shoot(direction: Vector2, move_speed: float):
     target_direction = direction
     projectile_speed = move_speed
     sprite.rotation = Vector2.RIGHT.angle_to(target_direction)
-    sfx.play()
+    Utils.play_pitch_shift_sfx(sfx)
 
 
 

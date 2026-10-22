@@ -8,6 +8,7 @@ signal xp_collected()
 
 @export var attract_shape: CircleShape2D = null
 
+@onready var audio_player: AudioStreamPlayer = $Collect
 @onready var sprite: Sprite2D = $Sprite
 @onready var animator: AnimationPlayer = $Animation
 @onready var hitbox: Area2D = $Hitbox
@@ -70,5 +71,6 @@ func _on_hitbox_entered(body: Node2D):
     if body is not Player2D || disabled: return
     disabled = true
     sprite.visible = false
+    Utils.play_pitch_shift_sfx(audio_player)
     (body as Player2D).collect_xp(worth)
     xp_collected.emit()

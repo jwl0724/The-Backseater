@@ -27,7 +27,7 @@ func hit_via_enemy(enemy: Enemy2D):
     player.movement.knockback(enemy.global_position.direction_to(player.global_position), enemy.move_speed * enemy.damage)
     if player.is_dead: kill()
     else:
-        player.hurt_sfx.play()
+        Utils.play_pitch_shift_sfx(player.hurt_sfx)
         player.visuals.play_hurt()
         player.iframe_handler.activate_iframes()
 
