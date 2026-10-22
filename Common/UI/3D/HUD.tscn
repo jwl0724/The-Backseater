@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d2m1fu56mpysc"]
 
+[ext_resource type="Script" uid="uid://b5eaddomanf4h" path="res://Common/UI/3D/hud.gd" id="1_4pxg5"]
 [ext_resource type="PackedScene" uid="uid://dgr18mw2u3cg4" path="res://Common/UI/3D/Components/Tutorial/Tutorial.tscn" id="1_365x3"]
 [ext_resource type="PackedScene" uid="uid://b5yp5cxaxir57" path="res://Common/UI/3D/Components/GameOver/GameOver.tscn" id="2_quupk"]
 [ext_resource type="PackedScene" uid="uid://bxoh0l7drati5" path="res://Common/UI/3D/Components/NightIntro/NightIntro.tscn" id="3_7ss35"]
+[ext_resource type="PackedScene" uid="uid://bcg4boes3uveh" path="res://Common/UI/3D/Components/StartScreen/StartScreen.tscn" id="5_vuv1e"]
 
 [node name="Hud3d" type="Control" unique_id=1004948615]
 layout_mode = 3
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4pxg5")
 
 [node name="Tutorial" parent="." unique_id=2122530405 instance=ExtResource("1_365x3")]
 layout_mode = 1
@@ -18,9 +21,10 @@ offset_top = -56.0
 offset_bottom = -33.0
 
 [node name="GameOver" parent="." unique_id=1473674471 instance=ExtResource("2_quupk")]
-visible = false
 layout_mode = 1
 
 [node name="NightIntro" parent="." unique_id=258571553 instance=ExtResource("3_7ss35")]
-visible = false
+layout_mode = 1
+
+[node name="StartScreen" parent="." unique_id=1175505821 instance=ExtResource("5_vuv1e")]
 layout_mode = 1

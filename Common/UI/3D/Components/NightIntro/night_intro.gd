@@ -10,7 +10,7 @@ signal finished()
 
 func _ready():
     visible = false
-    SignalBus.game3d_start_night.connect(play_intro)
+
 
 
 func play_intro(night: int):
