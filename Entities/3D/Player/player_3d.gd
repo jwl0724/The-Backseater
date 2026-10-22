@@ -3,8 +3,6 @@ class_name Player3D
 
 enum View { LEFT, RIGHT, FRONT, GAME }
 
-@export var hud_scene: PackedScene = null
-
 @export var computer: RoomComputer = null
 @export var left_view_node: Node3D = null
 @export var right_view_node: Node3D = null
@@ -15,11 +13,6 @@ enum View { LEFT, RIGHT, FRONT, GAME }
 var is_alive: bool = true
 var look_tween: Tween = null
 var current_view: View = View.FRONT
-
-
-
-func _ready():
-	SignalBus.game3d_hud_addUI.emit.call_deferred(hud_scene)
 
 
 

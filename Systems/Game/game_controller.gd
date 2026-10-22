@@ -20,10 +20,10 @@ class_name GameController
 
 func _ready():
     # TODO: Need actual launch scene here, for now just have it launch the debug scene by default
+    SignalBus.game3d_hud_addUI.connect(_on_addUI)
     var launch_scene = debug_scene.instantiate()
     running_node.add_child(launch_scene)
 
-    SignalBus.game3d_hud_addUI.connect(_on_addUI)
 
 
 

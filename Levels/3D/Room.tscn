@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhrqyrnv765ok" path="res://Levels/3D/room.gd" id="1_ja5dw"]
 [ext_resource type="PackedScene" uid="uid://cu58ntdcy8mki" path="res://Levels/3D/Imports/Standardized/wall.tscn" id="2_4ik4e"]
+[ext_resource type="PackedScene" uid="uid://d2m1fu56mpysc" path="res://Common/UI/3D/HUD.tscn" id="2_biiof"]
 [ext_resource type="PackedScene" uid="uid://bafnpktxbfv6n" path="res://Levels/3D/Imports/Standardized/wall_corner_rond.tscn" id="3_otcfp"]
 [ext_resource type="PackedScene" uid="uid://chq51hrwyr48v" path="res://Levels/3D/Imports/Standardized/wall_doorway.tscn" id="4_46r0l"]
 [ext_resource type="PackedScene" uid="uid://b4t4ib4o18de8" path="res://Levels/3D/SpecialFurniture/wall_window.tscn" id="6_lw87u"]
@@ -91,7 +92,7 @@ adjustment_saturation = 1.17
 [node name="Room" type="Node3D" unique_id=340710139]
 script = ExtResource("1_ja5dw")
 skip_tutorial = true
-current_night = 1
+hud_scene = ExtResource("2_biiof")
 
 [node name="Map" type="Node3D" parent="." unique_id=1756838734]
 metadata/_edit_lock_ = true
@@ -493,3 +494,6 @@ door_kill_point = NodePath("../AttackPoints/DoorKill")
 door_peek_point = NodePath("../AttackPoints/DoorPeek")
 window_kill_point = NodePath("../AttackPoints/WindowKill")
 window_peek_point = NodePath("../AttackPoints/DoorPeek")
+
+[node name="NightTimer" type="Timer" parent="." unique_id=1863182596]
+one_shot = true

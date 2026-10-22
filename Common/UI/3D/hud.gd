@@ -34,6 +34,7 @@ func _on_intro_request(night: int, from_start: bool):
         # Transition from chatlog to night screen
         SignalBus.transition_fade_hide.emit(1)
         await get_tree().create_timer(1).timeout
+        chatlog_screen.visible = false
 
         # Play the night intro
         SignalBus.transition_fade_show.emit(0)
