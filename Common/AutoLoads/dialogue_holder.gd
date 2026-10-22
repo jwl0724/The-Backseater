@@ -14,7 +14,8 @@ const hint_pool: Array[String] = [
     "Try to avoid dying in the game, otherwise you anger the backseater",
     "The backseater will get more aggressive as the night goes on",
     "If you die too much in game, the backseater will attack you immediately",
-    "The backseater makes a sound before attacking"
+    "The backseater makes a sound before attacking",
+    "Try to focus more on the frail enemies early on in the game to levelup quicker"
 ]
 
 const night1_tutorial: Array[String] = [

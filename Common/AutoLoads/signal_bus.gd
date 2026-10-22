@@ -27,5 +27,7 @@ signal game2d_mechanic_lowFPS(lower_fps: float) # Night 4 gimmick
 signal game3d_hud_addUI(hud_scene: PackedScene)
 signal game3d_tutorial_play(sequence: Array[String])
 signal game3d_tutorial_finished()
-signal game3d_reset_night()
-signal game3d_gameover()
+signal game3d_start_night(night: int) # For starting the night
+signal game3d_end_night() # For when player survives to the end
+signal game3d_reset_night() # For when player tries again
+signal game3d_gameover() # For when player dies

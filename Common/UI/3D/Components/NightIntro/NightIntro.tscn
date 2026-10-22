@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bxoh0l7drati5"]
+
+[ext_resource type="Script" uid="uid://b6lhdfjeggfdi" path="res://Common/UI/3D/Components/NightIntro/night_intro.gd" id="1_i6gc0"]
+[ext_resource type="AudioStream" uid="uid://iply5nrjjry0" path="res://Common/UI/3D/Components/NightIntro/boom.mp3" id="2_g0pw7"]
+
+[node name="NightIntro" type="Control" unique_id=258571553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6gc0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1570063416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+
+[node name="NightLabel" type="Label" parent="." unique_id=1887619744]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 11)
+text = "NIGHT 4"
+horizontal_alignment = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1132039547]
+stream = ExtResource("2_g0pw7")
+max_polyphony = 2
+bus = &"Default_SFX"

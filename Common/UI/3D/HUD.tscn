@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dgr18mw2u3cg4" path="res://Common/UI/3D/Components/Tutorial/Tutorial.tscn" id="1_365x3"]
 [ext_resource type="PackedScene" uid="uid://b5yp5cxaxir57" path="res://Common/UI/3D/Components/GameOver/GameOver.tscn" id="2_quupk"]
+[ext_resource type="PackedScene" uid="uid://bxoh0l7drati5" path="res://Common/UI/3D/Components/NightIntro/NightIntro.tscn" id="3_7ss35"]
 
 [node name="Hud3d" type="Control" unique_id=1004948615]
 layout_mode = 3
@@ -17,5 +18,9 @@ offset_top = -56.0
 offset_bottom = -33.0
 
 [node name="GameOver" parent="." unique_id=1473674471 instance=ExtResource("2_quupk")]
+visible = false
+layout_mode = 1
+
+[node name="NightIntro" parent="." unique_id=258571553 instance=ExtResource("3_7ss35")]
 visible = false
 layout_mode = 1
