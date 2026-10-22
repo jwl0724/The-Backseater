@@ -78,3 +78,4 @@ vertical_alignment = 1
 
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1054861785]
 stream = ExtResource("2_y2u3t")
+bus = &"Default_SFX"
