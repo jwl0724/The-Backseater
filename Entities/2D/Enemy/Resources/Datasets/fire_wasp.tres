@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw58yfq3rxj1t" path="res://Entities/2D/Projectile/enemy_projectile.tscn" id="1_ua0hx"]
 [ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="1_v6a6p"]
 [ext_resource type="Texture2D" uid="uid://cbwbhkq7wl1xv" path="res://Entities/2D/Projectile/Imports/Fire.png" id="2_5yo2l"]
+[ext_resource type="AudioStream" uid="uid://wl72bknfs11c" path="res://Entities/2D/Enemy/Imports/fire.mp3" id="2_mfnrk"]
 
 [resource]
 script = ExtResource("1_v6a6p")
@@ -14,6 +15,7 @@ xp_worth = 6
 attack_speed = 2.0
 projectile_scene = ExtResource("1_ua0hx")
 projectile_texture = ExtResource("2_5yo2l")
+projectile_sound = ExtResource("2_mfnrk")
 projectile_count = 2
 projectile_speed = 30.0
 metadata/_custom_type_script = "uid://bcu08sudqiuyg"

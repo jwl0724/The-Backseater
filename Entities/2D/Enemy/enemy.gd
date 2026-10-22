@@ -67,7 +67,7 @@ func load_data(data: Enemy2DData):
     projectile_speed = data.projectile_speed
     if projectile_handler.ready_projectiles.size() < ceili(data.attack_speed / 3) * data.projectile_count * Projectile.lifespan:
         projectile_handler.create_pool(ceili(data.attack_speed / 3) * data.projectile_count * ceili(Projectile.lifespan) - projectile_handler.ready_projectiles.size())
-    projectile_handler.set_pool_data(data.projectile_texture, null) # TODO: Null for now cause no audio implementation yet
+    projectile_handler.set_pool_data(data.projectile_texture, data.projectile_sound)
 
 
 

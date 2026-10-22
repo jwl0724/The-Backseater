@@ -67,6 +67,7 @@ func _on_attract_exited(body: Node2D):
     current_speed = 0
 
 
+
 func _on_hitbox_entered(body: Node2D):
     if body is not Player2D || disabled: return
     disabled = true
