@@ -9,7 +9,7 @@ class_name Room3D
 @onready var player: Player3D = $Player3d
 @onready var monster: Backseater = $Backseater
 
-@export var current_night: int = 1 # Up to 4
+@export var current_night: int = 3 # Up to 4
 
 # TODO: Implement level limitations in 2D Game
 # TODO: Main menu screen and credits screen with all credits properly listed
@@ -31,9 +31,12 @@ func _ready():
 func start_night():
     await _play_tutorial()
     computer.start_game(current_night)
-    computer.disable_sounds(current_night >= 2)
     monster.activate(current_night)
     monster.disable_attacks(current_night == 1)
+
+    # Handle gimmicks
+    computer.disable_sounds(current_night >= 2) # Night 2 gimmick
+    if current_night >= 3: SignalBus.game2d_mechanic_ultraZoom.emit()
 
 
 

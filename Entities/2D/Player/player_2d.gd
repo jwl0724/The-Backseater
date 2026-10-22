@@ -17,6 +17,8 @@ const health_regen_per_upgrade: float = 0.2
 const attack_speed_per_upgrade: float = 1
 const projectile_count_per_upgrade: int = 1
 
+const nerfed_zoom: Vector2 = Vector2(4, 4)
+
 @export var projectile_sound: AudioStream = null
 @export var projectile_texture: Texture2D = null
 
@@ -75,6 +77,7 @@ func _ready():
     hitbox.body_exited.connect(damage_handler.try_remove_body)
     movement.finished_knockback.connect(visuals.toggle_direction.bind(true))
     SignalBus.game2d_player_upgrade.connect(_on_upgrade)
+    SignalBus.game2d_mechanic_ultraZoom.connect(func(): camera.zoom = nerfed_zoom)
 
 
 
