@@ -3,8 +3,7 @@ extends Node
 class AudioBus:
     const DefaultMusic: String = "Default_Music"
     const DefaultSFX: String = "Default_SFX"
-    const SFX2D: String = "2DSFX"
-    const Music2D: String = "2DMusic"
+    const Game2D: String = "Game2D"
 
 class PhysLayers:
     const Terrain: int = 1

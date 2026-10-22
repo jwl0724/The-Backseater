@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cbvrdcpgtd850" path="res://Levels/2D/minigame.gd" id="1_qhb8o"]
 [ext_resource type="PackedScene" uid="uid://duk653tpcfw03" path="res://Common/UI/2D/HUD.tscn" id="2_hpms7"]
+[ext_resource type="AudioStream" uid="uid://dpd2mndkyc8ub" path="res://Levels/2D/Imports/Level1.ogg" id="2_jfpo8"]
 [ext_resource type="PackedScene" uid="uid://dvhdeqpqc071m" path="res://Levels/2D/Maps/Level1.tscn" id="2_xpwx0"]
 [ext_resource type="PackedScene" uid="uid://cx22fqar72tow" path="res://Entities/2D/Player/Player2D.tscn" id="2_y5ggp"]
+[ext_resource type="AudioStream" uid="uid://b81gvnxusfrmh" path="res://Levels/2D/Imports/Level2.ogg" id="3_kacqb"]
 [ext_resource type="PackedScene" uid="uid://bj4rgvv3cmc2x" path="res://Levels/2D/Maps/Level2.tscn" id="3_wnl36"]
 [ext_resource type="PackedScene" uid="uid://fkwmc6x6o14e" path="res://Levels/2D/Maps/Level3.tscn" id="4_7ac68"]
+[ext_resource type="AudioStream" uid="uid://bm10utncapv7w" path="res://Levels/2D/Imports/Level3.ogg" id="4_m1cfy"]
 [ext_resource type="PackedScene" uid="uid://b5yrqwejx0xr6" path="res://Levels/2D/Maps/Level4.tscn" id="5_hpms7"]
+[ext_resource type="AudioStream" uid="uid://cmxtxrymkxywv" path="res://Levels/2D/Imports/Level4.ogg" id="5_rcxuc"]
 [ext_resource type="PackedScene" uid="uid://cegkwh6glmxln" path="res://Entities/2D/Enemy/Enemy.tscn" id="8_mplvn"]
 [ext_resource type="Script" uid="uid://bcu08sudqiuyg" path="res://Entities/2D/Enemy/enemy_data.gd" id="9_we3jm"]
 [ext_resource type="Script" uid="uid://dsi2nj53a61wm" path="res://Levels/2D/Systems/enemy_spawner.gd" id="10_c52h6"]
@@ -50,6 +54,10 @@ size = Vector2(680, 20)
 [node name="Minigame" type="Node2D" unique_id=751759855]
 y_sort_enabled = true
 script = ExtResource("1_qhb8o")
+bgm1 = ExtResource("2_jfpo8")
+bgm2 = ExtResource("3_kacqb")
+bgm3 = ExtResource("4_m1cfy")
+bgm4 = ExtResource("5_rcxuc")
 player_hud = ExtResource("2_hpms7")
 night1 = ExtResource("2_xpwx0")
 night2 = ExtResource("3_wnl36")
@@ -99,3 +107,6 @@ position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_hpms7")
 
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1530130697]
+bus = &"Game2D"

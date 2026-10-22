@@ -4,6 +4,12 @@ class_name MiniGame
 @export_group("Dev Tools")
 @export var autoload_level: int = 1
 
+@export_group("Music Clips")
+@export var bgm1: AudioStream = null
+@export var bgm2: AudioStream = null
+@export var bgm3: AudioStream = null
+@export var bgm4: AudioStream = null
+
 @export_group("Required Scenes")
 @export var player_hud: PackedScene = null
 @export var night1: PackedScene = null
@@ -11,6 +17,7 @@ class_name MiniGame
 @export var night3: PackedScene = null
 @export var night4: PackedScene = null
 
+@onready var music_player: AudioStreamPlayer = $BGM
 @onready var player: Player2D = $Player
 @onready var hud_2d: HUD2D = $LocalViewport/Hud
 @onready var spawner: EnemySpawner = $Systems/Spawner
@@ -38,15 +45,19 @@ func start_game(level_number: int):
         1:
             scene = night1.instantiate()
             msg = "LEVEL 1"
+            music_player.stream = bgm1
         2:
             scene = night2.instantiate()
             msg = "LEVEL 2"
+            music_player.stream = bgm2
         3:
             scene = night3.instantiate()
             msg = "LEVEL 3"
+            music_player.stream = bgm3
         4:
             scene = night4.instantiate()
             msg = "YOU BROKE THE META"
+            music_player.stream = bgm4
         _: scene = null
     if !scene:
         printerr("%d is an invalid level number, value should be between 1 and 4" % level_number)
@@ -63,6 +74,7 @@ func start_game(level_number: int):
     # Start the game
     SignalBus.transition_message_show.emit()
     await SignalBus.transition_message_finished
+    music_player.play()
     hud_2d.show_hud()
     player.in_play = true # Activate the player
     SignalBus.game2d_start.emit.bind(player).call_deferred()
@@ -80,6 +92,7 @@ func restart_game(): # Respawning player and clearing enemies (probably keep pla
 
 # Expected to be called by the 3D scene once 5 minutes have passed then freed after
 func stop_game():
+    music_player.stop()
     process_mode = Node.PROCESS_MODE_DISABLED
 
 

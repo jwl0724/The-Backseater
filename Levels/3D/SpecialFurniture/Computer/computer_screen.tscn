@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dxdxnaxy0u4yb" path="res://Levels/3D/SpecialFurniture/Computer/computer_screen.gd" id="2_cdxrc"]
 [ext_resource type="PackedScene" uid="uid://32ej174w2uik" path="res://Levels/2D/Minigame.tscn" id="2_jt7oa"]
 [ext_resource type="AudioStream" uid="uid://dgm6ij2myb4gb" path="res://Levels/3D/SpecialFurniture/Computer/alert.mp3" id="3_drifm"]
+[ext_resource type="Script" uid="uid://cxicai677wcvc" path="res://Levels/3D/SpecialFurniture/Computer/game_sounds_funnel.gd" id="4_h64eg"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3cr4x"]
 viewport_path = NodePath("GameScreen")
@@ -21,6 +22,8 @@ emission_texture = SubResource("ViewportTexture_cdxrc")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_0p131")
 size = Vector2(1.92, 1.188)
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_drifm"]
 
 [node name="computerScreen" unique_id=1208118889 instance=ExtResource("1_8m4i1")]
 script = ExtResource("2_cdxrc")
@@ -53,6 +56,9 @@ bus = &"Default_SFX"
 
 [node name="GameSounds" type="AudioStreamPlayer3D" parent="." index="3" unique_id=618538193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8991122, 0.76803946, 0.34822083)
+stream = SubResource("AudioStreamGenerator_drifm")
+volume_db = -15.0
+script = ExtResource("4_h64eg")
 
 [node name="GameScreen" type="SubViewport" parent="." index="4" unique_id=1884509528]
 transparent_bg = true
