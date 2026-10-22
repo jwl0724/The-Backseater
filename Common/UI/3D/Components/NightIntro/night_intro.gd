@@ -15,6 +15,7 @@ func _ready():
 
 func play_intro(night: int):
     visible = true
+    modulate = Color.WHITE
     night_label.text = "NIGHT %d" % night
     night_label.modulate = Color.TRANSPARENT
     night_label.scale = Vector2(2, 2)

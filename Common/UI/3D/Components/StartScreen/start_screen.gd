@@ -16,9 +16,10 @@ func _ready():
 
 
 
-func show_chatlog():
+func show_chatlog(night: int):
     visible = true
     start_button.disabled = false
+    night_label.text = "NIGHT %d" % night
 
 
 
