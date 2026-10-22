@@ -36,7 +36,3 @@ layout_mode = 1
 [node name="WinScreen" parent="." unique_id=1807077758 instance=ExtResource("6_vuv1e")]
 visible = false
 layout_mode = 1
-offset_left = 262.0
-offset_top = 120.0
-offset_right = 262.0
-offset_bottom = 120.0

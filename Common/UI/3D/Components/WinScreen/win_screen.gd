@@ -27,7 +27,13 @@ func _ready():
 
 
 
+func show_screen(to_show: bool):
+    visible = to_show
+
+
+
 func play_end_sequence():
+    visible = true
     menu_button.visible = true
     menu_button.modulate = Color.TRANSPARENT
     menu_button.disabled = false

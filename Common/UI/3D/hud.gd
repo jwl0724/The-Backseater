@@ -80,8 +80,13 @@ func _handle_gameover_buttons(to_ingame: bool):
 
 
 func _on_game_finished():
+    win_screen.show_screen(true)
+    SignalBus.transition_fade_show.emit(1)
+    await get_tree().create_timer(1).timeout
+
     win_screen.play_end_sequence()
     await win_screen.closed
+
     SignalBus.transition_fade_hide.emit(2)
     await get_tree().create_timer(2).timeout
     SignalBus.back_to_menu.emit()
