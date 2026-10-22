@@ -10,6 +10,7 @@ class_name HUD3D
 func _ready():
     SignalBus.game3d_start_intro.connect(_on_intro_request)
     SignalBus.game3d_end_night.connect(_on_end_request)
+    SignalBus.game3d_gameover.connect(_on_gameover_request)
 
 
 
@@ -53,3 +54,23 @@ func _on_end_request():
 
     SignalBus.transition_fade_hide.emit(0)
     SignalBus.game3d_start_nextNightSetup.emit()
+
+
+
+func _on_gameover_request():
+    game_over.show_screen()
+    game_over.closed.connect(_handle_gameover_buttons, CONNECT_ONE_SHOT)
+
+
+
+func _handle_gameover_buttons(to_ingame: bool):
+    if to_ingame:
+        SignalBus.transition_fade_hide.emit(1)
+        await get_tree().create_timer(1).timeout
+        SignalBus.game3d_reset_night.emit()
+        game_over.hide_screen()
+    else:
+        SignalBus.transition_fade_hide.emit(1)
+        await get_tree().create_timer(1).timeout
+        SignalBus.back_to_menu.emit()
+        game_over.hide_screen()

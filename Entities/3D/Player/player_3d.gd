@@ -3,6 +3,9 @@ class_name Player3D
 
 enum View { LEFT, RIGHT, FRONT, GAME }
 
+signal killed()
+signal finished_death_animation()
+
 @export var computer: RoomComputer = null
 @export var left_view_node: Node3D = null
 @export var right_view_node: Node3D = null
@@ -41,7 +44,10 @@ func kill(kill_angle: View):
 	t.tween_interval(0.1)
 	t.tween_property(self, "position", dead_position, 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	t.parallel().tween_property(self, "rotation", dead_angle, 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	t.tween_callback(finished_death_animation.emit)
 	t.play()
+
+	killed.emit()
 
 
 

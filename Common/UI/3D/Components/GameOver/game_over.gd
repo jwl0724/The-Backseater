@@ -1,6 +1,8 @@
 extends Control
 class_name GameOverScreen
 
+signal closed(to_ingame: bool)
+
 @export var click_sfx: AudioStream = null
 
 @onready var back_to_menu: Button = %BackToMenu
@@ -11,37 +13,31 @@ class_name GameOverScreen
 
 func _ready():
     visible = false
-    SignalBus.game3d_gameover.connect(fade_show)
-    try_again.pressed.connect(SignalBus.game3d_reset_night.emit)
-    try_again.pressed.connect(_process_click)
-    back_to_menu.pressed.connect(SignalBus.back_to_menu.emit)
-    back_to_menu.pressed.connect(_process_click)
+    try_again.pressed.connect(_process_click.bind(try_again))
+    back_to_menu.pressed.connect(_process_click.bind(back_to_menu))
 
 
 
-func fade_show():
+func show_screen():
     visible = true
-    modulate = Color.WHITE
+    modulate = Color.TRANSPARENT
     try_again.disabled = false
     back_to_menu.disabled = false
     hint.text = Dialogue.hint_pool.pick_random()
     hint.modulate = Color.TRANSPARENT
 
     var t = create_tween()
-    t.tween_property(self, "modulate", Color.TRANSPARENT, 2)
+    t.tween_property(self, "modulate", Color.WHITE, 2)
     t.tween_property(hint, "modulate", Color.WHITE, 2)
     t.play()
 
 
-
-func fade_out():
-    var t = create_tween()
-    t.tween_property(self, "modulate", Color.WHITE, 1)
-    t.play()
+func hide_screen():
+    visible = false
 
 
-
-func _process_click():
+func _process_click(button: Button):
     try_again.disabled = true
     back_to_menu.disabled = true
     audio.play()
+    closed.emit(button == try_again)

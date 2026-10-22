@@ -19,7 +19,6 @@ class_name Room3D
 # TODO: Main menu screen and credits screen with all credits properly listed
 # TODO: Need a win screen for surviving the 4 nights
 # TODO: Need an animation for player defending themselves (probably throw some paper or something with an audio clip saying spreadsheets)
-# TODO: Need night intro sequence that gets re-used when player dies and restarts
 # TODO: Need to implement sounds on 3d game
 # TODO: Need to fix the skybox, looks terrible right now
 # TODO: Temporarily here for testing, determine exact details later
@@ -30,10 +29,11 @@ func _ready():
     night_timer.timeout.connect(end_night)
 
     # Setup signals
+    player.killed.connect(_on_player_died)
     SignalBus.game3d_hud_addUI.emit(hud_scene)
     SignalBus.game3d_start_night.connect(start_night)
     SignalBus.game3d_start_nextNightSetup.connect(setup_next_night)
-    SignalBus.game3d_reset_night.connect(func(): print("TODO: Implement via a dedicated function later"))
+    SignalBus.game3d_reset_night.connect(reset_night)
 
     # Starting signals
     SignalBus.transition_fade_show.emit(1)
@@ -65,17 +65,39 @@ func end_night():
 
 
 
+func reset_night():
+    monster.reset_position()
+    computer.clear_screen()
+    door.fix_door()
+    window.fix_window()
+    player.reset_player()
+    SignalBus.game3d_start_intro.emit(current_night, false)
+
+
+
 func setup_next_night():
+    current_night += 1
     if current_night <= 4:
         door.fix_door()
         window.fix_window()
         computer.clear_screen()
         player.reset_player()
-        current_night += 1
         SignalBus.transition_fade_show.emit(1)
         SignalBus.game3d_start_intro.emit(current_night, true)
     else:
         print("TODO: Make a win screen and link it to that")
+
+
+
+func _on_player_died():
+    night_timer.stop()
+    computer.stop_game()
+    computer.enable_inputs(false)
+    player.controls_enabled = false
+
+    await player.finished_death_animation
+    monster.reset()
+    SignalBus.game3d_gameover.emit()
 
 
 

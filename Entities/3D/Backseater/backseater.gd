@@ -38,8 +38,7 @@ var attack_stage: int = 0
 
 
 
-func disable_attacks(disable: bool):
-    can_attack = !disable
+
 
 
 
@@ -51,6 +50,11 @@ func _ready():
 
     SignalBus.game2d_restart.connect(func(): aggression += aggression_per_2d_death) # Fired when player dies in 2D game, increase monsters aggression
     roll_timer.timeout.connect(_roll_attack_stage_advance)
+
+
+
+func disable_attacks(disable: bool):
+    can_attack = !disable
 
 
 
@@ -67,6 +71,10 @@ func reset():
     cancel_attack(false)
     aggression = 0
     attack_stage = 0
+
+
+func reset_position():
+    global_position = hide_position
 
 
 # TODO: Probably need to create tweens of the monster running away
