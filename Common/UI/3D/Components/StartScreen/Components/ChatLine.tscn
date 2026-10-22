@@ -7,7 +7,7 @@
 [node name="ChatLine" type="HBoxContainer" unique_id=1654242049]
 custom_minimum_size = Vector2(460, 0)
 offset_right = 480.0
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 script = ExtResource("1_3gkyj")
 player_profile_picture = ExtResource("2_3ceis")
 

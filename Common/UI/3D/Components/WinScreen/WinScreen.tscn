@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bu5ias16pu0kj" path="res://Common/UI/3D/Components/WinScreen/win_screen.gd" id="1_7kw26"]
 [ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="2_wm5sk"]
 [ext_resource type="PackedScene" uid="uid://bt0w23is8niov" path="res://Common/UI/3D/Components/StartScreen/Components/ChatLine.tscn" id="3_wm5sk"]
+[ext_resource type="PackedScene" uid="uid://bi4ppp4o4tsy5" path="res://Common/UI/3D/Components/WinScreen/Components/TypingMessage.tscn" id="4_k65b7"]
 [ext_resource type="AudioStream" uid="uid://dgm6ij2myb4gb" path="res://Levels/3D/SpecialFurniture/Computer/alert.mp3" id="4_wm5sk"]
 
 [sub_resource type="Gradient" id="Gradient_q6api"]
@@ -20,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7kw26")
+chat_line_template = ExtResource("3_wm5sk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1371324031]
 layout_mode = 1
@@ -61,18 +63,18 @@ theme_override_constants/margin_bottom = 10
 unique_name_in_owner = true
 custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
-size_flags_horizontal = 0
 theme = ExtResource("2_wm5sk")
 
 [node name="Messages" type="VBoxContainer" parent="MarginContainer/Window/MarginContainer/Scroll" unique_id=473456584]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 1
+alignment = 2
 
-[node name="ChatLine" parent="MarginContainer/Window/MarginContainer/Scroll/Messages" unique_id=1654242049 instance=ExtResource("3_wm5sk")]
+[node name="Typing" parent="MarginContainer/Window/MarginContainer/Scroll/Messages" unique_id=1122161776 instance=ExtResource("4_k65b7")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Window" unique_id=1503403708]
