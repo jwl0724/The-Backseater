@@ -23,6 +23,7 @@ shader_parameter/rgb_mask = false
 shader_parameter/mask_strength = 0.5330000253175
 
 [node name="Hud" type="Control" unique_id=30358670]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
