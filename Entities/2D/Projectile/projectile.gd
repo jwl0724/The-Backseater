@@ -6,7 +6,7 @@ const lifespan: float = 5
 signal despawned()
 
 @onready var sprite: Sprite2D = $Sprite
-@onready var sfx: AudioStreamPlayer2D = $SFX
+@onready var sfx: AudioStreamPlayer = $SFX
 @onready var screen_notifier: VisibleOnScreenNotifier2D = $ScreenNotifier
 
 var projectile_owner: Node2D = null

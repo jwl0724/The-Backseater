@@ -24,6 +24,7 @@ material = SubResource("StandardMaterial3D_0p131")
 size = Vector2(1.92, 1.188)
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_drifm"]
+buffer_length = 0.1
 
 [node name="computerScreen" unique_id=1208118889 instance=ExtResource("1_8m4i1")]
 script = ExtResource("2_cdxrc")

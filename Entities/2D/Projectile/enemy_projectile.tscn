@@ -24,7 +24,8 @@ shape = SubResource("CircleShape2D_v57lb")
 [node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=715870493]
 rect = Rect2(-8, -8, 16, 16)
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=16001174]
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1727186705]
+max_polyphony = 3
 bus = &"Game2D"
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=712729023]

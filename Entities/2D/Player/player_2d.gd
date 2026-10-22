@@ -30,9 +30,9 @@ const projectile_count_per_upgrade: int = 1
 @export var base_projectile_count: int = 1
 
 # Audio players
-@onready var hurt_sfx: AudioStreamPlayer2D = $AudioPlayers/Hurt
-@onready var level_sfx: AudioStreamPlayer2D = $AudioPlayers/LevelUp
-@onready var die_sfx: AudioStreamPlayer2D = $AudioPlayers/Die
+@onready var hurt_sfx: AudioStreamPlayer = $AudioPlayers/Hurt
+@onready var level_sfx: AudioStreamPlayer = $AudioPlayers/LevelUp
+@onready var die_sfx: AudioStreamPlayer = $AudioPlayers/Die
 
 # Node components
 @onready var camera: Camera2D = $Camera

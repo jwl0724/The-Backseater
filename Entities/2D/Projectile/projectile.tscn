@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://blwbjrory6368" path="res://Entities/2D/Projectile/projectile.gd" id="1_01dhq"]
 [ext_resource type="Texture2D" uid="uid://dbqiafl7kp14c" path="res://Entities/2D/Projectile/Imports/PlayerProjectile.png" id="2_xjlok"]
 [ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="3_lo45h"]
+[ext_resource type="AudioStream" uid="uid://kknh31wkgarx" path="res://Entities/2D/Player/Imports/slash.mp3" id="3_p2epk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luu1w"]
 
@@ -22,7 +23,10 @@ shape = SubResource("CircleShape2D_luu1w")
 
 [node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=388248316]
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=88573804]
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=843422264]
+stream = ExtResource("3_p2epk")
+volume_db = 2.0
+max_polyphony = 3
 bus = &"Game2D"
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1685798990]

@@ -50,16 +50,21 @@ script = ExtResource("7_4emro")
 
 [node name="AudioPlayers" type="Node2D" parent="." unique_id=2136792466]
 
-[node name="Hurt" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=1458745667]
+[node name="Hurt" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1370743161]
 stream = ExtResource("8_layp3")
-volume_db = 5.0
+volume_db = -5.0
+bus = &"Game2D"
 
-[node name="LevelUp" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=1742030313]
+[node name="LevelUp" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1423918242]
 stream = ExtResource("10_ab5up")
+volume_db = -5.0
 max_polyphony = 2
+bus = &"Game2D"
 
-[node name="Die" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=184272930]
+[node name="Die" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=425911974]
 stream = ExtResource("11_d8kyv")
+volume_db = -5.0
+bus = &"Game2D"
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1347169259]
 position = Vector2(0, 6)
