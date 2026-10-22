@@ -1,4 +1,4 @@
-extends ColorRect
+extends Panel
 class_name Message
 
 signal expired()
@@ -16,7 +16,7 @@ func _ready():
 
 
 
-func show_content(start_timer: bool, linger_time: float = 2):
+func show_content(start_timer: bool, linger_time: float = 3):
     modulate = Color.TRANSPARENT
     visible = true
     lifespan_timer.wait_time = linger_time

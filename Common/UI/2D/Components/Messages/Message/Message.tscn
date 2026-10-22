@@ -13,19 +13,20 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nkrdk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r05wa"]
 shader = ExtResource("2_r05wa")
+shader_parameter/corner_scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_nkrdk"]
 font = ExtResource("3_et13n")
-font_size = 9
+font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_ilo3u"]
 font = ExtResource("3_r05wa")
-font_size = 7
+font_size = 10
 
 [node name="Message" type="Panel" unique_id=709474514]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(200, 60)
 offset_right = 150.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_r05wa")
@@ -48,7 +49,8 @@ layout_mode = 2
 
 [node name="Picture" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=802909480]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_nkrdk")
+texture_filter = 1
+material = SubResource("ShaderMaterial_r05wa")
 layout_mode = 2
 texture = ExtResource("2_et13n")
 expand_mode = 3

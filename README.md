@@ -46,6 +46,7 @@ https://fonts.google.com/specimen/Press+Start+2P?query=pixel
 https://fonts.google.com/specimen/Roboto
 
 ### Shaders
+https://godotshaders.com/shader/corner-radius/
 https://godotshaders.com/shader/crt-with-luminance-preservation/
 
 ### Models
