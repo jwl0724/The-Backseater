@@ -11,6 +11,7 @@ var is_reading_input: bool = false
 
 func start_game(level: int):
     minigame.start_game(level)
+    SignalBus.hud_2d_sendMessage.connect(_on_msg_send)
 
 
 
@@ -29,3 +30,8 @@ func enable_inputs(enable: bool):
 func _input(event: InputEvent):
     if !is_reading_input || event is not InputEventMouse: return
     game_window.push_input(event, false) # Forward mouse position to subviewport
+
+
+
+func _on_msg_send(_text: String):
+    alert_sound.play()

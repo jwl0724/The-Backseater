@@ -38,12 +38,6 @@ layout_mode = 1
 [node name="HudBars" parent="." unique_id=316807712 instance=ExtResource("2_4i5n4")]
 layout_mode = 1
 
-[node name="Cursor" type="Sprite2D" parent="." unique_id=1125446717]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("4_luq0o")
-script = ExtResource("4_rthi8")
-
 [node name="MessageTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
 visible = false
 layout_mode = 1
@@ -54,6 +48,12 @@ offset_left = -160.0
 offset_top = -10.0
 offset_right = -10.0
 offset_bottom = -10.0
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1125446717]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_luq0o")
+script = ExtResource("4_rthi8")
 
 [node name="Filter" type="ColorRect" parent="." unique_id=271878355]
 material = SubResource("ShaderMaterial_adf8c")
