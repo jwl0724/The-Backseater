@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bxoh0l7drati5"]
 
-[ext_resource type="Script" uid="uid://b6lhdfjeggfdi" path="res://Common/UI/3D/Components/NightIntro/night_intro.gd" id="1_i6gc0"]
-[ext_resource type="AudioStream" uid="uid://iply5nrjjry0" path="res://Common/UI/3D/Components/NightIntro/boom.mp3" id="2_g0pw7"]
+[ext_resource type="Script" uid="uid://b6lhdfjeggfdi" path="res://Common/UI/3D/Components/NightTransition/night_transition.gd" id="1_arvqs"]
+[ext_resource type="AudioStream" uid="uid://iply5nrjjry0" path="res://Common/UI/3D/Components/NightTransition/boom.mp3" id="2_f526p"]
+[ext_resource type="AudioStream" uid="uid://edtprvwqjyur" path="res://Common/UI/3D/Components/NightTransition/win.mp3" id="3_f526p"]
 
 [node name="NightIntro" type="Control" unique_id=258571553]
 layout_mode = 3
@@ -10,7 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i6gc0")
+script = ExtResource("1_arvqs")
+start_sfx = ExtResource("2_f526p")
+survive_sfx = ExtResource("3_f526p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1570063416]
 layout_mode = 1
@@ -36,6 +39,7 @@ text = "NIGHT 4"
 horizontal_alignment = 1
 
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1132039547]
-stream = ExtResource("2_g0pw7")
+stream = ExtResource("2_f526p")
+volume_db = -5.0
 max_polyphony = 2
 bus = &"Default_SFX"
