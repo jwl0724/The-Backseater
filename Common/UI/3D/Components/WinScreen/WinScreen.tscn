@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://e4f54262qw44"]
+
+[ext_resource type="Script" uid="uid://bu5ias16pu0kj" path="res://Common/UI/3D/Components/WinScreen/win_screen.gd" id="1_7kw26"]
+[ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="2_wm5sk"]
+[ext_resource type="PackedScene" uid="uid://bt0w23is8niov" path="res://Common/UI/3D/Components/StartScreen/Components/ChatLine.tscn" id="3_wm5sk"]
+[ext_resource type="AudioStream" uid="uid://dgm6ij2myb4gb" path="res://Levels/3D/SpecialFurniture/Computer/alert.mp3" id="4_wm5sk"]
+
+[sub_resource type="Gradient" id="Gradient_q6api"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.8039216, 0.8039216, 0.8039216, 1, 0.05490196, 0.05490196, 0.05490196, 1, 0.8039216, 0.8039216, 0.8039216, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ya8px"]
+gradient = SubResource("Gradient_q6api")
+
+[node name="WinScreen" type="Control" unique_id=1807077758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kw26")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1371324031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8039216, 0.8039216, 0.8039216, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=560614043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Window" type="Control" parent="MarginContainer" unique_id=1329776354]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Window" unique_id=836680184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Scroll" type="ScrollContainer" parent="MarginContainer/Window/MarginContainer" unique_id=1872329029]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_wm5sk")
+
+[node name="Messages" type="VBoxContainer" parent="MarginContainer/Window/MarginContainer/Scroll" unique_id=473456584]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="ChatLine" parent="MarginContainer/Window/MarginContainer/Scroll/Messages" unique_id=1654242049 instance=ExtResource("3_wm5sk")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Window" unique_id=1503403708]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = -2
+
+[node name="ChatName" type="Label" parent="MarginContainer/Window/MarginContainer2" unique_id=1838391537]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+text = "bigTeethDJC"
+horizontal_alignment = 1
+
+[node name="Border" type="TextureRect" parent="MarginContainer/Window/MarginContainer2" unique_id=455131439]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 8
+texture = SubResource("GradientTexture1D_ya8px")
+
+[node name="Menu" type="Button" parent="MarginContainer" unique_id=1329375296]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Back to Menu"
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1589197854]
+stream = ExtResource("4_wm5sk")
+bus = &"Default_SFX"

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bi4ppp4o4tsy5"]
+
+[ext_resource type="Script" uid="uid://brfu6b84dnogu" path="res://Common/UI/3D/Components/WinScreen/Components/typing_message.gd" id="1_6eifd"]
+
+[node name="TypingMessage" type="Label" unique_id=1122161776]
+offset_right = 110.0
+offset_bottom = 14.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+theme_override_font_sizes/font_size = 10
+text = "bigTeethDJC is typing..."
+script = ExtResource("1_6eifd")

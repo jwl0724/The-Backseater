@@ -30,6 +30,7 @@ signal game3d_tutorial_finished()
 signal game3d_start_intro(night: int, from_start: bool) # For showing chatlog -> night intro (from_start = true skips chatlog)
 signal game3d_start_night() # For notifying game handler to actually start the night and activate everything
 signal game3d_start_nextNightSetup()
-signal game3d_end_night() # For when player survives to the end
+signal game3d_end_night() # For when player survives to the end of the night
+signal game3d_end_game() # For when player survives all 4 nights, trigger finale cutscene
 signal game3d_reset_night() # For when player tries again
 signal game3d_gameover() # For when player dies

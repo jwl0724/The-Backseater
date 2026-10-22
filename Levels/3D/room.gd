@@ -85,7 +85,7 @@ func setup_next_night():
         SignalBus.transition_fade_show.emit(1)
         SignalBus.game3d_start_intro.emit(current_night, true)
     else:
-        print("TODO: Make a win screen and link it to that")
+        SignalBus.game3d_end_game.emit()
 
 
 

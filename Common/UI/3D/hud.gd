@@ -4,6 +4,7 @@ class_name HUD3D
 @onready var game_over: GameOverScreen = $GameOver
 @onready var night_trans: NightTransition = $NightTransition
 @onready var chatlog_screen: StartScreen = $StartScreen
+@onready var win_screen: WinScreen = $WinScreen
 
 
 
@@ -11,6 +12,7 @@ func _ready():
     SignalBus.game3d_start_intro.connect(_on_intro_request)
     SignalBus.game3d_end_night.connect(_on_end_request)
     SignalBus.game3d_gameover.connect(_on_gameover_request)
+    SignalBus.game3d_end_game.connect(_on_game_finished)
 
 
 
@@ -74,3 +76,12 @@ func _handle_gameover_buttons(to_ingame: bool):
         await get_tree().create_timer(1).timeout
         SignalBus.back_to_menu.emit()
         game_over.hide_screen()
+
+
+
+func _on_game_finished():
+    win_screen.play_end_sequence()
+    await win_screen.closed
+    SignalBus.transition_fade_hide.emit(2)
+    await get_tree().create_timer(2).timeout
+    SignalBus.back_to_menu.emit()
