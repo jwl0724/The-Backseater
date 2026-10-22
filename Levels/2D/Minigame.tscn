@@ -109,4 +109,5 @@ shape = SubResource("RectangleShape2D_hpms7")
 [node name="Player" parent="." unique_id=586874172 instance=ExtResource("2_y5ggp")]
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1530130697]
+volume_db = -10.0
 bus = &"Game2D"

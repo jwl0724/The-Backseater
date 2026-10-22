@@ -23,7 +23,7 @@ shape = SubResource("CircleShape2D_luu1w")
 [node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=388248316]
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=88573804]
-bus = &"2DSFX"
+bus = &"Game2D"
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1685798990]
 modulate = Color(0.6392157, 0.6392157, 0.6392157, 0.5882353)

@@ -2,13 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ck2j28gj7elr2" path="res://Entities/2D/Player/player_2d.gd" id="1_ec1sy"]
 [ext_resource type="Script" uid="uid://b3cy0k8v1glh4" path="res://Entities/2D/Player/Systems/player_controls.gd" id="2_rlqyc"]
+[ext_resource type="Texture2D" uid="uid://dbqiafl7kp14c" path="res://Entities/2D/Projectile/Imports/PlayerProjectile.png" id="3_ab5up"]
 [ext_resource type="Script" uid="uid://tj78qksw71gs" path="res://Entities/2D/Projectile/projectile_handler.gd" id="3_njn1r"]
 [ext_resource type="PackedScene" uid="uid://bcjks3144ttli" path="res://Entities/2D/Projectile/projectile.tscn" id="4_hoive"]
 [ext_resource type="Script" uid="uid://b8eiaxfykrhg" path="res://Entities/2D/Player/Systems/i_frame_handler.gd" id="5_uol42"]
 [ext_resource type="PackedScene" uid="uid://bn4nw802d6ww3" path="res://Entities/2D/Player/Components/PlayerVisuals.tscn" id="6_hoive"]
 [ext_resource type="Script" uid="uid://c37xyshjjfbjb" path="res://Entities/2D/Player/Systems/player_damage_handler.gd" id="6_uol42"]
 [ext_resource type="Script" uid="uid://dvu681tftmc3q" path="res://Entities/2D/Player/Systems/xp_handler.gd" id="7_4emro"]
+[ext_resource type="AudioStream" uid="uid://jyaxk7utig6g" path="res://Entities/2D/Player/Imports/hurt.mp3" id="8_layp3"]
+[ext_resource type="AudioStream" uid="uid://kknh31wkgarx" path="res://Entities/2D/Player/Imports/slash.mp3" id="9_d8kyv"]
 [ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="9_gtvml"]
+[ext_resource type="AudioStream" uid="uid://cfiwqykundd7u" path="res://Entities/2D/Player/Imports/levelup.mp3" id="10_ab5up"]
+[ext_resource type="AudioStream" uid="uid://cy6gi4of0m2je" path="res://Entities/2D/Player/Imports/die.mp3" id="11_d8kyv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoive"]
 radius = 3.0
@@ -21,6 +26,8 @@ height = 16.0
 scale = Vector2(1.3, 1.3)
 collision_layer = 2
 script = ExtResource("1_ec1sy")
+projectile_sound = ExtResource("9_d8kyv")
+projectile_texture = ExtResource("3_ab5up")
 
 [node name="Systems" type="Node" parent="." unique_id=686166810]
 
@@ -40,6 +47,19 @@ script = ExtResource("6_uol42")
 
 [node name="XPHandler" type="Node" parent="Systems" unique_id=2121360123]
 script = ExtResource("7_4emro")
+
+[node name="AudioPlayers" type="Node2D" parent="." unique_id=2136792466]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=1458745667]
+stream = ExtResource("8_layp3")
+volume_db = 5.0
+
+[node name="LevelUp" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=1742030313]
+stream = ExtResource("10_ab5up")
+max_polyphony = 2
+
+[node name="Die" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=184272930]
+stream = ExtResource("11_d8kyv")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1347169259]
 position = Vector2(0, 6)

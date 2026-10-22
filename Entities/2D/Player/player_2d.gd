@@ -17,13 +17,22 @@ const health_regen_per_upgrade: float = 0.2
 const attack_speed_per_upgrade: float = 1
 const projectile_count_per_upgrade: int = 1
 
+@export var projectile_sound: AudioStream = null
+@export var projectile_texture: Texture2D = null
+
 # Base stats on spawn in
+@export_group("Stats")
 @export var base_damage: float = 1
 @export var base_move_speed: float = 30
 @export var base_health: float = 20
 @export var base_health_regen: float = 0.1
 @export var base_attack_speed: float = 1 ## the attack interval will be 3 / attack_speed
 @export var base_projectile_count: int = 1
+
+# Audio players
+@onready var hurt_sfx: AudioStreamPlayer2D = $AudioPlayers/Hurt
+@onready var level_sfx: AudioStreamPlayer2D = $AudioPlayers/LevelUp
+@onready var die_sfx: AudioStreamPlayer2D = $AudioPlayers/Die
 
 # Node components
 @onready var camera: Camera2D = $Camera
@@ -60,6 +69,7 @@ var is_dead: bool:
 
 func _ready():
     projectile_handler.create_pool(40)
+    projectile_handler.set_pool_data(projectile_texture, projectile_sound)
 
     hitbox.body_entered.connect(damage_handler.try_queue_body)
     hitbox.body_exited.connect(damage_handler.try_remove_body)
