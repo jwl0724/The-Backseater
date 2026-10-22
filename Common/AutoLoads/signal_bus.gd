@@ -9,6 +9,7 @@ signal transition_message_hide()
 signal transition_message_finished()
 
 # 2D HUD Signals
+signal hud_2d_requestSend(base_chance: float)
 signal hud_2d_sendMessage(message: String)
 
 # 2D Game Signals

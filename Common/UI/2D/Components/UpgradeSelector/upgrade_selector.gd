@@ -36,6 +36,7 @@ func _open_upgrades():
 
 func _on_selected(option: UpgradeSelection):
     SignalBus.game2d_player_upgrade.emit(option.type)
+    SignalBus.hud_2d_requestSend.emit(1)
     visible = false
     if times_to_open > 0:
         times_to_open -= 1

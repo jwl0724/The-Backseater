@@ -30,7 +30,8 @@ func _level_up():
     player.level_sfx.play()
     collected_xp -= required_xp
     required_xp = _get_next_threshold()
-    SignalBus.game2d_player_levelup.emit.call_deferred() # Need to wait for next frame, doesn't open menu otherwise
+    SignalBus.game2d_player_levelup.emit.call_deferred() # Need to wait for next frame, doesn't open menu otherwise\
+    SignalBus.hud_2d_requestSend.emit(1)
     await SignalBus.game2d_player_upgrade
     if collected_xp >= required_xp: _level_up()
 

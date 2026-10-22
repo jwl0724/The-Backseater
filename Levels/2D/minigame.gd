@@ -31,6 +31,8 @@ func _ready():
     visible = false
     player.visible = false
     hud_2d.hide_hud()
+
+    SignalBus.hud_2d_requestSend.connect(_on_send_request)
     player.killed.connect(_on_player_death)
 
 
@@ -102,3 +104,10 @@ func _on_player_death():
     await SignalBus.transition_message_finished
     restart_game()
     SignalBus.transition_message_show.emit()
+
+
+
+func _on_send_request(base_chance: float):
+    var modified_chance = base_chance * instanced_level / 4 # Account for base level chance
+    if randf() > modified_chance: return
+    SignalBus.hud_2d_sendMessage.emit(Dialogue.random_chat_messages.pick_random())

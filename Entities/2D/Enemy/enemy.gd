@@ -91,6 +91,7 @@ func hurt_enemy(projectile: Projectile):
     movement.knockback(projectile.target_direction, projectile.projectile_speed)
     if is_dead: kill()
     else:
+        SignalBus.hud_2d_requestSend.emit(0.001)
         Utils.play_pitch_shift_sfx(hurt_sfx)
         damaged.emit()
 
@@ -98,6 +99,7 @@ func hurt_enemy(projectile: Projectile):
 
 func kill():
     killed.emit()
+    SignalBus.hud_2d_requestSend.emit(0.1)
     Utils.play_pitch_shift_sfx(die_sfx)
     await visuals.death_finished
     components.visible = false

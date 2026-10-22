@@ -30,6 +30,7 @@ func hit_via_enemy(enemy: Enemy2D):
         Utils.play_pitch_shift_sfx(player.hurt_sfx)
         player.visuals.play_hurt()
         player.iframe_handler.activate_iframes()
+        SignalBus.hud_2d_requestSend.emit(0.25)
 
 
 
@@ -44,10 +45,12 @@ func hit_via_projectile(projectile: Projectile):
         player.hurt_sfx.play()
         player.visuals.play_hurt()
         player.iframe_handler.activate_iframes()
+        SignalBus.hud_2d_requestSend.emit(0.25)
 
 
 
 func kill():
+    SignalBus.hud_2d_requestSend.emit(1)
     player.die_sfx.play()
     player.visuals.play_death()
     await player.visuals.death_finished
