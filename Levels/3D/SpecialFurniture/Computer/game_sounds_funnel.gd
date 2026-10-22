@@ -1,7 +1,10 @@
 extends AudioStreamPlayer3D
+class_name GameSoundsFunnel
 
 var capture:AudioEffectCapture
 var playback:AudioStreamGeneratorPlayback
+
+var do_funnel: bool = true
 
 
 
@@ -14,7 +17,15 @@ func _ready():
 
 
 
+func disable_funnel(disable: bool):
+	do_funnel = disable
+	if disable: stop()
+	else: play()
+
+
+
 func _process(_delta: float) -> void:
+	if !do_funnel: return
 	fill_buffer()
 
 
@@ -22,6 +33,8 @@ func _process(_delta: float) -> void:
 func fill_buffer():
 	var playback_available = playback.get_frames_available()
 	var capture_available = capture.get_frames_available()
+
+	if capture_available <= 0: return
 
 	while playback_available > capture_available:
 		var buffer = capture.get_buffer(capture_available)

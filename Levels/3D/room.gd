@@ -31,6 +31,7 @@ func _ready():
 func start_night():
     await _play_tutorial()
     computer.start_game(current_night)
+    computer.disable_sounds(current_night >= 2)
     monster.activate(current_night)
     monster.disable_attacks(current_night == 1)
 

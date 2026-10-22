@@ -4,6 +4,7 @@ class_name RoomComputer
 @onready var alert_sound: AudioStreamPlayer3D = $AlertSound
 @onready var game_window: SubViewport = $GameScreen
 @onready var minigame: MiniGame = $GameScreen/Minigame
+@onready var game_sounds: GameSoundsFunnel = $GameSounds
 
 var is_reading_input: bool = false
 
@@ -13,6 +14,10 @@ func start_game(level: int):
     minigame.start_game(level)
     SignalBus.hud_2d_sendMessage.connect(_on_msg_send)
 
+
+
+func disable_sounds(disable: bool):
+    game_sounds.disable_funnel(disable)
 
 
 
