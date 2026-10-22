@@ -58,7 +58,7 @@ func start_game(level_number: int):
             music_player.stream = bgm3
         4:
             scene = night4.instantiate()
-            msg = "YOU BROKE THE META"
+            msg = "M E T A"
             music_player.stream = bgm4
         _: scene = null
     if !scene:

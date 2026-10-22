@@ -5,6 +5,7 @@ signal finished()
 
 @export var chat_line_template: PackedScene = null
 
+@onready var scroll: ScrollContainer = %Scroll
 @onready var message_container: VBoxContainer = %Messages
 @onready var start_button: Button = %Start
 @onready var sender_name: Label = %ChatName
@@ -24,6 +25,7 @@ func show_chatlog(night: int):
     visible = true
     start_button.disabled = false
     night_label.text = "NIGHT %d" % night
+    scroll.get_v_scroll_bar().value = 0
 
     _clear_chatlog()
     var chatlog = _get_chat_history(night)

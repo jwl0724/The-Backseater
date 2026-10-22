@@ -42,7 +42,7 @@ func play_finish():
     modulate = Color.TRANSPARENT
     audio.stream = survive_sfx
     night_label.modulate = Color.TRANSPARENT
-    night_label.text = "YOU SURVIVE THE BACKSEATING"
+    night_label.text = "YOU SURVIVED THE BACKSEATING"
 
     var t = create_tween()
     t.tween_property(self, "modulate", Color.WHITE, 1)

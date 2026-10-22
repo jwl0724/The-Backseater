@@ -10,6 +10,7 @@ enum View { LEFT, RIGHT, FRONT, GAME }
 @export var game_view_node: Node3D = null
 @export var dead_view_node: Node3D = null
 
+var controls_enabled: bool = true
 var is_alive: bool = true
 var look_tween: Tween = null
 var current_view: View = View.FRONT
@@ -45,7 +46,7 @@ func kill(kill_angle: View):
 
 
 func _input(event: InputEvent):
-	if event is not InputEventKey: return
+	if event is not InputEventKey || !controls_enabled: return
 	if !is_alive: return
 
 	if current_view != View.GAME:

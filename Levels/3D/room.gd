@@ -16,10 +16,7 @@ class_name Room3D
 
 
 # TODO: Implement level limitations in 2D Game
-# TODO: Fix the multiploe starting listeners -> minigame is not properly resetting
-# TODO: Fix the computer trying to connect twice to msg send
 # TODO: Main menu screen and credits screen with all credits properly listed
-# TODO: Need night transition screens when b/n nights
 # TODO: Need a win screen for surviving the 4 nights
 # TODO: Need an animation for player defending themselves (probably throw some paper or something with an audio clip saying spreadsheets)
 # TODO: Need night intro sequence that gets re-used when player dies and restarts
@@ -28,6 +25,7 @@ class_name Room3D
 # TODO: Temporarily here for testing, determine exact details later
 
 func _ready():
+    player.controls_enabled = false
     night_timer.wait_time = night_duration
     night_timer.timeout.connect(end_night)
 
@@ -44,6 +42,7 @@ func _ready():
 
 
 func start_night():
+    player.controls_enabled = true
     await _play_tutorial()
 
     night_timer.start()
@@ -59,6 +58,9 @@ func start_night():
 
 func end_night():
     monster.reset()
+    player.controls_enabled = false
+    computer.stop_game()
+    computer.enable_inputs(false)
     SignalBus.game3d_end_night.emit()
 
 
@@ -67,8 +69,9 @@ func setup_next_night():
     if current_night <= 4:
         door.fix_door()
         window.fix_window()
+        computer.clear_screen()
+        player.reset_player()
         current_night += 1
-        print("request intro")
         SignalBus.transition_fade_show.emit(1)
         SignalBus.game3d_start_intro.emit(current_night, true)
     else:
