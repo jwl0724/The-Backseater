@@ -19,6 +19,10 @@ signal killed()
 signal ready_to_respawn()
 signal respawned()
 
+# Audio Players
+@onready var hurt_sfx: AudioStreamPlayer = $AudioPlayers/Hurt
+@onready var die_sfx: AudioStreamPlayer = $AudioPlayers/Die
+
 @onready var projectile_handler: ProjectileHandler = %ProjectileHandler
 @onready var components: Node2D = $Components
 @onready var visuals: EnemyVisuals = %Visuals
@@ -86,12 +90,15 @@ func hurt_enemy(projectile: Projectile):
     health -= player.damage
     movement.knockback(projectile.target_direction, projectile.projectile_speed)
     if is_dead: kill()
-    else: damaged.emit()
+    else:
+        Utils.play_pitch_shift_sfx(hurt_sfx)
+        damaged.emit()
 
 
 
 func kill():
     killed.emit()
+    Utils.play_pitch_shift_sfx(die_sfx)
     await visuals.death_finished
     components.visible = false
     xp_orb.drop_xp(global_position, xp_worth)

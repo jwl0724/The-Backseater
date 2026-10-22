@@ -12,7 +12,6 @@ class_name Room3D
 @export var current_night: int = 1 # Up to 4
 
 # TODO: Implement level limitations in 2D Game
-# TODO: Implement ingame messages being sent to the 2D Screen and showing up in viewport
 # TODO: Main menu screen and credits screen with all credits properly listed
 # TODO: Need night transition screens when b/n nights
 # TODO: Create text message screen for between nights transitions with a start night button -> intro transtiion
@@ -20,7 +19,7 @@ class_name Room3D
 # TODO: Need an animation for player defending themselves (probably throw some paper or something with an audio clip saying spreadsheets)
 # TODO: Need night intro sequence that gets re-used when player dies and restarts
 # TODO: Need a try again screen when player dies
-# TODO: Need to implement sounds on everything
+# TODO: Need to implement sounds on 3d game
 # TODO: Need to fix the skybox, looks terrible right now
 # TODO: Temporarily here for testing, determine exact details later
 

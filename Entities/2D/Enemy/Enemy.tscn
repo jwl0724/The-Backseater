@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmlhilkq4ypxh" path="res://Entities/2D/Enemy/Components/EnemyVisuals.tscn" id="3_i01j8"]
 [ext_resource type="Script" uid="uid://btvx3bqvxl45b" path="res://Entities/2D/Enemy/Systems/enemy_health_bar.gd" id="4_7m32k"]
 [ext_resource type="AudioStream" uid="uid://bneqkfpcq02t3" path="res://Entities/2D/Enemy/Imports/hurt.mp3" id="4_aqfwv"]
-[ext_resource type="AudioStream" uid="uid://8nu4g7q4pgot" path="res://Entities/2D/Enemy/Imports/die.mp3" id="5_nri4l"]
+[ext_resource type="AudioStream" uid="uid://n05t8aafqqgy" path="res://Entities/2D/Enemy/Imports/die.wav" id="5_aqfwv"]
 [ext_resource type="PackedScene" uid="uid://c85j8wv8lq1yg" path="res://Entities/2D/XPOrb/XPOrb.tscn" id="5_sbrd8"]
 [ext_resource type="Texture2D" uid="uid://dtpuqxeb242bd" path="res://Entities/2D/Shared/Shadow.png" id="6_fqab3"]
 
@@ -40,9 +40,13 @@ projectile_spawn_node = NodePath("..")
 
 [node name="Hurt" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=838400303]
 stream = ExtResource("4_aqfwv")
+volume_db = -10.0
+bus = &"Game2D"
 
 [node name="Die" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1452312780]
-stream = ExtResource("5_nri4l")
+stream = ExtResource("5_aqfwv")
+volume_db = -10.0
+bus = &"Game2D"
 
 [node name="Components" type="Node2D" parent="." unique_id=565327444]
 
