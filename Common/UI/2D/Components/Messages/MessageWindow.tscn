@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dd2q3xdyo1y0j" path="res://Common/UI/2D/Components/Messages/Message/Message.tscn" id="2_whe33"]
 
 [node name="MessageWindow" type="VBoxContainer" unique_id=2080460839]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(200, 0)
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -17,18 +17,4 @@ size_flags_vertical = 0
 mouse_filter = 2
 alignment = 2
 script = ExtResource("1_moouw")
-
-[node name="Message" parent="." unique_id=891409910 instance=ExtResource("2_whe33")]
-layout_mode = 2
-
-[node name="Message2" parent="." unique_id=709474514 instance=ExtResource("2_whe33")]
-layout_mode = 2
-
-[node name="Message3" parent="." unique_id=1074624039 instance=ExtResource("2_whe33")]
-layout_mode = 2
-
-[node name="Message4" parent="." unique_id=1306136439 instance=ExtResource("2_whe33")]
-layout_mode = 2
-
-[node name="Message5" parent="." unique_id=779233478 instance=ExtResource("2_whe33")]
-layout_mode = 2
+message_scene = ExtResource("2_whe33")

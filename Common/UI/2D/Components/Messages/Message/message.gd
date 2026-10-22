@@ -16,22 +16,24 @@ func _ready():
 
 
 
-func show_content(start_timer: bool, linger_time: float = 3):
+func show_content(start_timer: bool, linger_time: float = 2):
     modulate = Color.TRANSPARENT
     visible = true
     lifespan_timer.wait_time = linger_time
     if start_timer: lifespan_timer.start()
 
     var t = create_tween()
-    t.tween_property(self, "modulate", Color.WHITE, 0.3)
+    t.tween_property(self, "modulate", Color.WHITE, 0.5)
     t.play()
 
 
 
 func fade_content():
     var t = create_tween()
-    t.tween_property(self, "modulate", Color.TRANSPARENT, 0.3)
-    t.tween_callback(func(): visible = false)
+    t.tween_property(self, "modulate", Color.TRANSPARENT, 1)
+    t.tween_callback(func():
+        visible = false
+        expired.emit())
     t.play()
 
 
@@ -45,5 +47,4 @@ func populate_content(sender_name: String, message: String, profile_picture: Tex
 
 
 func _on_expired():
-    expired.emit()
     fade_content()
