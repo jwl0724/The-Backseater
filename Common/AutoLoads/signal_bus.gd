@@ -1,6 +1,9 @@
 extends Node
 @warning_ignore_start("unused_signal")
 
+# Scene Signals
+signal back_to_menu()
+
 # Transition Signals
 signal transition_fade_show(time: float)
 signal transition_fade_hide(time: float)
@@ -24,3 +27,5 @@ signal game2d_mechanic_lowFPS(lower_fps: float) # Night 4 gimmick
 signal game3d_hud_addUI(hud_scene: PackedScene)
 signal game3d_tutorial_play(sequence: Array[String])
 signal game3d_tutorial_finished()
+signal game3d_reset_night()
+signal game3d_gameover()

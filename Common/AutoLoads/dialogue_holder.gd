@@ -10,6 +10,13 @@ class MessageContent: # Pair holder for dialogue messages
         sender = username
         content = message
 
+const hint_pool: Array[String] = [
+    "Try to avoid dying in the game, otherwise you anger the backseater",
+    "The backseater will get more aggressive as the night goes on",
+    "If you die too much in game, the backseater will attack you immediately",
+    "The backseater makes a sound before attacking"
+]
+
 const night1_tutorial: Array[String] = [
     "Press 'Tab' to focus and unfocus on the monitor",
     "Press 'A' to look left",

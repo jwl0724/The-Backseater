@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b5yp5cxaxir57"]
+
+[ext_resource type="Script" uid="uid://dxa0kudkx0gm" path="res://Common/UI/3D/Components/GameOver/game_over.gd" id="1_c0iaj"]
+
+[node name="GameOver" type="Control" unique_id=1473674471]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0iaj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1287602843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+
+[node name="GameOver" type="Label" parent="." unique_id=1318766568]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 29.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=1051121626]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 59.0
+offset_bottom = 82.0
+grow_horizontal = 2
+text = "YOU WERE BACKSEATED"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1219332520]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TryAgain" type="Button" parent="HBoxContainer" unique_id=1805715272]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Try Again"
+
+[node name="BackToMenu" type="Button" parent="HBoxContainer" unique_id=1165829488]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to Menu"
+
+[node name="Hint" type="Label" parent="." unique_id=342741273]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 253.0
+offset_bottom = 276.0
+grow_horizontal = 2
+text = "Avoid dying in the game, otherwise you anger HIM"
+horizontal_alignment = 1
+vertical_alignment = 1
