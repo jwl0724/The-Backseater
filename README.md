@@ -66,6 +66,7 @@ https://opengameart.org/content/4-chiptunes-adventure
 
 ### SFX
 https://opengameart.org/content/retro-sounds-0
+https://pixabay.com/sound-effects/film-special-effects-soft-explosion-sound-effect-382043/
 https://pixabay.com/sound-effects/horror-boom-copyright-free-487662/
 https://pixabay.com/sound-effects/film-special-effects-lighter-click-fire-woosh-326482/
 https://pixabay.com/sound-effects/film-special-effects-bubble-pop-06-351337/

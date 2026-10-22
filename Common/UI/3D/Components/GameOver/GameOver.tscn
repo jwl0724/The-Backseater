@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5yp5cxaxir57"]
 
 [ext_resource type="Script" uid="uid://dxa0kudkx0gm" path="res://Common/UI/3D/Components/GameOver/game_over.gd" id="1_c0iaj"]
+[ext_resource type="AudioStream" uid="uid://cx2pwpjjb7050" path="res://Common/UI/3D/Components/StartScreen/ingame_click.mp3" id="2_y2u3t"]
 
 [node name="GameOver" type="Control" unique_id=1473674471]
 layout_mode = 3
@@ -74,3 +75,6 @@ grow_horizontal = 2
 text = "Avoid dying in the game, otherwise you anger HIM"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1054861785]
+stream = ExtResource("2_y2u3t")
