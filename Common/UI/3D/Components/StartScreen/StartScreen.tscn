@@ -2,6 +2,22 @@
 
 [ext_resource type="Script" uid="uid://dkqm4dpcwem1m" path="res://Common/UI/3D/Components/StartScreen/start_screen.gd" id="1_1j7tu"]
 [ext_resource type="AudioStream" uid="uid://cx2pwpjjb7050" path="res://Common/UI/3D/Components/StartScreen/ingame_click.mp3" id="2_gvu2o"]
+[ext_resource type="PackedScene" uid="uid://bt0w23is8niov" path="res://Common/UI/3D/Components/StartScreen/Components/ChatLine.tscn" id="2_q6api"]
+[ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="4_q6api"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6api"]
+bg_color = Color(0.8047426, 0.80474263, 0.8047425, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Gradient" id="Gradient_q6api"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.8039216, 0.8039216, 0.8039216, 1, 0.05490196, 0.05490196, 0.05490196, 1, 0.8039216, 0.8039216, 0.8039216, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xd3ho"]
+gradient = SubResource("Gradient_q6api")
 
 [node name="StartScreen" type="Control" unique_id=1175505821]
 layout_mode = 3
@@ -11,7 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1j7tu")
-click_sfx = ExtResource("2_gvu2o")
+chat_line_template = ExtResource("2_q6api")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1866602896]
 layout_mode = 1
@@ -20,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.7919991, 0.79199916, 0.7919991, 1)
+color = Color(0.05490196, 0.05490196, 0.05490196, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1066904309]
 layout_mode = 1
@@ -46,5 +62,72 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "NIGHT 1"
+
+[node name="Window" type="Control" parent="MarginContainer" unique_id=1422620013]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Background" type="Panel" parent="MarginContainer/Window" unique_id=335061831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6api")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Window" unique_id=1509764313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Window/MarginContainer" unique_id=242061276]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_q6api")
+
+[node name="Messages" type="VBoxContainer" parent="MarginContainer/Window/MarginContainer/ScrollContainer" unique_id=2031022905]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Window" unique_id=2002710919]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = -2
+
+[node name="ChatName" type="Label" parent="MarginContainer/Window/MarginContainer2" unique_id=850793682]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+text = "bigTeethDJC"
+horizontal_alignment = 1
+
+[node name="Border" type="TextureRect" parent="MarginContainer/Window/MarginContainer2" unique_id=117400244]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 8
+texture = SubResource("GradientTexture1D_xd3ho")
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=739864875]
+stream = ExtResource("2_gvu2o")
+bus = &"Default_SFX"
