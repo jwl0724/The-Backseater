@@ -7,5 +7,6 @@ script = ExtResource("1_xdv0l")
 enemy_type = 28
 damage = 10.0
 move_speed = 40.0
-xp_worth = 15
+health = 4.0
+xp_worth = 20
 metadata/_custom_type_script = "uid://bcu08sudqiuyg"

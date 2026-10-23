@@ -9,11 +9,12 @@
 script = ExtResource("1_qrrn7")
 enemy_type = 10
 damage = 1.0
-move_speed = 30.0
-health = 3.0
-attack_speed = 1.5
+move_speed = 40.0
+health = 2.0
+xp_worth = 3
+attack_speed = 1.0
 projectile_scene = ExtResource("1_mw4iy")
 projectile_texture = ExtResource("2_tv1jr")
 projectile_sound = ExtResource("2_uqnn5")
-projectile_speed = 50.0
+projectile_speed = 70.0
 metadata/_custom_type_script = "uid://bcu08sudqiuyg"

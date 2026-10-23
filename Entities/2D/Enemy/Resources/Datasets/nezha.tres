@@ -8,5 +8,5 @@ enemy_type = 12
 damage = 15.0
 move_speed = 30.0
 health = 20.0
-xp_worth = 20
+xp_worth = 50
 metadata/_custom_type_script = "uid://bcu08sudqiuyg"
