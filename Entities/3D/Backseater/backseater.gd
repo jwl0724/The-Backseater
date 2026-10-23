@@ -10,8 +10,9 @@ const time_per_aggression_increment: float = 60
 const attack_delay: float = 5 # Gap between ready to pounce and actually attacking
 
 @export_group("Sounds")
-@export var wood_step_noises: AudioStream = null # Play when about to attack with broken door
-@export var glass_step_noises: AudioStream = null # Play when about to attack with broken window
+@export var ambience_sounds: Array[AudioStream] = []
+@export var door_prepare_attack: AudioStream = null # Play when about to attack with broken door
+@export var window_prepare_attack: AudioStream = null # Play when about to attack with broken window
 
 @export_group("Attack Targets")
 @export var player: Player3D = null
@@ -124,7 +125,7 @@ func _start_attack():
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(door), CONNECT_ONE_SHOT)
         else:
-            audio_player.stream = wood_step_noises
+            audio_player.stream = door_prepare_attack
             audio_player.play()
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(door), CONNECT_ONE_SHOT)
@@ -138,7 +139,7 @@ func _start_attack():
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(window), CONNECT_ONE_SHOT)
         else:
-            audio_player.stream = glass_step_noises
+            audio_player.stream = window_prepare_attack
             audio_player.play()
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(window), CONNECT_ONE_SHOT)
