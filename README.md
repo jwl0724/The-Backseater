@@ -44,6 +44,7 @@ The real-life part will be task management game, where you have to watch out on 
 ### Fonts
 https://fonts.google.com/specimen/Press+Start+2P?query=pixel
 https://fonts.google.com/specimen/Roboto
+https://www.dafont.com/berylium.font
 
 ### Shaders
 https://godotshaders.com/shader/corner-radius/

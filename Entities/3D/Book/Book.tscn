@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da1262o6fbxfe" path="res://Entities/3D/Book/textures/book_tex.png" id="2_uuvxk"]
 [ext_resource type="Texture2D" uid="uid://bggex7p6u2opg" path="res://Entities/3D/Book/textures/book_spec.png" id="3_sknil"]
 [ext_resource type="Texture2D" uid="uid://ba76cmvd0x6h8" path="res://Entities/3D/Book/textures/book_normal.png" id="4_1814p"]
+[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/Default.ttf" id="5_6pv18"]
 [ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="5_sknil"]
 [ext_resource type="AudioStream" uid="uid://doblwv13j42y3" path="res://Entities/3D/Book/use.mp3" id="7_rfyqe"]
 
@@ -28,8 +29,8 @@ pixel_size = 0.0005
 modulate = Color(1, 0.7882353, 0.4627451, 1)
 outline_modulate = Color(0.4117647, 0.3019608, 0.22352941, 1)
 text = "META"
-font = ExtResource("5_sknil")
-font_size = 64
+font = ExtResource("5_6pv18")
+font_size = 50
 outline_size = 10
 
 [node name="Label3D2" type="Label3D" parent="." index="2" unique_id=918924774]
@@ -44,4 +45,5 @@ outline_size = 0
 
 [node name="UseSFX" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1094608665]
 stream = ExtResource("7_rfyqe")
+volume_db = -5.0
 pitch_scale = 0.9

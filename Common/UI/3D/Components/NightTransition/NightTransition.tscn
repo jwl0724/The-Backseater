@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6lhdfjeggfdi" path="res://Common/UI/3D/Components/NightTransition/night_transition.gd" id="1_arvqs"]
 [ext_resource type="AudioStream" uid="uid://iply5nrjjry0" path="res://Common/UI/3D/Components/NightTransition/boom.mp3" id="2_f526p"]
 [ext_resource type="AudioStream" uid="uid://edtprvwqjyur" path="res://Common/UI/3D/Components/NightTransition/win.mp3" id="3_f526p"]
+[ext_resource type="Theme" uid="uid://byf0h1l2hhudn" path="res://Common/UI/3D/default.tres" id="4_g0xi1"]
 
 [node name="NightIntro" type="Control" unique_id=258571553]
 layout_mode = 3
@@ -30,11 +31,13 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+offset_top = -22.5
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 11)
+theme = ExtResource("4_g0xi1")
+theme_override_font_sizes/font_size = 36
 text = "NIGHT 4"
 horizontal_alignment = 1
 

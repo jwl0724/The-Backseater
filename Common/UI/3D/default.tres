@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://byf0h1l2hhudn"]
+
+[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/Default.ttf" id="1_tjhpu"]
+
+[resource]
+default_font = ExtResource("1_tjhpu")
