@@ -13,6 +13,9 @@ const attack_delay: float = 5 # Gap between ready to pounce and actually attacki
 @export var ambience_sounds: Array[AudioStream] = []
 @export var door_prepare_attack: AudioStream = null # Play when about to attack with broken door
 @export var window_prepare_attack: AudioStream = null # Play when about to attack with broken window
+@export var attack_canceled_sound: AudioStream = null # Play when scared off
+@export var attack_sound: AudioStream = null # Sound played during the jumpscare
+@export var kill_sound: AudioStream = null # Jumpscare-ish sound
 
 @export_group("Attack Targets")
 @export var player: Player3D = null
@@ -25,7 +28,8 @@ const attack_delay: float = 5 # Gap between ready to pounce and actually attacki
 @export var window_kill_point: Node3D = null # Only used when the window is destroyed
 @export var window_peek_point: Node3D = null # Only used when the window is still there
 
-@onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
+@onready var attack_player: AudioStreamPlayer3D = $AttackSounds
+@onready var ambient_player: AudioStreamPlayer3D = $AmbientSounds
 @onready var delay_timer: Timer = $DelayTimer
 @onready var roll_timer: Timer = $RollTimer
 @onready var aggression_timer: Timer = $AggroTimer
@@ -125,8 +129,8 @@ func _start_attack():
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(door), CONNECT_ONE_SHOT)
         else:
-            audio_player.stream = door_prepare_attack
-            audio_player.play()
+            attack_player.stream = door_prepare_attack
+            attack_player.play()
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(door), CONNECT_ONE_SHOT)
 
@@ -139,8 +143,8 @@ func _start_attack():
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(window), CONNECT_ONE_SHOT)
         else:
-            audio_player.stream = window_prepare_attack
-            audio_player.play()
+            attack_player.stream = window_prepare_attack
+            attack_player.play()
             delay_timer.start()
             delay_timer.timeout.connect(_attack.bind(window), CONNECT_ONE_SHOT)
 

@@ -6,14 +6,28 @@
 [ext_resource type="AudioStream" uid="uid://drcrgcxwwl2nq" path="res://Entities/3D/Backseater/Imports/Sounds/ambience3.mp3" id="3_tuupa"]
 [ext_resource type="AudioStream" uid="uid://c0r17rl30c4dr" path="res://Entities/3D/Backseater/Imports/Sounds/ambience4.mp3" id="4_hgtop"]
 [ext_resource type="AudioStream" uid="uid://bte6fj0kk6q6u" path="res://Entities/3D/Backseater/Imports/Sounds/ambience.mp3" id="5_gb747"]
+[ext_resource type="AudioStream" uid="uid://c4vsevaf4mdc8" path="res://Entities/3D/Backseater/Imports/Sounds/ambience5.mp3" id="5_p8nb4"]
+[ext_resource type="AudioStream" uid="uid://bvv21kx2b4ep2" path="res://Entities/3D/Backseater/Imports/Sounds/cancel.wav" id="6_tuupa"]
+[ext_resource type="AudioStream" uid="uid://dcccl50wqsok6" path="res://Entities/3D/Backseater/Imports/Sounds/door_attack.mp3" id="7_bcqxr"]
+[ext_resource type="AudioStream" uid="uid://bo3oo34e2bugc" path="res://Entities/3D/Backseater/Imports/Sounds/kill.mp3" id="7_hgtop"]
+[ext_resource type="AudioStream" uid="uid://8ghh4ygookki" path="res://Entities/3D/Backseater/Imports/Sounds/window_attack.mp3" id="8_b2tlo"]
+[ext_resource type="AudioStream" uid="uid://cvsvqqgsivlob" path="res://Entities/3D/Backseater/Imports/Sounds/attack.mp3" id="10_63t4w"]
 
 [node name="Backseater" type="Node3D" unique_id=221199719]
 script = ExtResource("1_h2gjf")
-ambience_sounds = Array[AudioStream]([ExtResource("2_enomo"), ExtResource("3_tuupa"), ExtResource("4_hgtop"), ExtResource("5_gb747")])
+ambience_sounds = Array[AudioStream]([ExtResource("2_enomo"), ExtResource("3_tuupa"), ExtResource("4_hgtop"), ExtResource("5_p8nb4"), ExtResource("5_gb747")])
+door_prepare_attack = ExtResource("7_bcqxr")
+window_prepare_attack = ExtResource("8_b2tlo")
+attack_canceled_sound = ExtResource("6_tuupa")
+attack_sound = ExtResource("10_63t4w")
+kill_sound = ExtResource("7_hgtop")
 
 [node name="Model" parent="." unique_id=538325695 instance=ExtResource("1_nq5ow")]
 
-[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1425799207]
+[node name="AttackSounds" type="AudioStreamPlayer3D" parent="." unique_id=1425799207]
+bus = &"Default_SFX"
+
+[node name="AmbientSounds" type="AudioStreamPlayer3D" parent="." unique_id=570610214]
 bus = &"Default_SFX"
 
 [node name="DelayTimer" type="Timer" parent="." unique_id=1559654684]

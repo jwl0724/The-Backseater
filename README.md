@@ -91,6 +91,13 @@ https://pixabay.com/sound-effects/film-special-effects-glass-creaking-33916/
 https://pixabay.com/sound-effects/broken-glass-impact-454859/
 https://pixabay.com/sound-effects/film-special-effects-glass-knock-5-189101/
 
+https://pixabay.com/sound-effects/film-special-effects-wood-step-sample-1-47664/
+https://pixabay.com/sound-effects/film-special-effects-glass-breaking-99389/
+
+https://opengameart.org/content/goblin-cackle
+https://pixabay.com/sound-effects/horror-horror-orchestra-warning-338415/
+https://pixabay.com/sound-effects/horror-horrific-zombie-growl-107090/
+
 https://pixabay.com/sound-effects/household-floorboard-creak-03-499651/
 https://pixabay.com/sound-effects/household-floorboard-creak-02-499644/
 https://pixabay.com/sound-effects/household-floorboard-creak-04-499661/
