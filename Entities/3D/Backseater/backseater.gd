@@ -84,15 +84,23 @@ func reset_position():
     global_position = hide_position
 
 
-# TODO: Probably need to create tweens of the monster running away
+# TODO: Need to connect player waving book to canceling the attack
 func cancel_attack(start_roll_timer: bool = true):
     delay_timer.stop()
     if delay_timer.timeout.is_connected(_attack.bind(door)):
         delay_timer.timeout.disconnect(_attack.bind(door))
-        door.close_door()
+
+        if !door.is_vulnerable:
+            door.close_door()
+            _animate_to_node(door_peek_point, false)
+        else: _animate_to_node(door_kill_point, false)
 
     elif delay_timer.timeout.is_connected(_attack.bind(window)):
         delay_timer.timeout.disconnect(_attack.bind(window))
+
+        if !window.is_vulnerable: _animate_to_node(window_peek_point, false)
+        else: _animate_to_node(window_kill_point, false)
+
 
     if start_roll_timer:
         attack_player.stream = attack_canceled_sound
@@ -108,9 +116,13 @@ func _roll_attack_stage_advance():
         else: _attack(window)
         return
 
-    if randi() % max_aggression > aggression: return
-    attack_stage += 1
+    if randi() % max_aggression > aggression: # If failed to increment have a 1% chance to play ambient noise
+        if randf() < 0.01 && !ambient_player.playing:
+            ambient_player.stream = ambience_sounds.pick_random()
+            ambient_player.play()
+            return
 
+    attack_stage += 1
     if attack_stage > 4:
         _start_attack()
         return
@@ -128,8 +140,10 @@ func _start_attack():
 
     # Handle door attacks
     if randi() % 2 == 0:
-        global_position = door_kill_point.global_position if door.is_vulnerable else door_peek_point.global_position
         global_rotation = door_kill_point.global_rotation if door.is_vulnerable else door_peek_point.global_rotation
+        var target_pos = door_kill_point if door.is_vulnerable else door_peek_point
+        _animate_to_node(target_pos, true)
+
         if !door.is_vulnerable:
             door.peek_door()
             delay_timer.start()
@@ -142,8 +156,10 @@ func _start_attack():
 
     # Handle window attacks
     else:
-        global_position = window_kill_point.global_position if window.is_vulnerable else window_peek_point.global_position
         global_rotation = window_kill_point.global_rotation if window.is_vulnerable else window_peek_point.global_rotation
+        var target_pos = window_kill_point if window.is_vulnerable else window_peek_point
+        _animate_to_node(target_pos, true)
+
         if !window.is_vulnerable:
             window.knock_window()
             delay_timer.start()
@@ -155,16 +171,35 @@ func _start_attack():
             delay_timer.timeout.connect(_attack.bind(window), CONNECT_ONE_SHOT)
 
 
-# TODO: Probably need to do some quick tweens of the monster moving
+# TODO: Need to do animation of monster actually killing the player
 func _attack(attack_point: Node3D):
     if attack_point is RoomDoor:
         if !door.is_vulnerable:
             door.destroy_door()
+            _animate_to_node(door_peek_point, false)
             roll_timer.start()
         else: player.kill(Player3D.View.LEFT)
 
     elif attack_point is RoomWindow:
         if !window.is_vulnerable:
             window.break_window()
+            _animate_to_node(window_peek_point, false)
             roll_timer.start()
         else: player.kill(Player3D.View.RIGHT)
+
+
+
+func _animate_to_node(node: Node3D, towards: bool):
+    if node == window_kill_point || node == window_peek_point:
+        var target_pos = node.global_position if towards else node.global_position + Vector3.DOWN * 10
+        if towards: global_position = node.global_position + Vector3.DOWN * 10
+        var t = create_tween()
+        t.tween_property(self, "global_position", target_pos, 0.3)
+        t.play()
+
+    else: # Door position
+        var target_pos = node.global_position if towards else node.global_position - transform.basis.z * 10
+        if towards: position = node.global_position + -transform.basis.z * 10
+        var t = create_tween()
+        t.tween_property(self, "global_position", target_pos, 0.3)
+        t.play()
