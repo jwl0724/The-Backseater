@@ -20,9 +20,9 @@ class_name Room3D
 # TODO: Main menu screen and credits screen with all credits properly listed
 # TODO: Need to implement sounds on 3d game
 # TODO: Need to fix the skybox, looks terrible right now
-# TODO: Temporarily here for testing, determine exact details later
 
 func _ready():
+    player.reset_player()
     player.controls_enabled = false
     night_timer.wait_time = night_duration
     night_timer.timeout.connect(end_night)

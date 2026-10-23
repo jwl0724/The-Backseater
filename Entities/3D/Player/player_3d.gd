@@ -3,9 +3,13 @@ class_name Player3D
 
 enum View { LEFT, RIGHT, FRONT, GAME }
 
+const left_defend_anim_name: String = "defend_left"
+const right_defend_anim_name: String = "defend_right"
+
 signal killed()
 signal finished_death_animation()
 
+@export var defend_animations: AnimationPlayer = null
 @export var computer: RoomComputer = null
 @export var left_view_node: Node3D = null
 @export var right_view_node: Node3D = null
@@ -14,14 +18,15 @@ signal finished_death_animation()
 @export var dead_view_node: Node3D = null
 
 var controls_enabled: bool = true
+var is_defending: bool = false
 var is_alive: bool = true
 var look_tween: Tween = null
 var current_view: View = View.FRONT
 
 
-
 func reset_player():
 	is_alive = true
+	is_defending = false
 	current_view = View.FRONT
 	position = center_view_node.position
 	rotation = center_view_node.rotation
@@ -53,7 +58,7 @@ func kill(kill_angle: View):
 
 func _input(event: InputEvent):
 	if event is not InputEventKey || !controls_enabled: return
-	if !is_alive: return
+	if !is_alive || is_defending: return
 
 	if current_view != View.GAME:
 		if event.is_action_pressed(Constants.Controls.Left): goto_view(_get_next_view(Constants.Controls.Left))
@@ -61,6 +66,8 @@ func _input(event: InputEvent):
 		elif event.is_action_pressed(Constants.Controls.Tab):
 			computer.enable_inputs(current_view == View.FRONT)
 			goto_view(_get_next_view(Constants.Controls.Tab))
+
+		if event.is_action_pressed(Constants.Controls.Defend): try_defend_side(current_view)
 
 	else:
 		if event.is_action_pressed(Constants.Controls.Tab):
@@ -89,6 +96,17 @@ func goto_view(view_type: View):
 	look_tween.parallel().tween_property(self, "rotation", over_shoot, 0.15).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	look_tween.tween_property(self, "rotation", view_node.rotation, 0.03).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
 	look_tween.play()
+
+
+
+func try_defend_side(side: View):
+	# TODO: Need to make this only activatable when monster about to attack
+	if side != View.LEFT && side != View.RIGHT || is_defending: return
+	var anim_name := left_defend_anim_name if side == View.LEFT else right_defend_anim_name
+	is_defending = true
+	defend_animations.play(anim_name)
+	await defend_animations.animation_finished
+	is_defending = false
 
 
 

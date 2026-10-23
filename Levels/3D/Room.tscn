@@ -603,8 +603,9 @@ transform = Transform3D(-0.03681809, 0, 0.999322, 0, 1, 0, -0.999322, 0, -0.0368
 [node name="DoorPeek" type="Node3D" parent="AttackPoints" unique_id=261418777]
 transform = Transform3D(-0.7403002, 0, 0.67227644, 0, 1, 0, -0.67227644, 0, -0.7403002, -9.256027, 3.1997771, 6.8531337)
 
-[node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node", "dead_view_node") instance=ExtResource("44_ecbks")]
-transform = Transform3D(-0.090412736, 0.16292892, -0.9824865, 0.003952531, 0.9865778, 0.16324371, 0.99589646, 0.010876003, -0.0898432, 2.4028661, 3.6, 4.8)
+[node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("defend_animations", "computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node", "dead_view_node") instance=ExtResource("44_ecbks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 3.6, 4.8)
+defend_animations = NodePath("../Book/DefendAnimations")
 computer = NodePath("../Map/Interior/Layout/Furniture/desk/Computer")
 left_view_node = NodePath("../CameraPoints/LeftView")
 right_view_node = NodePath("../CameraPoints/RightView")
