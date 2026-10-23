@@ -5,8 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bggex7p6u2opg" path="res://Entities/3D/Book/textures/book_spec.png" id="3_sknil"]
 [ext_resource type="Texture2D" uid="uid://ba76cmvd0x6h8" path="res://Entities/3D/Book/textures/book_normal.png" id="4_1814p"]
 [ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="5_sknil"]
-[ext_resource type="AudioStream" uid="uid://pnj04qhduaro" path="res://Entities/3D/Book/land.mp3" id="6_r3gug"]
-[ext_resource type="AudioStream" uid="uid://doblwv13j42y3" path="res://Entities/3D/Book/despawn.mp3" id="7_rfyqe"]
+[ext_resource type="AudioStream" uid="uid://doblwv13j42y3" path="res://Entities/3D/Book/use.mp3" id="7_rfyqe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3gug"]
 transparency = 2
@@ -20,7 +19,7 @@ normal_texture = ExtResource("4_1814p")
 
 [node name="Book" unique_id=1361196322 instance=ExtResource("1_newpo")]
 
-[node name="book" parent="." index="0" unique_id=69606048]
+[node name="book" parent="." index="0" unique_id=1495581991]
 surface_material_override/0 = SubResource("StandardMaterial3D_r3gug")
 
 [node name="Label3D" type="Label3D" parent="." index="1" unique_id=1188591992]
@@ -43,8 +42,6 @@ optimization"
 font = ExtResource("5_sknil")
 outline_size = 0
 
-[node name="LandSFX" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1673006358]
-stream = ExtResource("6_r3gug")
-
-[node name="DespawnSFX" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1094608665]
+[node name="UseSFX" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1094608665]
 stream = ExtResource("7_rfyqe")
+pitch_scale = 0.9

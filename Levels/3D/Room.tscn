@@ -90,6 +90,132 @@ adjustment_brightness = 0.7
 adjustment_contrast = 1.14
 adjustment_saturation = 1.17
 
+[sub_resource type="Animation" id="Animation_6tpf1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.2275274, 3.4318228, 4.6283846)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7235523, 0.8679657, 0.24567063)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_75ltr"]
+resource_name = "defend_left"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.3764476, 0.7277987, 0.96666664, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 2, 1, 1, 1, 1, 1, 1, 0.5, 1),
+"update": 0,
+"values": [Vector3(1.2275274, 3.0512912, 4.6283846), Vector3(1.2275274, 3.4318228, 4.6283846), Vector3(1.2275274, 3.4318228, 4.6283846), Vector3(1.2547582, 3.4742236, 4.6283846), Vector3(1.2547582, 3.349165, 4.6283846), Vector3(1.2547582, 3.4742236, 4.6283846), Vector3(1.2547582, 3.349165, 4.6283846), Vector3(1.2547582, 3.4742236, 4.6283846), Vector3(1.2275274, 3.4318228, 4.6283846), Vector3(1.2275274, 3.0512912, 4.6283846)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.3764476, 0.7277987, 0.96666664, 1.2, 1.4, 1.6, 1.7, 2),
+"transitions": PackedFloat32Array(1, 2, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector3(0.7235523, 0.8679657, 0.24567063), Vector3(0.7235523, 0.8679657, 0.24567063), Vector3(0.7235523, 0.8679657, 0.24567063), Vector3(1.3087779, 2.9761367, -1.468723), Vector3(1.9076449, 2.9757864, -1.4695672), Vector3(1.3087779, 2.9761367, -1.468723), Vector3(1.9076449, 2.9757864, -1.4695672), Vector3(1.3087779, 2.9761367, -1.468723), Vector3(0.7235523, 0.8679657, 0.24567063), Vector3(0.7235523, 0.8679657, 0.24567063), Vector3(0.7235523, 0.8679657, 0.24567063)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_j167y"]
+resource_name = "defend_right"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.43333334, 0.7, 0.93333334, 1.1666666, 1.4333333, 1.7666667, 2),
+"transitions": PackedFloat32Array(1, 2, 1, 1, 1, 1, 1, 0.5, 1),
+"update": 0,
+"values": [Vector3(2.6703656, 3.0961916, 4.9392385), Vector3(2.6703656, 3.4202995, 4.9392385), Vector3(2.6703656, 3.473301, 4.9392385), Vector3(2.6703656, 3.3049, 4.9392385), Vector3(2.6703656, 3.473301, 4.9392385), Vector3(2.6703656, 3.3049, 4.9392385), Vector3(2.6703656, 3.473301, 4.9392385), Vector3(2.6703656, 3.4202995, 4.9392385), Vector3(2.6703656, 3.0961916, 4.9392385)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.43333334, 0.7, 0.93333334, 1.1666666, 1.4333333, 1.7666667, 2),
+"transitions": PackedFloat32Array(1, 2, 1, 1, 1, 1, 1, 0.5, 1),
+"update": 0,
+"values": [Vector3(0.7235523, -1.8118825, 0.24567068), Vector3(0.7235523, -1.8118826, 0.24567068), Vector3(1.4316981, 2.9625802, 1.4350159), Vector3(1.3909135, 0.2637428, -1.3930348), Vector3(1.4316981, 2.9625802, 1.4350159), Vector3(1.3909135, 0.2637428, -1.3930348), Vector3(1.4316981, 2.9625802, 1.4350159), Vector3(0.7235523, -1.8118826, 0.24567068), Vector3(0.7235523, -1.8118825, 0.24567068)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j167y"]
+_data = {
+&"RESET": SubResource("Animation_6tpf1"),
+&"defend_left": SubResource("Animation_75ltr"),
+&"defend_right": SubResource("Animation_j167y")
+}
+
 [node name="Room" type="Node3D" unique_id=340710139]
 script = ExtResource("1_ja5dw")
 skip_tutorial = true
@@ -478,7 +604,7 @@ transform = Transform3D(-0.03681809, 0, 0.999322, 0, 1, 0, -0.999322, 0, -0.0368
 transform = Transform3D(-0.7403002, 0, 0.67227644, 0, 1, 0, -0.67227644, 0, -0.7403002, -9.256027, 3.1997771, 6.8531337)
 
 [node name="Player3d" parent="." unique_id=1639451548 node_paths=PackedStringArray("computer", "left_view_node", "right_view_node", "center_view_node", "game_view_node", "dead_view_node") instance=ExtResource("44_ecbks")]
-transform = Transform3D(0.3193728, -0.23693112, 0.91753185, -7.1456445e-09, 0.9682393, 0.25002515, -0.9476291, -0.07985124, 0.30922934, 1.4168371, 3.6, 4.8)
+transform = Transform3D(-0.090412736, 0.16292892, -0.9824865, 0.003952531, 0.9865778, 0.16324371, 0.99589646, 0.010876003, -0.0898432, 2.4028661, 3.6, 4.8)
 computer = NodePath("../Map/Interior/Layout/Furniture/desk/Computer")
 left_view_node = NodePath("../CameraPoints/LeftView")
 right_view_node = NodePath("../CameraPoints/RightView")
@@ -497,10 +623,12 @@ window_kill_point = NodePath("../AttackPoints/WindowKill")
 window_peek_point = NodePath("../AttackPoints/DoorPeek")
 
 [node name="Book" parent="." unique_id=1361196322 instance=ExtResource("47_6tpf1")]
-transform = Transform3D(0.23949565, 0.47999835, 0.8439455, -0.011174336, 0.87054765, -0.49195734, -0.9708332, 0.10839112, 0.2138558, 1.1788042, 3.3992932, 4.7400546)
+transform = Transform3D(0.7498292, 0.33278373, 0.57184863, 0.18227345, 0.72695583, -0.66205114, -0.63602823, 0.60065836, 0.48443514, 1.2275274, 3.4318228, 4.6283846)
+visible = false
 
-[node name="DefendAnimation" type="AnimationPlayer" parent="Book" unique_id=144736717]
-root_node = NodePath("../..")
+[node name="DefendAnimations" type="AnimationPlayer" parent="Book" unique_id=134733385]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_j167y")
 
 [node name="NightTimer" type="Timer" parent="." unique_id=1863182596]
 one_shot = true
