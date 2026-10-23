@@ -22,6 +22,7 @@ boot_splash/bg_color=Color(0.05490196, 0.05490196, 0.05490196, 1)
 [audio]
 
 buses/default_bus_layout="uid://chv7np8s2h3xb"
+general/default_playback_type.web=0
 
 [autoload]
 
