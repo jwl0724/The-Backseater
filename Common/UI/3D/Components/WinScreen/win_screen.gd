@@ -3,6 +3,7 @@ class_name WinScreen
 
 signal closed()
 
+@export var bgm: AudioStream = null
 @export var chat_line_template: PackedScene = null
 
 @onready var scroll: ScrollContainer = %Scroll

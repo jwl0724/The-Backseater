@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://7mq5uvllvv2k" path="res://Common/UI/3D/default_button.tres" id="1_5pkyr"]
 [ext_resource type="Script" uid="uid://cb24mw2emowqv" path="res://Common/Menus/Credits/credits_menu.gd" id="1_ap0af"]
 [ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="2_ap0af"]
+[ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="4_lqbl3"]
 
 [node name="CreditsMenu" type="Control" unique_id=181847195]
 layout_mode = 3
@@ -39,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 60
@@ -50,16 +52,48 @@ layout_mode = 2
 theme = ExtResource("2_ap0af")
 
 [node name="Label" type="RichTextLabel" parent="MarginContainer/Scroll" unique_id=391723316]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+theme_override_fonts/normal_font = ExtResource("4_lqbl3")
+text = "Game created by golden rice
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+2D Art
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+Player and enemy sprites created by me 
+Brigada 16x16 Icon Pack by IvoryRed on opengameart.org
+Waterworld Tileset 16x16 by coem on opengameart.org
+Interior Tileset 16x16 by Bonsaiheldin on opengameart.org
+Zelda-like Tilesets and Sprites by ArMM1998 on opengameart.org
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+
+3D Models
+
+Old book by Aare on opengameart.org
+Angler Man 3D by piacenti on opengameart.org
+Furniture Kit by Kenney (Kenney.nl)
+
+
+Fonts
+
+Press Start 2P by CodeMan38 on Google Fonts
+Roboto by Christian Robertson, ParaType, Font Bureau on Google Fonts
+Berylium by Typodermic Fonts
+
+
+Shaders
+
+Corner radius by jack on Godot Shaders
+CRT with Luminance Preservation by Harrison Allen on Godot Shaders
+
+
+Music
+
+Full Moon by mercelofg55 on opengameart.org
+Creepy by TokyoGeisha
+4 ChipTunes (Adventure) by SubspaceAudio
+
+
+All sound effects were found on pixabay or opengameart.org"
+horizontal_alignment = 1

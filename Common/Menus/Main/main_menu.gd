@@ -1,5 +1,6 @@
 extends Control
 
+@export var bgm: AudioStream = null
 
 @onready var play_button: Button = %Play
 @onready var credits_button: Button = %Credits
@@ -9,8 +10,12 @@ extends Control
 
 
 func _ready():
-    SignalBus.transition_fade_show.emit(1)
+    play_button.pressed.connect(_on_play)
+    credits_button.pressed.connect(_on_credits)
     if OS.has_feature("web"): quit_button.visible = false
+    else: quit_button.pressed.connect(_on_quit)
+
+    SignalBus.transition_fade_show.emit(1)
 
 
 

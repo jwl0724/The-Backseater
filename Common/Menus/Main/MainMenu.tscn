@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5raq70loikcn"]
 
 [ext_resource type="Script" uid="uid://ddwnuiprc0eyq" path="res://Common/Menus/Main/main_menu.gd" id="1_3uoum"]
+[ext_resource type="AudioStream" uid="uid://tokd2dyp36fv" path="res://Common/Menus/Main/main_bgm.mp3" id="2_akvaq"]
 [ext_resource type="Texture2D" uid="uid://beuu2ujwgt1fw" path="res://Common/Menus/Main/Background.png" id="2_jdo1c"]
 [ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/horror.ttf" id="2_spc7o"]
 [ext_resource type="Theme" uid="uid://7mq5uvllvv2k" path="res://Common/UI/3D/default_button.tres" id="4_kr70a"]
@@ -26,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3uoum")
+bgm = ExtResource("2_akvaq")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1386448957]
 layout_mode = 1

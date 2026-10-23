@@ -64,7 +64,9 @@ https://opengameart.org/content/interior-tileset-16x16
 https://opengameart.org/content/zelda-like-tilesets-and-sprites
 
 ### Music
+https://opengameart.org/content/creepy
 https://opengameart.org/content/4-chiptunes-adventure
+https://opengameart.org/content/full-moon-0
 
 ### SFX
 https://opengameart.org/content/retro-sounds-0
