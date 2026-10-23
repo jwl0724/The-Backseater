@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://chfq5yhb2mjp3" path="res://Entities/3D/Backseater/backseater.gd" id="1_h2gjf"]
 [ext_resource type="PackedScene" uid="uid://cayjxlxq3ik68" path="res://Entities/3D/Backseater/Imports/BackseaterModel.tscn" id="1_nq5ow"]
+[ext_resource type="AudioStream" uid="uid://q66sl0cnanhg" path="res://Entities/3D/Backseater/Imports/Sounds/ambience2.mp3" id="2_enomo"]
+[ext_resource type="AudioStream" uid="uid://drcrgcxwwl2nq" path="res://Entities/3D/Backseater/Imports/Sounds/ambience3.mp3" id="3_tuupa"]
+[ext_resource type="AudioStream" uid="uid://c0r17rl30c4dr" path="res://Entities/3D/Backseater/Imports/Sounds/ambience4.mp3" id="4_hgtop"]
+[ext_resource type="AudioStream" uid="uid://bte6fj0kk6q6u" path="res://Entities/3D/Backseater/Imports/Sounds/ambience.mp3" id="5_gb747"]
 
 [node name="Backseater" type="Node3D" unique_id=221199719]
 script = ExtResource("1_h2gjf")
+ambience_sounds = Array[AudioStream]([ExtResource("2_enomo"), ExtResource("3_tuupa"), ExtResource("4_hgtop"), ExtResource("5_gb747")])
 
 [node name="Model" parent="." unique_id=538325695 instance=ExtResource("1_nq5ow")]
 

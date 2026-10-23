@@ -96,3 +96,13 @@ https://pixabay.com/sound-effects/household-floorboard-creak-02-499644/
 https://pixabay.com/sound-effects/household-floorboard-creak-04-499661/
 https://pixabay.com/sound-effects/household-floorboard-creak-01-499645/
 https://pixabay.com/sound-effects/film-special-effects-creak-sfx-602531/
+
+https://pixabay.com/sound-effects/horror-goblin-growl-100279/
+https://pixabay.com/sound-effects/horror-goblin-death-6729/
+https://pixabay.com/sound-effects/horror-goblin-scream-87564/
+https://pixabay.com/sound-effects/horror-monster-screech-94983/
+
+https://pixabay.com/sound-effects/horror-062740-creepy-ghost-scream-81907/
+https://pixabay.com/sound-effects/horror-creepy-female-ghost-whispers-430175/
+https://pixabay.com/sound-effects/horror-horror-sfx-3-103708/
+https://pixabay.com/sound-effects/horror-ghost-6979/
