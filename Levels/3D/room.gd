@@ -16,7 +16,6 @@ class_name Room3D
 @onready var monster: Backseater = $Backseater
 
 # TODO: Main menu screen and credits screen with all credits properly listed
-# TODO: Need to implement sounds on 3d game
 # TODO: Need to fix the skybox, looks terrible right now
 
 func _ready():

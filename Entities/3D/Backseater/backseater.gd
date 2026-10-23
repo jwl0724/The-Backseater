@@ -111,8 +111,14 @@ func cancel_attack(start_roll_timer: bool = true):
 func _roll_attack_stage_advance():
     if aggression == max_aggression && can_attack: # If player hit max aggression, force a death
         roll_timer.stop()
-        if randi() % 2 == 0: _attack(door)
-        else: _attack(window)
+        if randi() % 1 == 0:
+            global_rotation = door_kill_point.global_rotation if door.is_vulnerable else door_peek_point.global_rotation
+            global_position = door_kill_point.global_position if door.is_vulnerable else door_peek_point.global_position
+            _attack(door)
+        else:
+            global_rotation = window_kill_point.global_rotation if window.is_vulnerable else window_peek_point.global_rotation
+            global_position = window_kill_point.global_position if window.is_vulnerable else window_peek_point.global_position
+            _attack(window)
         return
 
     if randi() % max_aggression > aggression: # If failed to increment have a 1% chance to play ambient noise
@@ -174,21 +180,25 @@ func _start_attack():
             delay_timer.timeout.connect(_attack.bind(window), CONNECT_ONE_SHOT)
 
 
-# TODO: Need to do animation of monster actually killing the player
+
 func _attack(attack_point: Node3D):
     if attack_point is RoomDoor:
         if !door.is_vulnerable:
             door.destroy_door()
             _animate_to_node(door_peek_point, false)
             roll_timer.start()
-        else: player.kill(Player3D.View.LEFT)
+        else:
+            _jump_to_player(door)
+            player.kill(Player3D.View.LEFT)
 
     elif attack_point is RoomWindow:
         if !window.is_vulnerable:
             window.break_window()
             _animate_to_node(window_peek_point, false)
             roll_timer.start()
-        else: player.kill(Player3D.View.RIGHT)
+        else:
+            _jump_to_player(window)
+            player.kill(Player3D.View.RIGHT)
 
 
 
@@ -206,3 +216,21 @@ func _animate_to_node(node: Node3D, towards: bool):
         var t = create_tween()
         t.tween_property(self, "global_position", target_pos, 0.3)
         t.play()
+
+
+
+func _jump_to_player(attack_point: Node3D):
+    var destination
+    if attack_point is RoomDoor:
+        destination = -player.left_view_node.transform.basis.z * 2 + player.global_position
+    else:
+        destination = -player.right_view_node.transform.basis.z * 2 + player.global_position
+
+    attack_player.stream = kill_sound
+    attack_player.play()
+    ambient_player.stream = attack_sound
+    ambient_player.play()
+
+    var t = create_tween()
+    t.tween_property(self, "global_position", destination, 0.25).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+    t.play()
