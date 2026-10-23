@@ -20,7 +20,7 @@ func fix_door():
     is_vulnerable = false
     door.rotation_degrees.x = 0
     door.rotation_degrees.y = 0
-    door.position = Vector3.ZERO
+    door.position = Vector3(-0.142, 0, 0.223)
 
 
 
