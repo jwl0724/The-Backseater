@@ -59,7 +59,7 @@ bus = &"Default_SFX"
 [node name="GameSounds" type="AudioStreamPlayer3D" parent="." index="3" unique_id=618538193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8991122, 0.76803946, 0.34822083)
 stream = SubResource("AudioStreamGenerator_drifm")
-volume_db = -15.0
+volume_db = -20.0
 script = ExtResource("4_h64eg")
 
 [node name="GameScreen" type="SubViewport" parent="." index="4" unique_id=1884509528]
