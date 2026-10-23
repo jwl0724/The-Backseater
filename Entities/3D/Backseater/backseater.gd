@@ -226,7 +226,7 @@ func _jump_to_player(attack_point: Node3D):
     if attack_point is RoomDoor:
         destination = -player.left_view_node.transform.basis.z * 2 + player.global_position
     else:
-        destination = -player.right_view_node.transform.basis.z * 2 + player.global_position
+        destination = -player.right_view_node.transform.basis.z * 2.5 + player.global_position
 
     attack_player.stream = kill_sound
     attack_player.play()
