@@ -40,6 +40,12 @@ func _ready():
 
 
 
+func _process(_delta):
+    if night_timer.is_stopped(): return
+    SignalBus.game3d_broadcast_time.emit(night_timer.time_left, night_timer.wait_time)
+
+
+
 func start_night():
     player.controls_enabled = true
     await _play_tutorial()

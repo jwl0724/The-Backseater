@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxoh0l7drati5" path="res://Common/UI/3D/Components/NightTransition/NightTransition.tscn" id="3_7ss35"]
 [ext_resource type="PackedScene" uid="uid://bcg4boes3uveh" path="res://Common/UI/3D/Components/StartScreen/StartScreen.tscn" id="5_vuv1e"]
 [ext_resource type="PackedScene" uid="uid://e4f54262qw44" path="res://Common/UI/3D/Components/WinScreen/WinScreen.tscn" id="6_vuv1e"]
+[ext_resource type="Script" uid="uid://d0ej5arhdxuha" path="res://Common/UI/3D/Systems/time_display.gd" id="7_mbxne"]
 
 [node name="Hud3d" type="Control" unique_id=1004948615]
 layout_mode = 3
@@ -20,6 +21,20 @@ script = ExtResource("1_4pxg5")
 layout_mode = 1
 offset_top = -56.0
 offset_bottom = -33.0
+
+[node name="Time" type="Label" parent="." unique_id=1942028646]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "12:00"
+horizontal_alignment = 2
+script = ExtResource("7_mbxne")
 
 [node name="GameOver" parent="." unique_id=1473674471 instance=ExtResource("2_quupk")]
 visible = false

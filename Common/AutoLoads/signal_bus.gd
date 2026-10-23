@@ -25,6 +25,9 @@ signal game2d_mechanic_lowFPS(lower_fps: float) # Night 4 gimmick
 
 # 3D HUD Signals
 signal game3d_hud_addUI(hud_scene: PackedScene)
+
+# 3D Game Signals
+signal game3d_broadcast_time(time_left: float, wait_time: float)
 signal game3d_tutorial_play(sequence: Array[String])
 signal game3d_tutorial_finished()
 signal game3d_start_intro(night: int, from_start: bool) # For showing chatlog -> night intro (from_start = true skips chatlog)
