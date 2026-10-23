@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bt0w23is8niov" path="res://Common/UI/3D/Components/StartScreen/Components/ChatLine.tscn" id="3_wm5sk"]
 [ext_resource type="PackedScene" uid="uid://bi4ppp4o4tsy5" path="res://Common/UI/3D/Components/WinScreen/Components/TypingMessage.tscn" id="4_k65b7"]
 [ext_resource type="AudioStream" uid="uid://dgm6ij2myb4gb" path="res://Levels/3D/SpecialFurniture/Computer/alert.mp3" id="4_wm5sk"]
+[ext_resource type="Theme" uid="uid://7mq5uvllvv2k" path="res://Common/UI/3D/default_button.tres" id="5_v1fmw"]
 
 [sub_resource type="Gradient" id="Gradient_q6api"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -106,6 +107,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme = ExtResource("5_v1fmw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.24477634, 0.24477643, 0.24477628, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.49747366, 0.49747372, 0.49747354, 1)
 text = "Back to Menu"
 
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1589197854]

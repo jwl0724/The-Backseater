@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://7mq5uvllvv2k"]
+
+[ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="1_rqacq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6lf1o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gy2g0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcpt7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cw0fe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hgea"]
+
+[resource]
+default_font = ExtResource("1_rqacq")
+default_font_size = 24
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0.5729883, 0.5729883, 0.5729883, 1)
+Button/colors/font_hover_pressed_color = Color(0.38170326, 0.38170323, 0.38170323, 1)
+Button/colors/font_pressed_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_6lf1o")
+Button/styles/focus = SubResource("StyleBoxEmpty_gy2g0")
+Button/styles/hover = SubResource("StyleBoxEmpty_lcpt7")
+Button/styles/normal = SubResource("StyleBoxEmpty_cw0fe")
+Button/styles/pressed = SubResource("StyleBoxEmpty_8hgea")

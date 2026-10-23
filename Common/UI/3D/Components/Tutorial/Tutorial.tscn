@@ -2,11 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://byf0h1l2hhudn" path="res://Common/UI/3D/default.tres" id="1_4xykg"]
 [ext_resource type="Script" uid="uid://vca0d2q2g0yr" path="res://Common/UI/3D/Components/Tutorial/tutorial.gd" id="1_cvl8o"]
-[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/Default.ttf" id="2_iqn2p"]
-
-[sub_resource type="FontVariation" id="FontVariation_ty2sy"]
-base_font = ExtResource("2_iqn2p")
-spacing_glyph = 2
 
 [node name="Tutorial" type="Label" unique_id=2122530405]
 anchors_preset = 12
@@ -18,7 +13,6 @@ offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_4xykg")
-theme_override_fonts/font = SubResource("FontVariation_ty2sy")
 theme_override_font_sizes/font_size = 24
 text = "Press 'Tab' to focus and unfocus on the monitor"
 horizontal_alignment = 1

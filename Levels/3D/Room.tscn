@@ -266,7 +266,6 @@ _data = {
 
 [node name="Room" type="Node3D" unique_id=340710139]
 script = ExtResource("1_ja5dw")
-skip_tutorial = true
 current_night = 2
 hud_scene = ExtResource("2_biiof")
 

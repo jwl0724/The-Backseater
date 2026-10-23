@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkqm4dpcwem1m" path="res://Common/UI/3D/Components/StartScreen/start_screen.gd" id="1_1j7tu"]
 [ext_resource type="AudioStream" uid="uid://cx2pwpjjb7050" path="res://Common/UI/3D/Components/StartScreen/ingame_click.mp3" id="2_gvu2o"]
 [ext_resource type="PackedScene" uid="uid://bt0w23is8niov" path="res://Common/UI/3D/Components/StartScreen/Components/ChatLine.tscn" id="2_q6api"]
+[ext_resource type="Theme" uid="uid://7mq5uvllvv2k" path="res://Common/UI/3D/default_button.tres" id="3_d8feg"]
 [ext_resource type="Theme" uid="uid://byf0h1l2hhudn" path="res://Common/UI/3D/default.tres" id="3_xd3ho"]
 [ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="4_q6api"]
 
@@ -56,6 +57,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme = ExtResource("3_d8feg")
+theme_override_font_sizes/font_size = 20
 text = "Start Playing"
 
 [node name="NightLabel" type="Label" parent="MarginContainer" unique_id=1364613016]

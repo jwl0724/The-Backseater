@@ -5,14 +5,9 @@
 [ext_resource type="Theme" uid="uid://byf0h1l2hhudn" path="res://Common/UI/3D/default.tres" id="1_xbmgk"]
 [ext_resource type="PackedScene" uid="uid://b5yp5cxaxir57" path="res://Common/UI/3D/Components/GameOver/GameOver.tscn" id="2_quupk"]
 [ext_resource type="PackedScene" uid="uid://bxoh0l7drati5" path="res://Common/UI/3D/Components/NightTransition/NightTransition.tscn" id="3_7ss35"]
-[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/Default.ttf" id="4_wi8o5"]
 [ext_resource type="PackedScene" uid="uid://bcg4boes3uveh" path="res://Common/UI/3D/Components/StartScreen/StartScreen.tscn" id="5_vuv1e"]
 [ext_resource type="PackedScene" uid="uid://e4f54262qw44" path="res://Common/UI/3D/Components/WinScreen/WinScreen.tscn" id="6_vuv1e"]
 [ext_resource type="Script" uid="uid://d0ej5arhdxuha" path="res://Common/UI/3D/Systems/time_display.gd" id="7_mbxne"]
-
-[sub_resource type="FontVariation" id="FontVariation_mjslo"]
-base_font = ExtResource("4_wi8o5")
-spacing_glyph = 2
 
 [node name="Hud3d" type="Control" unique_id=1004948615]
 layout_mode = 3
@@ -40,7 +35,6 @@ offset_bottom = 33.0
 grow_horizontal = 0
 theme = ExtResource("1_xbmgk")
 theme_override_colors/font_outline_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
-theme_override_fonts/font = SubResource("FontVariation_mjslo")
 theme_override_font_sizes/font_size = 36
 text = "12:00"
 horizontal_alignment = 2
