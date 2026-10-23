@@ -7,7 +7,7 @@ const total_attack_stages: int = 4
 const aggression_per_2d_death: int = 3
 const aggression_per_passive_gain: int = 2 # Gain 2 aggression per minute passively
 const time_per_aggression_increment: float = 60
-const attack_delay: float = 5 # Gap between ready to pounce and actually attacking
+const attack_delay: float = 6 # Gap between ready to pounce and actually attacking
 
 @export_group("Sounds")
 @export var ambience_sounds: Array[AudioStream] = []
@@ -40,6 +40,8 @@ var can_attack: bool = true
 var aggression: int = 0:
     set(val): aggression = clampi(val, 0, 20)
 var attack_stage: int = 0
+
+var current_attack_node: Node3D = null # Node that the monster is attacking from
 
 
 
@@ -83,21 +85,22 @@ func reset_position():
 
 func cancel_attack(start_roll_timer: bool = true):
     delay_timer.stop()
-    if delay_timer.timeout.is_connected(_attack.bind(door)):
-        delay_timer.timeout.disconnect(_attack.bind(door))
+    # Reads as .bind(Node3D) so door/window both will read as true regardless
+    if delay_timer.timeout.is_connected(_attack.bind(door)): delay_timer.timeout.disconnect(_attack.bind(door))
+    if delay_timer.timeout.is_connected(_attack.bind(window)): delay_timer.timeout.disconnect(_attack.bind(window))
 
+    # Handle door cancel
+    if current_attack_node == door:
         if !door.is_vulnerable:
             door.close_door()
             _animate_to_node(door_peek_point, false)
         else: _animate_to_node(door_kill_point, false)
-
-    elif delay_timer.timeout.is_connected(_attack.bind(window)):
-        delay_timer.timeout.disconnect(_attack.bind(window))
-
+    # Handle window cancel
+    else:
         if !window.is_vulnerable: _animate_to_node(window_peek_point, false)
         else: _animate_to_node(window_kill_point, false)
 
-
+    current_attack_node = null
     if start_roll_timer:
         attack_player.stream = attack_canceled_sound
         attack_player.play()
@@ -128,7 +131,7 @@ func _roll_attack_stage_advance():
         else: window.scratch_window()
 
 
-# TODO: Fix the animation of the thing flying towards player when repelled from broken window?
+
 func _start_attack():
     attack_stage = 0
     if !can_attack: return
@@ -136,9 +139,10 @@ func _start_attack():
 
     # Handle door attacks
     if randi() % 2 == 0:
+        current_attack_node = door
         global_rotation = door_kill_point.global_rotation if door.is_vulnerable else door_peek_point.global_rotation
-        var target_pos = door_kill_point if door.is_vulnerable else door_peek_point
-        _animate_to_node(target_pos, true)
+        var target_node = door_kill_point if door.is_vulnerable else door_peek_point
+        _animate_to_node(target_node, true)
 
         player.alert_attacking(self, Player3D.View.LEFT)
         if !door.is_vulnerable:
@@ -153,9 +157,10 @@ func _start_attack():
 
     # Handle window attacks
     else:
+        current_attack_node = window
         global_rotation = window_kill_point.global_rotation if window.is_vulnerable else window_peek_point.global_rotation
-        var target_pos = window_kill_point if window.is_vulnerable else window_peek_point
-        _animate_to_node(target_pos, true)
+        var target_node = window_kill_point if window.is_vulnerable else window_peek_point
+        _animate_to_node(target_node, true)
 
         player.alert_attacking(self, Player3D.View.RIGHT)
         if !window.is_vulnerable:
