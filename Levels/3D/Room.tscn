@@ -266,6 +266,7 @@ _data = {
 
 [node name="Room" type="Node3D" unique_id=340710139]
 script = ExtResource("1_ja5dw")
+skip_tutorial = true
 current_night = 2
 hud_scene = ExtResource("2_biiof")
 
@@ -414,19 +415,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
 
 [node name="Window" parent="Map/Interior/Layout/Walls" unique_id=1914658601 instance=ExtResource("6_lw87u")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.5, 0, 2.75)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 7.75, 0, 7.5)
 
 [node name="wall5" parent="Map/Interior/Layout/Walls/Window" unique_id=1173333309 instance=ExtResource("2_4ik4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
 
 [node name="wall2" parent="Map/Interior/Layout/Walls" unique_id=1994357629 instance=ExtResource("2_4ik4e")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.5, 0, 7.5)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 7.75, 0, 12.5)
 
 [node name="wall5" parent="Map/Interior/Layout/Walls/wall2" unique_id=24039510 instance=ExtResource("2_4ik4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
 
 [node name="wall4" parent="Map/Interior/Layout/Walls" unique_id=1600045124 instance=ExtResource("2_4ik4e")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.5, 0, 12.5)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 7.75, 0, 17.5)
 
 [node name="wall5" parent="Map/Interior/Layout/Walls/wall4" unique_id=966240442 instance=ExtResource("2_4ik4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.44, 0)
@@ -699,7 +700,7 @@ script = ExtResource("57_mniwe")
 [node name="Backseater" parent="." unique_id=221199719 node_paths=PackedStringArray("player", "door", "window", "door_kill_point", "door_peek_point", "window_kill_point", "window_peek_point") instance=ExtResource("45_0j41l")]
 transform = Transform3D(-0.9995379, 0, 0.030399024, 0, 1.0000001, 0, -0.030399054, 0, -0.9995378, 1.7634141, 3.9933808, -6.539016)
 player = NodePath("../Player3d")
-door = NodePath("../Map/Interior/Layout/Walls/wallDoorway2/door")
+door = NodePath("../Map/Interior/Layout/Walls/Door")
 window = NodePath("../Map/Interior/Layout/Walls/Window")
 door_kill_point = NodePath("../AttackPoints/DoorKill")
 door_peek_point = NodePath("../AttackPoints/DoorPeek")
