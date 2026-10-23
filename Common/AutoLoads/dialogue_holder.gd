@@ -1,7 +1,7 @@
 extends Node
 
-const backseater_name: String = "bigTeethDJC"
-const player_name: String = "SEAmonster"
+const backseater_name: String = "MetaMind"
+const player_name: String = "YOU"
 
 class MessageContent: # Pair holder for dialogue messages
     var sender: String
@@ -27,7 +27,7 @@ const night1_tutorial: Array[String] = [
 ]
 
 const night2_tutorial: Array[String] = [
-    "Press 'Space' defend yourself",
+    "Press 'Space' to show your love for the meta when the time comes",
     "Good Luck"
 ]
 
