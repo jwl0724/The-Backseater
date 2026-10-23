@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://r4uya5mkk0fr" path="res://Common/UI/3D/Components/StartScreen/Components/chat_line.gd" id="1_3gkyj"]
 [ext_resource type="PackedScene" uid="uid://dd2q3xdyo1y0j" path="res://Common/UI/2D/Components/Messages/Message/Message.tscn" id="1_n7gst"]
-[ext_resource type="Texture2D" uid="uid://dqc3esfdismc1" path="res://Common/Menus/PreGame/Imports/player_pf.png" id="2_3ceis"]
+[ext_resource type="Texture2D" uid="uid://dqc3esfdismc1" path="res://Common/UI/3D/player_pf.png" id="2_3ceis"]
 
 [node name="ChatLine" type="HBoxContainer" unique_id=1654242049]
 custom_minimum_size = Vector2(460, 0)

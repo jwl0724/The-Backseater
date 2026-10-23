@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dd2q3xdyo1y0j"]
 
 [ext_resource type="Script" uid="uid://dd6lxph3x8dhm" path="res://Common/UI/2D/Components/Messages/Message/message.gd" id="1_n6gxp"]
-[ext_resource type="Texture2D" uid="uid://ow76pjuf1id6" path="res://Common/Menus/PreGame/Imports/monster_pf.png" id="2_et13n"]
+[ext_resource type="Texture2D" uid="uid://ow76pjuf1id6" path="res://Common/UI/3D/monster_pf.png" id="2_et13n"]
 [ext_resource type="Shader" uid="uid://c704gjs8563n5" path="res://Common/UI/2D/Components/Messages/Message/circle_crop.gdshader" id="2_r05wa"]
 [ext_resource type="FontFile" uid="uid://cteiocmri8rn8" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Black.ttf" id="3_et13n"]
 [ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="3_r05wa"]
