@@ -9,6 +9,11 @@ const right_defend_anim_name: String = "defend_right"
 signal killed()
 signal finished_death_animation()
 
+@export_group("Sounds")
+@export var neck_snap: AudioStream = null
+@export var body_thud: AudioStream = null
+
+@export_group("Required Nodes")
 @export var defend_animations: AnimationPlayer = null
 @export var computer: RoomComputer = null
 @export var left_view_node: Node3D = null
@@ -17,6 +22,7 @@ signal finished_death_animation()
 @export var game_view_node: Node3D = null
 @export var dead_view_node: Node3D = null
 
+@onready var audio_player: AudioStreamPlayer3D = $Audio
 
 var controls_enabled: bool = true
 var is_defending: bool = false
@@ -53,12 +59,20 @@ func kill(kill_angle: View):
 	var dead_position := dead_view_node.position if kill_angle == View.LEFT else dead_view_node.position + Vector3.LEFT * 5
 	var dead_angle := dead_view_node.rotation if kill_angle == View.LEFT else dead_view_node.rotation * -1
 
+	# Sync thud sound with tween visuals falling onto ground
+	get_tree().create_timer(0.25 + 0.8 + 0.4 + 0.4 + 1.1).timeout.connect(func():
+		audio_player.stream = body_thud
+		audio_player.play())
+
 	var t = create_tween()
 	t.tween_property(self, "position", view_node.position, 0.25).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	t.parallel().tween_property(self, "rotation", view_node.rotation, 0.18).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
-	t.tween_interval(0.2)
+	t.tween_interval(0.8)
+	t.tween_callback(func():
+		audio_player.stream = neck_snap
+		audio_player.play())
 	t.tween_property(self, "rotation", neck_angle, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
-	t.tween_interval(0.1)
+	t.tween_interval(0.4)
 	t.tween_property(self, "position", dead_position, 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	t.parallel().tween_property(self, "rotation", dead_angle, 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	t.tween_callback(finished_death_animation.emit)

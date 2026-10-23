@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://dwmiwoycg353x"]
 
 [ext_resource type="Script" uid="uid://cap1apywnvqpu" path="res://Entities/3D/Player/player_3d.gd" id="1_txvv6"]
-[ext_resource type="PackedScene" uid="uid://d2m1fu56mpysc" path="res://Common/UI/3D/HUD.tscn" id="2_iskr2"]
+[ext_resource type="AudioStream" uid="uid://5tl6h6von0vs" path="res://Entities/3D/Player/neck_snap.mp3" id="2_ubhbm"]
+[ext_resource type="AudioStream" uid="uid://bhjjtpp3wu3kt" path="res://Entities/3D/Player/body_fall.mp3" id="3_1djny"]
 
 [node name="Player3d" type="Camera3D" unique_id=1639451548]
 script = ExtResource("1_txvv6")
-hud_scene = ExtResource("2_iskr2")
+neck_snap = ExtResource("2_ubhbm")
+body_thud = ExtResource("3_1djny")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=410687784]
+stream = ExtResource("2_ubhbm")
+volume_db = 10.0
+bus = &"Default_SFX"

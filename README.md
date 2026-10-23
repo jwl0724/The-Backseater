@@ -113,3 +113,6 @@ https://pixabay.com/sound-effects/horror-062740-creepy-ghost-scream-81907/
 https://pixabay.com/sound-effects/horror-creepy-female-ghost-whispers-430175/
 https://pixabay.com/sound-effects/horror-horror-sfx-3-103708/
 https://pixabay.com/sound-effects/horror-ghost-6979/
+
+https://pixabay.com/sound-effects/film-special-effects-bone-break-10-218514/
+https://pixabay.com/sound-effects/film-special-effects-body-fall-259680/
