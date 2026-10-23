@@ -42,10 +42,6 @@ var aggression: int = 0:
 var attack_stage: int = 0
 
 
-# TODO: Fix monster just standing there after attacking
-
-
-
 
 func _ready():
     delay_timer.wait_time = attack_delay
@@ -84,7 +80,7 @@ func reset_position():
     global_position = hide_position
 
 
-# TODO: Need to connect player waving book to canceling the attack
+
 func cancel_attack(start_roll_timer: bool = true):
     delay_timer.stop()
     if delay_timer.timeout.is_connected(_attack.bind(door)):
@@ -132,7 +128,7 @@ func _roll_attack_stage_advance():
         else: window.scratch_window()
 
 
-
+# TODO: Fix the animation of the thing flying towards player when repelled from broken window?
 func _start_attack():
     attack_stage = 0
     if !can_attack: return
@@ -144,6 +140,7 @@ func _start_attack():
         var target_pos = door_kill_point if door.is_vulnerable else door_peek_point
         _animate_to_node(target_pos, true)
 
+        player.alert_attacking(self, Player3D.View.LEFT)
         if !door.is_vulnerable:
             door.peek_door()
             delay_timer.start()
@@ -160,6 +157,7 @@ func _start_attack():
         var target_pos = window_kill_point if window.is_vulnerable else window_peek_point
         _animate_to_node(target_pos, true)
 
+        player.alert_attacking(self, Player3D.View.RIGHT)
         if !window.is_vulnerable:
             window.knock_window()
             delay_timer.start()

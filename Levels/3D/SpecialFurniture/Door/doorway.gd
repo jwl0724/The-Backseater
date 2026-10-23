@@ -44,7 +44,7 @@ func close_door():
     audio_player.play()
 
     var t = create_tween()
-    t.tween_property(door, "rotation_degrees", Vector2.ZERO, 0.25).set_trans(Tween.TRANS_BOUNCE)
+    t.tween_property(door, "rotation_degrees", Vector3.ZERO, 0.25).set_trans(Tween.TRANS_BOUNCE)
     t.play()
 
 

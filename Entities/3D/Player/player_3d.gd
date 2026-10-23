@@ -17,11 +17,17 @@ signal finished_death_animation()
 @export var game_view_node: Node3D = null
 @export var dead_view_node: Node3D = null
 
+
 var controls_enabled: bool = true
 var is_defending: bool = false
 var is_alive: bool = true
 var look_tween: Tween = null
 var current_view: View = View.FRONT
+
+# Can only attack from left or right
+var current_monster_attack_angle: View = View.FRONT
+var backseater: Backseater = null # Set to something only when preparing to attack
+
 
 
 func reset_player():
@@ -30,6 +36,12 @@ func reset_player():
 	current_view = View.FRONT
 	position = center_view_node.position
 	rotation = center_view_node.rotation
+
+
+
+func alert_attacking(monster: Backseater, view: View):
+	backseater = monster
+	current_monster_attack_angle = view
 
 
 
@@ -100,8 +112,13 @@ func goto_view(view_type: View):
 
 
 func try_defend_side(side: View):
-	# TODO: Need to make this only activatable when monster about to attack
-	if side != View.LEFT && side != View.RIGHT || is_defending: return
+	if backseater == null || side != current_monster_attack_angle || is_defending: return
+
+	# Cancel monster attack then remove data for indicator of not attacking
+	backseater.cancel_attack(true)
+	backseater = null
+	current_monster_attack_angle = View.FRONT
+
 	var anim_name := left_defend_anim_name if side == View.LEFT else right_defend_anim_name
 	is_defending = true
 	defend_animations.play(anim_name)
