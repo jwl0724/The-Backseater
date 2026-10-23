@@ -73,8 +73,10 @@ var night2_exchange: Array[MessageContent] = [
     MessageContent.new(backseater_name, "It's probably nothing"),
     MessageContent.new(backseater_name, "So game tonight? I'm THIRSTING right now"),
     MessageContent.new(player_name, "-_-"),
-    MessageContent.new(backseater_name, "BTW I read a study today, it said playing games with sounds is not an optimal way to play!"),
-    MessageContent.new(backseater_name, "Sound actually distracts you from focusing on the game!"),
+    MessageContent.new(backseater_name, "BTW, I saw your gameplay yesterday, that was not it girl"),
+    MessageContent.new(backseater_name, "I'll be watching from now on and sending you constructive criticism!"),
+    MessageContent.new(player_name, "wdym im not even streaming my game"),
+    MessageContent.new(player_name, "????"),
     MessageContent.new(player_name, "-_-"),
 ]
 
@@ -89,10 +91,10 @@ var night3_exchange: Array[MessageContent] = [
     MessageContent.new(backseater_name, "Girl you were playing so inefficiently"),
     MessageContent.new(player_name, "SO YOU MADE A DEAL WITH A DEMON OR WHATEVER????"),
     MessageContent.new(backseater_name, "Actually it's not a demon, I think."),
-    MessageContent.new(backseater_name, "So game tonight? I read a study today that zooming the camera all the way is optimal!"),
-    MessageContent.new(backseater_name, "More zoom means you need to move the mouse less!"),
+    MessageContent.new(backseater_name, "So game tonight? I read a study today that playing with sounds is not an optimal way to play!"),
+    MessageContent.new(backseater_name, "Sound actually distracts you from focusing on the game"),
     MessageContent.new(backseater_name, "Science!"),
-    MessageContent.new(player_name, "NO WTF"),
+    MessageContent.new(player_name, "WTF IM NOT PLAYING WITHOUT SOUND"),
     MessageContent.new(backseater_name, "Um, that may not be a good idea."),
     MessageContent.new(backseater_name, "Probably"),
     MessageContent.new(player_name, "-_-")
@@ -108,8 +110,8 @@ var night4_exchange: Array[MessageContent] = [
     MessageContent.new(player_name, "-_-"),
     MessageContent.new(backseater_name, "So game?"),
     MessageContent.new(player_name, "WHAT STUDY DID YOU READ THIS TIME?"),
-    MessageContent.new(backseater_name, "Hear me out, playing on low fps is meta!"),
-    MessageContent.new(backseater_name, "It gives you more time to react to things! Ah I'm so smart"),
+    MessageContent.new(backseater_name, "Hear me out, zooming in your camera all the way is optimal!"),
+    MessageContent.new(backseater_name, "More zoom means you need to move the mouse less! Ah I'm so smart"),
     MessageContent.new(player_name, "-_-"),
 ]
 

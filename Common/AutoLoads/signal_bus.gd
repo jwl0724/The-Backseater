@@ -20,8 +20,7 @@ signal game2d_start(player: Player2D)
 signal game2d_restart() # The signal to restart the 2D game, 3D game will also listen to this to know when to increment aggression on monster
 signal game2d_player_levelup()
 signal game2d_player_upgrade(type: UpgradeData.UpgradeType)
-signal game2d_mechanic_ultraZoom(new_resolution: Vector2) # Night 3 gimmick (Night 2 gimmick is handled by computer)
-signal game2d_mechanic_lowFPS(lower_fps: float) # Night 4 gimmick
+signal game2d_mechanic_ultraZoom(new_resolution: Vector2) # Night 4 gimmick (Night 3 gimmick is handled by computer, 2 by minigame)
 
 # 3D HUD Signals
 signal game3d_hud_addUI(hud_scene: PackedScene)

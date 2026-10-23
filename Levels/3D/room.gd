@@ -15,8 +15,6 @@ class_name Room3D
 @onready var player: Player3D = $Player3d
 @onready var monster: Backseater = $Backseater
 
-
-# TODO: Implement level limitations in 2D Game
 # TODO: Main menu screen and credits screen with all credits properly listed
 # TODO: Need to implement sounds on 3d game
 # TODO: Need to fix the skybox, looks terrible right now
@@ -55,9 +53,9 @@ func start_night():
     monster.activate(current_night)
     monster.disable_attacks(current_night == 1)
 
-    # Handle gimmicks
-    computer.disable_sounds(current_night >= 2) # Night 2 gimmick
-    if current_night >= 3: SignalBus.game2d_mechanic_ultraZoom.emit()
+    # Activate mechanics (Night 2 is sending message that cover the screen)
+    computer.disable_sounds(current_night >= 3) # Night 3 gimmick
+    if current_night >= 4: SignalBus.game2d_mechanic_ultraZoom.emit() # Night 4 gimmick
 
 
 

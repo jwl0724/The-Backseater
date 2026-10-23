@@ -133,7 +133,7 @@ func _on_upgrade(type: UpgradeData.UpgradeType):
 
 
 func _process(delta):
-    if Engine.get_process_frames() % 60 == 0 && !is_dead: health = clampf(health_regen + health, 0, max_health) # TODO: Probably have to move this later when variable fps is involved?
+    if Engine.get_process_frames() % 60 == 0 && !is_dead: health = clampf(health_regen + health, 0, max_health)
 
     if elapsed >= fire_rate:
         elapsed = 0
