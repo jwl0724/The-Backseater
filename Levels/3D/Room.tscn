@@ -684,6 +684,7 @@ chance_to_play = 0.5
 
 [node name="Ghostly" type="AudioStreamPlayer3D" parent="Ambience" unique_id=1838483010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2663746, 4.554925, 9.531992)
+volume_db = -10.0
 bus = &"Default_SFX"
 script = ExtResource("46_uu7el")
 ambience_clips = Array[AudioStream]([ExtResource("52_0lsdk"), ExtResource("53_4s1wq"), ExtResource("54_rlocp"), ExtResource("55_mniwe")])
