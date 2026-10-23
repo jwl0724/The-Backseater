@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c5aat4lhq6svy"]
+
+[ext_resource type="Theme" uid="uid://byf0h1l2hhudn" path="res://Common/UI/3D/default.tres" id="1_4kl1m"]
+[ext_resource type="Script" uid="uid://cqogbqxn5idhx" path="res://Common/Menus/Splash/splash.gd" id="1_gl6k1"]
+
+[node name="Splash" type="Control" unique_id=1066351647]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gl6k1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1899594233]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1551684734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4kl1m")
+text = "A game created by golden rice for Scream Jam 2026"
+horizontal_alignment = 1
+vertical_alignment = 1

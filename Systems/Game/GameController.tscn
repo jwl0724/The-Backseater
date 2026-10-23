@@ -2,10 +2,17 @@
 
 [ext_resource type="Script" uid="uid://c0hnrrj4gcl5f" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
 [ext_resource type="Script" uid="uid://1q2cv2eh4bmk" path="res://Common/UI/Shared/fade.gd" id="2_gqpt8"]
+[ext_resource type="PackedScene" uid="uid://c5aat4lhq6svy" path="res://Common/Menus/Splash/Splash.tscn" id="2_j6267"]
 [ext_resource type="PackedScene" uid="uid://c5vsswhadftvh" path="res://Levels/3D/Room.tscn" id="2_q7v2m"]
+[ext_resource type="PackedScene" uid="uid://b5raq70loikcn" path="res://Common/Menus/Main/MainMenu.tscn" id="4_vf6nk"]
+[ext_resource type="PackedScene" uid="uid://dv4ce4co2fqi6" path="res://Common/Menus/Loading/LoadingScreen.tscn" id="5_vg6rv"]
 
 [node name="GameController" type="Node" unique_id=227253429]
 script = ExtResource("1_yl5u5")
+launch_scene = ExtResource("2_j6267")
+ingame_scene = ExtResource("2_q7v2m")
+main_menu_scene = ExtResource("4_vf6nk")
+load_screen = ExtResource("5_vg6rv")
 debug_scene = ExtResource("2_q7v2m")
 
 [node name="Node" type="Node" parent="." unique_id=1096348032]
