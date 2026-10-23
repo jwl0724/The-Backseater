@@ -9,7 +9,7 @@
 script = ExtResource("3_rr7j1")
 enemy_type = 18
 health = 12.0
-xp_worth = 6
+xp_worth = 10
 attack_speed = 1.0
 projectile_scene = ExtResource("1_lwwwm")
 projectile_texture = ExtResource("2_4ogig")

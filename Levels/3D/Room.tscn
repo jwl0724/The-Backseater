@@ -687,6 +687,7 @@ chance_to_play = 0.5
 [node name="Buzz" type="AudioStreamPlayer3D" parent="Ambience" unique_id=1062524661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1731424, 5.645694, 5.7840166)
 stream = ExtResource("56_rlocp")
+volume_db = 10.0
 bus = &"Default_SFX"
 script = ExtResource("57_mniwe")
 

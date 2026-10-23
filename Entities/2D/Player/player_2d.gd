@@ -27,7 +27,7 @@ const nerfed_zoom: Vector2 = Vector2(4, 4)
 @export var base_damage: float = 1
 @export var base_move_speed: float = 40
 @export var base_health: float = 25
-@export var base_health_regen: float = 0.1
+@export var base_health_regen: float = 0.3
 @export var base_attack_speed: float = 1 ## the attack interval will be 3 / attack_speed
 @export var base_projectile_count: int = 1
 

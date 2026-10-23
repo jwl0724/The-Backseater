@@ -81,6 +81,7 @@ func setup_next_night():
     current_night += 1
     if current_night <= 4:
         door.fix_door()
+        monster.reset_position()
         window.fix_window()
         computer.clear_screen()
         player.reset_player()

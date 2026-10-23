@@ -7,7 +7,7 @@ const total_attack_stages: int = 4
 const aggression_per_2d_death: int = 3
 const aggression_per_passive_gain: int = 2 # Gain 2 aggression per minute passively
 const time_per_aggression_increment: float = 60
-const attack_delay: float = 6 # Gap between ready to pounce and actually attacking
+const attack_delay: float = 3 # Gap between ready to pounce and actually attacking
 
 @export_group("Sounds")
 @export var ambience_sounds: Array[AudioStream] = []
@@ -73,6 +73,7 @@ func reset():
     roll_timer.stop()
     aggression_timer.stop()
     cancel_attack(false)
+    can_attack = false
     aggression = 0
     attack_stage = 0
 

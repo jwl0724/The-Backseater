@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_vwlhq")
 enemy_type = 29
-move_speed = 15.0
-health = 12.0
-xp_worth = 5
+damage = 1.0
+move_speed = 40.0
+health = 1.0
+xp_worth = 2
 metadata/_custom_type_script = "uid://bcu08sudqiuyg"

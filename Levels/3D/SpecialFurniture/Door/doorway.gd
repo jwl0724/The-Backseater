@@ -11,9 +11,12 @@ class_name RoomDoor
 
 var is_vulnerable: bool = false
 
+var door_tween: Tween = null
+
 
 
 func fix_door():
+    if door_tween && door_tween.is_running(): door_tween.kill()
     is_vulnerable = false
     door.rotation_degrees.x = 0
     door.rotation_degrees.y = 0
@@ -43,9 +46,9 @@ func close_door():
     audio_player.stream = door_slam_sfx
     audio_player.play()
 
-    var t = create_tween()
-    t.tween_property(door, "rotation_degrees", Vector3.ZERO, 0.25).set_trans(Tween.TRANS_BOUNCE)
-    t.play()
+    door_tween = create_tween()
+    door_tween.tween_property(door, "rotation_degrees", Vector3.ZERO, 0.25).set_trans(Tween.TRANS_BOUNCE)
+    door_tween.play()
 
 
 
@@ -53,6 +56,6 @@ func peek_door():
     audio_player.stream = door_squeak_sfx
     audio_player.play()
 
-    var t = create_tween()
-    t.tween_property(door, "rotation_degrees", Vector3(0, -21.8, 0), 0.25)
-    t.play()
+    door_tween = create_tween()
+    door_tween.tween_property(door, "rotation_degrees", Vector3(0, -21.8, 0), 0.25)
+    door_tween.play()

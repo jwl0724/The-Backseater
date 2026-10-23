@@ -77,7 +77,7 @@ script = ExtResource("10_c52h6")
 enemy_template = ExtResource("8_mplvn")
 level1_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("10_xtuuh"), ExtResource("11_al2ln"), ExtResource("12_tpbkn"), ExtResource("13_jfpo8"), ExtResource("14_kacqb"), ExtResource("15_m1cfy"), ExtResource("16_rcxuc"), ExtResource("17_mf03q")])
 level2_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("18_f7ybf"), ExtResource("19_5iw8n"), ExtResource("20_uhw6r"), ExtResource("21_n17mt"), ExtResource("22_jdtpb"), ExtResource("23_w40hx"), ExtResource("24_pvew2"), ExtResource("25_d5syc")])
-level3_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("26_5cmf4"), ExtResource("27_gr8tx"), ExtResource("28_0dy87"), ExtResource("29_d7ht1"), ExtResource("30_jjav7"), ExtResource("31_djnm0"), ExtResource("32_kvgok"), ExtResource("30_jjav7")])
+level3_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("26_5cmf4"), ExtResource("27_gr8tx"), ExtResource("28_0dy87"), ExtResource("29_d7ht1"), ExtResource("31_djnm0"), ExtResource("32_kvgok"), ExtResource("30_jjav7")])
 level4_enemy_set = Array[ExtResource("9_we3jm")]([ExtResource("33_ixuo1"), ExtResource("34_i64hn"), ExtResource("35_11as7"), ExtResource("36_0gvdo"), ExtResource("37_vm0cl"), ExtResource("38_r8q1p"), ExtResource("39_p6l65")])
 
 [node name="Borders" type="Node2D" parent="." unique_id=508902735]

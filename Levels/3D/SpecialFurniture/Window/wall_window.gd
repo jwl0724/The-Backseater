@@ -16,6 +16,8 @@ var broken_rot: Vector3 = Vector3(37.3, 0, 0)
 
 var is_vulnerable: bool = false
 
+var window_tween: Tween = null
+
 
 
 func _ready():
@@ -25,6 +27,7 @@ func _ready():
 
 
 func fix_window():
+    if window_tween && window_tween.is_running(): window_tween.kill()
     is_vulnerable = false
     window.position = default_window_pos
     window.rotation = default_window_rot
@@ -36,10 +39,10 @@ func break_window():
     audio_player.stream = window_break_sfx
     audio_player.play()
 
-    var t = create_tween()
-    t.tween_property(window, "position", broken_pos, 0.3).set_trans(Tween.TRANS_CUBIC)
-    t.parallel().tween_property(window, "rotation_degrees", broken_rot, 0.35).set_trans(Tween.TRANS_BOUNCE)
-    t.play()
+    window_tween = create_tween()
+    window_tween.tween_property(window, "position", broken_pos, 0.3).set_trans(Tween.TRANS_CUBIC)
+    window_tween.parallel().tween_property(window, "rotation_degrees", broken_rot, 0.35).set_trans(Tween.TRANS_BOUNCE)
+    window_tween.play()
 
 
 
