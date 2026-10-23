@@ -44,7 +44,8 @@ func disable_sounds(disable: bool):
 
 func enable_inputs(enable: bool):
     is_reading_input = enable
-    Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN if enable else Input.MOUSE_MODE_VISIBLE
+    var alternate = Input.MOUSE_MODE_HIDDEN if OS.has_feature("web") else Input.MOUSE_MODE_CONFINED_HIDDEN
+    Input.mouse_mode = alternate if enable else Input.MOUSE_MODE_VISIBLE
 
     var event = InputEventAction.new()
     event.action = Constants.Controls.Tab
