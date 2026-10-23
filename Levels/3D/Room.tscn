@@ -46,7 +46,13 @@
 [ext_resource type="PackedScene" uid="uid://cc1f6lbraoa8q" path="res://Levels/3D/Imports/Standardized/chair_cushion.tscn" id="40_ecbks"]
 [ext_resource type="PackedScene" uid="uid://dwmiwoycg353x" path="res://Entities/3D/Player/Player3D.tscn" id="44_ecbks"]
 [ext_resource type="PackedScene" uid="uid://bpkyuyhj77adw" path="res://Entities/3D/Backseater/Backseater.tscn" id="45_0j41l"]
+[ext_resource type="Script" uid="uid://b6bfj3uedbo1j" path="res://Levels/3D/Systems/ambience.gd" id="46_uu7el"]
 [ext_resource type="PackedScene" uid="uid://dnldw5ajqocxy" path="res://Entities/3D/Book/Book.tscn" id="47_6tpf1"]
+[ext_resource type="AudioStream" uid="uid://bcpflpg7f56g8" path="res://Levels/3D/Imports/Sounds/creak2.mp3" id="47_v04gy"]
+[ext_resource type="AudioStream" uid="uid://duvq3cblcp0oj" path="res://Levels/3D/Imports/Sounds/creak3.mp3" id="48_bij72"]
+[ext_resource type="AudioStream" uid="uid://c71rc30aj5b13" path="res://Levels/3D/Imports/Sounds/creak4.mp3" id="49_bwx65"]
+[ext_resource type="AudioStream" uid="uid://c6igxtuyo8q2a" path="res://Levels/3D/Imports/Sounds/creak5.mp3" id="50_0lsdk"]
+[ext_resource type="AudioStream" uid="uid://bryajdxpnhdin" path="res://Levels/3D/Imports/Sounds/creak.mp3" id="51_4s1wq"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0j41l"]
 
@@ -652,10 +658,22 @@ dead_view_node = NodePath("../CameraPoints/DeadView")
 [node name="Ambience" type="Node3D" parent="." unique_id=442873752]
 
 [node name="FloorCreek1" type="AudioStreamPlayer3D" parent="Ambience" unique_id=94097539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3360934, 0.6891043, 7.662234)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9371026, 0.6891043, 6.6393895)
+bus = &"Default_SFX"
+script = ExtResource("46_uu7el")
+ambience_clips = Array[AudioStream]([ExtResource("47_v04gy"), ExtResource("48_bij72"), ExtResource("49_bwx65"), ExtResource("50_0lsdk"), ExtResource("51_4s1wq")])
+lower_interval = 70.0
+upper_interval = 110.0
+chance_to_play = 0.75
 
 [node name="FloorCreek2" type="AudioStreamPlayer3D" parent="Ambience" unique_id=2125637763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3360934, 0.6891043, 7.662234)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7872496, 0.6891043, 9.031292)
+bus = &"Default_SFX"
+script = ExtResource("46_uu7el")
+ambience_clips = Array[AudioStream]([ExtResource("47_v04gy"), ExtResource("48_bij72"), ExtResource("49_bwx65"), ExtResource("50_0lsdk"), ExtResource("51_4s1wq")])
+lower_interval = 50.0
+upper_interval = 70.0
+chance_to_play = 0.5
 
 [node name="Backseater" parent="." unique_id=221199719 node_paths=PackedStringArray("player", "door", "window", "door_kill_point", "door_peek_point", "window_kill_point", "window_peek_point") instance=ExtResource("45_0j41l")]
 transform = Transform3D(-0.9995379, 0, 0.030399024, 0, 1.0000001, 0, -0.030399054, 0, -0.9995378, 1.7634141, 3.9933808, -6.539016)
