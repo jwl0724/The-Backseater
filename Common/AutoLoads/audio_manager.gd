@@ -78,6 +78,7 @@ func play_music(stream: AudioStream, fade_time: float = 0) -> void:
 	elif fade_time > 0:
 		var current_player: AudioStreamPlayer = in_use_player
 		current_player.volume_linear = 0
+		current_player.stream = stream
 		var fade: Tween = create_tween()
 		fade.tween_property(current_player, "volume_linear", 1, fade_time)
 		fade.tween_callback(func(): current_player.play())

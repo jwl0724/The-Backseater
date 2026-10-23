@@ -19,11 +19,14 @@ var end_tween: Tween = null
 
 func _ready():
     visible = false
+    sender_name.text = Dialogue.backseater_name
     typing_line.visible = false
     menu_button.visible = false
     menu_button.disabled = true
 
-    menu_button.pressed.connect(func(): if !end_tween || !end_tween.is_running(): closed.emit())
+    menu_button.pressed.connect(func(): if !end_tween || !end_tween.is_running():
+        Audio.stop_music(2)
+        closed.emit())
     scroll.get_v_scroll_bar().changed.connect(func(): scroll.get_v_scroll_bar().value = int(scroll.get_v_scroll_bar().max_value))
 
 
@@ -34,6 +37,8 @@ func show_screen(to_show: bool):
 
 
 func play_end_sequence():
+    Audio.play_music(bgm, 2)
+
     visible = true
     menu_button.visible = true
     menu_button.modulate = Color.TRANSPARENT

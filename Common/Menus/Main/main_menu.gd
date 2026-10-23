@@ -16,11 +16,13 @@ func _ready():
     else: quit_button.pressed.connect(_on_quit)
 
     SignalBus.transition_fade_show.emit(1)
+    Audio.play_music(bgm, 1)
 
 
 
 func _on_play():
     SignalBus.transition_fade_hide.emit(2)
+    Audio.stop_music(1)
     print("TODO: Make the actual game and connect it here")
 
 

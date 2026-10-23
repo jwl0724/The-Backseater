@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bu5ias16pu0kj" path="res://Common/UI/3D/Components/WinScreen/win_screen.gd" id="1_7kw26"]
 [ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="2_wm5sk"]
+[ext_resource type="AudioStream" uid="uid://uoixwlcfhjqx" path="res://Common/UI/3D/Components/WinScreen/win_bgm.mp3" id="2_ya8px"]
 [ext_resource type="PackedScene" uid="uid://bt0w23is8niov" path="res://Common/UI/3D/Components/StartScreen/Components/ChatLine.tscn" id="3_wm5sk"]
 [ext_resource type="PackedScene" uid="uid://bi4ppp4o4tsy5" path="res://Common/UI/3D/Components/WinScreen/Components/TypingMessage.tscn" id="4_k65b7"]
 [ext_resource type="AudioStream" uid="uid://dgm6ij2myb4gb" path="res://Levels/3D/SpecialFurniture/Computer/alert.mp3" id="4_wm5sk"]
@@ -22,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7kw26")
+bgm = ExtResource("2_ya8px")
 chat_line_template = ExtResource("3_wm5sk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1371324031]
