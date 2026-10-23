@@ -30,19 +30,19 @@ const attack_delay: float = 5 # Gap between ready to pounce and actually attacki
 
 @onready var attack_player: AudioStreamPlayer3D = $AttackSounds
 @onready var ambient_player: AudioStreamPlayer3D = $AmbientSounds
-@onready var delay_timer: Timer = $DelayTimer
-@onready var roll_timer: Timer = $RollTimer
-@onready var aggression_timer: Timer = $AggroTimer
+@onready var delay_timer: Timer = $DelayTimer # Wait time before pouncing for attack
+@onready var roll_timer: Timer = $RollTimer # Interval that tests if attack stage goes up
+@onready var aggression_timer: Timer = $AggroTimer # Interval at which aggression is increment throughout the night
 
 var hide_position: Vector3 = Vector3()
 
 var can_attack: bool = true
 var aggression: int = 0:
-    set(val): aggression = clampi(aggression + val, 0, 20)
+    set(val): aggression = clampi(val, 0, 20)
 var attack_stage: int = 0
 
 
-
+# TODO: Fix monster just standing there after attacking
 
 
 
@@ -51,6 +51,7 @@ func _ready():
     delay_timer.wait_time = attack_delay
     roll_timer.wait_time = roll_interval
     aggression_timer.wait_time = time_per_aggression_increment
+    aggression_timer.timeout.connect(func(): aggression += aggression_per_passive_gain)
     hide_position = global_position
 
     SignalBus.game2d_restart.connect(func(): aggression += aggression_per_2d_death) # Fired when player dies in 2D game, increase monsters aggression
@@ -78,6 +79,7 @@ func reset():
     attack_stage = 0
 
 
+
 func reset_position():
     global_position = hide_position
 
@@ -92,12 +94,16 @@ func cancel_attack(start_roll_timer: bool = true):
     elif delay_timer.timeout.is_connected(_attack.bind(window)):
         delay_timer.timeout.disconnect(_attack.bind(window))
 
-    if start_roll_timer: roll_timer.start()
+    if start_roll_timer:
+        attack_player.stream = attack_canceled_sound
+        attack_player.play()
+        roll_timer.start()
 
 
 
 func _roll_attack_stage_advance():
     if aggression == max_aggression && can_attack: # If player hit max aggression, force a death
+        roll_timer.stop()
         if randi() % 2 == 0: _attack(door)
         else: _attack(window)
         return
@@ -152,10 +158,13 @@ func _start_attack():
 # TODO: Probably need to do some quick tweens of the monster moving
 func _attack(attack_point: Node3D):
     if attack_point is RoomDoor:
-        if !door.is_vulnerable: door.destroy_door()
+        if !door.is_vulnerable:
+            door.destroy_door()
+            roll_timer.start()
         else: player.kill(Player3D.View.LEFT)
 
     elif attack_point is RoomWindow:
-        if !window.is_vulnerable: window.break_window()
+        if !window.is_vulnerable:
+            window.break_window()
+            roll_timer.start()
         else: player.kill(Player3D.View.RIGHT)
-    roll_timer.start()

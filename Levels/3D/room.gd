@@ -69,6 +69,7 @@ func end_night():
 
 
 func reset_night():
+    monster.reset()
     monster.reset_position()
     computer.clear_screen()
     door.fix_door()
