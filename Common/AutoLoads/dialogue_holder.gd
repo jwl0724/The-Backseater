@@ -26,7 +26,7 @@ const night1_tutorial: Array[String] = [
 ]
 
 const night2_tutorial: Array[String] = [
-    "Press 'Space' to defend yourself",
+    "Press 'Space' throw the 'Book of Meta'",
     "Good Luck"
 ]
 

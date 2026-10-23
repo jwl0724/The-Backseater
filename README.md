@@ -50,6 +50,7 @@ https://godotshaders.com/shader/corner-radius/
 https://godotshaders.com/shader/crt-with-luminance-preservation/
 
 ### Models
+https://opengameart.org/content/old-book
 https://opengameart.org/content/angler-man-3d
 https://opengameart.org/content/furniture-kit
 
