@@ -33,10 +33,10 @@ grow_vertical = 2
 theme = ExtResource("1_adf8c")
 script = ExtResource("1_s4xjq")
 
-[node name="UpgradeSelector" parent="." unique_id=219363242 instance=ExtResource("1_s1nf5")]
+[node name="HudBars" parent="." unique_id=316807712 instance=ExtResource("2_4i5n4")]
 layout_mode = 1
 
-[node name="HudBars" parent="." unique_id=316807712 instance=ExtResource("2_4i5n4")]
+[node name="UpgradeSelector" parent="." unique_id=219363242 instance=ExtResource("1_s1nf5")]
 layout_mode = 1
 
 [node name="MessageTransition" parent="." unique_id=1510419780 instance=ExtResource("3_4i5n4")]
