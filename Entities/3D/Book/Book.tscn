@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da1262o6fbxfe" path="res://Entities/3D/Book/textures/book_tex.png" id="2_uuvxk"]
 [ext_resource type="Texture2D" uid="uid://bggex7p6u2opg" path="res://Entities/3D/Book/textures/book_spec.png" id="3_sknil"]
 [ext_resource type="Texture2D" uid="uid://ba76cmvd0x6h8" path="res://Entities/3D/Book/textures/book_normal.png" id="4_1814p"]
-[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/Default.ttf" id="5_6pv18"]
+[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/horror.ttf" id="5_6pv18"]
 [ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="5_sknil"]
 [ext_resource type="AudioStream" uid="uid://doblwv13j42y3" path="res://Entities/3D/Book/use.mp3" id="7_rfyqe"]
 

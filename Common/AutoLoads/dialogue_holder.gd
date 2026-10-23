@@ -124,5 +124,6 @@ var ending_exchange: Array[MessageContent] = [
     MessageContent.new(player_name, "he actually just started today, he asked me how to play earlier"),
     MessageContent.new(backseater_name, "HE DIDN'T ASK ME?"),
     MessageContent.new(player_name, "honestly i think you should just help him out"),
-    MessageContent.new(backseater_name, "Say less!")
+    MessageContent.new(backseater_name, "Say less!"),
+    MessageContent.new(backseater_name, "Thanks for playing!")
 ]

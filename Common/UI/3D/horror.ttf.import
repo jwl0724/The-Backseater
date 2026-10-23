@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bba8bhxv661s7"
-path="res://.godot/imported/Default.ttf-756f1f9957a4b81a0e7b0d488d4dff4a.fontdata"
+path="res://.godot/imported/horror.ttf-e52d93347b5016cf2568f3529894a331.fontdata"
 
 [deps]
 
-source_file="res://Common/UI/3D/Default.ttf"
-dest_files=["res://.godot/imported/Default.ttf-756f1f9957a4b81a0e7b0d488d4dff4a.fontdata"]
+source_file="res://Common/UI/3D/horror.ttf"
+dest_files=["res://.godot/imported/horror.ttf-e52d93347b5016cf2568f3529894a331.fontdata"]
 
 [params]
 
