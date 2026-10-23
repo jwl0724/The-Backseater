@@ -22,17 +22,30 @@ class_name GameController
 
 
 func _ready():
-    # TODO: Need actual launch scene here, for now just have it launch the debug scene by default
     SignalBus.game3d_hud_addUI.connect(_on_addUI)
-    var launch_scene = debug_scene.instantiate()
-    running_node.add_child(launch_scene)
+    SignalBus.back_to_menu.connect(_on_back_to_menu)
+    SignalBus.to_ingame.connect(_on_ingame)
 
+    if enable_debug && debug_scene: direct_change_scenes(debug_scene)
+    else: direct_change_scenes(launch_scene)
 
 
 
 func _on_addUI(packed: PackedScene):
     if gui_layer.get_child_count() == 1: gui_layer.get_child(0).queue_free() # Assumes each game state has 1 menu
     gui_layer.add_child(packed.instantiate())
+
+
+
+func _on_back_to_menu():
+    for child in gui_layer.get_children():
+        child.queue_free()
+    direct_change_scenes(main_menu_scene)
+
+
+
+func _on_ingame():
+    thread_change_scenes("uid://c5vsswhadftvh")
 
 
 
@@ -52,7 +65,7 @@ func thread_change_scenes(scene_uid: String):
 
 
 func _on_finished_loading(node: Node):
-    if _free_current_running(): return
+    if !_free_current_running(): return
     running_node.add_child(node)
 
 
@@ -61,6 +74,8 @@ func _free_current_running() -> bool: # Returns true if successfully removed, fa
     if running_node.get_child_count() > 1:
         printerr("Running node should not have more than one child, multiple scenes were added to running")
         return false
-    else:
+    elif running_node.get_child_count() == 1:
         running_node.get_child(0).queue_free()
+        return true
+    else:
         return true

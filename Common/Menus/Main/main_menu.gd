@@ -23,7 +23,8 @@ func _ready():
 func _on_play():
     SignalBus.transition_fade_hide.emit(2)
     Audio.stop_music(1)
-    print("TODO: Make the actual game and connect it here")
+    await get_tree().create_timer(2).timeout
+    SignalBus.to_ingame.emit()
 
 
 

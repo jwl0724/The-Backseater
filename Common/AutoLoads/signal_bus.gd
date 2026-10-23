@@ -3,6 +3,7 @@ extends Node
 
 # Scene Signals
 signal back_to_menu()
+signal to_ingame()
 
 # Transition Signals
 signal transition_fade_show(time: float)

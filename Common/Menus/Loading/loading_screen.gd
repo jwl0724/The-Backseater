@@ -10,9 +10,7 @@ var load_tween: Tween = null
 
 
 func _ready():
-	SignalBus.game_transition_fadeShow.emit(Color.WHITE, 0)
-	load_tween = create_tween()
-	load_tween.play()
+	SignalBus.transition_fade_show.emit(0)
 
 
 
@@ -23,7 +21,6 @@ func _process(_delta: float):
 	if status == ResourceLoader.THREAD_LOAD_LOADED:
 		scene_ready = true
 		_start_off_thread_instantiate(ResourceLoader.load_threaded_get(loading_uid))
-
 
 
 
