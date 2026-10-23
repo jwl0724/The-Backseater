@@ -57,6 +57,8 @@
 [ext_resource type="AudioStream" uid="uid://s4k1bbjal65u" path="res://Levels/3D/Imports/Sounds/ghost3.mp3" id="53_4s1wq"]
 [ext_resource type="AudioStream" uid="uid://sijf5h57f8w2" path="res://Levels/3D/Imports/Sounds/ghost4.mp3" id="54_rlocp"]
 [ext_resource type="AudioStream" uid="uid://220r5q42aaa2" path="res://Levels/3D/Imports/Sounds/ghost.mp3" id="55_mniwe"]
+[ext_resource type="AudioStream" uid="uid://ditto6kf43v0v" path="res://Levels/3D/Imports/Sounds/buzz.mp3" id="56_rlocp"]
+[ext_resource type="Script" uid="uid://cwf78gkhs23t0" path="res://Levels/3D/Systems/ambience_constant.gd" id="57_mniwe"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0j41l"]
 
@@ -681,11 +683,18 @@ chance_to_play = 0.5
 
 [node name="Ghostly" type="AudioStreamPlayer3D" parent="Ambience" unique_id=1838483010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2663746, 4.554925, 9.531992)
+bus = &"Default_SFX"
 script = ExtResource("46_uu7el")
 ambience_clips = Array[AudioStream]([ExtResource("52_0lsdk"), ExtResource("53_4s1wq"), ExtResource("54_rlocp"), ExtResource("55_mniwe")])
 lower_interval = 70.0
 upper_interval = 110.0
 chance_to_play = 0.5
+
+[node name="Buzz" type="AudioStreamPlayer3D" parent="Ambience" unique_id=1062524661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1731424, 5.645694, 5.7840166)
+stream = ExtResource("56_rlocp")
+bus = &"Default_SFX"
+script = ExtResource("57_mniwe")
 
 [node name="Backseater" parent="." unique_id=221199719 node_paths=PackedStringArray("player", "door", "window", "door_kill_point", "door_peek_point", "window_kill_point", "window_peek_point") instance=ExtResource("45_0j41l")]
 transform = Transform3D(-0.9995379, 0, 0.030399024, 0, 1.0000001, 0, -0.030399054, 0, -0.9995378, 1.7634141, 3.9933808, -6.539016)
