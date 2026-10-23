@@ -17,6 +17,7 @@ func fix_door():
     is_vulnerable = false
     door.rotation_degrees.x = 0
     door.rotation_degrees.y = 0
+    door.position = Vector3.ZERO
 
 
 
@@ -27,6 +28,7 @@ func destroy_door():
 
     var t = create_tween()
     t.tween_property(door, "rotation_degrees", Vector3(90, 0, 0), 0.5).set_trans(Tween.TRANS_BOUNCE)
+    t.parallel().tween_property(door, "position", Vector3(-0.142, 0.32, 0.223), 0.5).set_trans(Tween.TRANS_BOUNCE)
     t.play()
 
 
