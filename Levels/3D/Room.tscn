@@ -98,7 +98,7 @@ glow_hdr_threshold = 0.5
 fog_light_color = Color(0.5601969, 0.6930995, 0.9063276, 1)
 fog_light_energy = 0.5
 adjustment_enabled = true
-adjustment_brightness = 0.7
+adjustment_brightness = 0.6
 adjustment_contrast = 1.14
 adjustment_saturation = 1.17
 
@@ -277,14 +277,6 @@ metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Map/Exterior" unique_id=1313034059]
 environment = SubResource("Environment_bl504")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map/Exterior" unique_id=1044457227]
-transform = Transform3D(-2.315768e-08, -0.84813154, 0.5297861, -3.7073e-08, 0.5297861, 0.84813154, -1, -1.0835065e-14, -4.371139e-08, 0, 0, 0)
-light_color = Color(0.8156863, 0.8784314, 1, 1)
-light_energy = 2.0
-light_angular_distance = 10.0
-light_bake_mode = 1
-shadow_enabled = true
 
 [node name="Interior" type="Node3D" parent="Map" unique_id=1967315032]
 metadata/_edit_lock_ = true
@@ -644,7 +636,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.22032292, 0, -0.975427, 0, 1, 0, 0.975427, 0, 0.22032292, 8.597059, 3.1997771, 5.3775887)
 
 [node name="WindowPeek" type="Node3D" parent="AttackPoints" unique_id=983580950]
-transform = Transform3D(-0.11716527, 0.7228034, -0.6810488, -0.38347742, 0.59965694, 0.70239353, 0.91608804, 0.343463, 0.20691983, 9.297775, 0.99829674, 5.399751)
+transform = Transform3D(-0.11716527, 0.7228034, -0.6810488, -0.38347742, 0.59965694, 0.70239353, 0.91608804, 0.343463, 0.20691983, 9.297775, 0.7178199, 5.399751)
 
 [node name="DoorKill" type="Node3D" parent="AttackPoints" unique_id=1209291331]
 transform = Transform3D(-0.03681809, 0, 0.999322, 0, 1, 0, -0.999322, 0, -0.03681809, -7.834141, 3.1997771, 5.0256357)
@@ -706,7 +698,7 @@ window = NodePath("../Map/Interior/Layout/Walls/Window")
 door_kill_point = NodePath("../AttackPoints/DoorKill")
 door_peek_point = NodePath("../AttackPoints/DoorPeek")
 window_kill_point = NodePath("../AttackPoints/WindowKill")
-window_peek_point = NodePath("../AttackPoints/DoorPeek")
+window_peek_point = NodePath("../AttackPoints/WindowPeek")
 
 [node name="Book" parent="." unique_id=1361196322 instance=ExtResource("47_6tpf1")]
 transform = Transform3D(0.7498292, 0.33278373, 0.57184863, 0.18227345, 0.72695583, -0.66205114, -0.63602823, 0.60065836, 0.48443514, 1.2275274, 3.4318228, 4.6283846)
