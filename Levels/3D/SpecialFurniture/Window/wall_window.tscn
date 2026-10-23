@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://b4t4ib4o18de8"]
 
 [ext_resource type="PackedScene" uid="uid://byclosg7n3pff" path="res://Levels/3D/Imports/FurniturePack/wallWindow.fbx" id="1_l2s3j"]
-[ext_resource type="Script" uid="uid://vwn6o28guw13" path="res://Levels/3D/SpecialFurniture/wall_window.gd" id="2_3m8ev"]
+[ext_resource type="Script" uid="uid://vwn6o28guw13" path="res://Levels/3D/SpecialFurniture/Window/wall_window.gd" id="2_3m8ev"]
+[ext_resource type="AudioStream" uid="uid://cmkmx4ohqldr" path="res://Levels/3D/SpecialFurniture/Window/knock.mp3" id="3_a00ul"]
+[ext_resource type="AudioStream" uid="uid://cbvhoa2ycp6ix" path="res://Levels/3D/SpecialFurniture/Window/break.mp3" id="4_c8ksg"]
+[ext_resource type="AudioStream" uid="uid://c52n7h45vvwok" path="res://Levels/3D/SpecialFurniture/Window/scratch.mp3" id="5_c8ksg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lerek"]
 transparency = 1
@@ -10,6 +13,9 @@ albedo_color = Color(0, 0.29803923, 0.59607846, 0.58431375)
 
 [node name="wallWindow" unique_id=1914658601 instance=ExtResource("1_l2s3j")]
 script = ExtResource("2_3m8ev")
+window_knock_sfx = ExtResource("3_a00ul")
+window_break_sfx = ExtResource("4_c8ksg")
+window_scratch_sfx = ExtResource("5_c8ksg")
 
 [node name="wallWindow" parent="." index="0" unique_id=1531187802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

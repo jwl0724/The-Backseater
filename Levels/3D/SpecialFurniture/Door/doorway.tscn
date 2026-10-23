@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bafk5bkpif4aa"]
+
+[ext_resource type="PackedScene" uid="uid://cilg8xtux674q" path="res://Levels/3D/Imports/FurniturePack/doorway.fbx" id="1_ptmmx"]
+[ext_resource type="Script" uid="uid://yrvok4s8ku3r" path="res://Levels/3D/SpecialFurniture/Door/doorway.gd" id="2_x8wvy"]
+[ext_resource type="AudioStream" uid="uid://dhpi4rshxpr5a" path="res://Levels/3D/SpecialFurniture/Door/smash.mp3" id="3_3scwg"]
+[ext_resource type="AudioStream" uid="uid://bft65m6goiug0" path="res://Levels/3D/SpecialFurniture/Door/knock.mp3" id="4_oejve"]
+[ext_resource type="AudioStream" uid="uid://blr6vjupm3gx7" path="res://Levels/3D/SpecialFurniture/Door/squeak.mp3" id="5_h36ld"]
+[ext_resource type="AudioStream" uid="uid://cyxwth5htcyk7" path="res://Levels/3D/SpecialFurniture/Door/slam.mp3" id="6_g807d"]
+
+[node name="doorway" unique_id=2030286840 instance=ExtResource("1_ptmmx")]
+script = ExtResource("2_x8wvy")
+door_bash_sfx = ExtResource("3_3scwg")
+door_knock_sfx = ExtResource("4_oejve")
+door_squeak_sfx = ExtResource("5_h36ld")
+door_slam_sfx = ExtResource("6_g807d")
+
+[node name="doorway" parent="." index="0" unique_id=1184754260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1525190534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4895619, 2.1896033, 0)
+bus = &"Default_SFX"

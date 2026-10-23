@@ -83,3 +83,10 @@ https://pixabay.com/sound-effects/film-special-effects-effect-notify-84408/
 https://pixabay.com/sound-effects/film-special-effects-sword-sound-2-36274/
 https://pixabay.com/sound-effects/film-special-effects-retro-hurt-2-236675/
 https://pixabay.com/sound-effects/film-special-effects-new-notification-010-352755/
+https://pixabay.com/sound-effects/film-special-effects-wooden-crate-smash-4-387903/
+https://pixabay.com/sound-effects/household-knocking-door-1-397992/
+https://pixabay.com/sound-effects/household-wood-door-squeak-81947/
+https://pixabay.com/sound-effects/film-special-effects-door-slam-172171/
+https://pixabay.com/sound-effects/film-special-effects-glass-creaking-33916/
+https://pixabay.com/sound-effects/broken-glass-impact-454859/
+https://pixabay.com/sound-effects/film-special-effects-glass-knock-5-189101/
