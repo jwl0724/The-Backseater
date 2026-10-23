@@ -28,6 +28,7 @@ const attack_delay: float = 3 # Gap between ready to pounce and actually attacki
 @export var window_kill_point: Node3D = null # Only used when the window is destroyed
 @export var window_peek_point: Node3D = null # Only used when the window is still there
 
+@onready var face_light: OmniLight3D = $FaceLight
 @onready var attack_player: AudioStreamPlayer3D = $AttackSounds
 @onready var ambient_player: AudioStreamPlayer3D = $AmbientSounds
 @onready var delay_timer: Timer = $DelayTimer # Wait time before pouncing for attack
@@ -46,6 +47,7 @@ var current_attack_node: Node3D = null # Node that the monster is attacking from
 
 
 func _ready():
+    face_light.visible = false
     delay_timer.wait_time = attack_delay
     roll_timer.wait_time = roll_interval
     aggression_timer.wait_time = time_per_aggression_increment
@@ -63,6 +65,7 @@ func disable_attacks(disable: bool):
 
 
 func activate(night: int):
+    face_light.visible = false
     roll_timer.start()
     aggression_timer.start()
     aggression = (night - 1) * 2 # Set starting aggression level
@@ -70,6 +73,7 @@ func activate(night: int):
 
 
 func reset():
+    face_light.visible = false
     roll_timer.stop()
     aggression_timer.stop()
     cancel_attack(false)
@@ -235,5 +239,6 @@ func _jump_to_player(attack_point: Node3D):
     ambient_player.play()
 
     var t = create_tween()
-    t.tween_property(self, "global_position", destination, 0.25).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+    t.tween_property(self, "global_position", destination, 0.1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+    t.tween_callback(func(): face_light.visible = true)
     t.play()

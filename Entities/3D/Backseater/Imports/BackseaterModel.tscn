@@ -96,6 +96,3 @@ bones/71/rotation = Quaternion(-0.34871295, 0.34890202, 0.10751329, 0.86319613)
 surface_material_override/0 = SubResource("StandardMaterial3D_aeigm")
 surface_material_override/1 = SubResource("StandardMaterial3D_tw1w5")
 surface_material_override/2 = SubResource("StandardMaterial3D_6qwvc")
-
-[node name="AnimationPlayer" parent="." index="1" unique_id=1409196035]
-autoplay = &"Armature_001Action"

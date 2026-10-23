@@ -38,3 +38,11 @@ one_shot = true
 [node name="RollTimer" type="Timer" parent="." unique_id=546936400]
 
 [node name="AggroTimer" type="Timer" parent="." unique_id=725758100]
+
+[node name="FaceLight" type="OmniLight3D" parent="." unique_id=1068697772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038012505, 0.5342853, 1.3544824)
+light_color = Color(0.9964457, 0.3437988, 0.23957667, 1)
+light_energy = 2.0
+light_size = 0.03
+omni_range = 1.006
+omni_attenuation = 0.25
