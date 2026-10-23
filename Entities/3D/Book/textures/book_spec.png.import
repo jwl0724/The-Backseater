@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bggex7p6u2opg"
-path.s3tc="res://.godot/imported/book_spec.png-73ed1a09bfb036289e8489cd82a1e013.s3tc.ctex"
+path.s3tc="res://.godot/imported/book_spec.png-42441c46814b716b789116331679171f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Entities/3D/Player/Components/textures/book_spec.png"
-dest_files=["res://.godot/imported/book_spec.png-73ed1a09bfb036289e8489cd82a1e013.s3tc.ctex"]
+source_file="res://Entities/3D/Book/textures/book_spec.png"
+dest_files=["res://.godot/imported/book_spec.png-42441c46814b716b789116331679171f.s3tc.ctex"]
 
 [params]
 

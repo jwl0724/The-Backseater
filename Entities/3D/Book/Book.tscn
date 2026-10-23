@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dnldw5ajqocxy"]
+
+[ext_resource type="PackedScene" uid="uid://2ddmadcbmkpv" path="res://Entities/3D/Book/DH_book_00.blend" id="1_newpo"]
+[ext_resource type="Texture2D" uid="uid://da1262o6fbxfe" path="res://Entities/3D/Book/textures/book_tex.png" id="2_uuvxk"]
+[ext_resource type="Texture2D" uid="uid://bggex7p6u2opg" path="res://Entities/3D/Book/textures/book_spec.png" id="3_sknil"]
+[ext_resource type="Texture2D" uid="uid://ba76cmvd0x6h8" path="res://Entities/3D/Book/textures/book_normal.png" id="4_1814p"]
+[ext_resource type="FontFile" uid="uid://bl5qwceaxah46" path="res://Common/UI/2D/Components/Messages/Message/Roboto_Condensed-Light.ttf" id="5_sknil"]
+[ext_resource type="AudioStream" uid="uid://pnj04qhduaro" path="res://Entities/3D/Book/land.mp3" id="6_r3gug"]
+[ext_resource type="AudioStream" uid="uid://doblwv13j42y3" path="res://Entities/3D/Book/despawn.mp3" id="7_rfyqe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3gug"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_uuvxk")
+metallic = 1.0
+metallic_texture = ExtResource("3_sknil")
+normal_enabled = true
+normal_texture = ExtResource("4_1814p")
+
+[node name="Book" unique_id=1361196322 instance=ExtResource("1_newpo")]
+
+[node name="book" parent="." index="0" unique_id=69606048]
+surface_material_override/0 = SubResource("StandardMaterial3D_r3gug")
+
+[node name="Label3D" type="Label3D" parent="." index="1" unique_id=1188591992]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.052836277, -0.04210172)
+pixel_size = 0.0005
+modulate = Color(1, 0.7882353, 0.4627451, 1)
+outline_modulate = Color(0.4117647, 0.3019608, 0.22352941, 1)
+text = "META"
+font = ExtResource("5_sknil")
+font_size = 64
+outline_size = 10
+
+[node name="Label3D2" type="Label3D" parent="." index="2" unique_id=918924774]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.052836277, 0.040335543)
+pixel_size = 0.0005
+modulate = Color(1, 0.7882353, 0.4627451, 1)
+text = "The ultimate
+guide to 
+optimization"
+font = ExtResource("5_sknil")
+outline_size = 0
+
+[node name="LandSFX" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1673006358]
+stream = ExtResource("6_r3gug")
+
+[node name="DespawnSFX" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1094608665]
+stream = ExtResource("7_rfyqe")

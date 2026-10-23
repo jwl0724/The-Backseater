@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2ddmadcbmkpv"
-path="res://.godot/imported/DH_book_00.blend-f224b89080b8f15db9c741c209068475.scn"
+path="res://.godot/imported/DH_book_00.blend-29eb85a4c00791fe5659211e629c9b23.scn"
 
 [deps]
 
-source_file="res://Entities/3D/Player/Components/DH_book_00.blend"
-dest_files=["res://.godot/imported/DH_book_00.blend-f224b89080b8f15db9c741c209068475.scn"]
+source_file="res://Entities/3D/Book/DH_book_00.blend"
+dest_files=["res://.godot/imported/DH_book_00.blend-29eb85a4c00791fe5659211e629c9b23.scn"]
 
 [params]
 
