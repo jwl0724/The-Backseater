@@ -111,7 +111,7 @@ func cancel_attack(start_roll_timer: bool = true):
 func _roll_attack_stage_advance():
     if aggression == max_aggression && can_attack: # If player hit max aggression, force a death
         roll_timer.stop()
-        if randi() % 1 == 0:
+        if randi() % 2 == 0:
             global_rotation = door_kill_point.global_rotation if door.is_vulnerable else door_peek_point.global_rotation
             global_position = door_kill_point.global_position if door.is_vulnerable else door_peek_point.global_position
             _attack(door)
@@ -182,6 +182,8 @@ func _start_attack():
 
 
 func _attack(attack_point: Node3D):
+    player.alert_attacking(null, Player3D.View.FRONT)
+
     if attack_point is RoomDoor:
         if !door.is_vulnerable:
             door.destroy_door()
