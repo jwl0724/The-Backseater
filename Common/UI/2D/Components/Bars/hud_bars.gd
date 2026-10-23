@@ -18,6 +18,7 @@ func _process(_delta):
     if player_ref == null: return
     # Need to constantly update cause health regen exists
     hp_bar.value = player_ref.health
+    hp_bar.max_value = player_ref.max_health
     hp_label.text = "%.1f/%.0f" % [clampf(player_ref.health, 0, player_ref.max_health), player_ref.max_health]
 
 
