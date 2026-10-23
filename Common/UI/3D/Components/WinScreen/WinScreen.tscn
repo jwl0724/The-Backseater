@@ -110,4 +110,5 @@ text = "Back to Menu"
 
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1589197854]
 stream = ExtResource("4_wm5sk")
+volume_db = -5.0
 bus = &"Default_SFX"

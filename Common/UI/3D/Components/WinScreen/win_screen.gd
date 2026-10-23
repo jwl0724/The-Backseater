@@ -55,7 +55,8 @@ func play_end_sequence():
         var chatline = chat_line_template.instantiate() as ChatLine
         end_tween.tween_callback(func():
             message_container.add_child(chatline)
-            chatline.set_content(message.sender, message.content))
+            chatline.set_content(message.sender, message.content)
+            if message.sender == Dialogue.backseater_name: audio.play())
         delay = true
 
     end_tween.tween_interval(1)
