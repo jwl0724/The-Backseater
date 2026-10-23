@@ -15,7 +15,6 @@ class_name Room3D
 @onready var player: Player3D = $Player3d
 @onready var monster: Backseater = $Backseater
 
-# TODO: Main menu screen and credits screen with all credits properly listed
 # TODO: Need to fix the skybox, looks terrible right now
 
 func _ready():

@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://b5raq70loikcn"]
 
 [ext_resource type="Script" uid="uid://ddwnuiprc0eyq" path="res://Common/Menus/Main/main_menu.gd" id="1_3uoum"]
+[ext_resource type="Texture2D" uid="uid://beuu2ujwgt1fw" path="res://Common/Menus/Main/Background.png" id="2_jdo1c"]
+[ext_resource type="FontFile" uid="uid://bba8bhxv661s7" path="res://Common/UI/3D/horror.ttf" id="2_spc7o"]
+[ext_resource type="Theme" uid="uid://7mq5uvllvv2k" path="res://Common/UI/3D/default_button.tres" id="4_kr70a"]
+[ext_resource type="PackedScene" uid="uid://p8hqkrf5bkvk" path="res://Common/Menus/Credits/CreditsMenu.tscn" id="5_kr70a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_adjjp"]
+font = ExtResource("2_spc7o")
+font_size = 64
+font_color = Color(0.83137256, 0.12156863, 0, 1)
+outline_size = 13
+outline_color = Color(1, 0.7176471, 0.5372549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jdo1c"]
+font = ExtResource("2_spc7o")
+font_size = 24
+font_color = Color(0.78431374, 0.5882353, 0.46666667, 1)
 
 [node name="MainMenu" type="Control" unique_id=868263092]
 layout_mode = 3
@@ -11,41 +27,75 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3uoum")
 
-[node name="Title" type="Label" parent="." unique_id=1228334929]
+[node name="Background" type="TextureRect" parent="." unique_id=1386448957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jdo1c")
+expand_mode = 3
+
+[node name="Title" type="Label" parent="." unique_id=15645135]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_bottom = 90.0
 grow_horizontal = 2
-text = "The Backseater"
+text = "THE BACKSEATER"
+label_settings = SubResource("LabelSettings_adjjp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1933975834]
+[node name="Label" type="Label" parent="Title" unique_id=1527223756]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_top = -19.0
+offset_right = 157.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "When Backseating Goes Too Far"
+label_settings = SubResource("LabelSettings_jdo1c")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=816268706]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 100
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1819178551]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1933975834]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1819178551]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("4_kr70a")
 text = "Play"
 
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=932906263]
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer" unique_id=932906263]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("4_kr70a")
 text = "Credits"
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=834193881]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=834193881]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("4_kr70a")
 text = "Quit"
+
+[node name="CreditsMenu" parent="." unique_id=181847195 instance=ExtResource("5_kr70a")]
+visible = false
+layout_mode = 1

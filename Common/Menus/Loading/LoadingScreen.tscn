@@ -1,6 +1,44 @@
 [gd_scene format=3 uid="uid://dv4ce4co2fqi6"]
 
 [ext_resource type="Script" uid="uid://lti5h4jaxbe1" path="res://Common/Menus/Loading/loading_screen.gd" id="1_lg34r"]
+[ext_resource type="Theme" uid="uid://byf0h1l2hhudn" path="res://Common/UI/3D/default.tres" id="2_n5x7v"]
+
+[sub_resource type="Animation" id="Animation_e63u6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.84]
+}
+
+[sub_resource type="Animation" id="Animation_fomq3"]
+resource_name = "ellipsis"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.84, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8uyr2"]
+_data = {
+&"RESET": SubResource("Animation_e63u6"),
+&"ellipsis": SubResource("Animation_fomq3")
+}
 
 [node name="LoadingScreen" type="Control" unique_id=365770302]
 layout_mode = 3
@@ -19,3 +57,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=916595567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1689508903]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_n5x7v")
+theme_override_font_sizes/font_size = 48
+text = "Now Loading..."
+visible_characters = 11
+visible_ratio = 0.84
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/Label" unique_id=1511044995]
+libraries/ = SubResource("AnimationLibrary_8uyr2")
+autoplay = &"ellipsis"

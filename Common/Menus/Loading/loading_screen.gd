@@ -48,7 +48,6 @@ func _thread_loading(packed: PackedScene, thread: Thread):
 func close_loading_screen(loaded_scene: Node, thread: Thread):
 	thread.wait_to_finish()
 
-	# TODO: Put some visual animation down here, also should call a transition fade here
 	if load_tween && load_tween.is_running(): load_tween.kill()
 	load_tween = create_tween()
 	load_tween.tween_callback(loading_finished.emit.bind(loaded_scene))

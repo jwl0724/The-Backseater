@@ -1,8 +1,10 @@
 extends Control
 
+
 @onready var play_button: Button = %Play
 @onready var credits_button: Button = %Credits
 @onready var quit_button: Button = %Quit
+@onready var credits: CreditsMenu = $CreditsMenu
 
 
 
@@ -19,7 +21,7 @@ func _on_play():
 
 
 func _on_credits():
-    print("TODO: Make credits menu and connect it here")
+    credits.show_credits()
 
 
 

@@ -2,6 +2,9 @@ extends Node
 class_name GameController
 
 @export_group("Required Scenes")
+@export var launch_scene: PackedScene = null
+@export var ingame_scene: PackedScene = null
+@export var main_menu_scene: PackedScene = null
 @export var load_screen: PackedScene = null
 
 @export_group("Dev Tools")

@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://p8hqkrf5bkvk"]
 
+[ext_resource type="Theme" uid="uid://7mq5uvllvv2k" path="res://Common/UI/3D/default_button.tres" id="1_5pkyr"]
+[ext_resource type="Script" uid="uid://cb24mw2emowqv" path="res://Common/Menus/Credits/credits_menu.gd" id="1_ap0af"]
+[ext_resource type="Theme" uid="uid://cyynh6faw3pee" path="res://Common/UI/Shared/no_scroll.tres" id="2_ap0af"]
+
 [node name="CreditsMenu" type="Control" unique_id=181847195]
 layout_mode = 3
 anchors_preset = 15
@@ -7,11 +11,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ap0af")
 
-[node name="Button" type="Button" parent="." unique_id=10290321]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=474292164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05490196, 0.05490196, 0.05490196, 0.57254905)
+
+[node name="Back" type="Button" parent="." unique_id=10290321]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 39.0
+theme = ExtResource("1_5pkyr")
 text = "Back"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1547658055]
@@ -26,10 +44,13 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 40
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1283929002]
+[node name="Scroll" type="ScrollContainer" parent="MarginContainer" unique_id=1283929002]
+unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_ap0af")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollContainer" unique_id=391723316]
+[node name="Label" type="RichTextLabel" parent="MarginContainer/Scroll" unique_id=391723316]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

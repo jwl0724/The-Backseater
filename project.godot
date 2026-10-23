@@ -17,6 +17,7 @@ warnings/check_invalid_track_paths=false
 config/name="The Backseater"
 run/main_scene="uid://b3pg1ple7wm2m"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.05490196, 0.05490196, 0.05490196, 1)
 
 [audio]
 
